@@ -1,29 +1,137 @@
-# Create T3 App
+# LandingPageMaker
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+A complete **LandingPageMaker** web application built with the T3 Stack for collecting and organizing textual and media content for landing page creation.
 
-## What's next? How do I make an app with this?
+## 🚀 Features
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- **Modern UI**: Clean, simple interface with rounded borders and no animations
+- **Section Management**: Create, edit, reorder, and delete sections with up/down buttons
+- **Content Organization**: Manage text content, buttons, and external images
+- **Export Functionality**: Export landing pages to formatted TXT files
+- **Limits Enforcement**: Maximum 250 landing pages, 25 sections per page
+- **Responsive Design**: Works seamlessly on desktop and mobile
+- **Real-time Feedback**: Toast notifications for all user actions
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## 🧰 Tech Stack
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+| Technology | Purpose |
+|------------|---------|
+| **Next.js 15** | Frontend framework with App Router |
+| **TypeScript** | Type safety throughout the application |
+| **tRPC** | Type-safe API layer |
+| **Prisma** | ORM for PostgreSQL database operations |
+| **Neon PostgreSQL** | Serverless PostgreSQL 16 database |
+| **Tailwind CSS** | Utility-first CSS framework |
+| **React Hook Form** | Form validation and management |
+| **@headlessui/react** | Accessible modal/dialog components |
+| **react-hot-toast** | Toast notifications |
+| **Zustand** | Client-side state management |
+| **Zod** | Schema validation |
 
-## Learn More
+## 🛠️ Setup Instructions
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+### Prerequisites
+- Node.js 18+ and npm
+- Neon PostgreSQL account
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Installation
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/gae4it/landingpagemaker.git
+   cd landingpagemaker
+   ```
 
-## How do I deploy this?
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+3. **Environment setup**
+   - Copy `.env.example` to `.env`
+   - Get your Neon PostgreSQL connection string from [console.neon.tech](https://console.neon.tech)
+   - Update `DATABASE_URL` in `.env`:
+   ```env
+   DATABASE_URL="postgresql://[user]:[password]@[neon-host]/[database]?sslmode=require"
+   ```
+
+4. **Database setup**
+   ```bash
+   # Generate Prisma client
+   npx prisma generate
+   
+   # Run database migrations
+   npx prisma migrate dev --name init
+   
+   # (Optional) Open Prisma Studio to inspect data
+   npx prisma studio
+   ```
+
+5. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:3000`
+
+## 📋 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues
+- `npm run format:write` - Format code with Prettier
+- `npx prisma studio` - Open database GUI
+- `npx prisma migrate dev` - Run database migrations
+
+## 🎯 Usage
+
+### Creating Landing Pages
+1. Navigate to the home page
+2. Click "Add New Landing Page"
+3. Fill in URL and description
+4. Add sections with content, buttons, and images
+5. Use up/down arrows to reorder sections
+6. Save the landing page
+
+### Managing Content
+- **Sections**: Each section can have intro, title, subtitle, description
+- **Buttons**: Up to 3 buttons per section (URL or scroll type)
+- **Images**: Up to 8 external image URLs per section
+- **Reordering**: Use up/down buttons to rearrange sections
+
+### Exporting Data
+- Go to the edit page of any landing page
+- Click "Export to TXT" to download formatted content
+- The export includes all sections, buttons, and images
+
+## 🚀 Deployment
+
+### Recommended Setup
+- **Frontend**: Vercel (free tier, optimized for Next.js)
+- **Database**: Neon PostgreSQL (free tier: 10GB storage)
+- **Total Cost**: $0/month for small to medium projects
+
+## 🔒 Environment Variables
+
+```env
+# Database (required)
+DATABASE_URL="postgresql://[user]:[password]@[neon-host]/[database]?sslmode=require"
+
+# Next.js (optional)
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License.
