@@ -2,19 +2,58 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model LandingPage {
+  id          String   @id @default(cuid())
+  url         String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  sections    Section[]
+  
+  @@map("landing_pages")
+}
 
-    @@index([name])
+model Section {
+  id            String      @id @default(cuid())
+  name          String
+  intro         String?
+  title         String?
+  subtitle      String?
+  description   String?
+  order         Int         @default(0)
+  landingPageId String
+  landingPage   LandingPage @relation(fields: [landingPageId], references: [id], onDelete: Cascade)
+  buttons       Button[]
+  images        Image[]
+  
+  @@map("sections")
+}
+
+model Button {
+  id        String  @id @default(cuid())
+  label     String
+  linkType  String  // "url" | "scroll"
+  value     String
+  sectionId String
+  section   Section @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  
+  @@map("buttons")
+}
+
+model Image {
+  id        String  @id @default(cuid())
+  url       String
+  alt       String?
+  sectionId String
+  section   Section @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  
+  @@map("images")
 }
