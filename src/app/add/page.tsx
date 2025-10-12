@@ -43,7 +43,7 @@ export default function AddLandingPage() {
   const onSubmit = (data: LandingPage) => {
     createLandingPage.mutate({
       ...data,
-      sections: sections.map(({ id, ...section }, index) => ({
+      sections: sections.map(({ id: _id, ...section }, index) => ({
         ...section,
         order: index,
       })),
@@ -77,14 +77,18 @@ export default function AddLandingPage() {
   const handleMoveUp = (index: number) => {
     if (index === 0) return;
     const newSections = [...sections];
-    [newSections[index - 1], newSections[index]] = [newSections[index], newSections[index - 1]];
+    const temp = newSections[index - 1];
+    newSections[index - 1] = newSections[index]!;
+    newSections[index] = temp!;
     setSections(newSections);
   };
 
   const handleMoveDown = (index: number) => {
     if (index === sections.length - 1) return;
     const newSections = [...sections];
-    [newSections[index], newSections[index + 1]] = [newSections[index + 1], newSections[index]];
+    const temp = newSections[index];
+    newSections[index] = newSections[index + 1]!;
+    newSections[index + 1] = temp!;
     setSections(newSections);
   };
 
@@ -133,7 +137,7 @@ export default function AddLandingPage() {
 
               {sections.length === 0 ? (
                 <div className="text-center py-8 text-gray-500">
-                  No sections added yet. Click "Add Section" to get started.
+                  No sections added yet. Click &quot;Add Section&quot; to get started.
                 </div>
               ) : (
                 <div className="space-y-4">

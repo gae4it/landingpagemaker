@@ -24,7 +24,7 @@ interface EditLandingPageProps {
 
 export default function EditLandingPage({ params }: EditLandingPageProps) {
   const { id } = use(params);
-  const router = useRouter();
+  const _router = useRouter();
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [editingSection, setEditingSection] = useState<Section | null>(null);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -35,7 +35,7 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
   const updateLandingPage = api.landingPage.update.useMutation({
     onSuccess: () => {
       toast.success("Landing page updated successfully!");
-      refetch();
+      void refetch();
     },
     onError: (error) => {
       toast.error(error.message);
@@ -45,7 +45,7 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
   const createSection = api.section.create.useMutation({
     onSuccess: () => {
       toast.success("Section added successfully!");
-      refetch();
+      void refetch();
       setIsEditorOpen(false);
     },
     onError: (error) => {
@@ -56,7 +56,7 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
   const updateSection = api.section.update.useMutation({
     onSuccess: () => {
       toast.success("Section updated successfully!");
-      refetch();
+      void refetch();
       setIsEditorOpen(false);
       setEditingSection(null);
     },
@@ -68,7 +68,7 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
   const deleteSection = api.section.delete.useMutation({
     onSuccess: () => {
       toast.success("Section deleted successfully!");
-      refetch();
+      void refetch();
       setDeleteModalOpen(false);
       setSectionToDelete(null);
     },
@@ -79,7 +79,7 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
 
   const moveSectionUp = api.section.moveUp.useMutation({
     onSuccess: () => {
-      refetch();
+      void refetch();
     },
     onError: (error) => {
       toast.error(error.message);
@@ -88,7 +88,7 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
 
   const moveSectionDown = api.section.moveDown.useMutation({
     onSuccess: () => {
-      refetch();
+      void refetch();
     },
     onError: (error) => {
       toast.error(error.message);
@@ -258,8 +258,14 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
                     title: section.title || undefined,
                     subtitle: section.subtitle || undefined,
                     description: section.description || undefined,
-                    buttons: section.buttons || [],
-                    images: section.images || [],
+                    buttons: (section.buttons || []).map((btn: any) => ({
+                      ...btn,
+                      linkType: btn.linkType as "url" | "scroll"
+                    })),
+                    images: (section.images || []).map((img: any) => ({
+                      ...img,
+                      alt: img.alt ?? undefined
+                    })),
                   }}
                   onEdit={() => handleEditSection(section)}
                   onDelete={() => handleDeleteSection(section.id)}

@@ -20,7 +20,7 @@ export default function EditLandingPages() {
   const deleteLandingPage = api.landingPage.delete.useMutation({
     onSuccess: () => {
       toast.success("Landing page deleted successfully!");
-      refetch();
+      void refetch();
       setDeleteId(null);
     },
     onError: (error) => {
