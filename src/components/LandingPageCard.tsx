@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { useEffect, useState } from "react";
 
 interface LandingPageCardProps {
   landingPage: {
@@ -13,6 +16,12 @@ interface LandingPageCardProps {
 }
 
 export function LandingPageCard({ landingPage, onDelete }: LandingPageCardProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat("en-US", {
       year: "numeric",
@@ -48,7 +57,9 @@ export function LandingPageCard({ landingPage, onDelete }: LandingPageCardProps)
         </p>
         
         <div className="flex items-center justify-between text-xs text-gray-500">
-          <span>Updated {formatDate(landingPage.updatedAt)}</span>
+          <span>
+            {mounted ? `Updated ${formatDate(landingPage.updatedAt)}` : 'Updated recently'}
+          </span>
           <span>{landingPage.sections.length}/25 sections</span>
         </div>
         
