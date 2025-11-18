@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, use } from "react";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-hot-toast";
@@ -24,13 +23,14 @@ interface EditLandingPageProps {
 
 export default function EditLandingPage({ params }: EditLandingPageProps) {
   const { id } = use(params);
-  const _router = useRouter();
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [editingSection, setEditingSection] = useState<Section | null>(null);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [sectionToDelete, setSectionToDelete] = useState<string | null>(null);
 
-  const { data: landingPage, refetch } = api.landingPage.getById.useQuery({ id });
+  const { data: landingPage, refetch } = api.landingPage.getById.useQuery({
+    id,
+  });
 
   const updateLandingPage = api.landingPage.update.useMutation({
     onSuccess: () => {
@@ -100,10 +100,12 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
     handleSubmit,
     formState: { errors },
   } = useForm<LandingPage>({
-    resolver: zodResolver(landingPageSchema.pick({ url: true, description: true })),
+    resolver: zodResolver(
+      landingPageSchema.pick({ url: true, description: true }),
+    ),
     values: {
-      url: landingPage?.url || "",
-      description: landingPage?.description || "",
+      url: landingPage?.url ?? "",
+      description: landingPage?.description ?? "",
     },
   });
 
@@ -127,16 +129,18 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
     });
   };
 
-  const handleEditSection = (section: any) => {
+  const handleEditSection = (section: unknown) => {
+    if (!section || typeof section !== "object") return;
+    const s = section as Partial<Section>;
     setEditingSection({
-      id: section.id,
-      name: section.name,
-      intro: section.intro || "",
-      title: section.title || "",
-      subtitle: section.subtitle || "",
-      description: section.description || "",
-      buttons: section.buttons || [],
-      images: section.images || [],
+      id: s.id ?? "",
+      name: s.name ?? "",
+      intro: s.intro ?? "",
+      title: s.title ?? "",
+      subtitle: s.subtitle ?? "",
+      description: s.description ?? "",
+      buttons: s.buttons ?? [],
+      images: s.images ?? [],
     });
     setIsEditorOpen(true);
   };
@@ -176,9 +180,9 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
 
   if (!landingPage) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-gray-50">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-b-2 border-blue-600"></div>
           <p className="text-gray-600">Loading landing page...</p>
         </div>
       </div>
@@ -187,19 +191,21 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="mx-auto max-w-4xl px-4">
         <div className="mb-6">
           <Link href="/edit" className="text-blue-600 hover:text-blue-700">
             ← Back to Landing Pages
           </Link>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
-          <div className="flex items-center justify-between mb-6">
-            <h1 className="text-2xl font-bold text-gray-900">Edit Landing Page</h1>
+        <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="mb-6 flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-gray-900">
+              Edit Landing Page
+            </h1>
             <ExportButton landingPageId={id} />
           </div>
-          
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <Input
               label="Landing Page URL"
@@ -218,10 +224,7 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
             />
 
             <div className="flex justify-end">
-              <Button
-                type="submit"
-                disabled={updateLandingPage.isPending}
-              >
+              <Button type="submit" disabled={updateLandingPage.isPending}>
                 {updateLandingPage.isPending ? "Saving..." : "Save Changes"}
               </Button>
             </div>
@@ -229,8 +232,8 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
         </div>
 
         {/* Sections */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <div className="flex items-center justify-between mb-6">
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="mb-6 flex items-center justify-between">
             <h2 className="text-lg font-semibold text-gray-900">
               Sections ({landingPage.sections.length}/{MAX_SECTIONS_PER_PAGE})
             </h2>
@@ -243,8 +246,8 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
           </div>
 
           {landingPage.sections.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">
-              No sections added yet. Click "Add Section" to get started.
+            <div className="py-8 text-center text-gray-500">
+              No sections added yet. Click &quot;Add Section&quot; to get started.
             </div>
           ) : (
             <div className="space-y-4">
@@ -254,17 +257,17 @@ export default function EditLandingPage({ params }: EditLandingPageProps) {
                   section={{
                     id: section.id,
                     name: section.name,
-                    intro: section.intro || undefined,
-                    title: section.title || undefined,
-                    subtitle: section.subtitle || undefined,
-                    description: section.description || undefined,
-                    buttons: (section.buttons || []).map((btn: any) => ({
+                    intro: section.intro ?? undefined,
+                    title: section.title ?? undefined,
+                    subtitle: section.subtitle ?? undefined,
+                    description: section.description ?? undefined,
+                    buttons: (Array.isArray(section.buttons) ? section.buttons : []).map((btn) => ({
                       ...btn,
-                      linkType: btn.linkType as "url" | "scroll"
+                      linkType: (btn as { linkType?: string }).linkType as "url" | "scroll",
                     })),
-                    images: (section.images || []).map((img: any) => ({
+                    images: (Array.isArray(section.images) ? section.images : []).map((img) => ({
                       ...img,
-                      alt: img.alt ?? undefined
+                      alt: (img as { alt?: string }).alt ?? undefined,
                     })),
                   }}
                   onEdit={() => handleEditSection(section)}

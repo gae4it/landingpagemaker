@@ -29,7 +29,9 @@ type LandingPageWithSections = {
   }[];
 };
 
-export function formatLandingPageToTXT(landingPage: LandingPageWithSections): string {
+export function formatLandingPageToTXT(
+  landingPage: LandingPageWithSections,
+): string {
   let txtContent = `LANDING PAGE: ${landingPage.url}\nDESCRIPTION: ${landingPage.description}\n\n`;
 
   landingPage.sections.forEach((section, index) => {
@@ -37,19 +39,22 @@ export function formatLandingPageToTXT(landingPage: LandingPageWithSections): st
     if (section.intro) txtContent += `Intro: ${section.intro}\n`;
     if (section.title) txtContent += `Title: ${section.title}\n`;
     if (section.subtitle) txtContent += `Subtitle: ${section.subtitle}\n`;
-    if (section.description) txtContent += `Description: ${section.description}\n`;
-    
+    if (section.description)
+      txtContent += `Description: ${section.description}\n`;
+
     if (section.buttons.length > 0) {
-      const buttonStrings = section.buttons.map(btn => `${btn.label} -> ${btn.value} (${btn.linkType})`);
-      txtContent += `Buttons: ${buttonStrings.join(', ')}\n`;
+      const buttonStrings = section.buttons.map(
+        (btn) => `${btn.label} -> ${btn.value} (${btn.linkType})`,
+      );
+      txtContent += `Buttons: ${buttonStrings.join(", ")}\n`;
     }
-    
+
     if (section.images.length > 0) {
-      const imageUrls = section.images.map(img => img.url);
-      txtContent += `Images: ${imageUrls.join(', ')}\n`;
+      const imageUrls = section.images.map((img) => img.url);
+      txtContent += `Images: ${imageUrls.join(", ")}\n`;
     }
-    
-    txtContent += '\n';
+
+    txtContent += "\n";
   });
 
   txtContent += `---\nTotal Sections: ${landingPage.sections.length}\nGenerated: ${new Date().toLocaleString()}\n`;
@@ -58,8 +63,8 @@ export function formatLandingPageToTXT(landingPage: LandingPageWithSections): st
 }
 
 export function downloadTXTFile(filename: string, content: string): void {
-  const element = document.createElement('a');
-  const file = new Blob([content], { type: 'text/plain' });
+  const element = document.createElement("a");
+  const file = new Blob([content], { type: "text/plain" });
   element.href = URL.createObjectURL(file);
   element.download = filename;
   document.body.appendChild(element);

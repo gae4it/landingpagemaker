@@ -15,7 +15,7 @@ export function ExportButton({ landingPageId }: ExportButtonProps) {
 
   const exportQuery = api.landingPage.export.useQuery(
     { id: landingPageId },
-    { enabled: false }
+    { enabled: false },
   );
 
   const handleExport = async () => {
@@ -24,8 +24,8 @@ export function ExportButton({ landingPageId }: ExportButtonProps) {
       const result = await exportQuery.refetch();
       if (result.data) {
         // Create and download the file
-        const element = document.createElement('a');
-        const file = new Blob([result.data.content], { type: 'text/plain' });
+        const element = document.createElement("a");
+        const file = new Blob([result.data.content], { type: "text/plain" });
         element.href = URL.createObjectURL(file);
         element.download = result.data.filename;
         document.body.appendChild(element);
@@ -35,7 +35,7 @@ export function ExportButton({ landingPageId }: ExportButtonProps) {
       } else {
         toast.error("Failed to export landing page");
       }
-    } catch (error) {
+    } catch {
       toast.error("Failed to export landing page");
     } finally {
       setIsExporting(false);
@@ -43,11 +43,7 @@ export function ExportButton({ landingPageId }: ExportButtonProps) {
   };
 
   return (
-    <Button
-      onClick={handleExport}
-      disabled={isExporting}
-      variant="secondary"
-    >
+    <Button onClick={handleExport} disabled={isExporting} variant="secondary">
       {isExporting ? "Exporting..." : "Export to TXT"}
     </Button>
   );

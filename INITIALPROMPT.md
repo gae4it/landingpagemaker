@@ -1,9 +1,11 @@
 # LandingPageMaker - T3 Stack with Neon PostgreSQL
 
 ## Project Brief
+
 Create a complete **LandingPageMaker** web application using **T3 Stack** (Next.js 15, TypeScript, tRPC, Prisma, Tailwind CSS) with **Neon PostgreSQL** database. This is an internal tool for collecting and organizing textual and media content from coworkers for landing page creation.
 
 ## 🎯 Key Project Specifications
+
 - **Images**: External URLs only (no upload functionality)
 - **Preview**: No landing page preview needed
 - **Export**: TXT format export functionality
@@ -16,23 +18,24 @@ Create a complete **LandingPageMaker** web application using **T3 Stack** (Next.
 
 ## 🧰 Tech Stack Requirements
 
-| Tool/Library | Purpose |
-|--------------|---------|
-| **Next.js 15** | Frontend framework with App Router |
-| **TypeScript** | Type safety throughout the application |
-| **tRPC** | Type-safe API layer (replaces REST endpoints) |
-| **Prisma** | ORM for PostgreSQL database operations |
-| **Neon PostgreSQL** | Serverless PostgreSQL 16 database (existing account) |
-| **Tailwind CSS** | Utility-first CSS framework |
-| **Zustand** | Client-side state management |
-| **React Hook Form** | Form validation and management |
-| **@headlessui/react** | Accessible modal/dialog components |
-| **Zod** | Schema validation for tRPC and forms |
-| **react-hot-toast** | Toast notifications library |
+| Tool/Library          | Purpose                                              |
+| --------------------- | ---------------------------------------------------- |
+| **Next.js 15**        | Frontend framework with App Router                   |
+| **TypeScript**        | Type safety throughout the application               |
+| **tRPC**              | Type-safe API layer (replaces REST endpoints)        |
+| **Prisma**            | ORM for PostgreSQL database operations               |
+| **Neon PostgreSQL**   | Serverless PostgreSQL 16 database (existing account) |
+| **Tailwind CSS**      | Utility-first CSS framework                          |
+| **Zustand**           | Client-side state management                         |
+| **React Hook Form**   | Form validation and management                       |
+| **@headlessui/react** | Accessible modal/dialog components                   |
+| **Zod**               | Schema validation for tRPC and forms                 |
+| **react-hot-toast**   | Toast notifications library                          |
 
 ## 🎯 Project Requirements
 
 ### Global Rules
+
 - All interface text and code comments must be in **English**
 - No authentication required (publicly accessible)
 - All data must be persistently stored in **Neon PostgreSQL**
@@ -44,6 +47,7 @@ Create a complete **LandingPageMaker** web application using **T3 Stack** (Next.
 - **Section Reordering**: Up/down buttons (universal for desktop/mobile)
 
 ### Database Schema (Prisma)
+
 ```prisma
 // prisma/schema.prisma
 generator client {
@@ -62,7 +66,7 @@ model LandingPage {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   sections    Section[]
-  
+
   @@map("landing_pages")
 }
 
@@ -78,7 +82,7 @@ model Section {
   landingPage   LandingPage @relation(fields: [landingPageId], references: [id], onDelete: Cascade)
   buttons       Button[]
   images        Image[]
-  
+
   @@map("sections")
 }
 
@@ -89,7 +93,7 @@ model Button {
   value     String
   sectionId String
   section   Section @relation(fields: [sectionId], references: [id], onDelete: Cascade)
-  
+
   @@map("buttons")
 }
 
@@ -99,7 +103,7 @@ model Image {
   alt       String?
   sectionId String
   section   Section @relation(fields: [sectionId], references: [id], onDelete: Cascade)
-  
+
   @@map("images")
 }
 ```
@@ -107,6 +111,7 @@ model Image {
 ## 📱 App Pages & Routing
 
 ### 1. `/` - Home Page
+
 - **Layout**: Centered card with navigation buttons
 - **Components**:
   - Large heading: "LandingPageMaker"
@@ -116,6 +121,7 @@ model Image {
     - **"✏️ Edit Existing Landing Page"** → Navigate to `/edit`
 
 ### 2. `/add` - Add New Landing Page
+
 - **Top Section**: Landing page details form
   - **Field**: "Landing Page URL" (required, type: url validation only)
   - **Field**: "Landing Page Description" (textarea)
@@ -126,6 +132,7 @@ model Image {
   - **Save Button**: "Save Landing Page" (creates record and navigates to `/edit`)
 
 ### 3. `/edit` - Edit Existing Landing Pages List
+
 - **Search Bar**: Filter landing pages by URL or description
 - **Landing Page Cards**: Modern simple cards with rounded borders, grid/list format, ordered by `updatedAt DESC`
 - **Limit Notice**: Show "X/250 landing pages" counter
@@ -139,6 +146,7 @@ model Image {
   - **"Delete" button** → Show confirmation modal
 
 ### 4. `/edit/[id]` - Edit Landing Page Detail
+
 - **Top Section**: Editable landing page details
   - URL input (pre-filled)
   - Description textarea (pre-filled)
@@ -214,22 +222,23 @@ section.moveDown({ id: string })                       // Move section down
 
 **Modal/Dialog Component** with React Hook Form validation:
 
-| Field | Type | Required | Validation | Notes |
-|-------|------|----------|------------|-------|
-| **Section Name** | text | ✅ Yes | min: 1 char | Required field |
-| **Intro** | text | ❌ No | max: 80 chars | Short introductory text |
-| **Title** | text | ❌ No | max: 80 chars | Section title |
-| **Subtitle** | text | ❌ No | max: 160 chars | Section subtitle |
-| **Description** | textarea | ❌ No | No limit | Long description text |
-| **Buttons** (1-3) | dynamic array | ❌ No | max: 3 buttons | Each button: { label, linkType, value } |
-| **Images** (1-8) | dynamic array | ❌ No | max: 8 images | URL strings, validated as URLs |
+| Field             | Type          | Required | Validation     | Notes                                   |
+| ----------------- | ------------- | -------- | -------------- | --------------------------------------- |
+| **Section Name**  | text          | ✅ Yes   | min: 1 char    | Required field                          |
+| **Intro**         | text          | ❌ No    | max: 80 chars  | Short introductory text                 |
+| **Title**         | text          | ❌ No    | max: 80 chars  | Section title                           |
+| **Subtitle**      | text          | ❌ No    | max: 160 chars | Section subtitle                        |
+| **Description**   | textarea      | ❌ No    | No limit       | Long description text                   |
+| **Buttons** (1-3) | dynamic array | ❌ No    | max: 3 buttons | Each button: { label, linkType, value } |
+| **Images** (1-8)  | dynamic array | ❌ No    | max: 8 images  | URL strings, validated as URLs          |
 
 **Button Object Structure**:
+
 ```typescript
 {
-  label: string;           // Button text
-  linkType: 'url' | 'scroll';  // Link type selection
-  value: string;           // URL or scroll target ID
+  label: string; // Button text
+  linkType: "url" | "scroll"; // Link type selection
+  value: string; // URL or scroll target ID
 }
 ```
 
@@ -267,6 +276,7 @@ Generated: [Date and Time]
 ## 💾 Environment Setup
 
 ### Required Environment Variables
+
 ```env
 # Database
 DATABASE_URL="postgresql://[user]:[password]@[neon-host]/[database]?sslmode=require"
@@ -277,6 +287,7 @@ NEXTAUTH_URL="http://localhost:3000"
 ```
 
 ### Neon Database Setup Steps
+
 1. Create account at [neon.tech](https://neon.tech)
 2. Create new PostgreSQL database with these recommended settings:
    - **PostgreSQL Version**: 16 (latest stable)
@@ -290,6 +301,7 @@ NEXTAUTH_URL="http://localhost:3000"
 ## 🎨 UI/UX Requirements
 
 ### Design Principles
+
 - **Modern simple interface** with rounded borders, no animations
 - **Responsive design** (mobile-friendly)
 - **Loading states** for all async operations
@@ -300,6 +312,7 @@ NEXTAUTH_URL="http://localhost:3000"
 - **Export Functionality**: TXT format download for landing pages
 
 ### Section Reordering Implementation
+
 - **Up/Down Buttons**: Universal method for desktop and mobile
 - **Modern Simple Design**: Clean buttons with rounded borders, no animations
 - **Section Cards**: Modern simple cards with rounded borders
@@ -310,7 +323,9 @@ NEXTAUTH_URL="http://localhost:3000"
 ## 📋 Required Documentation Files
 
 ### 1. `README.md`
+
 Comprehensive project documentation including:
+
 - Project overview and purpose
 - Tech stack explanation
 - Local development setup
@@ -321,7 +336,9 @@ Comprehensive project documentation including:
 - Contributing guidelines
 
 ### 2. `CHANGES.md`
+
 Change tracking log with:
+
 - Completed features checklist
 - Remaining tasks and TODOs
 - Future enhancements roadmap
@@ -329,7 +346,9 @@ Change tracking log with:
 - Instructions for contributors
 
 ### 3. `GITHUB_INSTRUCTIONS.md`
+
 AI contributor guidelines:
+
 - Code style and conventions
 - Component structure rules
 - How to update CHANGES.md
@@ -338,29 +357,34 @@ AI contributor guidelines:
 - Deployment process
 
 ### 4. `ORIGINAL_PROMPT.md`
+
 **IMPORTANT**: Copy this entire prompt document and save it as `ORIGINAL_PROMPT.md` in the project root directory. This file serves as the complete specification document that was used to create this project and can be used to recreate or understand the project requirements in the future.
 
 ## ⚡ Implementation Priority
 
 ### Phase 1: Core Setup (Foundation)
+
 1. **Initialize T3 Stack project** with all required dependencies
 2. **Setup Neon PostgreSQL** and environment variables
 3. **Create Prisma schema** and run initial migration
 4. **Setup basic routing** structure with Next.js App Router
 
 ### Phase 2: Backend API (tRPC + Prisma)
+
 1. **Create tRPC routers** for landing pages and sections
 2. **Implement all CRUD operations** with proper validation
 3. **Add error handling** and response formatting
 4. **Test all API endpoints** manually
 
 ### Phase 3: Frontend Components
+
 1. **Build UI components** (Button, Input, Modal, etc.)
 2. **Create page components** for all routes
 3. **Implement SectionEditor** form with validation
 4. **Add confirmation modals** for delete operations
 
 ### Phase 4: Advanced Features
+
 1. **Implement up/down reordering** with simple buttons
 2. **Add search/filtering** functionality
 3. **Integrate Zustand** for client state management
@@ -369,6 +393,7 @@ AI contributor guidelines:
 6. **Implement limits** (250 landing pages, 25 sections)
 
 ### Phase 5: Polish & Documentation
+
 1. **Responsive design** improvements
 2. **Performance optimizations**
 3. **Complete all documentation** files
@@ -377,12 +402,14 @@ AI contributor guidelines:
 ## 🚀 Deployment
 
 ### Recommended Hosting
+
 - **Frontend**: Vercel (free tier, optimized for Next.js)
 - **Database**: Neon PostgreSQL 16 on AWS (free tier: 10GB, 100 hours compute/month)
 - **Recommended Region**: EU Central 1 (Frankfurt) for European users
 - **Total Cost**: $0/month for small to medium projects
 
 ### Deployment Checklist
+
 - [ ] Environment variables configured in Vercel
 - [ ] Prisma migrations run on production database
 - [ ] Build and deploy successful
@@ -392,6 +419,7 @@ AI contributor guidelines:
 ## 📊 Success Criteria
 
 The project is complete when:
+
 - ✅ All pages render correctly and are responsive
 - ✅ Users can create, edit, and delete landing pages (max 250)
 - ✅ Users can add, edit, reorder, and delete sections (max 25 per landing page)
@@ -409,6 +437,7 @@ The project is complete when:
 ## 🎯 Final Notes
 
 This project should demonstrate modern full-stack development practices using the T3 Stack with:
+
 - **Type-safe APIs** with tRPC
 - **Database operations** with Prisma ORM
 - **Form handling** with React Hook Form + Zod validation

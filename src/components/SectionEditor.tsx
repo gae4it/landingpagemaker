@@ -8,7 +8,11 @@ import { Modal } from "@/components/ui/Modal";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
-import { sectionSchema, MAX_BUTTONS_PER_SECTION, MAX_IMAGES_PER_SECTION } from "@/lib/validations";
+import {
+  sectionSchema,
+  MAX_BUTTONS_PER_SECTION,
+  MAX_IMAGES_PER_SECTION,
+} from "@/lib/validations";
 import type { Section } from "@/lib/validations";
 
 interface SectionEditorProps {
@@ -18,8 +22,15 @@ interface SectionEditorProps {
   section?: Section | null;
 }
 
-export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEditorProps) {
-  const [activeTab, setActiveTab] = useState<"basic" | "buttons" | "images">("basic");
+export function SectionEditor({
+  isOpen,
+  onClose,
+  onSave,
+  section,
+}: SectionEditorProps) {
+  const [activeTab, setActiveTab] = useState<"basic" | "buttons" | "images">(
+    "basic",
+  );
 
   const {
     register,
@@ -77,7 +88,7 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
   const onSubmit = (data: Section) => {
     onSave({
       ...data,
-      id: section?.id || crypto.randomUUID(),
+      id: section?.id ?? crypto.randomUUID(),
     });
   };
 
@@ -88,8 +99,8 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
   };
 
   return (
-    <Modal 
-      isOpen={isOpen} 
+    <Modal
+      isOpen={isOpen}
       onClose={handleClose}
       title={section ? "Edit Section" : "Add New Section"}
       size="lg"
@@ -100,17 +111,23 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
           <nav className="-mb-px flex space-x-8">
             {[
               { id: "basic", label: "Basic Info" },
-              { id: "buttons", label: `Buttons (${buttonFields.length}/${MAX_BUTTONS_PER_SECTION})` },
-              { id: "images", label: `Images (${imageFields.length}/${MAX_IMAGES_PER_SECTION})` },
+              {
+                id: "buttons",
+                label: `Buttons (${buttonFields.length}/${MAX_BUTTONS_PER_SECTION})`,
+              },
+              {
+                id: "images",
+                label: `Images (${imageFields.length}/${MAX_IMAGES_PER_SECTION})`,
+              },
             ].map((tab) => (
               <button
                 key={tab.id}
                 type="button"
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                onClick={() => setActiveTab(tab.id as "basic" | "buttons" | "images")}
+                className={`border-b-2 px-1 py-2 text-sm font-medium ${
                   activeTab === tab.id
                     ? "border-blue-500 text-blue-600"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
                 }`}
               >
                 {tab.label}
@@ -167,7 +184,9 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
               <h3 className="text-lg font-medium">Buttons</h3>
               <Button
                 type="button"
-                onClick={() => appendButton({ label: "", linkType: "url", value: "" })}
+                onClick={() =>
+                  appendButton({ label: "", linkType: "url", value: "" })
+                }
                 disabled={buttonFields.length >= MAX_BUTTONS_PER_SECTION}
                 size="sm"
               >
@@ -176,11 +195,16 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
             </div>
 
             {buttonFields.length === 0 ? (
-              <p className="text-gray-500 text-center py-4">No buttons added yet.</p>
+              <p className="py-4 text-center text-gray-500">
+                No buttons added yet.
+              </p>
             ) : (
               <div className="space-y-4">
                 {buttonFields.map((field, index) => (
-                  <div key={field.id} className="border rounded-lg p-4 space-y-3">
+                  <div
+                    key={field.id}
+                    className="space-y-3 rounded-lg border p-4"
+                  >
                     <div className="flex items-center justify-between">
                       <h4 className="font-medium">Button {index + 1}</h4>
                       <Button
@@ -201,11 +225,11 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
                     />
 
                     <div>
-                      <label className="text-sm font-medium text-gray-700 mb-2 block">
+                      <label className="mb-2 block text-sm font-medium text-gray-700">
                         Link Type
                       </label>
                       <select
-                        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                         {...register(`buttons.${index}.linkType`)}
                       >
                         <option value="url">URL</option>
@@ -242,11 +266,16 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
             </div>
 
             {imageFields.length === 0 ? (
-              <p className="text-gray-500 text-center py-4">No images added yet.</p>
+              <p className="py-4 text-center text-gray-500">
+                No images added yet.
+              </p>
             ) : (
               <div className="space-y-4">
                 {imageFields.map((field, index) => (
-                  <div key={field.id} className="border rounded-lg p-4 space-y-3">
+                  <div
+                    key={field.id}
+                    className="space-y-3 rounded-lg border p-4"
+                  >
                     <div className="flex items-center justify-between">
                       <h4 className="font-medium">Image {index + 1}</h4>
                       <Button
@@ -270,7 +299,7 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
                     <Input
                       label="Alt Text (optional)"
                       placeholder="Description of the image"
-                      error={errors.images?.[index]?.alt?.message}
+                      error={errors.images?.[index]?.alt?.message ?? undefined}
                       {...register(`images.${index}.alt`)}
                     />
                   </div>
@@ -281,7 +310,7 @@ export function SectionEditor({ isOpen, onClose, onSave, section }: SectionEdito
         )}
 
         {/* Footer */}
-        <div className="flex justify-end space-x-4 pt-4 border-t">
+        <div className="flex justify-end space-x-4 border-t pt-4">
           <Button type="button" variant="secondary" onClick={handleClose}>
             Cancel
           </Button>

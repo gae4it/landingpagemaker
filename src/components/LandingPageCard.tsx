@@ -10,12 +10,15 @@ interface LandingPageCardProps {
     url: string;
     description: string;
     updatedAt: Date;
-    sections: any[];
+    sections: unknown[];
   };
   onDelete: () => void;
 }
 
-export function LandingPageCard({ landingPage, onDelete }: LandingPageCardProps) {
+export function LandingPageCard({
+  landingPage,
+  onDelete,
+}: LandingPageCardProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -33,37 +36,41 @@ export function LandingPageCard({ landingPage, onDelete }: LandingPageCardProps)
   };
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow">
+    <div className="rounded-lg border border-gray-200 bg-white p-4 transition-shadow hover:shadow-md">
       <div className="space-y-3">
         <div>
-          <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Landing Page</span>
+          <span className="text-xs font-medium tracking-wide text-gray-500 uppercase">
+            Landing Page
+          </span>
         </div>
-        
+
         <div>
           <a
             href={landingPage.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 font-medium break-all"
+            className="font-medium break-all text-blue-600 hover:text-blue-800"
           >
             {landingPage.url}
           </a>
         </div>
-        
-        <p className="text-gray-600 text-sm line-clamp-2">
+
+        <p className="line-clamp-2 text-sm text-gray-600">
           {landingPage.description.length > 120
             ? `${landingPage.description.substring(0, 120)}...`
             : landingPage.description}
         </p>
-        
+
         <div className="flex items-center justify-between text-xs text-gray-500">
           <span>
-            {mounted ? `Updated ${formatDate(landingPage.updatedAt)}` : 'Updated recently'}
+            {mounted
+              ? `Updated ${formatDate(landingPage.updatedAt)}`
+              : "Updated recently"}
           </span>
           <span>{landingPage.sections.length}/25 sections</span>
         </div>
-        
-        <div className="flex space-x-2 pt-2 border-t border-gray-100">
+
+        <div className="flex space-x-2 border-t border-gray-100 pt-2">
           <Link href={`/edit/${landingPage.id}`} className="flex-1">
             <Button variant="secondary" size="sm" className="w-full">
               Edit

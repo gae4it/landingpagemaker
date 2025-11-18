@@ -65,13 +65,15 @@ export default function AddLandingPage() {
   };
 
   const handleUpdateSection = (updatedSection: Section) => {
-    setSections(sections.map(s => s.id === updatedSection.id ? updatedSection : s));
+    setSections(
+      sections.map((s) => (s.id === updatedSection.id ? updatedSection : s)),
+    );
     setIsEditorOpen(false);
     setEditingSection(null);
   };
 
   const handleDeleteSection = (id: string) => {
-    setSections(sections.filter(s => s.id !== id));
+    setSections(sections.filter((s) => s.id !== id));
   };
 
   const handleMoveUp = (index: number) => {
@@ -94,16 +96,18 @@ export default function AddLandingPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="mx-auto max-w-4xl px-4">
         <div className="mb-6">
           <Link href="/" className="text-blue-600 hover:text-blue-700">
             ← Back to Home
           </Link>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">Add New Landing Page</h1>
-          
+        <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <h1 className="mb-6 text-2xl font-bold text-gray-900">
+            Add New Landing Page
+          </h1>
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <Input
               label="Landing Page URL"
@@ -122,7 +126,7 @@ export default function AddLandingPage() {
             />
 
             <div className="border-t pt-6">
-              <div className="flex items-center justify-between mb-4">
+              <div className="mb-4 flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-gray-900">
                   Sections ({sections.length}/{MAX_SECTIONS_PER_PAGE})
                 </h2>
@@ -136,8 +140,9 @@ export default function AddLandingPage() {
               </div>
 
               {sections.length === 0 ? (
-                <div className="text-center py-8 text-gray-500">
-                  No sections added yet. Click &quot;Add Section&quot; to get started.
+                <div className="py-8 text-center text-gray-500">
+                  No sections added yet. Click &quot;Add Section&quot; to get
+                  started.
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -167,7 +172,9 @@ export default function AddLandingPage() {
                 type="submit"
                 disabled={createLandingPage.isPending || sections.length === 0}
               >
-                {createLandingPage.isPending ? "Saving..." : "Save Landing Page"}
+                {createLandingPage.isPending
+                  ? "Saving..."
+                  : "Save Landing Page"}
               </Button>
             </div>
           </form>

@@ -26,20 +26,12 @@ export function ConfirmModal({
     <Modal isOpen={isOpen} onClose={onClose} title={title} size="sm">
       <div className="space-y-4">
         <p className="text-gray-600">{message}</p>
-        
-        <div className="flex justify-end space-x-3 pt-4 border-t border-gray-200">
-          <Button
-            variant="secondary"
-            onClick={onClose}
-            disabled={isLoading}
-          >
+
+        <div className="flex justify-end space-x-3 border-t border-gray-200 pt-4">
+          <Button variant="secondary" onClick={onClose} disabled={isLoading}>
             {cancelText}
           </Button>
-          <Button
-            variant="danger"
-            onClick={onConfirm}
-            disabled={isLoading}
-          >
+          <Button variant="danger" onClick={onConfirm} disabled={isLoading}>
             {isLoading ? "Please wait..." : confirmText}
           </Button>
         </div>

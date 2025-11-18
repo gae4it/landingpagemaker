@@ -21,50 +21,55 @@ export function SectionCard({
   canMoveDown,
 }: SectionCardProps) {
   return (
-    <div className="bg-gray-50 rounded-lg border border-gray-200 p-4">
+    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="font-semibold text-gray-900 mb-2">{section.name}</h3>
-          
+          <h3 className="mb-2 font-semibold text-gray-900">{section.name}</h3>
+
           {section.intro && (
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="mb-1 text-sm text-gray-600">
               <span className="font-medium">Intro:</span> {section.intro}
             </p>
           )}
-          
+
           {section.title && (
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="mb-1 text-sm text-gray-600">
               <span className="font-medium">Title:</span> {section.title}
             </p>
           )}
-          
+
           {section.subtitle && (
-            <p className="text-sm text-gray-600 mb-1">
+            <p className="mb-1 text-sm text-gray-600">
               <span className="font-medium">Subtitle:</span> {section.subtitle}
             </p>
           )}
-          
+
           {section.description && (
-            <p className="text-sm text-gray-600 mb-2">
-              <span className="font-medium">Description:</span> {" "}
-              {section.description.length > 100 
-                ? `${section.description.substring(0, 100)}...` 
-                : section.description
-              }
+            <p className="mb-2 text-sm text-gray-600">
+              <span className="font-medium">Description:</span>{" "}
+              {section.description.length > 100
+                ? `${section.description.substring(0, 100)}...`
+                : section.description}
             </p>
           )}
-          
+
           <div className="flex items-center space-x-4 text-xs text-gray-500">
             {section.buttons && section.buttons.length > 0 && (
-              <span>{section.buttons.length} button{section.buttons.length > 1 ? "s" : ""}</span>
+              <span>
+                {section.buttons.length} button
+                {section.buttons.length > 1 ? "s" : ""}
+              </span>
             )}
             {section.images && section.images.length > 0 && (
-              <span>{section.images.length} image{section.images.length > 1 ? "s" : ""}</span>
+              <span>
+                {section.images.length} image
+                {section.images.length > 1 ? "s" : ""}
+              </span>
             )}
           </div>
         </div>
-        
-        <div className="flex items-center space-x-2 ml-4">
+
+        <div className="ml-4 flex items-center space-x-2">
           <div className="flex flex-col space-y-1">
             <Button
               size="sm"
@@ -85,7 +90,7 @@ export function SectionCard({
               ↓
             </Button>
           </div>
-          
+
           <div className="flex flex-col space-y-1">
             <Button
               size="sm"

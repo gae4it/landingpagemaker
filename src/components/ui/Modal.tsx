@@ -11,7 +11,13 @@ interface ModalProps {
   size?: "sm" | "md" | "lg" | "xl";
 }
 
-const Modal = ({ isOpen, onClose, title, children, size = "md" }: ModalProps) => {
+const Modal = ({
+  isOpen,
+  onClose,
+  title,
+  children,
+  size = "md",
+}: ModalProps) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -24,7 +30,7 @@ const Modal = ({ isOpen, onClose, title, children, size = "md" }: ModalProps) =>
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black bg-opacity-25" />
+          <div className="bg-opacity-25 fixed inset-0 bg-black" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -46,13 +52,13 @@ const Modal = ({ isOpen, onClose, title, children, size = "md" }: ModalProps) =>
                     "max-w-lg": size === "md",
                     "max-w-2xl": size === "lg",
                     "max-w-4xl": size === "xl",
-                  }
+                  },
                 )}
               >
                 {title && (
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900 mb-4"
+                    className="mb-4 text-lg leading-6 font-medium text-gray-900"
                   >
                     {title}
                   </Dialog.Title>

@@ -12,20 +12,39 @@ export const sectionRouter = createTRPCRouter({
       z.object({
         landingPageId: z.string(),
         name: z.string().min(1, "Section name is required"),
-        intro: z.string().max(80, "Intro must be 80 characters or less").optional(),
-        title: z.string().max(80, "Title must be 80 characters or less").optional(),
-        subtitle: z.string().max(160, "Subtitle must be 160 characters or less").optional(),
+        intro: z
+          .string()
+          .max(80, "Intro must be 80 characters or less")
+          .optional(),
+        title: z
+          .string()
+          .max(80, "Title must be 80 characters or less")
+          .optional(),
+        subtitle: z
+          .string()
+          .max(160, "Subtitle must be 160 characters or less")
+          .optional(),
         description: z.string().optional(),
-        buttons: z.array(z.object({
-          label: z.string().min(1, "Button label is required"),
-          linkType: z.enum(["url", "scroll"]),
-          value: z.string().min(1, "Button value is required"),
-        })).max(3, "Maximum 3 buttons per section").optional(),
-        images: z.array(z.object({
-          url: z.string().url("Invalid image URL"),
-          alt: z.string().optional(),
-        })).max(8, "Maximum 8 images per section").optional(),
-      })
+        buttons: z
+          .array(
+            z.object({
+              label: z.string().min(1, "Button label is required"),
+              linkType: z.enum(["url", "scroll"]),
+              value: z.string().min(1, "Button value is required"),
+            }),
+          )
+          .max(3, "Maximum 3 buttons per section")
+          .optional(),
+        images: z
+          .array(
+            z.object({
+              url: z.string().url("Invalid image URL"),
+              alt: z.string().optional(),
+            }),
+          )
+          .max(8, "Maximum 8 images per section")
+          .optional(),
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       // Check section limit for the landing page
@@ -55,12 +74,16 @@ export const sectionRouter = createTRPCRouter({
           ...sectionData,
           landingPageId,
           order: nextOrder,
-          buttons: buttons ? {
-            create: buttons,
-          } : undefined,
-          images: images ? {
-            create: images,
-          } : undefined,
+          buttons: buttons
+            ? {
+                create: buttons,
+              }
+            : undefined,
+          images: images
+            ? {
+                create: images,
+              }
+            : undefined,
         },
         include: {
           buttons: true,
@@ -75,22 +98,41 @@ export const sectionRouter = createTRPCRouter({
       z.object({
         id: z.string(),
         name: z.string().min(1, "Section name is required").optional(),
-        intro: z.string().max(80, "Intro must be 80 characters or less").optional(),
-        title: z.string().max(80, "Title must be 80 characters or less").optional(),
-        subtitle: z.string().max(160, "Subtitle must be 160 characters or less").optional(),
+        intro: z
+          .string()
+          .max(80, "Intro must be 80 characters or less")
+          .optional(),
+        title: z
+          .string()
+          .max(80, "Title must be 80 characters or less")
+          .optional(),
+        subtitle: z
+          .string()
+          .max(160, "Subtitle must be 160 characters or less")
+          .optional(),
         description: z.string().optional(),
-        buttons: z.array(z.object({
-          id: z.string().optional(),
-          label: z.string().min(1, "Button label is required"),
-          linkType: z.enum(["url", "scroll"]),
-          value: z.string().min(1, "Button value is required"),
-        })).max(3, "Maximum 3 buttons per section").optional(),
-        images: z.array(z.object({
-          id: z.string().optional(),
-          url: z.string().url("Invalid image URL"),
-          alt: z.string().optional(),
-        })).max(8, "Maximum 8 images per section").optional(),
-      })
+        buttons: z
+          .array(
+            z.object({
+              id: z.string().optional(),
+              label: z.string().min(1, "Button label is required"),
+              linkType: z.enum(["url", "scroll"]),
+              value: z.string().min(1, "Button value is required"),
+            }),
+          )
+          .max(3, "Maximum 3 buttons per section")
+          .optional(),
+        images: z
+          .array(
+            z.object({
+              id: z.string().optional(),
+              url: z.string().url("Invalid image URL"),
+              alt: z.string().optional(),
+            }),
+          )
+          .max(8, "Maximum 8 images per section")
+          .optional(),
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       const { id, buttons, images, ...updateData } = input;
@@ -113,12 +155,16 @@ export const sectionRouter = createTRPCRouter({
         where: { id },
         data: {
           ...updateData,
-          buttons: buttons ? {
-            create: buttons.map(({ id: _, ...button }) => button),
-          } : undefined,
-          images: images ? {
-            create: images.map(({ id: _, ...image }) => image),
-          } : undefined,
+          buttons: buttons
+            ? {
+                create: buttons.map(({ id: _, ...button }) => button),
+              }
+            : undefined,
+          images: images
+            ? {
+                create: images.map(({ id: _, ...image }) => image),
+              }
+            : undefined,
         },
         include: {
           buttons: true,

@@ -15,7 +15,8 @@ export default function EditLandingPages() {
   const [searchQuery, setSearchQuery] = useState("");
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
-  const { data: landingPages = [], refetch } = api.landingPage.getAll.useQuery();
+  const { data: landingPages = [], refetch } =
+    api.landingPage.getAll.useQuery();
 
   const deleteLandingPage = api.landingPage.delete.useMutation({
     onSuccess: () => {
@@ -31,7 +32,7 @@ export default function EditLandingPages() {
   const filteredPages = landingPages.filter(
     (page) =>
       page.url.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      page.description.toLowerCase().includes(searchQuery.toLowerCase())
+      page.description.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   const handleDelete = (id: string) => {
@@ -40,15 +41,15 @@ export default function EditLandingPages() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="mx-auto max-w-6xl px-4">
         <div className="mb-6">
           <Link href="/" className="text-blue-600 hover:text-blue-700">
             ← Back to Home
           </Link>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <div className="flex items-center justify-between mb-6">
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="mb-6 flex items-center justify-between">
             <h1 className="text-2xl font-bold text-gray-900">
               Edit Landing Pages ({landingPages.length}/{MAX_LANDING_PAGES})
             </h1>
@@ -69,20 +70,21 @@ export default function EditLandingPages() {
 
           {/* Landing Pages Grid */}
           {filteredPages.length === 0 ? (
-            <div className="text-center py-12">
+            <div className="py-12 text-center">
               {searchQuery ? (
                 <div>
-                  <p className="text-gray-500 mb-2">No landing pages found matching your search.</p>
-                  <Button
-                    variant="ghost"
-                    onClick={() => setSearchQuery("")}
-                  >
+                  <p className="mb-2 text-gray-500">
+                    No landing pages found matching your search.
+                  </p>
+                  <Button variant="ghost" onClick={() => setSearchQuery("")}>
                     Clear search
                   </Button>
                 </div>
               ) : (
                 <div>
-                  <p className="text-gray-500 mb-4">No landing pages created yet.</p>
+                  <p className="mb-4 text-gray-500">
+                    No landing pages created yet.
+                  </p>
                   <Link href="/add">
                     <Button>Create your first landing page</Button>
                   </Link>
@@ -90,7 +92,7 @@ export default function EditLandingPages() {
               )}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {filteredPages.map((page) => (
                 <LandingPageCard
                   key={page.id}

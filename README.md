@@ -14,35 +14,38 @@ A complete **LandingPageMaker** web application built with the T3 Stack for coll
 
 ## 🧰 Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| **Next.js 15** | Frontend framework with App Router |
-| **TypeScript** | Type safety throughout the application |
-| **tRPC** | Type-safe API layer |
-| **Prisma** | ORM for PostgreSQL database operations |
-| **Neon PostgreSQL** | Serverless PostgreSQL 16 database |
-| **Tailwind CSS** | Utility-first CSS framework |
-| **React Hook Form** | Form validation and management |
-| **@headlessui/react** | Accessible modal/dialog components |
-| **react-hot-toast** | Toast notifications |
-| **Zustand** | Client-side state management |
-| **Zod** | Schema validation |
+| Technology            | Purpose                                |
+| --------------------- | -------------------------------------- |
+| **Next.js 15**        | Frontend framework with App Router     |
+| **TypeScript**        | Type safety throughout the application |
+| **tRPC**              | Type-safe API layer                    |
+| **Prisma**            | ORM for PostgreSQL database operations |
+| **Neon PostgreSQL**   | Serverless PostgreSQL 16 database      |
+| **Tailwind CSS**      | Utility-first CSS framework            |
+| **React Hook Form**   | Form validation and management         |
+| **@headlessui/react** | Accessible modal/dialog components     |
+| **react-hot-toast**   | Toast notifications                    |
+| **Zustand**           | Client-side state management           |
+| **Zod**               | Schema validation                      |
 
 ## 🛠️ Setup Instructions
 
 ### Prerequisites
+
 - Node.js 18+ and npm
 - Neon PostgreSQL account
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/gae4it/landingpagemaker.git
    cd landingpagemaker
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -51,23 +54,26 @@ A complete **LandingPageMaker** web application built with the T3 Stack for coll
    - Copy `.env.example` to `.env`
    - Get your Neon PostgreSQL connection string from [console.neon.tech](https://console.neon.tech)
    - Update `DATABASE_URL` in `.env`:
+
    ```env
    DATABASE_URL="postgresql://[user]:[password]@[neon-host]/[database]?sslmode=require"
    ```
 
 4. **Database setup**
+
    ```bash
    # Generate Prisma client
    npx prisma generate
-   
+
    # Run database migrations
    npx prisma migrate dev --name init
-   
+
    # (Optional) Open Prisma Studio to inspect data
    npx prisma studio
    ```
 
 5. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -88,6 +94,7 @@ A complete **LandingPageMaker** web application built with the T3 Stack for coll
 ## 🎯 Usage
 
 ### Creating Landing Pages
+
 1. Navigate to the home page
 2. Click "Add New Landing Page"
 3. Fill in URL and description
@@ -96,12 +103,14 @@ A complete **LandingPageMaker** web application built with the T3 Stack for coll
 6. Save the landing page
 
 ### Managing Content
+
 - **Sections**: Each section can have intro, title, subtitle, description
 - **Buttons**: Up to 3 buttons per section (URL or scroll type)
 - **Images**: Up to 8 external image URLs per section
 - **Reordering**: Use up/down buttons to rearrange sections
 
 ### Exporting Data
+
 - Go to the edit page of any landing page
 - Click "Export to TXT" to download formatted content
 - The export includes all sections, buttons, and images
@@ -109,6 +118,7 @@ A complete **LandingPageMaker** web application built with the T3 Stack for coll
 ## 🚀 Deployment
 
 ### Recommended Setup
+
 - **Frontend**: Vercel (free tier, optimized for Next.js)
 - **Database**: Neon PostgreSQL (free tier: 10GB storage)
 - **Total Cost**: $0/month for small to medium projects

@@ -56,23 +56,41 @@ export const landingPageRouter = createTRPCRouter({
       z.object({
         url: z.string().url("Invalid URL format"),
         description: z.string().min(1, "Description is required"),
-        sections: z.array(z.object({
-          name: z.string().min(1, "Section name is required"),
-          intro: z.string().optional(),
-          title: z.string().optional(),
-          subtitle: z.string().optional(),
-          description: z.string().optional(),
-          buttons: z.array(z.object({
-            label: z.string().min(1, "Button label is required"),
-            linkType: z.enum(["url", "scroll"]),
-            value: z.string().min(1, "Button value is required"),
-          })).max(3, "Maximum 3 buttons per section").optional(),
-          images: z.array(z.object({
-            url: z.string().url("Invalid image URL"),
-            alt: z.string().optional(),
-          })).max(8, "Maximum 8 images per section").optional(),
-        })).max(MAX_SECTIONS_PER_PAGE, `Maximum ${MAX_SECTIONS_PER_PAGE} sections per landing page`).optional(),
-      })
+        sections: z
+          .array(
+            z.object({
+              name: z.string().min(1, "Section name is required"),
+              intro: z.string().optional(),
+              title: z.string().optional(),
+              subtitle: z.string().optional(),
+              description: z.string().optional(),
+              buttons: z
+                .array(
+                  z.object({
+                    label: z.string().min(1, "Button label is required"),
+                    linkType: z.enum(["url", "scroll"]),
+                    value: z.string().min(1, "Button value is required"),
+                  }),
+                )
+                .max(3, "Maximum 3 buttons per section")
+                .optional(),
+              images: z
+                .array(
+                  z.object({
+                    url: z.string().url("Invalid image URL"),
+                    alt: z.string().optional(),
+                  }),
+                )
+                .max(8, "Maximum 8 images per section")
+                .optional(),
+            }),
+          )
+          .max(
+            MAX_SECTIONS_PER_PAGE,
+            `Maximum ${MAX_SECTIONS_PER_PAGE} sections per landing page`,
+          )
+          .optional(),
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       // Check landing page limit
@@ -88,22 +106,28 @@ export const landingPageRouter = createTRPCRouter({
         data: {
           url: input.url,
           description: input.description,
-          sections: input.sections ? {
-            create: input.sections.map((section, index) => ({
-              name: section.name,
-              intro: section.intro,
-              title: section.title,
-              subtitle: section.subtitle,
-              description: section.description,
-              order: index,
-              buttons: section.buttons ? {
-                create: section.buttons,
-              } : undefined,
-              images: section.images ? {
-                create: section.images,
-              } : undefined,
-            })),
-          } : undefined,
+          sections: input.sections
+            ? {
+                create: input.sections.map((section, index) => ({
+                  name: section.name,
+                  intro: section.intro,
+                  title: section.title,
+                  subtitle: section.subtitle,
+                  description: section.description,
+                  order: index,
+                  buttons: section.buttons
+                    ? {
+                        create: section.buttons,
+                      }
+                    : undefined,
+                  images: section.images
+                    ? {
+                        create: section.images,
+                      }
+                    : undefined,
+                })),
+              }
+            : undefined,
         },
         include: {
           sections: {
@@ -124,7 +148,7 @@ export const landingPageRouter = createTRPCRouter({
         id: z.string(),
         url: z.string().url("Invalid URL format").optional(),
         description: z.string().min(1, "Description is required").optional(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       const { id, ...updateData } = input;
@@ -185,19 +209,22 @@ export const landingPageRouter = createTRPCRouter({
         if (section.intro) txtContent += `Intro: ${section.intro}\n`;
         if (section.title) txtContent += `Title: ${section.title}\n`;
         if (section.subtitle) txtContent += `Subtitle: ${section.subtitle}\n`;
-        if (section.description) txtContent += `Description: ${section.description}\n`;
-        
+        if (section.description)
+          txtContent += `Description: ${section.description}\n`;
+
         if (section.buttons.length > 0) {
-          const buttonStrings = section.buttons.map(btn => `${btn.label} -> ${btn.value} (${btn.linkType})`);
-          txtContent += `Buttons: ${buttonStrings.join(', ')}\n`;
+          const buttonStrings = section.buttons.map(
+            (btn) => `${btn.label} -> ${btn.value} (${btn.linkType})`,
+          );
+          txtContent += `Buttons: ${buttonStrings.join(", ")}\n`;
         }
-        
+
         if (section.images.length > 0) {
-          const imageUrls = section.images.map(img => img.url);
-          txtContent += `Images: ${imageUrls.join(', ')}\n`;
+          const imageUrls = section.images.map((img) => img.url);
+          txtContent += `Images: ${imageUrls.join(", ")}\n`;
         }
-        
-        txtContent += '\n';
+
+        txtContent += "\n";
       });
 
       txtContent += `---\nTotal Sections: ${landingPage.sections.length}\nGenerated: ${new Date().toLocaleString()}\n`;
