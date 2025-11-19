@@ -1,6 +1,6 @@
 # Product Requirements Document (PRD): LandingPageMaker
 
-- **Author**: GaeMaz
+- **Author**: LandingPageMaker
 - **Creation Date**: 2025-11-19
 - **Version**: 1.0
 
@@ -81,7 +81,7 @@ The header/banner text for each blocks page must dynamically reflect the categor
 *   **Content**:
     *   Simple and concise information about the passion for web design and marketing.
     *   Information about the technology stack used (`T3 App`).
-    *   Credits (e.g., to you, `GaeMaz`, and `Tailwind2Blocks` or other sources of inspiration).
+    *   Credits (e.g., to you, `LandingPageMaker`, and `Tailwind2Blocks` or other sources of inspiration).
     *   Link to the project's GitHub repository.
 
 ### 2.2. Block Management
@@ -106,7 +106,9 @@ The header/banner text for each blocks page must dynamically reflect the categor
 
 *   **Framework**: Next.js (via `create-t3-app`).
 *   **Language**: TypeScript.
-*   **Style**: Tailwind CSS. No custom `.css` files or `styled-components`.
+*   **Style**: Tailwind CSS v4. No custom `.css` files or `styled-components`.
+*   **UI Components**: shadcn/ui - All UI components must use shadcn/ui library for consistent design and accessibility.
+*   **Theme**: Dark theme only. The entire application uses a dark color scheme.
 *   **Deployment**: Vercel (recommended for Next.js).
 *   **Components**: React.
 *   **API/Data**: No database needed initially. Block data will come directly from the project filesystem.

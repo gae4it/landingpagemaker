@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { Button } from "~/components/ui/button";
+
 interface HeroProps {
   title: string;
   subtitle?: string;
@@ -7,27 +10,27 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, ctaText, ctaLink }: HeroProps) {
   return (
-    <section className="bg-linear-to-r from-blue-500 to-purple-600 py-20">
+    <section className="from-primary/20 via-background to-secondary/20 relative overflow-hidden bg-linear-to-br py-20 sm:py-32">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] bg-size-[4rem_4rem]" />
+      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="from-foreground to-foreground/70 bg-linear-to-r bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
             {title}
           </h1>
           {subtitle && (
-            <p className="mx-auto mt-3 max-w-md text-base text-gray-100 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
+            <p className="text-muted-foreground mt-6 text-lg leading-8">
               {subtitle}
             </p>
           )}
           {ctaText && ctaLink && (
-            <div className="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
-              <div className="rounded-md shadow">
-                <a
-                  href={ctaLink}
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-blue-600 hover:bg-gray-50 md:px-10 md:py-4 md:text-lg"
-                >
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <Link href={ctaLink}>
+                <Button size="lg" className="shadow-lg">
                   {ctaText}
-                </a>
-              </div>
+                </Button>
+              </Link>
             </div>
           )}
         </div>
