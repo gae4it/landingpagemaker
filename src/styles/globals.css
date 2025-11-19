@@ -1,3 +1,31 @@
+/* Section Divider Global Style */
+.section-divider {
+  background-color: #001344;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+.section-divider p {
+  font-size: 1.2rem;
+  line-height: 1.4em;
+  font-weight: 800;
+  color: white;
+  text-align: left;
+  margin: 0;
+}
+.section-divider .copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  padding: 0 0 0 1rem;
+}
 @import "tailwindcss";
 @import "tw-animate-css";
 
