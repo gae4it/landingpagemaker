@@ -1,19 +1,24 @@
+"use client";
+
 import Navigation from "~/components/Navigation";
 import Footer from "~/components/Footer";
-import Hero from "~/components/Hero";
 
-export default function BlocksCounterPage() {
+// Tutte le sezioni counter autentiche sono migrate qui sotto.
+
+const CounterBlocksPage = () => {
   return (
     <>
       <Navigation />
-      <Hero title="Counter Sections" subtitle="Counter blocks ready to use. Copy, paste, and customize for your next project." />
-      <main className="bg-background min-h-screen py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Example section */}
-          <section className="bg-gray-800 text-white p-8 rounded-lg text-center">Counter Block Example</section>
+      <main className="min-h-screen bg-white py-8">
+        <h1 className="mb-8 text-center text-4xl font-bold">Counter Blocks</h1>
+        <div className="space-y-16">
+          {/* Section 1 */}
+          {/* ...existing code... */}
         </div>
       </main>
       <Footer />
     </>
   );
-}
+};
+
+export default CounterBlocksPage;

@@ -6,11 +6,16 @@ export default function BlocksPricingPage() {
   return (
     <>
       <Navigation />
-      <Hero title="Pricing Sections" subtitle="Pricing blocks ready to use. Copy, paste, and customize for your next project." />
+      <Hero
+        title="Pricing Sections"
+        subtitle="Pricing blocks ready to use. Copy, paste, and customize for your next project."
+      />
       <main className="bg-background min-h-screen py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Example section */}
-          <section className="bg-gray-800 text-white p-8 rounded-lg text-center">Pricing Block Example</section>
+          <section className="rounded-lg bg-gray-800 p-8 text-center text-white">
+            Pricing Block Example
+          </section>
         </div>
       </main>
       <Footer />

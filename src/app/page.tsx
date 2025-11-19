@@ -10,27 +10,95 @@ import {
 } from "~/components/ui/card";
 
 const categories = [
-  { name: "Call to Action", slug: "blocks-call-to-action", description: "Engaging CTAs to drive conversions" },
-  { name: "Columns", slug: "blocks-columns", description: "Multi-column layouts for content organization" },
-    { name: "Contact", slug: "blocks-contact", description: "Contact forms and information sections" },
-    { name: "Content", slug: "blocks-content", description: "Rich content sections for storytelling" },
-    { name: "Counter", slug: "blocks-counter", description: "Animated statistics and counters" },
-    { name: "Dividers", slug: "blocks-dividers", description: "Stylish section dividers" },
-    { name: "Features & Services", slug: "blocks-features-e-services", description: "Showcase features and services" },
-    { name: "Footer", slug: "blocks-footer", description: "Professional footer designs" },
-    { name: "Forms", slug: "blocks-forms", description: "Beautiful form components" },
-    { name: "Headers", slug: "blocks-headers", description: "Eye-catching header sections" },
-    { name: "Hero", slug: "blocks-hero", description: "Stunning hero sections" },
-    { name: "Interactions", slug: "blocks-interactions", description: "Interactive UI elements" },
-    { name: "Partner", slug: "blocks-partner", description: "Partner and logo showcases" },
-    { name: "Post", slug: "blocks-post", description: "Blog post and article layouts" },
-    { name: "Pricing", slug: "blocks-pricing", description: "Pricing tables and plans" },
-    { name: "Shop", slug: "blocks-shop", description: "E-commerce product displays" },
-    { name: "Social", slug: "blocks-social", description: "Social media integrations" },
-    { name: "Teams", slug: "blocks-teams", description: "Team member showcases" },
-    { name: "Testimonials", slug: "blocks-testimonials", description: "Customer testimonials and reviews" },
-    { name: "UI", slug: "blocks-ui", description: "Essential UI components" },
-  ];
+  {
+    name: "Call to Action",
+    slug: "blocks-call-to-action",
+    description: "Engaging CTAs to drive conversions",
+  },
+  {
+    name: "Columns",
+    slug: "blocks-columns",
+    description: "Multi-column layouts for content organization",
+  },
+  {
+    name: "Contact",
+    slug: "blocks-contact",
+    description: "Contact forms and information sections",
+  },
+  {
+    name: "Content",
+    slug: "blocks-content",
+    description: "Rich content sections for storytelling",
+  },
+  {
+    name: "Counter",
+    slug: "blocks-counter",
+    description: "Animated statistics and counters",
+  },
+  {
+    name: "Dividers",
+    slug: "blocks-dividers",
+    description: "Stylish section dividers",
+  },
+  {
+    name: "Features & Services",
+    slug: "blocks-features-e-services",
+    description: "Showcase features and services",
+  },
+  {
+    name: "Footer",
+    slug: "blocks-footer",
+    description: "Professional footer designs",
+  },
+  {
+    name: "Forms",
+    slug: "blocks-forms",
+    description: "Beautiful form components",
+  },
+  {
+    name: "Headers",
+    slug: "blocks-headers",
+    description: "Eye-catching header sections",
+  },
+  { name: "Hero", slug: "blocks-hero", description: "Stunning hero sections" },
+  {
+    name: "Interactions",
+    slug: "blocks-interactions",
+    description: "Interactive UI elements",
+  },
+  {
+    name: "Partner",
+    slug: "blocks-partner",
+    description: "Partner and logo showcases",
+  },
+  {
+    name: "Post",
+    slug: "blocks-post",
+    description: "Blog post and article layouts",
+  },
+  {
+    name: "Pricing",
+    slug: "blocks-pricing",
+    description: "Pricing tables and plans",
+  },
+  {
+    name: "Shop",
+    slug: "blocks-shop",
+    description: "E-commerce product displays",
+  },
+  {
+    name: "Social",
+    slug: "blocks-social",
+    description: "Social media integrations",
+  },
+  { name: "Teams", slug: "blocks-teams", description: "Team member showcases" },
+  {
+    name: "Testimonials",
+    slug: "blocks-testimonials",
+    description: "Customer testimonials and reviews",
+  },
+  { name: "UI", slug: "blocks-ui", description: "Essential UI components" },
+];
 
 export default function Home() {
   return (

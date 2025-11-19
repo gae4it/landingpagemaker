@@ -12,27 +12,63 @@ import {
 import { cn } from "~/lib/utils";
 
 const categories = [
-  { name: "Call to Action", slug: "blocks-call-to-action", description: "Engaging CTAs to drive conversions" },
-    { name: "Columns", slug: "blocks-columns", description: "Multi-column layouts" },
-    { name: "Contact", slug: "blocks-contact", description: "Contact forms and sections" },
-    { name: "Content", slug: "blocks-content", description: "Rich content sections" },
-    { name: "Counter", slug: "blocks-counter", description: "Animated statistics" },
-    { name: "Dividers", slug: "blocks-dividers", description: "Stylish dividers" },
-    { name: "Features & Services", slug: "blocks-features-e-services", description: "Showcase features" },
-    { name: "Footer", slug: "blocks-footer", description: "Footer designs" },
-    { name: "Forms", slug: "blocks-forms", description: "Form components" },
-    { name: "Headers", slug: "blocks-headers", description: "Header sections" },
-    { name: "Hero", slug: "blocks-hero", description: "Hero sections" },
-    { name: "Interactions", slug: "blocks-interactions", description: "Interactive elements" },
-    { name: "Partner", slug: "blocks-partner", description: "Partner showcases" },
-    { name: "Post", slug: "blocks-post", description: "Blog layouts" },
-    { name: "Pricing", slug: "blocks-pricing", description: "Pricing tables" },
-    { name: "Shop", slug: "blocks-shop", description: "E-commerce displays" },
-    { name: "Social", slug: "blocks-social", description: "Social integrations" },
-    { name: "Teams", slug: "blocks-teams", description: "Team showcases" },
-    { name: "Testimonials", slug: "blocks-testimonials", description: "Testimonials" },
-    { name: "UI", slug: "blocks-ui", description: "UI components" },
-  ];
+  {
+    name: "Call to Action",
+    slug: "blocks-call-to-action",
+    description: "Engaging CTAs to drive conversions",
+  },
+  {
+    name: "Columns",
+    slug: "blocks-columns",
+    description: "Multi-column layouts",
+  },
+  {
+    name: "Contact",
+    slug: "blocks-contact",
+    description: "Contact forms and sections",
+  },
+  {
+    name: "Content",
+    slug: "blocks-content",
+    description: "Rich content sections",
+  },
+  {
+    name: "Counter",
+    slug: "blocks-counter",
+    description: "Animated statistics",
+  },
+  {
+    name: "Dividers",
+    slug: "blocks-dividers",
+    description: "Stylish dividers",
+  },
+  {
+    name: "Features & Services",
+    slug: "blocks-features-e-services",
+    description: "Showcase features",
+  },
+  { name: "Footer", slug: "blocks-footer", description: "Footer designs" },
+  { name: "Forms", slug: "blocks-forms", description: "Form components" },
+  { name: "Headers", slug: "blocks-headers", description: "Header sections" },
+  { name: "Hero", slug: "blocks-hero", description: "Hero sections" },
+  {
+    name: "Interactions",
+    slug: "blocks-interactions",
+    description: "Interactive elements",
+  },
+  { name: "Partner", slug: "blocks-partner", description: "Partner showcases" },
+  { name: "Post", slug: "blocks-post", description: "Blog layouts" },
+  { name: "Pricing", slug: "blocks-pricing", description: "Pricing tables" },
+  { name: "Shop", slug: "blocks-shop", description: "E-commerce displays" },
+  { name: "Social", slug: "blocks-social", description: "Social integrations" },
+  { name: "Teams", slug: "blocks-teams", description: "Team showcases" },
+  {
+    name: "Testimonials",
+    slug: "blocks-testimonials",
+    description: "Testimonials",
+  },
+  { name: "UI", slug: "blocks-ui", description: "UI components" },
+];
 
 export default function Navigation() {
   return (
