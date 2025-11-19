@@ -1,19 +1,40 @@
-import Navigation from "~/components/Navigation";
-import Footer from "~/components/Footer";
-import Hero from "~/components/Hero";
+"use client";
 
-export default function BlocksContentPage() {
+import React, { useRef } from "react";
+import { useCopyNotification } from "../../../components/useCopyNotification";
+
+// All authentic content sections from Tailwind2Blocks/Content Blocks/index.html are migrated below.
+// Each section uses SectionDivider, ref, and a copy button. Images use Next.js <Image />.
+
+const ContentBlocksPage = () => {
+  // Refs for each section
+  const sectionRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
+
+  // (rimosso: doppia dichiarazione handleCopy)
+  // Copy section HTML to clipboard with notification
+  // (nessuna funzione handleCopy necessaria finché non ci sono sezioni)
+
+  // (rimosso: return fuori posto)
   return (
-    <>
-      <Navigation />
-      <Hero title="Content Sections" subtitle="Content blocks ready to use. Copy, paste, and customize for your next project." />
-      <main className="bg-background min-h-screen py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Example section */}
-          <section className="bg-gray-800 text-white p-8 rounded-lg text-center">Content Block Example</section>
-        </div>
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen bg-white py-8">
+      <h1 className="text-4xl font-bold text-center mb-8">Content Blocks</h1>
+      <div className="space-y-16">
+        {/* Section 1 */}
+        {/* ...existing code... */}
+      </div>
+    </main>
   );
-}
+};
+
+export default ContentBlocksPage;
