@@ -1,10 +1,10 @@
 # GitHub Instructions for AI Contributors
 
-This document provides guidelines for AI contributors working on the LandingPageMaker project.
+This document provides guidelines for AI contributors working on the ContentPageMaker project.
 
 ## 📋 **Project Overview**
 
-**LandingPageMaker** is a T3 Stack application for managing landing page content with:
+**ContentPageMaker** is a T3 Stack application for managing landing page content with:
 
 - Modern UI with rounded borders, no animations
 - Section management with up/down reordering

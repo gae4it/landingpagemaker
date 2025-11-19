@@ -1,8 +1,8 @@
-# LandingPageMaker - T3 Stack with Neon PostgreSQL
+# ContentPageMaker - T3 Stack with Neon PostgreSQL
 
 ## Project Brief
 
-Create a complete **LandingPageMaker** web application using **T3 Stack** (Next.js 15, TypeScript, tRPC, Prisma, Tailwind CSS) with **Neon PostgreSQL** database. This is an internal tool for collecting and organizing textual and media content from coworkers for landing page creation.
+Create a complete **ContentPageMaker** web application using **T3 Stack** (Next.js 15, TypeScript, tRPC, Prisma, Tailwind CSS) with **Neon PostgreSQL** database. This is an internal tool for collecting and organizing textual and media content from coworkers for landing page creation.
 
 ## 🎯 Key Project Specifications
 
@@ -114,7 +114,7 @@ model Image {
 
 - **Layout**: Centered card with navigation buttons
 - **Components**:
-  - Large heading: "LandingPageMaker"
+  - Large heading: "ContentPageMaker"
   - Description: "Create and manage landing page content with ease"
   - Two main buttons:
     - **"+ Add New Landing Page"** → Navigate to `/add`

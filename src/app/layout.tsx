@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
-  title: "LandingPageMaker",
+  title: "ContentPageMaker",
   description: "Create and manage landing page content with ease",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };

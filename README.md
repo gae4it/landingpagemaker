@@ -1,6 +1,6 @@
-# LandingPageMaker
+# ContentPageMaker
 
-A complete **LandingPageMaker** web application built with the T3 Stack for collecting and organizing textual and media content for landing page creation.
+A complete **ContentPageMaker** web application built with the T3 Stack for collecting and organizing textual and media content for landing page creation.
 
 ## 🚀 Features
 
@@ -40,8 +40,8 @@ A complete **LandingPageMaker** web application built with the T3 Stack for coll
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/gae4it/landingpagemaker.git
-   cd landingpagemaker
+   git clone https://github.com/gae4it/contentpagemaker.git
+   cd contentpagemaker
    ```
 
 2. **Install dependencies**

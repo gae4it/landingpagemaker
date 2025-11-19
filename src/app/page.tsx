@@ -8,7 +8,7 @@ export default function Home() {
         <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
           <div className="space-y-6 text-center">
             <h1 className="text-3xl font-bold text-gray-900">
-              LandingPageMaker
+              ContentPageMaker
             </h1>
             <p className="text-gray-600">
               Create and manage landing page content with ease

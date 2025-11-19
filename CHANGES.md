@@ -1,4 +1,4 @@
-# CHANGES.md - LandingPageMaker Development Log
+# CHANGES.md - ContentPageMaker Development Log
 
 ## 🎯 Project Status: **COMPLETED** ✅
 
