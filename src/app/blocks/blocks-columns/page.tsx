@@ -1,13 +1,13 @@
 "use client";
 
-import Navigation from "~/components/Navigation";
-import Footer from "~/components/Footer";
-import Hero from "~/components/Hero";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import { Copy } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "~/components/useCopyNotification";
-import SectionDivider from "~/components/SectionDivider";
-import { Button } from "~/components/ui/button";
+import { useCopyNotification } from "@/components/useCopyNotification";
+import SectionDivider from "@/components/SectionDivider";
+import { Button } from "@/components/ui/button";
 
 export default function BlocksColumnsPage() {
   const sectionRef1 = useRef<HTMLElement>(null);

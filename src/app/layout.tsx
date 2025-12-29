@@ -1,9 +1,9 @@
-import "~/styles/globals.css";
+import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
-import { TRPCReactProvider } from "~/trpc/react";
+import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
   title: "LandingPageMaker - Ready-made Tailwind Blocks",
@@ -25,7 +25,10 @@ export default function RootLayout({
       className={`dark ${geist.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-background min-h-screen font-sans antialiased">
+      <body
+        className="bg-background min-h-screen font-sans antialiased"
+        suppressHydrationWarning
+      >
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

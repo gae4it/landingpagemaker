@@ -1,23 +1,17 @@
 "use client";
 
-import Navigation from "~/components/Navigation";
-import Footer from "~/components/Footer";
-import Hero from "~/components/Hero";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import { Copy } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "~/components/useCopyNotification";
-import SectionDivider from "~/components/SectionDivider";
-import { Button } from "~/components/ui/button";
+import { useCopyNotification } from "@/components/useCopyNotification";
+import SectionDivider from "@/components/SectionDivider";
+import { Button } from "@/components/ui/button";
 
 export default function BlocksContactPage() {
   // Refs for each section
   const sectionRef1 = useRef<HTMLElement>(null);
-  const sectionRef2 = useRef<HTMLElement>(null);
-  const sectionRef3 = useRef<HTMLElement>(null);
-  const sectionRef4 = useRef<HTMLElement>(null);
-  const sectionRef5 = useRef<HTMLElement>(null);
-  const sectionRef6 = useRef<HTMLElement>(null);
-  const sectionRef7 = useRef<HTMLElement>(null);
 
   // Copy handler with notification
   const [showCopied, triggerCopied] = useCopyNotification();

@@ -1,13 +1,13 @@
 "use client";
-import Navigation from "~/components/Navigation";
-import Footer from "~/components/Footer";
-import Hero from "~/components/Hero";
-import Image from "next/image";
+
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import { useRef } from "react";
 import { Copy } from "lucide-react";
-import { useCopyNotification } from "~/components/useCopyNotification";
-import SectionDivider from "~/components/SectionDivider";
-import { Button } from "~/components/ui/button";
+import { useCopyNotification } from "@/components/useCopyNotification";
+import SectionDivider from "@/components/SectionDivider";
+import { Button } from "@/components/ui/button";
 
 export default function BlocksHeroPage() {
   // Refs for each hero section
@@ -18,9 +18,7 @@ export default function BlocksHeroPage() {
   const sectionRef5 = useRef<HTMLElement>(null);
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
-  const sectionRef8 = useRef<HTMLElement>(null);
-  const sectionRef9 = useRef<HTMLElement>(null);
-  const sectionRef10 = useRef<HTMLElement>(null);
+
   const [showCopied, triggerCopied] = useCopyNotification();
   const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
     const el = ref.current;
@@ -43,13 +41,13 @@ export default function BlocksHeroPage() {
       <Navigation />
       <Hero
         title="Hero Sections"
-        subtitle="Beautiful landing page hero blocks ready to use. Copy, paste, and customize for your next project."
+        subtitle="Beautiful hero sections built with shadcn/ui and Tailwind CSS 4. Copy, customize, and deploy."
       />
       <main className="bg-background min-h-screen py-16">
         <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
-          {/* Hero Block 1 */}
+          {/* Hero Block 1: Centered Hero with Large Heading */}
           <div className="relative">
-            <SectionDivider title="Hero Block 1">
+            <SectionDivider title="Centered Hero with CTA">
               <Button
                 variant="ghost"
                 size="icon"
@@ -60,35 +58,39 @@ export default function BlocksHeroPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section ref={sectionRef1} className="relative text-gray-500">
-              <div className="container mx-auto px-4 py-48">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="mx-auto w-full px-4 text-center lg:w-8/12">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </p>
-                    <h1 className="mb-4 text-6xl font-extrabold text-gray-800">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-xl font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Get It Now
-                    </a>
+            <section
+              ref={sectionRef1}
+              className="relative overflow-hidden bg-linear-to-b from-neutral-50 to-neutral-100 py-24 sm:py-32 dark:from-neutral-950 dark:to-neutral-900"
+            >
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl text-center">
+                  <span className="inline-block rounded-full bg-neutral-200 px-4 py-1.5 text-sm font-semibold text-neutral-900 dark:bg-neutral-800 dark:text-neutral-50">
+                    Welcome to our platform
+                  </span>
+                  <h1 className="mt-8 text-4xl font-bold tracking-tight text-neutral-950 sm:text-6xl dark:text-neutral-50">
+                    Build something amazing
+                  </h1>
+                  <p className="mt-6 text-lg leading-8 text-neutral-600 dark:text-neutral-400">
+                    Create stunning websites with our collection of pre-built,
+                    fully customizable sections. All built with Tailwind CSS and
+                    shadcn/ui components.
+                  </p>
+                  <div className="mt-10 flex items-center justify-center gap-x-6">
+                    <button className="inline-flex items-center justify-center rounded-lg bg-neutral-900 px-8 py-3 text-base font-semibold text-white hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200">
+                      Get started
+                    </button>
+                    <button className="inline-flex items-center justify-center rounded-lg border border-neutral-300 px-8 py-3 text-base font-semibold text-neutral-900 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-50 dark:hover:bg-neutral-900">
+                      Learn more
+                    </button>
                   </div>
                 </div>
               </div>
             </section>
           </div>
 
-          {/* Hero Block 2 */}
+          {/* Hero Block 2: Hero with Image on Right */}
           <div className="relative">
-            <SectionDivider title="Hero Block 2">
+            <SectionDivider title="Hero with Image">
               <Button
                 variant="ghost"
                 size="icon"
@@ -101,36 +103,42 @@ export default function BlocksHeroPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="relative bg-gray-800 text-gray-400"
+              className="relative bg-white py-16 sm:py-24 lg:py-32 dark:bg-neutral-950"
             >
-              <div className="container mx-auto px-4 py-48">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="mx-auto w-full px-4 text-center lg:w-8/12">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
+                  <div>
+                    <h2 className="text-3xl font-bold tracking-tight text-neutral-950 sm:text-4xl dark:text-neutral-50">
+                      The complete solution for modern teams
+                    </h2>
+                    <p className="mt-6 text-lg text-neutral-600 dark:text-neutral-400">
+                      Streamline your workflow and boost productivity with our
+                      comprehensive platform. Designed for teams of all sizes.
                     </p>
-                    <h1 className="mb-4 text-6xl font-extrabold text-white">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-xl font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Get It Now
-                    </a>
+                    <div className="mt-10 flex gap-4">
+                      <button className="rounded-lg bg-neutral-900 px-6 py-2.5 text-sm font-semibold text-white hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200">
+                        Start free trial
+                      </button>
+                      <button className="rounded-lg border border-neutral-300 px-6 py-2.5 text-sm font-semibold text-neutral-900 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-50 dark:hover:bg-neutral-900">
+                        Watch demo
+                      </button>
+                    </div>
+                  </div>
+                  <div className="relative h-96 rounded-lg bg-linear-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-neutral-500 dark:text-neutral-400">
+                        Product image
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </section>
           </div>
 
-          {/* Hero Block 3 */}
+          {/* Hero Block 3: Hero with Gradient Background */}
           <div className="relative">
-            <SectionDivider title="Hero Block 3">
+            <SectionDivider title="Gradient Hero">
               <Button
                 variant="ghost"
                 size="icon"
@@ -143,42 +151,35 @@ export default function BlocksHeroPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="relative bg-gray-800 text-white"
+              className="relative overflow-hidden bg-linear-to-r from-neutral-900 via-neutral-800 to-neutral-900 py-24 text-white sm:py-32 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950"
             >
-              <Image
-                src="https://images.unsplash.com/photo-1443916568596-df5a58c445e9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ"
-                alt="..."
-                fill
-                className="absolute inset-0 h-full w-full object-cover object-center"
-              />
-              <div className="relative container mx-auto px-4 py-48">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="mx-auto w-full px-4 text-center lg:w-8/12">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </p>
-                    <h1 className="mb-4 text-6xl font-extrabold">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-xl font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Get It Now
-                    </a>
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl text-center">
+                  <p className="text-sm font-semibold tracking-widest text-neutral-400 uppercase">
+                    Introducing features
+                  </p>
+                  <h1 className="mt-4 text-5xl font-bold sm:text-6xl">
+                    Powerful tools for everyone
+                  </h1>
+                  <p className="mt-6 text-lg text-neutral-300">
+                    Everything you need to succeed, from day one to scale.
+                  </p>
+                  <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center">
+                    <button className="rounded-lg bg-white px-8 py-3 font-semibold text-neutral-900 hover:bg-neutral-100">
+                      Start building
+                    </button>
+                    <button className="rounded-lg border border-neutral-700 px-8 py-3 font-semibold text-white hover:bg-neutral-800">
+                      Learn more
+                    </button>
                   </div>
                 </div>
               </div>
             </section>
           </div>
 
-          {/* Hero Block 4 */}
+          {/* Hero Block 4: Hero with Features Grid Below */}
           <div className="relative">
-            <SectionDivider title="Hero Block 4">
+            <SectionDivider title="Hero with Features">
               <Button
                 variant="ghost"
                 size="icon"
@@ -191,36 +192,42 @@ export default function BlocksHeroPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="relative bg-gray-800 text-gray-400"
+              className="relative bg-neutral-50 py-16 sm:py-24 dark:bg-neutral-950"
             >
-              <div className="container mx-auto px-4 py-48">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full px-4 lg:w-6/12">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </p>
-                    <h1 className="mb-4 text-6xl font-extrabold text-white">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-xl font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl text-center">
+                  <h1 className="text-4xl font-bold text-neutral-950 sm:text-5xl dark:text-neutral-50">
+                    Everything you need to get started
+                  </h1>
+                  <p className="mt-6 text-lg text-neutral-600 dark:text-neutral-400">
+                    Powerful features designed to help you succeed
+                  </p>
+                </div>
+                <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                  {[1, 2, 3, 4, 5, 6].map((feature) => (
+                    <div
+                      key={feature}
+                      className="rounded-lg border border-neutral-200 p-8 transition-colors hover:border-neutral-300 dark:border-neutral-800 dark:hover:border-neutral-700"
                     >
-                      Get It Now
-                    </a>
-                  </div>
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neutral-900 text-white dark:bg-neutral-800">
+                        ✓
+                      </div>
+                      <h3 className="mt-4 font-semibold text-neutral-950 dark:text-neutral-50">
+                        Feature {feature}
+                      </h3>
+                      <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
           </div>
 
-          {/* Hero Block 5 */}
+          {/* Hero Block 5: Split Layout Hero */}
           <div className="relative">
-            <SectionDivider title="Hero Block 5">
+            <SectionDivider title="Split Layout Hero">
               <Button
                 variant="ghost"
                 size="icon"
@@ -233,42 +240,56 @@ export default function BlocksHeroPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="relative bg-gray-800 text-gray-400"
+              className="relative bg-white py-16 sm:py-24 dark:bg-neutral-950"
             >
-              <Image
-                src="https://images.unsplash.com/photo-1443916568596-df5a58c445e9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ"
-                alt="..."
-                fill
-                className="absolute inset-0 h-full w-full object-cover object-center"
-              />
-              <div className="relative container mx-auto px-4 py-48">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full px-4 md:w-10/12 lg:w-6/12">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 items-stretch gap-12 lg:grid-cols-2 lg:gap-16">
+                  <div className="flex flex-col justify-center">
+                    <span className="inline-block w-fit rounded-full bg-neutral-100 px-4 py-1.5 text-sm font-semibold text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50">
+                      New Release
+                    </span>
+                    <h2 className="mt-6 text-4xl font-bold text-neutral-950 dark:text-neutral-50">
+                      Transform your business
+                    </h2>
+                    <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
+                      Discover how thousands of companies are already using our
+                      platform to drive growth.
                     </p>
-                    <h1 className="mb-4 text-6xl font-extrabold text-white">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-xl font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Get It Now
-                    </a>
+                    <ul className="mt-8 space-y-4">
+                      {[
+                        "Seamless integration",
+                        "Real-time analytics",
+                        "Enterprise security",
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-3">
+                          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-sm text-neutral-900 dark:bg-neutral-800 dark:text-neutral-50">
+                            ✓
+                          </span>
+                          <span className="text-neutral-700 dark:text-neutral-300">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <button className="mt-10 w-fit rounded-lg bg-neutral-900 px-8 py-3 font-semibold text-white hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200">
+                      Get started now
+                    </button>
+                  </div>
+                  <div className="relative rounded-lg bg-linear-to-br from-neutral-100 to-neutral-200 dark:from-neutral-900 dark:to-neutral-800">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-neutral-500 dark:text-neutral-400">
+                        Feature image
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </section>
           </div>
 
-          {/* Hero Block 6 */}
+          {/* Hero Block 6: Minimal Hero */}
           <div className="relative">
-            <SectionDivider title="Hero Block 6">
+            <SectionDivider title="Minimal Hero">
               <Button
                 variant="ghost"
                 size="icon"
@@ -279,41 +300,32 @@ export default function BlocksHeroPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section
-              ref={sectionRef6}
-              className="relative bg-gray-100 text-gray-500"
-            >
-              <div className="container mx-auto px-4 pt-24">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="mx-auto w-full px-4 text-center lg:w-2/3">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </p>
-                    <h1 className="mb-4 text-6xl font-extrabold text-gray-800">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-3xl leading-tight font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Get It Now
-                    </a>
-                    <div className="mt-10 -mb-32 rounded-lg bg-white p-16">
-                      {/* SVG illustration omitted for brevity */}
-                    </div>
+            <section ref={sectionRef6} className="relative py-32 sm:py-48">
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div className="space-y-6">
+                  <p className="text-base font-semibold tracking-wider text-neutral-600 uppercase dark:text-neutral-400">
+                    Welcome
+                  </p>
+                  <h1 className="text-5xl font-bold tracking-tight text-neutral-950 sm:text-7xl dark:text-neutral-50">
+                    Less is more
+                  </h1>
+                  <p className="max-w-2xl text-xl text-neutral-600 dark:text-neutral-400">
+                    Clean, minimal design with maximum impact. Perfect for
+                    showcasing your work or presenting your vision.
+                  </p>
+                  <div className="pt-6">
+                    <button className="inline-flex items-center gap-2 text-base font-semibold text-neutral-900 hover:text-neutral-600 dark:text-neutral-50 dark:hover:text-neutral-400">
+                      Explore more →
+                    </button>
                   </div>
                 </div>
               </div>
             </section>
           </div>
 
-          {/* Hero Block 7 */}
+          {/* Hero Block 7: Hero with Video/Media Background */}
           <div className="relative">
-            <SectionDivider title="Hero Block 7">
+            <SectionDivider title="Hero with Media Background">
               <Button
                 variant="ghost"
                 size="icon"
@@ -326,195 +338,34 @@ export default function BlocksHeroPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="relative bg-gray-100 text-gray-500"
+              className="relative h-screen min-h-96 overflow-hidden"
             >
-              <div className="container mx-auto px-4 pt-24">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="mb-16 w-full px-4 lg:w-6/12">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </p>
-                    <h1 className="mb-4 text-6xl font-extrabold text-gray-800">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-2xl leading-tight font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Get It Now
-                    </a>
-                  </div>
-                  <div className="w-full px-4 lg:w-6/12">
-                    <div className="-mb-14 bg-white p-4 shadow-xl">
-                      <Image
-                        src="https://images.unsplash.com/photo-1565972476522-4338522b1929?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDV8fGJ1YmJsZXN8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=800&h=1200&fit=crop"
-                        alt="..."
-                        width={800}
-                        height={1200}
-                        className="w-full"
-                      />
-                    </div>
-                  </div>
-                </div>
+              <div className="absolute inset-0 bg-linear-to-r from-neutral-900/80 to-neutral-900/50">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage:
+                      'url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22rgba(255,255,255,0.1)%22/%3E%3C/svg%3E")',
+                  }}
+                ></div>
               </div>
-            </section>
-          </div>
-
-          {/* Hero Block 8 */}
-          <div className="relative">
-            <SectionDivider title="Hero Block 8">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
-            </SectionDivider>
-            <section
-              ref={sectionRef8}
-              className="relative bg-gray-100 text-gray-500"
-            >
-              <div className="container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="mt-16 mb-16 w-full px-4 lg:w-8/12">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </p>
-                    <h1 className="mb-4 text-6xl font-extrabold text-gray-800">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-2xl leading-tight font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Get It Now
-                    </a>
+              <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl text-center text-white">
+                  <h1 className="text-5xl font-bold sm:text-6xl">
+                    Bold visual presence
+                  </h1>
+                  <p className="mt-6 text-xl text-neutral-100">
+                    Create impactful landing pages with stunning full-screen
+                    heroes.
+                  </p>
+                  <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+                    <button className="rounded-lg bg-white px-8 py-3 font-semibold text-neutral-900 hover:bg-neutral-100">
+                      Get started
+                    </button>
+                    <button className="rounded-lg border border-white px-8 py-3 font-semibold text-white hover:bg-white/10">
+                      Learn more
+                    </button>
                   </div>
-                  <div className="w-full px-4 lg:w-4/12">
-                    <Image
-                      src="https://images.unsplash.com/photo-1565972476522-4338522b1929?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDV8fGJ1YmJsZXN8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=800&h=1200&fit=crop"
-                      alt="..."
-                      width={800}
-                      height={1200}
-                      className="w-full"
-                    />
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          {/* Hero Block 9 */}
-          <div className="relative">
-            <SectionDivider title="Hero Block 9">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef9)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
-            </SectionDivider>
-            <section
-              ref={sectionRef9}
-              className="relative bg-gray-100 text-gray-500"
-            >
-              <div className="container mx-auto px-4 py-48 pt-24 pb-24">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="w-full px-4 lg:w-6/12">
-                    <p className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </p>
-                    <h1 className="mb-4 text-6xl font-extrabold text-gray-800">
-                      The Natural Experience
-                    </h1>
-                    <p className="mb-6 text-2xl leading-tight font-light">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </p>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Get It Now
-                    </a>
-                  </div>
-                  <div className="w-full p-4 lg:w-6/12">
-                    <div className="bg-white p-4 shadow-xl">
-                      {/* Embedded YouTube video */}
-                      <iframe
-                        width="100%"
-                        height="315"
-                        src="https://www.youtube.com/embed/mlD9KngeV2E"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        title="Pinegrow location map"
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          {/* Hero Block 10 */}
-          <div className="relative">
-            <SectionDivider title="Hero Block 10">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef10)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
-            </SectionDivider>
-            <section
-              ref={sectionRef10}
-              className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80"
-                alt=""
-                fill
-                className="-z-10 object-cover object-right opacity-40 md:object-center"
-              />
-              <div className="mx-auto max-w-2xl text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                  Welcome to LandingPageMaker
-                </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-300">
-                  Build beautiful landing pages with ready-to-use hero sections.
-                  Copy, paste, and customize for your next project.
-                </p>
-                <div className="mt-10 flex items-center justify-center gap-x-6">
-                  <a
-                    href="#"
-                    className="rounded-md bg-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-                  >
-                    Get started
-                  </a>
-                  <a
-                    href="#"
-                    className="text-sm leading-6 font-semibold text-white"
-                  >
-                    Learn more <span aria-hidden="true">→</span>
-                  </a>
                 </div>
               </div>
             </section>

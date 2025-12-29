@@ -1,13 +1,13 @@
 import Link from "next/link";
-import Navigation from "~/components/Navigation";
-import Hero from "~/components/Hero";
-import Footer from "~/components/Footer";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
-} from "~/components/ui/card";
+} from "@/components/ui/card";
 
 const categories = [
   {

@@ -1,12 +1,12 @@
 "use client";
-import Navigation from "~/components/Navigation";
-import Footer from "~/components/Footer";
-import Hero from "~/components/Hero";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import { useRef } from "react";
 import { Copy } from "lucide-react";
-import { useCopyNotification } from "~/components/useCopyNotification";
-import SectionDivider from "~/components/SectionDivider";
-import { Button } from "~/components/ui/button";
+import { useCopyNotification } from "@/components/useCopyNotification";
+import SectionDivider from "@/components/SectionDivider";
+import { Button } from "@/components/ui/button";
 
 export default function BlocksDividersPage() {
   // Refs for each divider section

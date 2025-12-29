@@ -1,6 +1,6 @@
-import Navigation from "~/components/Navigation";
-import Footer from "~/components/Footer";
-import Hero from "~/components/Hero";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 
 export default function BlocksUIPage() {
   return (

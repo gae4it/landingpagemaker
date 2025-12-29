@@ -1,7 +1,7 @@
-import Navigation from "~/components/Navigation";
-import Footer from "~/components/Footer";
-import { Button } from "~/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "~/components/ui/card";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Github, Code, Palette } from "lucide-react";
 import Link from "next/link";
 

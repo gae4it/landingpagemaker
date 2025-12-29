@@ -1,36 +1,30 @@
 "use client";
 
-import Navigation from "~/components/Navigation";
-import Footer from "~/components/Footer";
-import Hero from "~/components/Hero";
-import Image from "next/image";
-import { Copy } from "lucide-react";
-import { useRef } from "react";
-import { useCopyNotification } from "~/components/useCopyNotification";
-import SectionDivider from "~/components/SectionDivider";
-import { Button } from "~/components/ui/button";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import { Copy, ArrowRight, Mail, Zap, Shield, Users } from "lucide-react";
+import { useRef, type RefObject } from "react";
+import { useCopyNotification } from "@/components/useCopyNotification";
+import SectionDivider from "@/components/SectionDivider";
+import { Button } from "@/components/ui/button";
 
 export default function BlocksCallToActionPage() {
-  // Refs for each section
   const sectionRef1 = useRef<HTMLElement>(null);
   const sectionRef2 = useRef<HTMLElement>(null);
   const sectionRef3 = useRef<HTMLElement>(null);
   const sectionRef4 = useRef<HTMLElement>(null);
   const sectionRef5 = useRef<HTMLElement>(null);
   const sectionRef6 = useRef<HTMLElement>(null);
-  const sectionRef7 = useRef<HTMLElement>(null);
-  const sectionRef8 = useRef<HTMLElement>(null);
-  const sectionRef9 = useRef<HTMLElement>(null);
 
-  // Copy handler with notification
   const [showCopied, triggerCopied] = useCopyNotification();
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
+  const handleCopy = (ref: RefObject<HTMLElement | null>) => {
     const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
+    if (!el) return;
+    void navigator.clipboard.writeText(el.outerHTML);
+    triggerCopied();
   };
+
   return (
     <>
       {showCopied && (
@@ -41,16 +35,18 @@ export default function BlocksCallToActionPage() {
           Section copied
         </div>
       )}
+
       <Navigation />
       <Hero
         title="Call To Action Sections"
-        subtitle="Call To Action blocks ready to use. Copy, paste, and customize for your next project."
+        subtitle="Conversion-focused CTA sections built with shadcn/ui and Tailwind CSS 4. Copy and deploy."
       />
+
       <main className="bg-background min-h-screen py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Call-To-Action Block 1 */}
+        <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
+          {/* CTA Block 1: Full Width Banner */}
           <div className="relative">
-            <SectionDivider title="Call-To-Action Block 1">
+            <SectionDivider title="Full Width CTA Banner">
               <Button
                 variant="ghost"
                 size="icon"
@@ -63,38 +59,32 @@ export default function BlocksCallToActionPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-gray-50 py-20 text-gray-500"
+              className="relative bg-neutral-900 py-12 dark:bg-neutral-950"
             >
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="mb-6 w-full px-4 lg:mb-0 lg:w-9/12">
-                    <h2 className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </h2>
-                    <h3 className="mb-4 text-4xl font-bold text-gray-800">
-                      The Natural Experience
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+                  <div className="text-center sm:text-left">
+                    <h3 className="text-2xl font-bold text-white">
+                      Ready to get started?
                     </h3>
-                    <p className="text-2xl leading-tight font-light">
-                      You never change things by fighting the existing reality.
-                      To change something, build a new model that makes the
-                      existing model obsolete.
+                    <p className="mt-2 text-neutral-300">
+                      Join thousands of developers building with our platform.
                     </p>
                   </div>
-                  <div className="w-full px-4 lg:w-3/12 lg:text-right">
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Read More
-                    </a>
+                  <div className="flex gap-4">
+                    <button className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-neutral-900 hover:bg-neutral-100">
+                      Get started
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </button>
                   </div>
                 </div>
               </div>
             </section>
           </div>
-          {/* Call-To-Action Block 2 */}
+
+          {/* CTA Block 2: Cards with Icons */}
           <div className="relative">
-            <SectionDivider title="Call-To-Action Block 2">
+            <SectionDivider title="CTA Cards Grid">
               <Button
                 variant="ghost"
                 size="icon"
@@ -107,34 +97,54 @@ export default function BlocksCallToActionPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-gray-50 py-20 text-gray-500"
+              className="relative bg-neutral-50 py-16 sm:py-24 dark:bg-neutral-950"
             >
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="mb-6 w-full px-4 lg:mb-0 lg:w-9/12">
-                    <h2 className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
-                    </h2>
-                    <h3 className="text-4xl font-bold text-gray-900">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </h3>
-                  </div>
-                  <div className="w-full px-4 lg:w-3/12 lg:text-right">
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                  {[
+                    {
+                      icon: Zap,
+                      title: "Fast Setup",
+                      desc: "Get started in minutes",
+                    },
+                    {
+                      icon: Shield,
+                      title: "Secure",
+                      desc: "Enterprise-grade security",
+                    },
+                    {
+                      icon: Users,
+                      title: "Team Ready",
+                      desc: "Built for collaboration",
+                    },
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="group relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-8 transition-all hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700"
                     >
-                      Read More
-                    </a>
-                  </div>
+                      <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-neutral-100 p-3 dark:bg-neutral-800">
+                        <item.icon className="h-6 w-6 text-neutral-900 dark:text-neutral-50" />
+                      </div>
+                      <h3 className="mb-2 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
+                        {item.title}
+                      </h3>
+                      <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+                        {item.desc}
+                      </p>
+                      <button className="inline-flex items-center text-sm font-semibold text-neutral-900 hover:text-neutral-600 dark:text-neutral-50 dark:hover:text-neutral-400">
+                        Learn more
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </button>
+                    </div>
+                  ))}
                 </div>
               </div>
             </section>
           </div>
-          {/* Call-To-Action Block 3 */}
+
+          {/* CTA Block 3: Newsletter Signup */}
           <div className="relative">
-            <SectionDivider title="Call-To-Action Block 3">
+            <SectionDivider title="Newsletter CTA">
               <Button
                 variant="ghost"
                 size="icon"
@@ -147,29 +157,47 @@ export default function BlocksCallToActionPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-gray-50 py-20 text-gray-500"
+              className="relative bg-white py-16 sm:py-24 dark:bg-neutral-950"
             >
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="mx-auto w-full px-4 text-center lg:w-7/12">
-                    <h2 className="mb-6 text-4xl font-bold text-gray-900">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </h2>
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Read More
-                    </a>
-                  </div>
-                </div>
+              <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+                <Mail className="mx-auto mb-4 h-12 w-12 text-neutral-900 dark:text-neutral-50" />
+                <h2 className="text-3xl font-bold text-neutral-950 sm:text-4xl dark:text-neutral-50">
+                  Subscribe to our newsletter
+                </h2>
+                <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
+                  Get the latest updates, articles, and resources delivered
+                  weekly to your inbox.
+                </p>
+                <form className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="max-w-md flex-1 rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 placeholder:text-neutral-500 focus:ring-2 focus:ring-neutral-900 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-neutral-50"
+                  />
+                  <button
+                    type="submit"
+                    className="rounded-lg bg-neutral-900 px-6 py-3 font-semibold text-white hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+                <p className="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
+                  We care about your data. Read our{" "}
+                  <a
+                    href="#"
+                    className="underline hover:text-neutral-900 dark:hover:text-neutral-50"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </p>
               </div>
             </section>
           </div>
-          {/* Call-To-Action Block 4 */}
+
+          {/* CTA Block 4: Split CTA with Form */}
           <div className="relative">
-            <SectionDivider title="Call-To-Action Block 4">
+            <SectionDivider title="Split CTA Section">
               <Button
                 variant="ghost"
                 size="icon"
@@ -180,33 +208,78 @@ export default function BlocksCallToActionPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section ref={sectionRef4} className="bg-gray-900 py-20">
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="mb-6 w-full px-4 lg:mb-0 lg:w-7/12">
-                    <h2 className="mb-2 font-medium text-blue-600 uppercase">
-                      The Latest
+            <section
+              ref={sectionRef4}
+              className="relative bg-neutral-50 py-16 sm:py-24 dark:bg-neutral-900"
+            >
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+                  <div>
+                    <h2 className="text-3xl font-bold text-neutral-950 sm:text-4xl dark:text-neutral-50">
+                      Start your free trial today
                     </h2>
-                    <h3 className="text-4xl font-semibold text-white">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </h3>
+                    <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
+                      No credit card required. Cancel anytime. Get full access
+                      to all features for 14 days.
+                    </p>
+                    <ul className="mt-8 space-y-4">
+                      {[
+                        "Unlimited projects",
+                        "24/7 support",
+                        "Advanced analytics",
+                      ].map((feature) => (
+                        <li key={feature} className="flex items-center gap-3">
+                          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-sm text-neutral-900 dark:bg-neutral-800 dark:text-neutral-50">
+                            ✓
+                          </span>
+                          <span className="text-neutral-700 dark:text-neutral-300">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="w-full px-4 lg:w-5/12 lg:text-right">
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-blue-600 px-5 py-2 font-light text-white uppercase hover:bg-blue-700"
-                    >
-                      Read More
-                    </a>
+                  <div className="rounded-lg border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-950">
+                    <h3 className="mb-6 text-xl font-semibold text-neutral-950 dark:text-neutral-50">
+                      Create your account
+                    </h3>
+                    <form className="space-y-4">
+                      <div>
+                        <label className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-neutral-900 focus:ring-2 focus:ring-neutral-900 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50 dark:focus:ring-neutral-50"
+                          placeholder="you@example.com"
+                        />
+                      </div>
+                      <div>
+                        <label className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                          Password
+                        </label>
+                        <input
+                          type="password"
+                          className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-neutral-900 focus:ring-2 focus:ring-neutral-900 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50 dark:focus:ring-neutral-50"
+                          placeholder="••••••••"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full rounded-lg bg-neutral-900 px-4 py-2.5 font-semibold text-white hover:bg-neutral-800 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-200"
+                      >
+                        Get started free
+                      </button>
+                    </form>
                   </div>
                 </div>
               </div>
             </section>
           </div>
-          {/* Call-To-Action Block 5 */}
+
+          {/* CTA Block 5: Gradient Background CTA */}
           <div className="relative">
-            <SectionDivider title="Call-To-Action Block 5">
+            <SectionDivider title="Gradient CTA">
               <Button
                 variant="ghost"
                 size="icon"
@@ -217,30 +290,33 @@ export default function BlocksCallToActionPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section ref={sectionRef5} className="bg-blue-700 py-20">
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="mb-6 w-full px-4 lg:mb-0 lg:w-7/12">
-                    <h2 className="text-4xl font-semibold text-white">
-                      Our ability to feel, act and communicate is
-                      indistinguishable from magic.
-                    </h2>
-                  </div>
-                  <div className="w-full px-4 lg:w-5/12 lg:text-right">
-                    <a
-                      href="#"
-                      className="inline-block rounded-sm bg-white px-5 py-2 font-light text-blue-600 uppercase hover:bg-gray-300"
-                    >
-                      Read More
-                    </a>
-                  </div>
+            <section
+              ref={sectionRef5}
+              className="relative overflow-hidden bg-linear-to-r from-neutral-900 via-neutral-800 to-neutral-900 py-20 sm:py-28 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950"
+            >
+              <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+                <h2 className="text-4xl font-bold text-white sm:text-5xl">
+                  Transform your workflow today
+                </h2>
+                <p className="mt-6 text-lg text-neutral-300">
+                  Join 10,000+ teams already building better products with our
+                  platform.
+                </p>
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+                  <button className="rounded-lg bg-white px-8 py-3 font-semibold text-neutral-900 hover:bg-neutral-100">
+                    Start free trial
+                  </button>
+                  <button className="hover:bg-opacity-10 rounded-lg border border-white px-8 py-3 font-semibold text-white hover:bg-white">
+                    Schedule demo
+                  </button>
                 </div>
               </div>
             </section>
           </div>
-          {/* Call-To-Action Block 6 */}
+
+          {/* CTA Block 6: Minimal Text CTA */}
           <div className="relative">
-            <SectionDivider title="Call-To-Action Block 6">
+            <SectionDivider title="Minimal CTA">
               <Button
                 variant="ghost"
                 size="icon"
@@ -251,179 +327,26 @@ export default function BlocksCallToActionPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section ref={sectionRef6} className="bg-gray-800 pt-12">
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap items-center text-center lg:text-left">
-                  <div className="w-full px-4 py-16 lg:order-2 lg:w-7/12">
-                    <h2 className="text-lg font-medium text-blue-500 uppercase">
-                      Grab your collection today
-                    </h2>
-                    <h3 className="mb-6 text-4xl font-bold text-white">
-                      {" "}
-                      Seasonal sale upto 70% off
-                    </h3>
-                    <a
-                      href="#"
-                      className="inline-block border-b border-current py-1 text-lg font-light text-gray-400 hover:border-current hover:text-blue-600"
-                    >
-                      {" "}
-                      See Collection
-                    </a>
-                  </div>
-                  <div className="w-full px-4 lg:order-1 lg:w-5/12">
-                    <svg
-                      data-name="Layer 1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      viewBox="0 0 839.2 727.08"
-                      className="mx-auto h-auto max-w-full"
-                      height="727.08"
-                      width="839.2"
-                    >
-                      {/* ...svg content... */}
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          {/* Call-To-Action Block 7 */}
-          <div className="relative">
-            <SectionDivider title="Call-To-Action Block 7">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
-            </SectionDivider>
-            <section ref={sectionRef7} className="bg-gray-100 pt-12">
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap items-center">
-                  <div className="w-full px-4 py-16 lg:w-7/12">
-                    <h2 className="text-lg font-medium text-gray-500 uppercase">
-                      Grab your collection today
-                    </h2>
-                    <h3 className="mb-6 text-4xl font-bold text-gray-800">
-                      {" "}
-                      Seasonal sale upto 70% off
-                    </h3>
-                    <a
-                      href="#"
-                      className="inline-block border-b border-current py-1 text-lg font-light text-blue-600 hover:border-current hover:text-gray-800"
-                    >
-                      {" "}
-                      See Collection
-                    </a>
-                  </div>
-                  <div className="w-full px-4 lg:w-5/12">
-                    <svg
-                      data-name="Layer 1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      viewBox="0 0 839.2 727.08"
-                      className="mx-auto h-auto max-w-full"
-                      height="727.08"
-                      width="839.2"
-                    >
-                      {/* ...svg content... */}
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          {/* Call-To-Action Block 8 */}
-          <div className="relative">
-            <SectionDivider title="Call-To-Action Block 8">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
-            </SectionDivider>
-            <section ref={sectionRef8} className="bg-opacity-50 bg-yellow-900">
-              <div className="px-4">
-                <div className="-mx-4 flex flex-wrap items-center text-center md:text-left">
-                  <div className="w-full px-10 py-16 md:order-2 md:w-7/12 md:py-0 xl:w-8/12">
-                    <h2 className="text-lg font-medium text-white uppercase">
-                      Grab your collection today
-                    </h2>
-                    <h3 className="mb-4 text-4xl font-bold text-white">
-                      Seasonal sale upto 70% off
-                    </h3>
-                    <a
-                      href="#"
-                      className="inline-block border-b border-current py-1 text-lg font-light text-white hover:border-current hover:text-gray-900"
-                    >
-                      See Collection
-                    </a>
-                  </div>
-                  <div className="w-full md:order-1 md:w-5/12 xl:w-4/12">
-                    <Image
-                      src="https://images.unsplash.com/photo-1556228308-f6e92d757b1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDkyMnwwfDF8c2VhcmNofDI5fHxjdXJvbG9neXxlbnwwfHx8&ixlib=rb-1.2.1&q=80&w=1080"
-                      className="mx-auto xl:w-full"
-                      alt="..."
-                      width={1080}
-                      height={720}
-                    />
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          {/* Call-To-Action Block 9 */}
-          <div className="relative">
-            <SectionDivider title="Call-To-Action Block 9">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef9)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
-            </SectionDivider>
-            <section ref={sectionRef9} className="bg-opacity-75 bg-purple-800">
-              <div className="px-4">
-                <div className="-mx-4 flex flex-wrap items-center text-center md:text-left">
-                  <div className="w-full px-10 py-16 md:order-2 md:w-8/12 md:py-0 xl:w-9/12">
-                    <h2 className="text-lg font-medium text-white uppercase">
-                      Grab your collection today
-                    </h2>
-                    <h3 className="mb-4 text-4xl font-bold text-white">
-                      Seasonal sale upto 70% off
-                    </h3>
-                    <a
-                      href="#"
-                      className="inline-block border-b border-current py-1 text-lg font-light text-white hover:border-current hover:text-gray-900"
-                    >
-                      See Collection
-                    </a>
-                  </div>
-                  <div className="w-full md:order-1 md:w-4/12 xl:w-3/12">
-                    <Image
-                      src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-                      className="mx-auto xl:w-full"
-                      alt="..."
-                      width={720}
-                      height={1080}
-                    />
-                  </div>
+            <section ref={sectionRef6} className="relative py-20 sm:py-28">
+              <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+                <h2 className="text-4xl font-bold text-neutral-950 sm:text-5xl dark:text-neutral-50">
+                  Ready when you are
+                </h2>
+                <p className="mt-6 text-xl text-neutral-600 dark:text-neutral-400">
+                  Start building today. No credit card required.
+                </p>
+                <div className="mt-10">
+                  <button className="inline-flex items-center text-lg font-semibold text-neutral-900 hover:text-neutral-600 dark:text-neutral-50 dark:hover:text-neutral-400">
+                    Get started
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </button>
                 </div>
               </div>
             </section>
           </div>
         </div>
       </main>
+
       <Footer />
     </>
   );
