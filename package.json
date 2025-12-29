@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "check": "eslint . && prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "check": "eslint . && prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache && tsc --noEmit",
     "dev": "next dev --turbo",
     "fix": "eslint . --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
