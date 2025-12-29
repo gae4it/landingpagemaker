@@ -91,7 +91,7 @@ export default function Navigation() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Blocks</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[90vw] max-w-[800px] grid-cols-2 gap-3 p-4 md:w-[600px] md:grid-cols-3 lg:w-[800px]">
+                  <div className="grid w-[90vw] max-w-200 grid-cols-2 gap-3 p-4 md:w-150 md:grid-cols-3 lg:w-200">
                     {categories.map((category) => (
                       <NavigationMenuLink
                         asChild
