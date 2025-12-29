@@ -3,6 +3,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import Image from "next/image";
 import { useRef } from "react";
 import { Copy } from "lucide-react";
 import { useCopyNotification } from "@/components/useCopyNotification";
@@ -18,6 +19,7 @@ export default function BlocksHeroPage() {
   const sectionRef5 = useRef<HTMLElement>(null);
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
+  const sectionRef8 = useRef<HTMLElement>(null);
 
   const [showCopied, triggerCopied] = useCopyNotification();
   const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
@@ -366,6 +368,56 @@ export default function BlocksHeroPage() {
                       Learn more
                     </button>
                   </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* Hero Block 8: Image Background Overlay Hero */}
+          <div className="relative">
+            <SectionDivider title="Image Background Overlay Hero">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef8)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <section
+              ref={sectionRef8}
+              className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32"
+            >
+              <Image
+                alt=""
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80"
+                fill
+                sizes="100vw"
+                className="-z-10 object-cover object-right opacity-40 md:object-center"
+              />
+              <div className="mx-auto max-w-2xl text-center">
+                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                  Welcome to LandingPageMaker
+                </h1>
+                <p className="mt-6 text-lg leading-8 text-gray-300">
+                  Build beautiful landing pages with ready-to-use hero sections.
+                  Copy, paste, and customize for your next project.
+                </p>
+                <div className="mt-10 flex items-center justify-center gap-x-6">
+                  <a
+                    href="#"
+                    className="rounded-md bg-indigo-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                  >
+                    Get started
+                  </a>
+                  <a
+                    href="#"
+                    className="text-sm leading-6 font-semibold text-white"
+                  >
+                    Learn more <span aria-hidden="true">→</span>
+                  </a>
                 </div>
               </div>
             </section>

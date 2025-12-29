@@ -174,7 +174,7 @@ function ChartTooltipContent({
     if (labelFormatter) {
       tooltipLabel = (
         <div className={cn("font-medium", labelClassName)}>
-          {labelFormatter(value, payload)}
+          {labelFormatter(value, payload ?? [])}
         </div>
       );
     } else if (value) {

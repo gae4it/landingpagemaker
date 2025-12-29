@@ -109,6 +109,8 @@ The header/banner text for each blocks page must dynamically reflect the categor
 *   **Style**: Tailwind CSS v4. No custom `.css` files or `styled-components`.
 *   **UI Components**: shadcn/ui - All UI components must use shadcn/ui library for consistent design and accessibility.
 *   **Theme**: Dark theme only. The entire application uses a dark color scheme.
+*   **UI Components**: shadcn/ui - All UI components must use shadcn/ui library for consistent design and accessibility.
+*   **Theme**: Dark theme only. The entire application uses a dark color scheme.
 *   **Deployment**: Vercel (recommended for Next.js).
 *   **Components**: React.
 *   **API/Data**: No database needed initially. Block data will come directly from the project filesystem.
