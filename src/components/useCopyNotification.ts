@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 export function useCopyNotification(timeout = 2000) {
