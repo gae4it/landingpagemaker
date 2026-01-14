@@ -3,21 +3,34 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { Copy } from "lucide-react";
+import {
+  Copy,
+  Heart,
+  Share2,
+  MessageCircle,
+  Users,
+  TrendingUp,
+  Award,
+  Facebook,
+  Twitter,
+  Linkedin,
+} from "lucide-react";
 import { useRef } from "react";
 import { useCopyNotification } from "@/components/useCopyNotification";
 import SectionDivider from "@/components/SectionDivider";
 import { Button } from "@/components/ui/button";
 
 export default function BlocksSocialPage() {
-  // Refs for each section
   const sectionRef1 = useRef<HTMLElement>(null);
   const sectionRef2 = useRef<HTMLElement>(null);
   const sectionRef3 = useRef<HTMLElement>(null);
   const sectionRef4 = useRef<HTMLElement>(null);
-
-  // Copy handler with notification
+  const sectionRef5 = useRef<HTMLElement>(null);
+  const sectionRef6 = useRef<HTMLElement>(null);
+  const sectionRef7 = useRef<HTMLElement>(null);
+  const sectionRef8 = useRef<HTMLElement>(null);
   const [showCopied, triggerCopied] = useCopyNotification();
+
   const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
     const el = ref.current;
     if (el) {
@@ -25,6 +38,7 @@ export default function BlocksSocialPage() {
       triggerCopied();
     }
   };
+
   return (
     <>
       {showCopied && (
@@ -37,14 +51,14 @@ export default function BlocksSocialPage() {
       )}
       <Navigation />
       <Hero
-        title="Social Sections"
-        subtitle="Social blocks ready to use. Copy, paste, and customize for your next project."
+        title="Social Blocks"
+        subtitle="Beautiful social engagement blocks ready to use. Copy, paste, and customize for your next project."
       />
       <main className="bg-background min-h-screen py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Social Block 1 */}
+        <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
+          {/* Variant 1: Share Buttons */}
           <div className="relative">
-            <SectionDivider title="Social Block 1">
+            <SectionDivider title="Share Buttons (Facebook, Twitter, LinkedIn)">
               <Button
                 variant="ghost"
                 size="icon"
@@ -55,79 +69,40 @@ export default function BlocksSocialPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section ref={sectionRef1} className="py-8">
-              <div className="flex flex-wrap gap-2 leading-none">
-                <a
-                  href="#"
-                  className="inline-block text-blue-500 hover:text-blue-700"
-                  aria-label="facebook"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="inline h-5 w-5"
-                  >
-                    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="inline-block text-blue-500 hover:text-blue-700"
-                  aria-label="twitter"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="inline h-5 w-5"
-                  >
-                    <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="inline-block text-blue-500 hover:text-blue-700"
-                  aria-label="instagram"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="inline h-5 w-5"
-                  >
-                    <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="inline-block text-blue-500 hover:text-blue-700"
-                  aria-label="linkedin"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="inline h-5 w-5"
-                  >
-                    <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="inline-block text-blue-500 hover:text-blue-700"
-                  aria-label="youtube"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="inline h-5 w-5"
-                  >
-                    <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                  </svg>
-                </a>
+            <section
+              ref={sectionRef1}
+              className="bg-slate-50 dark:bg-slate-900 py-12"
+            >
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    Share This Article
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Share this content with your network
+                  </p>
+                </div>
+                <div className="flex justify-center gap-4">
+                  <button className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                    <Facebook size={20} />
+                    Share on Facebook
+                  </button>
+                  <button className="flex items-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-lg font-medium transition-colors">
+                    <Twitter size={20} />
+                    Share on Twitter
+                  </button>
+                  <button className="flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-medium transition-colors">
+                    <Linkedin size={20} />
+                    Share on LinkedIn
+                  </button>
+                </div>
               </div>
             </section>
           </div>
-          {/* Social Block 2 */}
-          <div className="relative mt-12">
-            <SectionDivider title="Social Block 2">
+
+          {/* Variant 2: Follow Button States */}
+          <div className="relative">
+            <SectionDivider title="Follow Button (Follow/Following/Unfollow States)">
               <Button
                 variant="ghost"
                 size="icon"
@@ -138,80 +113,37 @@ export default function BlocksSocialPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section ref={sectionRef2} className="py-8">
-              <div className="inline-flex flex-wrap space-x-2">
-                {/* ...social icons come sopra, cambia solo il layout... */}
-                <a
-                  href="#"
-                  className="text-blue-500 hover:text-blue-700"
-                  aria-label="facebook"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="text-blue-500 hover:text-blue-700"
-                  aria-label="twitter"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="text-blue-500 hover:text-blue-700"
-                  aria-label="instagram"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="text-blue-500 hover:text-blue-700"
-                  aria-label="linkedin"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="text-blue-500 hover:text-blue-700"
-                  aria-label="youtube"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                  </svg>
-                </a>
+            <section
+              ref={sectionRef2}
+              className="bg-slate-50 dark:bg-slate-900 py-12"
+            >
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    Follow States
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Different button states for follow interactions
+                  </p>
+                </div>
+                <div className="flex justify-center gap-4 flex-wrap">
+                  <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                    Follow
+                  </button>
+                  <button className="px-6 py-3 bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg font-medium transition-colors hover:bg-slate-300 dark:hover:bg-slate-600">
+                    Following
+                  </button>
+                  <button className="px-6 py-3 border-2 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white rounded-lg font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800">
+                    Unfollow
+                  </button>
+                </div>
               </div>
             </section>
           </div>
-          {/* Social Block 3 */}
-          <div className="relative mt-12">
-            <SectionDivider title="Social Block 3">
+
+          {/* Variant 3: Social Feed Grid */}
+          <div className="relative">
+            <SectionDivider title="Social Feed Grid (Post Cards with Likes)">
               <Button
                 variant="ghost"
                 size="icon"
@@ -222,79 +154,64 @@ export default function BlocksSocialPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section ref={sectionRef3} className="py-8">
-              <div className="flex flex-wrap gap-2">
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="facebook"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="twitter"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="instagram"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="linkedin"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="youtube"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                  </svg>
-                </a>
+            <section
+              ref={sectionRef3}
+              className="bg-slate-50 dark:bg-slate-900 py-12"
+            >
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    Social Feed
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Latest posts from the community
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {[1, 2, 3].map((post) => (
+                    <div
+                      key={post}
+                      className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">
+                            @user{post}
+                          </p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">
+                            2 hours ago
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 mb-4">
+                        Just launched our new product! Excited to share it with
+                        everyone.
+                      </p>
+                      <div className="flex items-center gap-6 text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-slate-700">
+                        <button className="flex items-center gap-2 hover:text-red-500 transition-colors">
+                          <Heart size={18} />
+                          <span className="text-sm">234</span>
+                        </button>
+                        <button className="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                          <MessageCircle size={18} />
+                          <span className="text-sm">45</span>
+                        </button>
+                        <button className="flex items-center gap-2 hover:text-green-500 transition-colors">
+                          <Share2 size={18} />
+                          <span className="text-sm">12</span>
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </section>
           </div>
-          {/* Social Block 4 */}
-          <div className="relative mt-12">
-            <SectionDivider title="Social Block 4">
+
+          {/* Variant 4: Social Proof Numbers */}
+          <div className="relative">
+            <SectionDivider title="Social Proof Numbers (Followers Counter)">
               <Button
                 variant="ghost"
                 size="icon"
@@ -305,74 +222,310 @@ export default function BlocksSocialPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section ref={sectionRef4} className="py-8">
-              <div className="inline-flex flex-wrap space-x-2">
-                {/* ...social icons come sopra, cambia solo il layout... */}
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="facebook"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="twitter"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="instagram"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="linkedin"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="bg-blue-500 p-2 text-white hover:bg-blue-700"
-                  aria-label="youtube"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5"
-                  >
-                    <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                  </svg>
-                </a>
+            <section
+              ref={sectionRef4}
+              className="bg-linear-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-12"
+            >
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    Our Community
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Join thousands of satisfied users
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
+                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                      125K
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-300 font-medium">
+                      Followers
+                    </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
+                    <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                      89K
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-300 font-medium">
+                      Engagement
+                    </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
+                    <div className="text-3xl font-bold text-pink-600 dark:text-pink-400 mb-2">
+                      45K
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-300 font-medium">
+                      Likes
+                    </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
+                    <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+                      12K
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-300 font-medium">
+                      Shares
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* Variant 5: Social Reviews/Testimonials */}
+          <div className="relative">
+            <SectionDivider title="Social Reviews/Testimonials (Avatar + Stars + Quote)">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef5)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <section
+              ref={sectionRef5}
+              className="bg-slate-50 dark:bg-slate-900 py-12"
+            >
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    User Reviews
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    What our community says about us
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[1, 2].map((review) => (
+                    <div
+                      key={review}
+                      className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">
+                            Sarah Johnson
+                          </p>
+                          <div className="flex gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <span key={i} className="text-yellow-400">
+                                ★
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 italic">
+                        "This product has completely transformed how I work. The
+                        interface is intuitive and the support team is amazing!"
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* Variant 6: Influencer Showcase */}
+          <div className="relative">
+            <SectionDivider title="Influencer Showcase (Avatar, Name, Followers, Follow Btn)">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef6)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <section
+              ref={sectionRef6}
+              className="bg-slate-50 dark:bg-slate-900 py-12"
+            >
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    Featured Creators
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Follow our top influencers and content creators
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                  {[1, 2, 3].map((influencer) => (
+                    <div
+                      key={influencer}
+                      className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-8 text-center"
+                    >
+                      <div className="w-20 h-20 bg-slate-300 dark:bg-slate-600 rounded-full mx-auto mb-4"></div>
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+                        Creator {influencer}
+                      </h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                        Content Creator
+                      </p>
+                      <p className="text-slate-600 dark:text-slate-300 font-semibold mb-4">
+                        {125 + influencer * 10}K Followers
+                      </p>
+                      <button className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                        Follow
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* Variant 7: Social Stats */}
+          <div className="relative">
+            <SectionDivider title="Social Stats (Engagement Metrics Grid)">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef7)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <section
+              ref={sectionRef7}
+              className="bg-linear-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-12"
+            >
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                    Engagement Metrics
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Track your social media performance
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                        <Heart className="text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <h4 className="font-semibold text-slate-900 dark:text-white">
+                        Likes
+                      </h4>
+                    </div>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                      2,458
+                    </p>
+                    <p className="text-sm text-green-600 dark:text-green-400">
+                      +12% from last week
+                    </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-3 bg-purple-100 dark:bg-purple-900 rounded-lg">
+                        <MessageCircle className="text-purple-600 dark:text-purple-400" />
+                      </div>
+                      <h4 className="font-semibold text-slate-900 dark:text-white">
+                        Comments
+                      </h4>
+                    </div>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                      856
+                    </p>
+                    <p className="text-sm text-green-600 dark:text-green-400">
+                      +8% from last week
+                    </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-3 bg-green-100 dark:bg-green-900 rounded-lg">
+                        <Share2 className="text-green-600 dark:text-green-400" />
+                      </div>
+                      <h4 className="font-semibold text-slate-900 dark:text-white">
+                        Shares
+                      </h4>
+                    </div>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                      432
+                    </p>
+                    <p className="text-sm text-green-600 dark:text-green-400">
+                      +5% from last week
+                    </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-3 bg-pink-100 dark:bg-pink-900 rounded-lg">
+                        <TrendingUp className="text-pink-600 dark:text-pink-400" />
+                      </div>
+                      <h4 className="font-semibold text-slate-900 dark:text-white">
+                        Reach
+                      </h4>
+                    </div>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                      45.2K
+                    </p>
+                    <p className="text-sm text-green-600 dark:text-green-400">
+                      +23% from last week
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* Variant 8: Social CTA */}
+          <div className="relative">
+            <SectionDivider title="Social CTA (Follow + Newsletter)">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef8)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <section
+              ref={sectionRef8}
+              className="bg-linear-to-r from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 text-white py-12"
+            >
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="w-16 h-16 bg-slate-600 rounded-full"></div>
+                </div>
+                <h3 className="text-3xl font-bold mb-3">Stay Connected</h3>
+                <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+                  Follow us on social media and subscribe to our newsletter for
+                  the latest updates, tips, and exclusive content.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                  <button className="flex items-center justify-center gap-2 px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors">
+                    <Users size={20} />
+                    Follow Us
+                  </button>
+                  <button className="flex items-center justify-center gap-2 px-8 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors">
+                    <Award size={20} />
+                    Join Newsletter
+                  </button>
+                </div>
+                <div className="flex justify-center gap-6 text-slate-400">
+                  <a href="#" className="hover:text-white transition-colors">
+                    <Facebook size={24} />
+                  </a>
+                  <a href="#" className="hover:text-white transition-colors">
+                    <Twitter size={24} />
+                  </a>
+                  <a href="#" className="hover:text-white transition-colors">
+                    <Linkedin size={24} />
+                  </a>
+                </div>
               </div>
             </section>
           </div>

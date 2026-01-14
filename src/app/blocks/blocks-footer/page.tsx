@@ -3,8 +3,21 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Image from "next/image";
-import { Copy } from "lucide-react";
+import {
+  Copy,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  ArrowUp,
+  Globe,
+  Youtube,
+  Github,
+} from "lucide-react";
 import { useRef } from "react";
 import { useCopyNotification } from "@/components/useCopyNotification";
 import SectionDivider from "@/components/SectionDivider";
@@ -15,6 +28,10 @@ export default function BlocksFooterPage() {
   const sectionRef2 = useRef<HTMLElement>(null);
   const sectionRef3 = useRef<HTMLElement>(null);
   const sectionRef4 = useRef<HTMLElement>(null);
+  const sectionRef5 = useRef<HTMLElement>(null);
+  const sectionRef6 = useRef<HTMLElement>(null);
+  const sectionRef7 = useRef<HTMLElement>(null);
+  const sectionRef8 = useRef<HTMLElement>(null);
   const [showCopied, triggerCopied] = useCopyNotification();
 
   const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
@@ -42,9 +59,9 @@ export default function BlocksFooterPage() {
       />
       <main className="bg-background min-h-screen py-16">
         <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
-          {/* Footer Block 1 */}
+          {/* Variant 1: Links Grid + Copyright */}
           <div className="relative">
-            <SectionDivider title="Footer Block 1">
+            <SectionDivider title="Links Grid + Copyright">
               <Button
                 variant="ghost"
                 size="icon"
@@ -55,204 +72,169 @@ export default function BlocksFooterPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section
+            <footer
               ref={sectionRef1}
-              className="bg-gray-50 pt-12 font-light text-gray-500"
+              className="bg-slate-900 dark:bg-slate-950 text-slate-200 dark:text-slate-300 py-16"
             >
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full p-4 xl:mr-auto xl:w-4/12">
-                    <a
-                      href="#"
-                      className="mr-auto mb-6 inline-block text-3xl font-medium text-blue-600 uppercase hover:text-blue-800"
-                    >
-                      Company
-                    </a>
-                    <p className="mb-4 text-sm">
-                      Duis pharetra venenatis felis, ut tincidunt ipsum
-                      consequat nec. Fusce et porttitor libero, eu aliquam nisi.
-                      Nam finibus ullamcorper semper.
-                    </p>
-                    <div className="mb-6">
-                      <a href="#" className="hover:text-blue-600">
-                        +1 234 567-890
-                      </a>
-                      <br />
-                      <a href="#" className="hover:text-blue-600">
-                        hello@fantico.com
-                      </a>
-                    </div>
-                    <div className="inline-flex flex-wrap space-x-3">
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="facebook"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="twitter"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37a4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="instagram"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="linkedin"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="youtube"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="w-full p-4 sm:w-4/12 xl:w-2/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                  <div>
+                    <h3 className="text-white dark:text-white font-bold mb-4">
                       About
-                    </h2>
-                    <ul>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Get Quote
+                    </h3>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          About Us
                         </a>
                       </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Enterprise Plan
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Blog
                         </a>
                       </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Become an Affiliate
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Our Portfolio
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="w-full p-4 sm:w-4/12 xl:w-2/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
-                      Services
-                    </h2>
-                    <ul>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Web Design
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Web Development
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          WordPress
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Digital Marketing
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Content Writing
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Careers
                         </a>
                       </li>
                     </ul>
                   </div>
-                  <div className="w-full p-4 sm:w-4/12 xl:w-2/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
-                      Other
-                    </h2>
-                    <ul>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Business Stories
+                  <div>
+                    <h3 className="text-white dark:text-white font-bold mb-4">
+                      Product
+                    </h3>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Features
                         </a>
                       </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Learning
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Pricing
                         </a>
                       </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Licence
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Security
                         </a>
                       </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Refund Policy
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-white dark:text-white font-bold mb-4">
+                      Resources
+                    </h3>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Docs
                         </a>
                       </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          API Reference
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Support
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-white dark:text-white font-bold mb-4">
+                      Legal
+                    </h3>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Privacy Policy
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
                           Terms of Service
                         </a>
                       </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="hover:text-white transition-colors"
+                        >
+                          Cookie Policy
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
-                <div className="py-4 text-center">
-                  <hr className="mb-4 border-gray-400" />
-                  <p className="text-sm">Copyright &copy; 2020 Company Name</p>
+                <div className="border-t border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                  <p className="text-sm">
+                    &copy; 2024 Your Company. All rights reserved.
+                  </p>
+                  <div className="flex gap-4 mt-4 sm:mt-0">
+                    <a
+                      href="#"
+                      className="text-slate-400 hover:text-white transition-colors"
+                    >
+                      <Twitter size={20} />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-slate-400 hover:text-white transition-colors"
+                    >
+                      <Facebook size={20} />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-slate-400 hover:text-white transition-colors"
+                    >
+                      <Linkedin size={20} />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </section>
+            </footer>
           </div>
 
-          {/* Footer Block 2 */}
-          <div className="relative mt-12">
-            <SectionDivider title="Footer Block 2">
+          {/* Variant 2: Newsletter Focus */}
+          <div className="relative">
+            <SectionDivider title="Newsletter Focus">
               <Button
                 variant="ghost"
                 size="icon"
@@ -263,200 +245,58 @@ export default function BlocksFooterPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section
+            <footer
               ref={sectionRef2}
-              className="bg-gray-900 pt-12 font-light text-gray-300"
+              className="bg-linear-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-16"
             >
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full p-4 xl:mr-auto xl:w-4/12">
-                    <a
-                      href="#"
-                      className="mr-auto mb-6 inline-block text-3xl font-medium text-white uppercase hover:text-blue-800"
-                    >
-                      Company
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                  Stay Updated
+                </h3>
+                <p className="text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
+                  Subscribe to our newsletter and get the latest updates delivered
+                  to your inbox.
+                </p>
+                <form className="flex gap-2 mb-8 max-w-md mx-auto">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium flex items-center gap-2 transition-colors"
+                  >
+                    <Send size={18} />
+                    Subscribe
+                  </button>
+                </form>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+                <div className="border-t border-slate-200 dark:border-slate-700 mt-8 pt-8">
+                  <div className="flex flex-wrap justify-center gap-6 text-slate-600 dark:text-slate-300 text-sm">
+                    <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                      Privacy Policy
                     </a>
-                    <p className="mb-4 text-sm">
-                      Duis pharetra venenatis felis, ut tincidunt ipsum
-                      consequat nec. Fusce et porttitor libero, eu aliquam nisi.
-                      Nam finibus ullamcorper semper.
-                    </p>
-                    <div className="mb-6">
-                      <a href="#" className="hover:text-blue-600">
-                        +1 234 567-890
-                      </a>
-                      <br />
-                      <a href="#" className="hover:text-blue-600">
-                        hello@fantico.com
-                      </a>
-                    </div>
-                    <div className="inline-flex flex-wrap space-x-3">
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="facebook"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="twitter"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37a4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="instagram"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="linkedin"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="youtube"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                        </svg>
-                      </a>
-                    </div>
+                    <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                      Terms of Service
+                    </a>
+                    <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                      Contact
+                    </a>
                   </div>
-                  <div className="w-full p-4 sm:w-4/12 xl:w-2/12">
-                    <h2 className="mb-8 text-lg font-bold uppercase">About</h2>
-                    <ul>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Get Quote
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Enterprise Plan
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Become an Affiliate
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Our Portfolio
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="w-full p-4 sm:w-4/12 xl:w-2/12">
-                    <h2 className="mb-8 text-lg font-bold uppercase">
-                      Services
-                    </h2>
-                    <ul>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Web Design
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Web Development
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          WordPress
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Digital Marketing
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Content Writing
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="w-full p-4 sm:w-4/12 xl:w-2/12">
-                    <h2 className="mb-8 text-lg font-bold uppercase">Other</h2>
-                    <ul>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Business Stories
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Learning
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Licence
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Refund Policy
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Terms of Service
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="py-4 text-center">
-                  <hr className="mb-4 opacity-25" />
-                  <p className="text-sm">Copyright &copy; 2020 Company Name</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-4">
+                    &copy; 2024 Your Company. All rights reserved.
+                  </p>
                 </div>
               </div>
-            </section>
+            </footer>
           </div>
 
-          {/* Footer Block 3 - Con Subscribe form */}
-          <div className="relative mt-12">
-            <SectionDivider title="Footer Block 3">
+          {/* Variant 3: Social Icons */}
+          <div className="relative">
+            <SectionDivider title="Social Icons">
               <Button
                 variant="ghost"
                 size="icon"
@@ -467,221 +307,117 @@ export default function BlocksFooterPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section
+            <footer
               ref={sectionRef3}
-              className="bg-gray-50 pt-12 font-light text-gray-500"
+              className="bg-slate-900 dark:bg-slate-950 text-white py-12"
             >
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full p-4 xl:w-4/12">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+                  <div>
+                    <h3 className="text-2xl font-bold">YourBrand</h3>
+                    <p className="text-slate-400 mt-2">
+                      Building amazing products together
+                    </p>
+                  </div>
+                  <div className="flex gap-6 mt-6 md:mt-0">
                     <a
                       href="#"
-                      className="mr-auto mb-6 inline-block text-3xl font-semibold text-blue-600 uppercase hover:text-blue-800"
+                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      aria-label="Twitter"
                     >
-                      Company
+                      <Twitter size={24} />
                     </a>
-                    <p className="mb-4">
-                      Duis pharetra venenatis felis, ut tincidunt ipsum
-                      consequat nec. Fusce et porttitor libero, eu aliquam nisi.
-                      Nam finibus ullamcorper semper.
-                    </p>
-                    <div className="mb-6">
-                      <a href="#" className="hover:text-blue-600">
-                        +1 234 567-890
-                      </a>
-                      <br />
-                      <a href="#" className="hover:text-blue-600">
-                        hello@fantico.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="w-full p-4 sm:w-6/12 md:w-3/12 xl:w-2/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
-                      About
-                    </h2>
-                    <ul>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Get Quote
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Enterprise Plan
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Become an Affiliate
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Our Portfolio
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="w-full p-4 sm:w-6/12 md:w-3/12 xl:w-2/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
-                      Services
-                    </h2>
-                    <ul>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Web Design
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Web Development
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          WordPress
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Digital Marketing
-                        </a>
-                      </li>
-                      <li className="mb-4">
-                        <a href="#" className="hover:text-blue-600">
-                          Content Writing
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="w-full p-4 md:w-6/12 xl:w-4/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
-                      Subscribe
-                    </h2>
-                    <p className="mb-4">
-                      Subscribe to our newsletter and get exclusive updates
-                      directly in your inbox.
-                    </p>
-                    <form>
-                      <div className="mb-6 flex items-center overflow-hidden border-2 border-gray-400 bg-white p-1">
-                        <input
-                          className="w-full flex-1 appearance-none border-blue-600 p-2 font-light text-gray-600 outline-none"
-                          placeholder="Enter email..."
-                          type="email"
-                        />
-                        <button
-                          type="submit"
-                          className="inline-block bg-blue-600 px-6 py-2 text-center font-medium text-white uppercase hover:bg-blue-700"
-                          aria-label="submit"
-                        >
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            className="inline-block h-4 w-4"
-                          >
-                            <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" />
-                          </svg>
-                        </button>
-                      </div>
-                    </form>
-                    <h2 className="mb-4 text-lg font-bold text-blue-600 uppercase">
-                      Get Social
-                    </h2>
-                    <div className="inline-flex flex-wrap space-x-3">
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="facebook"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="twitter"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37a4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="instagram"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="linkedin"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="youtube"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                        </svg>
-                      </a>
-                    </div>
+                    <a
+                      href="#"
+                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      aria-label="Facebook"
+                    >
+                      <Facebook size={24} />
+                    </a>
+                    <a
+                      href="#"
+                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      aria-label="Instagram"
+                    >
+                      <Instagram size={24} />
+                    </a>
+                    <a
+                      href="#"
+                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      aria-label="Linkedin"
+                    >
+                      <Linkedin size={24} />
+                    </a>
+                    <a
+                      href="#"
+                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      aria-label="YouTube"
+                    >
+                      <Youtube size={24} />
+                    </a>
+                    <a
+                      href="#"
+                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      aria-label="Github"
+                    >
+                      <Github size={24} />
+                    </a>
                   </div>
                 </div>
-                <div className="py-4 text-sm">
-                  <hr className="mb-4 border-gray-400" />
-                  <div className="-mx-4 flex flex-wrap items-center">
-                    <div className="w-full px-4 py-2 md:flex-1">
-                      <p>
-                        &copy; 2002 - 2020. All Rights Reserved - Company Name
-                      </p>
-                    </div>
-                    <div className="w-full px-4 py-2 sm:w-auto">
-                      <a href="#" className="hover:text-blue-600">
-                        Privacy Policy
-                      </a>{" "}
-                      |{" "}
-                      <a href="#" className="hover:text-blue-600">
-                        Terms of Use
-                      </a>
-                    </div>
+                <div className="border-t border-slate-700 pt-8 grid grid-cols-2 md:grid-cols-3 gap-4 text-sm text-slate-400">
+                  <div>
+                    <p className="font-semibold text-white mb-2">Product</p>
+                    <ul className="space-y-1">
+                      <li>
+                        <a href="#" className="hover:text-white">
+                          Features
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white">
+                          Pricing
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white mb-2">Company</p>
+                    <ul className="space-y-1">
+                      <li>
+                        <a href="#" className="hover:text-white">
+                          About
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white">
+                          Blog
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white mb-2">Legal</p>
+                    <ul className="space-y-1">
+                      <li>
+                        <a href="#" className="hover:text-white">
+                          Privacy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white">
+                          Terms
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-            </section>
+            </footer>
           </div>
 
-          {/* Footer Block 4 - Con Latest Posts */}
-          <div className="relative mt-12">
-            <SectionDivider title="Footer Block 4">
+          {/* Variant 4: Company Info + Contact */}
+          <div className="relative">
+            <SectionDivider title="Company Info + Contact">
               <Button
                 variant="ghost"
                 size="icon"
@@ -692,276 +428,643 @@ export default function BlocksFooterPage() {
                 <Copy size={18} />
               </Button>
             </SectionDivider>
-            <section
+            <footer
               ref={sectionRef4}
-              className="bg-gray-50 pt-12 font-light text-gray-500"
+              className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16"
             >
-              <div className="relative container mx-auto px-4">
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full p-4 lg:w-4/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
-                      About
-                    </h2>
-                    <div className="-mx-4 flex flex-wrap">
-                      <div className="w-full px-4 sm:w-6/12">
-                        <ul>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              Get Quote
-                            </a>
-                          </li>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              Enterprise Plan
-                            </a>
-                          </li>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              Become an Affiliate
-                            </a>
-                          </li>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              Our Portfolio
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="w-full px-4 sm:w-6/12">
-                        <ul>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              Web Design
-                            </a>
-                          </li>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              Web Development
-                            </a>
-                          </li>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              WordPress
-                            </a>
-                          </li>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              Digital Marketing
-                            </a>
-                          </li>
-                          <li className="mb-4">
-                            <a href="#" className="hover:text-blue-600">
-                              Content Writing
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-full p-4 md:w-1/2 lg:w-4/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
-                      Latest Posts
-                    </h2>
-                    <div className="space-y-4">
-                      <div className="flex w-full flex-wrap items-center">
-                        <div className="w-3/12">
-                          <a href="#" className="block hover:opacity-75">
-                            <Image
-                              src="https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDI4fHx0cmF2ZWx8ZW58MHx8fA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                              className="w-full"
-                              alt="..."
-                              width={350}
-                              height={240}
-                            />
-                          </a>
-                        </div>
-                        <div className="w-9/12 pl-3">
-                          <a
-                            href="#"
-                            className="mb-1 block text-gray-700 hover:text-blue-600"
-                          >
-                            <h3 className="text-sm leading-tight font-semibold">
-                              Travelling as a way of self-discovery and progress
-                            </h3>
-                          </a>
-                          <h4 className="text-xs">10 August 2020</h4>
-                        </div>
-                      </div>
-                      <div className="flex w-full flex-wrap items-center">
-                        <div className="w-3/12">
-                          <a href="#" className="block hover:opacity-75">
-                            <Image
-                              src="https://images.unsplash.com/photo-1577327966244-999949c7e884?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDEyfHxidXNpbmVzcyUyMHBob3RvZ3JhcGhlcnxlbnwwfHx8&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                              className="w-full"
-                              alt="..."
-                              width={350}
-                              height={240}
-                            />
-                          </a>
-                        </div>
-                        <div className="w-9/12 pl-3">
-                          <a
-                            href="#"
-                            className="mb-1 block text-gray-700 hover:text-blue-600"
-                          >
-                            <h3 className="text-sm leading-tight font-semibold">
-                              Where to grow your business as a photographer:
-                              site or social media?
-                            </h3>
-                          </a>
-                          <h4 className="text-xs">10 August 2020</h4>
-                        </div>
-                      </div>
-                      <div className="flex w-full flex-wrap items-center">
-                        <div className="w-3/12">
-                          <a href="#" className="block hover:opacity-75">
-                            <Image
-                              src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwyMDkyMnwwfDF8c2VhcmNofDE0MHx8Y29sb3JzJTIwd2Vic2l0ZXxlbnwwfHx8&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=350&h=240&fit=crop"
-                              className="w-full"
-                              alt="..."
-                              width={350}
-                              height={240}
-                            />
-                          </a>
-                        </div>
-                        <div className="w-9/12 pl-3">
-                          <a
-                            href="#"
-                            className="mb-1 block text-gray-700 hover:text-blue-600"
-                          >
-                            <h3 className="text-sm leading-tight font-semibold">
-                              How to choose the right colors when creating a
-                              website?
-                            </h3>
-                          </a>
-                          <h4 className="text-xs">10 August 2020</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-full p-4 md:w-1/2 lg:w-4/12">
-                    <h2 className="mb-8 text-lg font-bold text-blue-600 uppercase">
-                      Subscribe
-                    </h2>
-                    <p className="mb-4">
-                      Subscribe to our newsletter and get exclusive updates
-                      directly in your inbox.
-                    </p>
-                    <form>
-                      <div className="mb-6 flex items-center overflow-hidden rounded-full border-2 border-gray-400 bg-white p-1">
-                        <input
-                          className="w-full flex-1 appearance-none border-blue-600 p-2 font-light text-gray-600 outline-none"
-                          placeholder="Enter email..."
-                          type="email"
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                      Contact Us
+                    </h4>
+                    <ul className="space-y-3">
+                      <li className="flex gap-3">
+                        <Mail
+                          size={20}
+                          className="text-blue-600 shrink-0 mt-1"
                         />
-                        <button
-                          type="submit"
-                          className="inline-block rounded-full bg-blue-600 px-6 py-2 text-center font-medium text-white uppercase hover:bg-blue-700"
-                          aria-label="submit"
-                        >
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            className="inline-block h-4 w-4"
+                        <div>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">
+                            Email
+                          </p>
+                          <a
+                            href="mailto:hello@company.com"
+                            className="text-slate-900 dark:text-white hover:text-blue-600"
                           >
-                            <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" />
-                          </svg>
-                        </button>
-                      </div>
-                    </form>
-                    <h2 className="mb-4 text-lg font-bold text-blue-600 uppercase">
-                      Get Social
-                    </h2>
-                    <div className="inline-flex flex-wrap space-x-3">
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="facebook"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
+                            hello@company.com
+                          </a>
+                        </div>
+                      </li>
+                      <li className="flex gap-3">
+                        <Phone
+                          size={20}
+                          className="text-blue-600 shrink-0 mt-1"
+                        />
+                        <div>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">
+                            Phone
+                          </p>
+                          <a
+                            href="tel:+1234567890"
+                            className="text-slate-900 dark:text-white hover:text-blue-600"
+                          >
+                            +1 (234) 567-890
+                          </a>
+                        </div>
+                      </li>
+                      <li className="flex gap-3">
+                        <MapPin
+                          size={20}
+                          className="text-blue-600 shrink-0 mt-1"
+                        />
+                        <div>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">
+                            Address
+                          </p>
+                          <p className="text-slate-900 dark:text-white">
+                            123 Main St, City, Country
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                      Quick Links
+                    </h4>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                         >
-                          <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="twitter"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
+                          Home
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                         >
-                          <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37a4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="instagram"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
+                          Products
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                         >
-                          <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="linkedin"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
+                          Services
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                         >
-                          <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="hover:text-blue-600"
-                        aria-label="youtube"
-                      >
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="h-5 w-5"
+                          About Us
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                      Support
+                    </h4>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                         >
-                          <path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" />
-                        </svg>
-                      </a>
-                    </div>
+                          Help Center
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                        >
+                          Documentation
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                        >
+                          Contact Support
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                        >
+                          Status Page
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div className="py-4 text-sm">
-                  <hr className="mb-4 border-gray-400" />
-                  <div className="-mx-4 flex flex-wrap items-center">
-                    <div className="w-full px-4 py-2 md:flex-1">
-                      <p>
-                        &copy; 2002 - 2020. All Rights Reserved - Company Name
-                      </p>
+                <div className="border-t border-slate-200 dark:border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    &copy; 2024 Your Company. All rights reserved.
+                  </p>
+                  <div className="flex gap-4 mt-4 md:mt-0">
+                    <a
+                      href="#"
+                      className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm"
+                    >
+                      Privacy Policy
+                    </a>
+                    <a
+                      href="#"
+                      className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm"
+                    >
+                      Terms
+                    </a>
+                    <a
+                      href="#"
+                      className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm"
+                    >
+                      Cookies
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
+
+          {/* Variant 5: Logo + Columns */}
+          <div className="relative">
+            <SectionDivider title="Logo + Columns">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef5)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <footer
+              ref={sectionRef5}
+              className="bg-slate-50 dark:bg-slate-900 py-16"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+                  <div className="md:col-span-1">
+                    <div className="text-2xl font-bold text-blue-600 mb-4">
+                      Brand
                     </div>
-                    <div className="w-full px-4 py-2 sm:w-auto">
-                      <a href="#" className="hover:text-blue-600">
-                        Privacy Policy
-                      </a>{" "}
-                      |{" "}
-                      <a href="#" className="hover:text-blue-600">
-                        Terms of Use
+                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                      Creating exceptional digital experiences.
+                    </p>
+                    <div className="flex gap-3">
+                      <a
+                        href="#"
+                        className="text-slate-400 hover:text-blue-600 transition-colors"
+                      >
+                        <Twitter size={18} />
                       </a>
+                      <a
+                        href="#"
+                        className="text-slate-400 hover:text-blue-600 transition-colors"
+                      >
+                        <Linkedin size={18} />
+                      </a>
+                      <a
+                        href="#"
+                        className="text-slate-400 hover:text-blue-600 transition-colors"
+                      >
+                        <Github size={18} />
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-slate-900 dark:text-white mb-4">
+                      Product
+                    </h5>
+                    <ul className="space-y-2 text-sm">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Features
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Pricing
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Updates
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-slate-900 dark:text-white mb-4">
+                      Company
+                    </h5>
+                    <ul className="space-y-2 text-sm">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          About
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Blog
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Careers
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-slate-900 dark:text-white mb-4">
+                      Resources
+                    </h5>
+                    <ul className="space-y-2 text-sm">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Documentation
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          API
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Community
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-slate-900 dark:text-white mb-4">
+                      Legal
+                    </h5>
+                    <ul className="space-y-2 text-sm">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Privacy
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          Terms
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                        >
+                          License
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="border-t border-slate-200 dark:border-slate-700 pt-8">
+                  <p className="text-center text-slate-600 dark:text-slate-400 text-sm">
+                    &copy; 2024 Your Company. All rights reserved.
+                  </p>
+                </div>
+              </div>
+            </footer>
+          </div>
+
+          {/* Variant 6: Dark Minimal */}
+          <div className="relative">
+            <SectionDivider title="Dark Minimal">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef6)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <footer
+              ref={sectionRef6}
+              className="bg-black dark:bg-black text-white py-12"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2">YourBrand</h3>
+                    <p className="text-gray-400">
+                      Elegant footer for your modern website
+                    </p>
+                  </div>
+                  <div className="flex gap-8 text-sm">
+                    <a href="#" className="text-gray-400 hover:text-white">
+                      Privacy
+                    </a>
+                    <a href="#" className="text-gray-400 hover:text-white">
+                      Terms
+                    </a>
+                    <a href="#" className="text-gray-400 hover:text-white">
+                      Contact
+                    </a>
+                    <a href="#" className="text-gray-400 hover:text-white">
+                      Support
+                    </a>
+                  </div>
+                </div>
+                <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs">
+                  <p>&copy; 2024 Your Company. All rights reserved.</p>
+                  <div className="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" className="hover:text-white">
+                      <Twitter size={16} />
+                    </a>
+                    <a href="#" className="hover:text-white">
+                      <Facebook size={16} />
+                    </a>
+                    <a href="#" className="hover:text-white">
+                      <Instagram size={16} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div>
+
+          {/* Variant 7: Back to Top Button */}
+          <div className="relative">
+            <SectionDivider title="Back to Top Button">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef7)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <footer
+              ref={sectionRef7}
+              className="bg-slate-900 dark:bg-slate-950 text-slate-200 dark:text-slate-300 py-16"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                  <div>
+                    <h4 className="text-white dark:text-white font-bold mb-4">
+                      Solutions
+                    </h4>
+                    <ul className="space-y-2 text-sm">
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          Platform
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          Features
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          Security
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-white dark:text-white font-bold mb-4">
+                      Developers
+                    </h4>
+                    <ul className="space-y-2 text-sm">
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          Documentation
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          API Reference
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          Status
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-white dark:text-white font-bold mb-4">
+                      Company
+                    </h4>
+                    <ul className="space-y-2 text-sm">
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          About Us
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          Blog
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-white transition-colors">
+                          Careers
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                  <p className="text-sm">
+                    &copy; 2024 Your Company. All rights reserved.
+                  </p>
+                  <button
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    className="mt-4 md:mt-0 p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-2"
+                  >
+                    <span className="text-sm">Back to top</span>
+                    <ArrowUp size={18} />
+                  </button>
+                </div>
+              </div>
+            </footer>
+          </div>
+
+          {/* Variant 8: Language Switcher */}
+          <div className="relative">
+            <SectionDivider title="Language Switcher">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => handleCopy(sectionRef8)}
+                className="absolute top-2 right-2"
+                aria-label="Copy section HTML"
+              >
+                <Copy size={18} />
+              </Button>
+            </SectionDivider>
+            <footer
+              ref={sectionRef8}
+              className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                      Product
+                    </h4>
+                    <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          Overview
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          Features
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          Pricing
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                      Developers
+                    </h4>
+                    <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          Docs
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          API
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          SDK
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                      Company
+                    </h4>
+                    <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          Blog
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          Careers
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          About
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                      Legal
+                    </h4>
+                    <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          Privacy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          Terms
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-blue-600">
+                          License
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="border-t border-slate-200 dark:border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    &copy; 2024 Your Company. All rights reserved.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <Globe size={18} className="text-slate-400" />
+                      <select className="bg-transparent text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                        <option>German</option>
+                        <option>Italian</option>
+                      </select>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
+            </footer>
           </div>
         </div>
       </main>
