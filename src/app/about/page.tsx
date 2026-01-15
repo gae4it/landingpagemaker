@@ -9,13 +9,13 @@ export default function About() {
   return (
     <>
       <Navigation />
-      <main className="bg-background min-h-screen py-16 sm:py-24">
+      <main className="min-h-screen bg-background py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               About LandingPageMaker
             </h1>
-            <p className="text-muted-foreground mt-6 text-lg leading-8">
+            <p className="mt-6 text-lg leading-8 text-muted-foreground">
               A passion project built with love for web design and modern
               development tools
             </p>
@@ -25,7 +25,7 @@ export default function About() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Palette className="text-primary h-6 w-6" />
+                  <Palette className="h-6 w-6 text-primary" />
                   <CardTitle>Our Mission</CardTitle>
                 </div>
               </CardHeader>
@@ -43,12 +43,12 @@ export default function About() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Code className="text-primary h-6 w-6" />
+                  <Code className="h-6 w-6 text-primary" />
                   <CardTitle>Technology Stack</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <ul className="text-muted-foreground space-y-2">
+                <ul className="space-y-2 text-muted-foreground">
                   <li>
                     <strong className="text-foreground">Next.js 15</strong> -
                     React framework with App Router
@@ -76,12 +76,12 @@ export default function About() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Github className="text-primary h-6 w-6" />
+                  <Github className="h-6 w-6 text-primary" />
                   <CardTitle>Open Source</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">
+                <p className="mb-4 text-muted-foreground">
                   This project is open source and available on GitHub. Feel free
                   to contribute, report issues, or suggest new features.
                 </p>
@@ -100,7 +100,7 @@ export default function About() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm text-muted-foreground">
               Built with passion for web design and marketing • © 2025
               LandingPageMaker
             </p>

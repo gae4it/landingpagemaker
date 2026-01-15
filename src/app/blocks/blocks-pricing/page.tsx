@@ -41,7 +41,7 @@ export default function BlocksPricingPage() {
         title="Pricing Sections"
         subtitle="Pricing tables and plans built with shadcn/ui and Tailwind CSS 4. Copy and customize."
       />
-      <main className="bg-background min-h-screen py-16">
+      <main className="min-h-screen bg-background py-16">
         <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
           {/* Pricing Block 1: Simple 3-Tier */}
           <div className="relative">

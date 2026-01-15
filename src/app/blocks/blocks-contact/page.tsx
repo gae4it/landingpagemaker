@@ -52,7 +52,7 @@ export default function BlocksContactPage() {
         title="Contact Sections"
         subtitle="Contact blocks ready to use. Copy, paste, and customize for your next project."
       />
-      <main className="bg-background min-h-screen py-16">
+      <main className="min-h-screen bg-background py-16">
         <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
           {/* Variant 1: Contact Form + Info (2 Columns) */}
           <div className="relative">

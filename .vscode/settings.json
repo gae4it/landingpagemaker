@@ -1,0 +1,7 @@
+{
+  "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
+  "tailwindCSS.experimental.configFile": "src/styles/globals.css",
+  "tailwindCSS.classAttributes": ["class", "className", "class:list"],
+  "tailwindCSS.classFunctions": ["clsx", "cva", "cn", "tw"],
+  "editor.quickSuggestions": { "strings": "on" }
+}

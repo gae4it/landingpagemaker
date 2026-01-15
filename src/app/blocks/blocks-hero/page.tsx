@@ -45,7 +45,7 @@ export default function BlocksHeroPage() {
         title="Hero Sections"
         subtitle="Beautiful hero sections built with shadcn/ui and Tailwind CSS 4. Copy, customize, and deploy."
       />
-      <main className="bg-background min-h-screen py-16">
+      <main className="min-h-screen bg-background py-16">
         <div className="mx-auto max-w-7xl space-y-16 px-4 sm:px-6 lg:px-8">
           {/* Hero Block 1: Centered Hero with Large Heading */}
           <div className="relative">

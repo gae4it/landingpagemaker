@@ -167,7 +167,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main className="bg-background min-h-screen">
+      <main className="min-h-screen bg-background">
         <Hero
           title="Free Next.js Components Library - Copy & Paste Landing Page Sections with shadcn/ui"
           subtitle="Free, copy-paste ready Next.js components & landing page sections."
@@ -176,93 +176,15 @@ export default function Home() {
           ctaLink="#categories"
         />
 
-        {/* Animated Hero Image Section */}
-        <section className="from-background to-muted/20 bg-gradient-to-b py-2 sm:py-16">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="border-border bg-card relative overflow-hidden rounded-2xl border shadow-2xl">
-              {/* Image background */}
-              <div className="absolute inset-0">
-                <Image
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&q=80&fit=crop"
-                  alt="Developer workspace with code"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
-                {/* Dark gradient overlay */}
-                <div className="from-background/90 via-background/80 to-background/60 absolute inset-0 bg-gradient-to-r" />
-              </div>
-
-              {/* Content */}
-              <div className="relative p-8 sm:p-12">
-                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-                  <div className="space-y-4">
-                    <div className="bg-primary/10 text-primary inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium">
-                      <PanelsTopLeft className="h-4 w-4" />
-                      <span>20+ Ready-to-Use Components</span>
-                    </div>
-                    <h2 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl">
-                      Copy, Paste, Ship
-                    </h2>
-                    <p className="text-muted-foreground text-lg">
-                      Production-ready Next.js sections built with shadcn/ui and
-                      Tailwind CSS. No configuration needed&mdash;just copy and
-                      use.
-                    </p>
-                    <ul className="space-y-3">
-                      {[
-                        "Built with Next.js 15 & React 19",
-                        "Fully responsive & accessible",
-                        "Dark mode support included",
-                        "TypeScript ready",
-                      ].map((feature) => (
-                        <li key={feature} className="flex items-center gap-3">
-                          <Check className="text-primary h-5 w-5 shrink-0" />
-                          <span className="text-muted-foreground">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Visual demo cards with animation */}
-                  <div className="relative hidden h-[400px] lg:block lg:h-[500px]">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="grid w-full max-w-sm grid-cols-2 gap-4">
-                        {[0, 1, 2, 3].map((i) => (
-                          <div
-                            key={i}
-                            className="border-border bg-card/50 aspect-square rounded-xl border shadow-lg backdrop-blur-sm"
-                            style={{
-                              animation: `float 3s ease-in-out infinite`,
-                              animationDelay: `${i * 0.2}s`,
-                            }}
-                          >
-                            <div className="from-primary/20 to-secondary/20 h-full w-full rounded-xl bg-gradient-to-br p-4">
-                              <div className="space-y-2">
-                                <div className="bg-foreground/10 h-3 w-3/4 rounded" />
-                                <div className="bg-foreground/5 h-2 w-1/2 rounded" />
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         <section id="categories" className="py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Free Next.js Landing Page Component Categories
               </h2>
-              <p className="text-muted-foreground mt-4 text-lg">
+              <p className="mt-4 text-lg text-muted-foreground">
                 Browse 20+ free, copy-paste ready landing page sections. All
                 components built with Next.js, shadcn/ui, and Tailwind CSS. No
                 installation needed—just copy the code and customize.
@@ -275,11 +197,11 @@ export default function Home() {
                   href={`/blocks/${category.slug}`}
                   title={`Copy and paste ${category.name} components for your Next.js landing page`}
                 >
-                  <Card className="hover:border-primary h-full transition-colors">
+                  <Card className="h-full transition-colors hover:border-primary">
                     <CardHeader className="flex flex-row items-start gap-3">
                       {category.icon ? (
                         <category.icon
-                          className="text-primary mt-1 h-5 w-5 shrink-0"
+                          className="mt-1 h-5 w-5 shrink-0 text-primary"
                           aria-hidden
                         />
                       ) : null}
@@ -299,17 +221,97 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Animated Hero Image Section */}
+        <section className="bg-gradient-to-b from-background to-muted/20 py-2 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
+              {/* Image background */}
+              <div className="absolute inset-0">
+                <Image
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&h=1080&q=80&fit=crop"
+                  alt="Developer workspace with code"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/80 to-background/60" />
+              </div>
+
+              {/* Content */}
+              <div className="relative p-8 sm:p-12">
+                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                  <div className="space-y-4">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                      <PanelsTopLeft className="h-4 w-4" />
+                      <span>20+ Ready-to-Use Components</span>
+                    </div>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                      Copy, Paste, Ship
+                    </h2>
+                    <p className="text-lg text-muted-foreground">
+                      Production-ready Next.js sections built with shadcn/ui and
+                      Tailwind CSS. No configuration needed&mdash;just copy and
+                      use.
+                    </p>
+                    <ul className="space-y-3">
+                      {[
+                        "Built with Next.js 15 & React 19",
+                        "Fully responsive & accessible",
+                        "Dark mode support included",
+                        "TypeScript ready",
+                      ].map((feature) => (
+                        <li key={feature} className="flex items-center gap-3">
+                          <Check className="h-5 w-5 shrink-0 text-primary" />
+                          <span className="text-muted-foreground">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Visual demo cards with animation */}
+                  <div className="relative hidden h-[400px] lg:block lg:h-[500px]">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="grid w-full max-w-sm grid-cols-2 gap-4">
+                        {[0, 1, 2, 3].map((i) => (
+                          <div
+                            key={i}
+                            className="aspect-square rounded-xl border border-border bg-card/50 shadow-lg backdrop-blur-sm"
+                            style={{
+                              animation: `float 3s ease-in-out infinite`,
+                              animationDelay: `${i * 0.2}s`,
+                            }}
+                          >
+                            <div className="h-full w-full rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 p-4">
+                              <div className="space-y-2">
+                                <div className="h-3 w-3/4 rounded bg-foreground/10" />
+                                <div className="h-2 w-1/2 rounded bg-foreground/5" />
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="bg-muted/30 py-16 sm:py-24">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <div className="mb-4 inline-flex items-center gap-2">
-                <HelpCircle className="text-primary h-6 w-6" />
-                <h2 className="text-foreground text-3xl font-bold tracking-tight sm:text-4xl">
+                <HelpCircle className="h-6 w-6 text-primary" />
+                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                   Frequently Asked Questions
                 </h2>
               </div>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-lg text-muted-foreground">
                 Everything you need to know about using our component library
               </p>
             </div>
@@ -317,7 +319,7 @@ export default function Home() {
             <Accordion type="single" collapsible className="w-full space-y-4">
               <AccordionItem
                 value="item-1"
-                className="bg-card rounded-lg border px-6"
+                className="rounded-lg border bg-card px-6"
               >
                 <AccordionTrigger className="text-left hover:no-underline">
                   Are these components completely free to use?
@@ -332,7 +334,7 @@ export default function Home() {
 
               <AccordionItem
                 value="item-2"
-                className="bg-card rounded-lg border px-6"
+                className="rounded-lg border bg-card px-6"
               >
                 <AccordionTrigger className="text-left hover:no-underline">
                   What tech stack are these components built with?
@@ -346,7 +348,7 @@ export default function Home() {
 
               <AccordionItem
                 value="item-3"
-                className="bg-card rounded-lg border px-6"
+                className="rounded-lg border bg-card px-6"
               >
                 <AccordionTrigger className="text-left hover:no-underline">
                   How do I use these components in my project?
@@ -361,7 +363,7 @@ export default function Home() {
 
               <AccordionItem
                 value="item-4"
-                className="bg-card rounded-lg border px-6"
+                className="rounded-lg border bg-card px-6"
               >
                 <AccordionTrigger className="text-left hover:no-underline">
                   Do I need to install any dependencies?
@@ -376,7 +378,7 @@ export default function Home() {
 
               <AccordionItem
                 value="item-5"
-                className="bg-card rounded-lg border px-6"
+                className="rounded-lg border bg-card px-6"
               >
                 <AccordionTrigger className="text-left hover:no-underline">
                   Are the components responsive and accessible?
@@ -391,7 +393,7 @@ export default function Home() {
 
               <AccordionItem
                 value="item-6"
-                className="bg-card rounded-lg border px-6"
+                className="rounded-lg border bg-card px-6"
               >
                 <AccordionTrigger className="text-left hover:no-underline">
                   Can I customize the components?
@@ -406,7 +408,7 @@ export default function Home() {
 
               <AccordionItem
                 value="item-7"
-                className="bg-card rounded-lg border px-6"
+                className="rounded-lg border bg-card px-6"
               >
                 <AccordionTrigger className="text-left hover:no-underline">
                   Will more components be added?

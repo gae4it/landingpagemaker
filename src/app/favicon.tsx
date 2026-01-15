@@ -24,7 +24,15 @@ export default function favicon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect x="3" y="3" width="7" height="7" rx="1.5" fill="white" stroke="none" />
+        <rect
+          x="3"
+          y="3"
+          width="7"
+          height="7"
+          rx="1.5"
+          fill="white"
+          stroke="none"
+        />
         <rect
           x="3"
           y="13"

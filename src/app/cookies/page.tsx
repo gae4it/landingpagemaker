@@ -13,14 +13,14 @@ export default function CookiePolicy() {
   return (
     <>
       <Navigation />
-      <main className="bg-background min-h-screen py-16 sm:py-24">
+      <main className="min-h-screen bg-background py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Cookie Policy
             </h1>
-            <p className="text-muted-foreground mt-4 text-lg">
+            <p className="mt-4 text-lg text-muted-foreground">
               Last updated: January 2026
             </p>
           </div>
@@ -42,10 +42,10 @@ export default function CookiePolicy() {
           <div className="prose prose-invert max-w-none space-y-10">
             {/* What Are Cookies */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 👁️ What Are Cookies?
               </h2>
-              <div className="text-muted-foreground space-y-4">
+              <div className="space-y-4 text-muted-foreground">
                 <p>
                   Cookies are small text files that are stored on your browser
                   or device when you visit a website. They serve various
@@ -75,12 +75,12 @@ export default function CookiePolicy() {
 
             {/* How We Use Cookies */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 🔒 How We Use Cookies
               </h2>
-              <div className="text-muted-foreground space-y-6">
+              <div className="space-y-6 text-muted-foreground">
                 <div>
-                  <h3 className="text-foreground mb-2 font-semibold">
+                  <h3 className="mb-2 font-semibold text-foreground">
                     Essential Cookies
                   </h3>
                   <p>
@@ -93,7 +93,7 @@ export default function CookiePolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-foreground mb-2 font-semibold">
+                  <h3 className="mb-2 font-semibold text-foreground">
                     Analytics Cookies
                   </h3>
                   <p>
@@ -105,7 +105,7 @@ export default function CookiePolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-foreground mb-2 font-semibold">
+                  <h3 className="mb-2 font-semibold text-foreground">
                     Performance Cookies
                   </h3>
                   <p>
@@ -120,10 +120,10 @@ export default function CookiePolicy() {
 
             {/* Third-Party Services */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 Third-Party Services
               </h2>
-              <div className="text-muted-foreground space-y-4">
+              <div className="space-y-4 text-muted-foreground">
                 <p>
                   LandingPageMaker uses the following third-party services that
                   may set cookies:
@@ -158,10 +158,10 @@ export default function CookiePolicy() {
 
             {/* Cookie Management */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 Managing Your Cookies
               </h2>
-              <div className="text-muted-foreground space-y-4">
+              <div className="space-y-4 text-muted-foreground">
                 <p>
                   You have full control over cookies in your browser. You can:
                 </p>
@@ -171,7 +171,7 @@ export default function CookiePolicy() {
                   <li>Delete all cookies or specific ones</li>
                   <li>Set preferences for automatic cookie management</li>
                 </ul>
-                <p className="text-foreground mt-4 font-semibold">
+                <p className="mt-4 font-semibold text-foreground">
                   Browser Instructions:
                 </p>
                 <ul className="ml-6 list-disc space-y-2">
@@ -203,7 +203,7 @@ export default function CookiePolicy() {
 
             {/* Cookie Duration */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 ⏰ Cookie Duration
               </h2>
               <div className="space-y-3">
@@ -211,27 +211,27 @@ export default function CookiePolicy() {
                   The duration for which cookies are stored varies depending on
                   their type and purpose:
                 </p>
-                <div className="border-primary border-l-4 pl-4">
-                  <p className="text-foreground font-semibold">
+                <div className="border-l-4 border-primary pl-4">
+                  <p className="font-semibold text-foreground">
                     Session Cookies
                   </p>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-sm text-muted-foreground">
                     Deleted when you close your browser
                   </p>
                 </div>
-                <div className="border-primary border-l-4 pl-4">
-                  <p className="text-foreground font-semibold">
+                <div className="border-l-4 border-primary pl-4">
+                  <p className="font-semibold text-foreground">
                     Analytics Cookies
                   </p>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-sm text-muted-foreground">
                     Typically stored for 1-2 years
                   </p>
                 </div>
-                <div className="border-primary border-l-4 pl-4">
-                  <p className="text-foreground font-semibold">
+                <div className="border-l-4 border-primary pl-4">
+                  <p className="font-semibold text-foreground">
                     Preference Cookies
                   </p>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-sm text-muted-foreground">
                     Can persist for up to several years
                   </p>
                 </div>
@@ -240,10 +240,10 @@ export default function CookiePolicy() {
 
             {/* Your Rights */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 ⚖️ Your Rights Under GDPR
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   If you are located in the European Union or other
                   jurisdictions with similar privacy regulations, you have the
@@ -294,10 +294,10 @@ export default function CookiePolicy() {
 
             {/* Contact */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 Contact Us
               </h2>
-              <div className="text-muted-foreground space-y-4">
+              <div className="space-y-4 text-muted-foreground">
                 <p>
                   If you have any questions about this Cookie Policy or wish to
                   exercise your rights regarding cookies and data processing,
@@ -305,7 +305,7 @@ export default function CookiePolicy() {
                 </p>
                 <div className="ml-4 space-y-3">
                   <div>
-                    <p className="text-foreground font-semibold">GitHub</p>
+                    <p className="font-semibold text-foreground">GitHub</p>
                     <Link
                       href="https://github.com/gae4it/landingpagemaker"
                       className="text-primary hover:underline"
@@ -316,7 +316,7 @@ export default function CookiePolicy() {
                     </Link>
                   </div>
                   <div>
-                    <p className="text-foreground font-semibold">
+                    <p className="font-semibold text-foreground">
                       Project Documentation
                     </p>
                     <p className="text-sm">
@@ -330,31 +330,31 @@ export default function CookiePolicy() {
           </div>
 
           {/* Links to other legal pages */}
-          <div className="border-border mt-16 flex flex-wrap justify-center gap-6 border-t pt-8 text-sm">
+          <div className="mt-16 flex flex-wrap justify-center gap-6 border-t border-border pt-8 text-sm">
             <Link
               href="/privacy"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               Privacy Policy
             </Link>
             <span className="text-muted-foreground">•</span>
             <Link
               href="/cookies"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               Cookie Policy
             </Link>
             <span className="text-muted-foreground">•</span>
             <Link
               href="/terms"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               Terms of Service
             </Link>
             <span className="text-muted-foreground">•</span>
             <Link
               href="/disclaimer"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               Disclaimer
             </Link>

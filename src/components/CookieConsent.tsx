@@ -81,13 +81,13 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="border-border/80 bg-card/95 fixed inset-x-4 bottom-4 z-50 rounded-2xl border shadow-2xl backdrop-blur">
+    <div className="fixed inset-x-4 bottom-4 z-50 rounded-2xl border border-border/80 bg-card/95 shadow-2xl backdrop-blur">
       <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-2 sm:max-w-xl">
-          <p className="text-foreground text-sm font-semibold">
+          <p className="text-sm font-semibold text-foreground">
             Cookie & Analytics Consent
           </p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-sm text-muted-foreground">
             We use essential cookies and, with your consent, Cronitor RUM for
             anonymous analytics. You can decline: in that case, we will not load
             Cronitor. Read our{" "}
@@ -100,13 +100,13 @@ export default function CookieConsent() {
         <div className="flex shrink-0 flex-wrap gap-2">
           <button
             onClick={decline}
-            className="border-border text-foreground hover:bg-muted rounded-lg border px-4 py-2 text-sm font-medium transition"
+            className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition hover:bg-muted"
           >
             Decline
           </button>
           <button
             onClick={accept}
-            className="bg-primary text-primary-foreground rounded-lg px-4 py-2 text-sm font-semibold shadow-sm transition hover:brightness-95"
+            className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95"
           >
             Accept
           </button>

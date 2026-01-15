@@ -29,7 +29,17 @@ export const metadata: Metadata = {
   applicationName: "LandingPageMaker",
   category: "Web Development",
   classification: "Educational",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [
+    { rel: "icon", url: "/favicon.ico" },
+    { rel: "icon", type: "image/svg+xml", url: "/favicon.svg" },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "96x96",
+      url: "/favicon-96x96.png",
+    },
+    { rel: "apple-touch-icon", url: "/apple-touch-icon.png" },
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -54,6 +64,7 @@ export const metadata: Metadata = {
     creator: "@landingpagemaker",
   },
   robots: "index, follow",
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
@@ -165,7 +176,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="bg-background min-h-screen font-sans antialiased"
+        className="min-h-screen bg-background font-sans antialiased"
         suppressHydrationWarning
       >
         <CookieConsent />

@@ -13,14 +13,14 @@ export default function Disclaimer() {
   return (
     <>
       <Navigation />
-      <main className="bg-background min-h-screen py-16 sm:py-24">
+      <main className="min-h-screen bg-background py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Disclaimer
             </h1>
-            <p className="text-muted-foreground mt-4 text-lg">
+            <p className="mt-4 text-lg text-muted-foreground">
               Please read this disclaimer carefully before using
               LandingPageMaker
             </p>
@@ -51,10 +51,10 @@ export default function Disclaimer() {
           <div className="prose prose-invert max-w-none space-y-6">
             {/* No Professional Advice */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 1. No Professional Advice
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   LandingPageMaker provides educational content and code
                   components. Nothing on this project should be considered:
@@ -74,10 +74,10 @@ export default function Disclaimer() {
 
             {/* Warranty Disclaimer */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 2. Warranty Disclaimer
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   LandingPageMaker is provided on an &quot;AS IS&quot; and
                   &quot;AS AVAILABLE&quot; basis without any warranties of any
@@ -100,10 +100,10 @@ export default function Disclaimer() {
 
             {/* Limitation of Liability */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 3. Limitation of Liability
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   To the maximum extent permitted by law, the project authors
                   and contributors shall not be liable for any:
@@ -126,10 +126,10 @@ export default function Disclaimer() {
 
             {/* Third-Party Content & Links */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 4. Third-Party Content & Links
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   LandingPageMaker may contain links to third-party websites,
                   libraries, and services. We are not responsible for:
@@ -155,10 +155,10 @@ export default function Disclaimer() {
 
             {/* No Guarantees */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 5. No Guarantees - Accuracy & Completeness
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   While we strive to provide accurate and up-to-date
                   information, we make no guarantees regarding:
@@ -179,10 +179,10 @@ export default function Disclaimer() {
 
             {/* User Responsibility */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 6. User Responsibility
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>As a user of LandingPageMaker, you are responsible for:</p>
                 <ul className="ml-2 list-inside list-disc space-y-2">
                   <li>Reviewing all code before using it in your projects</li>
@@ -201,10 +201,10 @@ export default function Disclaimer() {
 
             {/* License Information */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 7. License Information
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   LandingPageMaker is released under an open-source license.
                   Please review the LICENSE file in the project repository for
@@ -230,10 +230,10 @@ export default function Disclaimer() {
 
             {/* Contact & Support */}
             <section>
-              <h2 className="text-foreground mb-4 text-2xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold text-foreground">
                 8. Contact & Support
               </h2>
-              <div className="text-muted-foreground space-y-3">
+              <div className="space-y-3 text-muted-foreground">
                 <p>
                   For questions, bug reports, or feature requests, please visit
                   our GitHub repository:
@@ -243,7 +243,7 @@ export default function Disclaimer() {
                     href="https://github.com/gae4it/landingpagemaker"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary font-medium hover:underline"
+                    className="font-medium text-primary hover:underline"
                   >
                     github.com/gae4it/landingpagemaker
                   </a>
@@ -257,8 +257,8 @@ export default function Disclaimer() {
 
             {/* Acknowledgment */}
             <section>
-              <div className="border-primary border-l-4 py-4 pl-4">
-                <p className="text-foreground font-medium">
+              <div className="border-l-4 border-primary py-4 pl-4">
+                <p className="font-medium text-foreground">
                   By using LandingPageMaker, you acknowledge that you have read
                   and understood this disclaimer and agree to its terms.
                 </p>
@@ -267,31 +267,31 @@ export default function Disclaimer() {
           </div>
 
           {/* Links to other legal pages */}
-          <div className="border-border mt-16 flex flex-wrap justify-center gap-6 border-t pt-8 text-sm">
+          <div className="mt-16 flex flex-wrap justify-center gap-6 border-t border-border pt-8 text-sm">
             <Link
               href="/privacy"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               Privacy Policy
             </Link>
             <span className="text-muted-foreground">•</span>
             <Link
               href="/cookies"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               Cookie Policy
             </Link>
             <span className="text-muted-foreground">•</span>
             <Link
               href="/terms"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               Terms of Service
             </Link>
             <span className="text-muted-foreground">•</span>
             <Link
               href="/disclaimer"
-              className="text-primary font-medium hover:underline"
+              className="font-medium text-primary hover:underline"
             >
               Disclaimer
             </Link>
