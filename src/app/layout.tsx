@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://landingpagemaker.vercel.app/"),
@@ -60,13 +61,12 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "LandingPageMaker",
-  "url": "https://landingpagemaker.vercel.app",
-  "description": "Free Next.js components library with copy-paste ready landing page sections built with Tailwind CSS and shadcn/ui",
-  "logo": "https://landingpagemaker.vercel.app/logo.png",
-  "sameAs": [
-    "https://github.com/landingpagemaker"
-  ]
+  name: "LandingPageMaker",
+  url: "https://landingpagemaker.vercel.app",
+  description:
+    "Free Next.js components library with copy-paste ready landing page sections built with Tailwind CSS and shadcn/ui",
+  logo: "https://landingpagemaker.vercel.app/logo.png",
+  sameAs: ["https://github.com/landingpagemaker"],
 };
 
 const geist = Geist({
@@ -87,7 +87,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema)
+            __html: JSON.stringify(organizationSchema),
           }}
         />
       </head>
@@ -95,6 +95,7 @@ export default function RootLayout({
         className="bg-background min-h-screen font-sans antialiased"
         suppressHydrationWarning
       >
+        <CookieConsent />
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

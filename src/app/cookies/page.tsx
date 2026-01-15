@@ -26,8 +26,8 @@ export default function CookiePolicy() {
           </div>
 
           {/* Educational Disclaimer */}
-          <div className="bg-blue-950/30 border border-blue-900/50 rounded-lg p-6 mb-10">
-            <h2 className="text-lg font-semibold text-blue-300 mb-2">
+          <div className="mb-10 rounded-lg border border-blue-900/50 bg-blue-950/30 p-6">
+            <h2 className="mb-2 text-lg font-semibold text-blue-300">
               📚 Educational Project Notice
             </h2>
             <p className="text-blue-200">
@@ -42,26 +42,30 @@ export default function CookiePolicy() {
           <div className="prose prose-invert max-w-none space-y-10">
             {/* What Are Cookies */}
             <section>
-              <h2 className="text-foreground text-2xl font-bold mb-4">
+              <h2 className="text-foreground mb-4 text-2xl font-bold">
                 👁️ What Are Cookies?
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="text-muted-foreground space-y-4">
                 <p>
                   Cookies are small text files that are stored on your browser
-                  or device when you visit a website. They serve various purposes
-                  and help websites provide you with a better user experience by
-                  remembering your preferences, login information, and browsing
-                  behavior.
+                  or device when you visit a website. They serve various
+                  purposes and help websites provide you with a better user
+                  experience by remembering your preferences, login information,
+                  and browsing behavior.
                 </p>
                 <p>There are two main types of cookies:</p>
-                <ul className="space-y-2 ml-6 list-disc">
+                <ul className="ml-6 list-disc space-y-2">
                   <li>
-                    <strong className="text-foreground">Session Cookies:</strong>{" "}
+                    <strong className="text-foreground">
+                      Session Cookies:
+                    </strong>{" "}
                     Temporary cookies that are deleted when you close your
                     browser.
                   </li>
                   <li>
-                    <strong className="text-foreground">Persistent Cookies:</strong>{" "}
+                    <strong className="text-foreground">
+                      Persistent Cookies:
+                    </strong>{" "}
                     Cookies that remain on your device for a specified period or
                     until manually deleted.
                   </li>
@@ -71,12 +75,12 @@ export default function CookiePolicy() {
 
             {/* How We Use Cookies */}
             <section>
-              <h2 className="text-foreground text-2xl font-bold mb-4">
+              <h2 className="text-foreground mb-4 text-2xl font-bold">
                 🔒 How We Use Cookies
               </h2>
-              <div className="space-y-6 text-muted-foreground">
+              <div className="text-muted-foreground space-y-6">
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">
+                  <h3 className="text-foreground mb-2 font-semibold">
                     Essential Cookies
                   </h3>
                   <p>
@@ -89,25 +93,26 @@ export default function CookiePolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">
+                  <h3 className="text-foreground mb-2 font-semibold">
                     Analytics Cookies
                   </h3>
                   <p>
                     We use analytics cookies to understand how visitors interact
-                    with our website. This helps us analyze page traffic, visitor
-                    behavior, and improve the overall user experience. Data is
-                    typically anonymized and aggregated.
+                    with our website. This helps us analyze page traffic,
+                    visitor behavior, and improve the overall user experience.
+                    Data is typically anonymized and aggregated.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-foreground font-semibold mb-2">
+                  <h3 className="text-foreground mb-2 font-semibold">
                     Performance Cookies
                   </h3>
                   <p>
-                    These cookies monitor website performance and optimize loading
-                    times. They help us identify and fix errors, ensuring the
-                    website runs smoothly and efficiently for all visitors.
+                    These cookies monitor website performance and optimize
+                    loading times. They help us identify and fix errors,
+                    ensuring the website runs smoothly and efficiently for all
+                    visitors.
                   </p>
                 </div>
               </div>
@@ -115,24 +120,28 @@ export default function CookiePolicy() {
 
             {/* Third-Party Services */}
             <section>
-              <h2 className="text-foreground text-2xl font-bold mb-4">
+              <h2 className="text-foreground mb-4 text-2xl font-bold">
                 Third-Party Services
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="text-muted-foreground space-y-4">
                 <p>
                   LandingPageMaker uses the following third-party services that
                   may set cookies:
                 </p>
-                <ul className="space-y-3 ml-6 list-disc">
+                <ul className="ml-6 list-disc space-y-3">
                   <li>
-                    <strong className="text-foreground">Google Analytics:</strong>{" "}
-                    Used to track website traffic and user behavior. Google's
-                    privacy policy applies to data collected.
+                    <strong className="text-foreground">
+                      Google Analytics:
+                    </strong>{" "}
+                    Used to track website traffic and user behavior.
+                    Google&apos;s privacy policy applies to data collected.
                   </li>
                   <li>
-                    <strong className="text-foreground">Vercel Analytics:</strong>{" "}
+                    <strong className="text-foreground">
+                      Vercel Analytics:
+                    </strong>{" "}
                     Used to monitor performance metrics and website health. Data
-                    is processed in accordance with Vercel's data policies.
+                    is processed in accordance with Vercel&apos;s data policies.
                   </li>
                   <li>
                     <strong className="text-foreground">Next.js:</strong> The
@@ -149,23 +158,23 @@ export default function CookiePolicy() {
 
             {/* Cookie Management */}
             <section>
-              <h2 className="text-foreground text-2xl font-bold mb-4">
+              <h2 className="text-foreground mb-4 text-2xl font-bold">
                 Managing Your Cookies
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="text-muted-foreground space-y-4">
                 <p>
                   You have full control over cookies in your browser. You can:
                 </p>
-                <ul className="space-y-2 ml-6 list-disc">
+                <ul className="ml-6 list-disc space-y-2">
                   <li>View cookies stored on your device</li>
                   <li>Accept or reject cookies</li>
                   <li>Delete all cookies or specific ones</li>
                   <li>Set preferences for automatic cookie management</li>
                 </ul>
-                <p className="font-semibold text-foreground mt-4">
+                <p className="text-foreground mt-4 font-semibold">
                   Browser Instructions:
                 </p>
-                <ul className="space-y-2 ml-6 list-disc">
+                <ul className="ml-6 list-disc space-y-2">
                   <li>
                     <strong>Chrome:</strong> Settings → Privacy and security →
                     Cookies and other site data
@@ -175,18 +184,18 @@ export default function CookiePolicy() {
                     Cookies and Site Data
                   </li>
                   <li>
-                    <strong>Safari:</strong> Preferences → Privacy →
-                    Manage Website Data
+                    <strong>Safari:</strong> Preferences → Privacy → Manage
+                    Website Data
                   </li>
                   <li>
                     <strong>Edge:</strong> Settings → Privacy, search, and
                     services → Clear browsing data
                   </li>
                 </ul>
-                <div className="bg-yellow-950/30 border border-yellow-900/50 p-3 rounded mt-4">
-                  <p className="text-yellow-200 text-sm">
-                    <strong>Note:</strong> Disabling essential cookies may affect
-                    website functionality.
+                <div className="mt-4 rounded border border-yellow-900/50 bg-yellow-950/30 p-3">
+                  <p className="text-sm text-yellow-200">
+                    <strong>Note:</strong> Disabling essential cookies may
+                    affect website functionality.
                   </p>
                 </div>
               </div>
@@ -194,7 +203,7 @@ export default function CookiePolicy() {
 
             {/* Cookie Duration */}
             <section>
-              <h2 className="text-foreground text-2xl font-bold mb-4">
+              <h2 className="text-foreground mb-4 text-2xl font-bold">
                 ⏰ Cookie Duration
               </h2>
               <div className="space-y-3">
@@ -202,20 +211,26 @@ export default function CookiePolicy() {
                   The duration for which cookies are stored varies depending on
                   their type and purpose:
                 </p>
-                <div className="border-l-4 border-primary pl-4">
-                  <p className="text-foreground font-semibold">Session Cookies</p>
+                <div className="border-primary border-l-4 pl-4">
+                  <p className="text-foreground font-semibold">
+                    Session Cookies
+                  </p>
                   <p className="text-muted-foreground text-sm">
                     Deleted when you close your browser
                   </p>
                 </div>
-                <div className="border-l-4 border-primary pl-4">
-                  <p className="text-foreground font-semibold">Analytics Cookies</p>
+                <div className="border-primary border-l-4 pl-4">
+                  <p className="text-foreground font-semibold">
+                    Analytics Cookies
+                  </p>
                   <p className="text-muted-foreground text-sm">
                     Typically stored for 1-2 years
                   </p>
                 </div>
-                <div className="border-l-4 border-primary pl-4">
-                  <p className="text-foreground font-semibold">Preference Cookies</p>
+                <div className="border-primary border-l-4 pl-4">
+                  <p className="text-foreground font-semibold">
+                    Preference Cookies
+                  </p>
                   <p className="text-muted-foreground text-sm">
                     Can persist for up to several years
                   </p>
@@ -225,26 +240,34 @@ export default function CookiePolicy() {
 
             {/* Your Rights */}
             <section>
-              <h2 className="text-foreground text-2xl font-bold mb-4">
+              <h2 className="text-foreground mb-4 text-2xl font-bold">
                 ⚖️ Your Rights Under GDPR
               </h2>
-              <div className="space-y-3 text-muted-foreground">
+              <div className="text-muted-foreground space-y-3">
                 <p>
-                  If you are located in the European Union or other jurisdictions
-                  with similar privacy regulations, you have the following rights:
+                  If you are located in the European Union or other
+                  jurisdictions with similar privacy regulations, you have the
+                  following rights:
                 </p>
-                <ul className="space-y-2 ml-6 list-disc">
+                <ul className="ml-6 list-disc space-y-2">
                   <li>
-                    <strong className="text-foreground">Right to Access:</strong>{" "}
+                    <strong className="text-foreground">
+                      Right to Access:
+                    </strong>{" "}
                     You can request information about what cookies we store.
                   </li>
                   <li>
-                    <strong className="text-foreground">Right to Rectification:</strong>{" "}
+                    <strong className="text-foreground">
+                      Right to Rectification:
+                    </strong>{" "}
                     You can request to correct any inaccurate data.
                   </li>
                   <li>
-                    <strong className="text-foreground">Right to Erasure:</strong>{" "}
-                    You can request deletion of your data (right to be forgotten).
+                    <strong className="text-foreground">
+                      Right to Erasure:
+                    </strong>{" "}
+                    You can request deletion of your data (right to be
+                    forgotten).
                   </li>
                   <li>
                     <strong className="text-foreground">
@@ -253,7 +276,9 @@ export default function CookiePolicy() {
                     You can request limitations on how we use your data.
                   </li>
                   <li>
-                    <strong className="text-foreground">Right to Object:</strong>{" "}
+                    <strong className="text-foreground">
+                      Right to Object:
+                    </strong>{" "}
                     You can object to the processing of your data for marketing
                     purposes.
                   </li>
@@ -269,16 +294,16 @@ export default function CookiePolicy() {
 
             {/* Contact */}
             <section>
-              <h2 className="text-foreground text-2xl font-bold mb-4">
+              <h2 className="text-foreground mb-4 text-2xl font-bold">
                 Contact Us
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="text-muted-foreground space-y-4">
                 <p>
                   If you have any questions about this Cookie Policy or wish to
                   exercise your rights regarding cookies and data processing,
                   please contact us:
                 </p>
-                <div className="space-y-3 ml-4">
+                <div className="ml-4 space-y-3">
                   <div>
                     <p className="text-foreground font-semibold">GitHub</p>
                     <Link
@@ -295,8 +320,8 @@ export default function CookiePolicy() {
                       Project Documentation
                     </p>
                     <p className="text-sm">
-                      See our README and documentation for more information about
-                      this educational project.
+                      See our README and documentation for more information
+                      about this educational project.
                     </p>
                   </div>
                 </div>
@@ -305,20 +330,32 @@ export default function CookiePolicy() {
           </div>
 
           {/* Links to other legal pages */}
-          <div className="mt-16 flex flex-wrap justify-center gap-6 text-sm pt-8 border-t border-border">
-            <Link href="/privacy" className="text-primary hover:underline font-medium">
+          <div className="border-border mt-16 flex flex-wrap justify-center gap-6 border-t pt-8 text-sm">
+            <Link
+              href="/privacy"
+              className="text-primary font-medium hover:underline"
+            >
               Privacy Policy
             </Link>
             <span className="text-muted-foreground">•</span>
-            <Link href="/cookies" className="text-primary hover:underline font-medium">
+            <Link
+              href="/cookies"
+              className="text-primary font-medium hover:underline"
+            >
               Cookie Policy
             </Link>
             <span className="text-muted-foreground">•</span>
-            <Link href="/terms" className="text-primary hover:underline font-medium">
+            <Link
+              href="/terms"
+              className="text-primary font-medium hover:underline"
+            >
               Terms of Service
             </Link>
             <span className="text-muted-foreground">•</span>
-            <Link href="/disclaimer" className="text-primary hover:underline font-medium">
+            <Link
+              href="/disclaimer"
+              className="text-primary font-medium hover:underline"
+            >
               Disclaimer
             </Link>
           </div>

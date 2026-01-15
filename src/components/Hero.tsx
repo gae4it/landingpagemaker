@@ -10,7 +10,13 @@ interface HeroProps {
   ctaLink?: string;
 }
 
-export default function Hero({ title, subtitle, subsubtitle, ctaText, ctaLink }: HeroProps) {
+export default function Hero({
+  title,
+  subtitle,
+  subsubtitle,
+  ctaText,
+  ctaLink,
+}: HeroProps) {
   return (
     <section className="from-primary/20 via-background to-secondary/20 relative overflow-hidden bg-linear-to-br py-20 sm:py-32">
       <div className="absolute inset-0 -z-10">
@@ -29,7 +35,10 @@ export default function Hero({ title, subtitle, subsubtitle, ctaText, ctaLink }:
           {ctaText && ctaLink && (
             <div className="mt-6 flex items-center justify-center gap-x-6">
               <Link href={ctaLink}>
-                <Button size="lg" className="shadow-lg inline-flex items-center gap-2">
+                <Button
+                  size="lg"
+                  className="inline-flex items-center gap-2 shadow-lg"
+                >
                   <PanelsTopLeft className="h-4 w-4" aria-hidden />
                   <span>{ctaText}</span>
                 </Button>
