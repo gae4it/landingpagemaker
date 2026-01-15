@@ -67,24 +67,24 @@ export default function BlocksPartnerPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 text-center">
+                  <h2 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">
                     Our Partners
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-400">
                     Trusted by leading companies around the world
                   </p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                  {[...Array(6)].map((_, i) => (
+                <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-4 lg:grid-cols-6">
+                  {Array.from({ length: 6 }).map((_, i) => (
                     <div
                       key={i}
-                      className="flex items-center justify-center p-4 rounded-lg bg-white dark:bg-slate-800 hover:shadow-lg dark:hover:shadow-xl transition-shadow"
+                      className="flex items-center justify-center rounded-lg bg-white p-4 transition-shadow hover:shadow-lg dark:bg-slate-800 dark:hover:shadow-xl"
                     >
-                      <div className="text-slate-400 dark:text-slate-500 text-2xl font-bold">
+                      <div className="text-2xl font-bold text-slate-400 dark:text-slate-500">
                         Partner {i + 1}
                       </div>
                     </div>
@@ -109,25 +109,25 @@ export default function BlocksPartnerPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-white dark:bg-slate-950 py-16"
+              className="bg-white py-16 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 text-center">
+                  <h2 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">
                     What Our Partners Say
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-400">
                     Hear from the leaders in our partner network
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {[...Array(3)].map((_, i) => (
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+                  {Array.from({ length: 3 }).map((_, i) => (
                     <div
                       key={i}
-                      className="bg-slate-50 dark:bg-slate-900 rounded-lg p-8 border border-slate-200 dark:border-slate-800"
+                      className="rounded-lg border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900"
                     >
-                      <div className="flex gap-1 mb-4">
-                        {[...Array(5)].map((_, j) => (
+                      <div className="mb-4 flex gap-1">
+                        {Array.from({ length: 5 }).map((_, j) => (
                           <Star
                             key={j}
                             size={18}
@@ -135,11 +135,13 @@ export default function BlocksPartnerPage() {
                           />
                         ))}
                       </div>
-                      <p className="text-slate-700 dark:text-slate-300 mb-6">
-                        "This partnership has been transformative for our business. The support and collaboration exceeded our expectations."
+                      <p className="mb-6 text-slate-700 dark:text-slate-300">
+                        &quot;This partnership has been transformative for our
+                        business. The support and collaboration exceeded our
+                        expectations.&quot;
                       </p>
                       <div className="flex gap-3">
-                        <div className="w-12 h-12 rounded-full bg-blue-200 dark:bg-blue-900"></div>
+                        <div className="h-12 w-12 rounded-full bg-blue-200 dark:bg-blue-900"></div>
                         <div>
                           <p className="font-semibold text-slate-900 dark:text-white">
                             Partner Name
@@ -171,94 +173,130 @@ export default function BlocksPartnerPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-slate-900 dark:bg-slate-950 py-16"
+              className="bg-slate-900 py-16 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 text-center">
+                  <h2 className="mb-4 text-4xl font-bold text-white">
                     Partnership Tiers
                   </h2>
                   <p className="text-lg text-slate-400">
                     Choose the right partnership level for your business
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                   {/* Gold */}
-                  <div className="bg-linear-to-b from-amber-50 to-white dark:from-amber-900 dark:to-slate-800 rounded-lg p-8 border-2 border-amber-400 dark:border-amber-600">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Award size={24} className="text-amber-600 dark:text-amber-400" />
+                  <div className="rounded-lg border-2 border-amber-400 bg-linear-to-b from-amber-50 to-white p-8 dark:border-amber-600 dark:from-amber-900 dark:to-slate-800">
+                    <div className="mb-4 flex items-center gap-2">
+                      <Award
+                        size={24}
+                        className="text-amber-600 dark:text-amber-400"
+                      />
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                         Gold
                       </h3>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 mb-6">
+                    <p className="mb-6 text-slate-600 dark:text-slate-300">
                       Premium partnership with dedicated support
                     </p>
                     <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-amber-600 dark:text-amber-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-amber-600 dark:text-amber-400"
+                        />
                         Dedicated Account Manager
                       </li>
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-amber-600 dark:text-amber-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-amber-600 dark:text-amber-400"
+                        />
                         Co-marketing opportunities
                       </li>
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-amber-600 dark:text-amber-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-amber-600 dark:text-amber-400"
+                        />
                         Priority support
                       </li>
                     </ul>
                   </div>
 
                   {/* Silver */}
-                  <div className="bg-linear-to-b from-gray-100 to-white dark:from-gray-700 dark:to-slate-800 rounded-lg p-8 border-2 border-gray-400 dark:border-gray-600">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Award size={24} className="text-gray-600 dark:text-gray-400" />
+                  <div className="rounded-lg border-2 border-gray-400 bg-linear-to-b from-gray-100 to-white p-8 dark:border-gray-600 dark:from-gray-700 dark:to-slate-800">
+                    <div className="mb-4 flex items-center gap-2">
+                      <Award
+                        size={24}
+                        className="text-gray-600 dark:text-gray-400"
+                      />
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                         Silver
                       </h3>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 mb-6">
+                    <p className="mb-6 text-slate-600 dark:text-slate-300">
                       Mid-tier partnership with strong support
                     </p>
                     <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-gray-600 dark:text-gray-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-gray-600 dark:text-gray-400"
+                        />
                         Monthly check-ins
                       </li>
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-gray-600 dark:text-gray-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-gray-600 dark:text-gray-400"
+                        />
                         Marketing resources
                       </li>
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-gray-600 dark:text-gray-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-gray-600 dark:text-gray-400"
+                        />
                         Standard support
                       </li>
                     </ul>
                   </div>
 
                   {/* Bronze */}
-                  <div className="bg-linear-to-b from-orange-50 to-white dark:from-orange-900 dark:to-slate-800 rounded-lg p-8 border-2 border-orange-400 dark:border-orange-600">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Award size={24} className="text-orange-600 dark:text-orange-400" />
+                  <div className="rounded-lg border-2 border-orange-400 bg-linear-to-b from-orange-50 to-white p-8 dark:border-orange-600 dark:from-orange-900 dark:to-slate-800">
+                    <div className="mb-4 flex items-center gap-2">
+                      <Award
+                        size={24}
+                        className="text-orange-600 dark:text-orange-400"
+                      />
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                         Bronze
                       </h3>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 mb-6">
+                    <p className="mb-6 text-slate-600 dark:text-slate-300">
                       Entry-level partnership for growing businesses
                     </p>
                     <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-orange-600 dark:text-orange-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-orange-600 dark:text-orange-400"
+                        />
                         Quarterly reviews
                       </li>
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-orange-600 dark:text-orange-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-orange-600 dark:text-orange-400"
+                        />
                         Partner portal access
                       </li>
                       <li className="flex gap-2">
-                        <CheckCircle size={18} className="text-orange-600 dark:text-orange-400 shrink-0" />
+                        <CheckCircle
+                          size={18}
+                          className="shrink-0 text-orange-600 dark:text-orange-400"
+                        />
                         Community support
                       </li>
                     </ul>
@@ -283,58 +321,67 @@ export default function BlocksPartnerPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-white dark:bg-slate-950 py-16"
+              className="bg-white py-16 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 text-center">
+                  <h2 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">
                     Partner Benefits & Advantages
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-400">
                     Everything you need to grow your business with us
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
                       icon: TrendingUp,
                       title: "Revenue Growth",
-                      description: "Unlock new revenue streams with our partnership programs",
+                      description:
+                        "Unlock new revenue streams with our partnership programs",
                     },
                     {
                       icon: Users,
                       title: "Access to Network",
-                      description: "Connect with thousands of partners in our ecosystem",
+                      description:
+                        "Connect with thousands of partners in our ecosystem",
                     },
                     {
                       icon: Award,
                       title: "Recognition",
-                      description: "Gain visibility and brand recognition in the industry",
+                      description:
+                        "Gain visibility and brand recognition in the industry",
                     },
                     {
                       icon: CheckCircle,
                       title: "Training & Resources",
-                      description: "Comprehensive training programs and marketing materials",
+                      description:
+                        "Comprehensive training programs and marketing materials",
                     },
                     {
                       icon: Star,
                       title: "Exclusive Benefits",
-                      description: "Access special offers and exclusive partnership perks",
+                      description:
+                        "Access special offers and exclusive partnership perks",
                     },
                     {
                       icon: Users,
                       title: "Dedicated Support",
-                      description: "Get personalized support from our partnership team",
+                      description:
+                        "Get personalized support from our partnership team",
                     },
                   ].map((benefit, i) => {
                     const Icon = benefit.icon;
                     return (
                       <div
                         key={i}
-                        className="bg-slate-50 dark:bg-slate-900 rounded-lg p-8 border border-slate-200 dark:border-slate-800 hover:shadow-lg dark:hover:shadow-xl transition-shadow"
+                        className="rounded-lg border border-slate-200 bg-slate-50 p-8 transition-shadow hover:shadow-lg dark:border-slate-800 dark:bg-slate-900 dark:hover:shadow-xl"
                       >
-                        <Icon size={32} className="text-blue-600 dark:text-blue-400 mb-4" />
-                        <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+                        <Icon
+                          size={32}
+                          className="mb-4 text-blue-600 dark:text-blue-400"
+                        />
+                        <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">
                           {benefit.title}
                         </h3>
                         <p className="text-slate-600 dark:text-slate-400">
@@ -363,11 +410,11 @@ export default function BlocksPartnerPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 text-center">
+                  <h2 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">
                     Partner Comparison
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-400">
@@ -378,55 +425,94 @@ export default function BlocksPartnerPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-slate-200 dark:border-slate-700">
-                        <th className="text-left py-4 px-4 font-semibold text-slate-900 dark:text-white">
+                        <th className="px-4 py-4 text-left font-semibold text-slate-900 dark:text-white">
                           Feature
                         </th>
-                        <th className="text-center py-4 px-4 font-semibold text-slate-900 dark:text-white">
+                        <th className="px-4 py-4 text-center font-semibold text-slate-900 dark:text-white">
                           Bronze
                         </th>
-                        <th className="text-center py-4 px-4 font-semibold text-slate-900 dark:text-white">
+                        <th className="px-4 py-4 text-center font-semibold text-slate-900 dark:text-white">
                           Silver
                         </th>
-                        <th className="text-center py-4 px-4 font-semibold text-slate-900 dark:text-white">
+                        <th className="px-4 py-4 text-center font-semibold text-slate-900 dark:text-white">
                           Gold
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       {[
-                        { feature: "Partner Portal Access", bronze: true, silver: true, gold: true },
-                        { feature: "Marketing Support", bronze: false, silver: true, gold: true },
-                        { feature: "Dedicated Account Manager", bronze: false, silver: false, gold: true },
-                        { feature: "Co-branding Opportunities", bronze: false, silver: true, gold: true },
-                        { feature: "Priority Support", bronze: false, silver: false, gold: true },
-                        { feature: "Revenue Share Program", bronze: true, silver: true, gold: true },
+                        {
+                          feature: "Partner Portal Access",
+                          bronze: true,
+                          silver: true,
+                          gold: true,
+                        },
+                        {
+                          feature: "Marketing Support",
+                          bronze: false,
+                          silver: true,
+                          gold: true,
+                        },
+                        {
+                          feature: "Dedicated Account Manager",
+                          bronze: false,
+                          silver: false,
+                          gold: true,
+                        },
+                        {
+                          feature: "Co-branding Opportunities",
+                          bronze: false,
+                          silver: true,
+                          gold: true,
+                        },
+                        {
+                          feature: "Priority Support",
+                          bronze: false,
+                          silver: false,
+                          gold: true,
+                        },
+                        {
+                          feature: "Revenue Share Program",
+                          bronze: true,
+                          silver: true,
+                          gold: true,
+                        },
                       ].map((row, i) => (
                         <tr
                           key={i}
                           className="border-b border-slate-200 dark:border-slate-800"
                         >
-                          <td className="py-4 px-4 text-slate-700 dark:text-slate-300">
+                          <td className="px-4 py-4 text-slate-700 dark:text-slate-300">
                             {row.feature}
                           </td>
-                          <td className="py-4 px-4 text-center">
+                          <td className="px-4 py-4 text-center">
                             {row.bronze ? (
-                              <CheckCircle size={20} className="mx-auto text-green-600 dark:text-green-400" />
+                              <CheckCircle
+                                size={20}
+                                className="mx-auto text-green-600 dark:text-green-400"
+                              />
                             ) : (
-                              <div className="mx-auto w-5 h-5 border-2 border-slate-300 dark:border-slate-600"></div>
+                              <div className="mx-auto h-5 w-5 border-2 border-slate-300 dark:border-slate-600"></div>
                             )}
                           </td>
-                          <td className="py-4 px-4 text-center">
+                          <td className="px-4 py-4 text-center">
                             {row.silver ? (
-                              <CheckCircle size={20} className="mx-auto text-green-600 dark:text-green-400" />
+                              <CheckCircle
+                                size={20}
+                                className="mx-auto text-green-600 dark:text-green-400"
+                              />
                             ) : (
-                              <div className="mx-auto w-5 h-5 border-2 border-slate-300 dark:border-slate-600"></div>
+                              <div className="mx-auto h-5 w-5 border-2 border-slate-300 dark:border-slate-600"></div>
                             )}
                           </td>
-                          <td className="py-4 px-4 text-center">
+                          <td className="px-4 py-4 text-center">
                             {row.gold ? (
-                              <CheckCircle size={20} className="mx-auto text-green-600 dark:text-green-400" />
+                              <CheckCircle
+                                size={20}
+                                className="mx-auto text-green-600 dark:text-green-400"
+                              />
                             ) : (
-                              <div className="mx-auto w-5 h-5 border-2 border-slate-300 dark:border-slate-600"></div>
+                              <div className="mx-auto h-5 w-5 border-2 border-slate-300 dark:border-slate-600"></div>
                             )}
                           </td>
                         </tr>
@@ -453,30 +539,30 @@ export default function BlocksPartnerPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-white dark:bg-slate-950 py-16"
+              className="bg-white py-16 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 text-center">
+                  <h2 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">
                     Featured Partners
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-400">
                     Spotlight on our key strategic partners
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {[...Array(2)].map((_, i) => (
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                  {Array.from({ length: 2 }).map((_, i) => (
                     <div
                       key={i}
-                      className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700"
+                      className="overflow-hidden rounded-lg border border-slate-200 bg-linear-to-br from-slate-50 to-slate-100 dark:border-slate-700 dark:from-slate-900 dark:to-slate-800"
                     >
                       <div className="h-48 bg-linear-to-r from-blue-400 to-purple-400"></div>
                       <div className="p-8">
-                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                        <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                           Featured Partner {i + 1}
                         </h3>
-                        <div className="flex gap-1 mb-4">
-                          {[...Array(5)].map((_, j) => (
+                        <div className="mb-4 flex gap-1">
+                          {Array.from({ length: 5 }).map((_, j) => (
                             <Star
                               key={j}
                               size={18}
@@ -484,12 +570,14 @@ export default function BlocksPartnerPage() {
                             />
                           ))}
                         </div>
-                        <p className="text-slate-600 dark:text-slate-400 mb-6">
-                          Learn how this partner leveraged our platform to achieve remarkable growth and drive innovation in their industry.
+                        <p className="mb-6 text-slate-600 dark:text-slate-400">
+                          Learn how this partner leveraged our platform to
+                          achieve remarkable growth and drive innovation in
+                          their industry.
                         </p>
                         <a
                           href="#"
-                          className="inline-block text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+                          className="inline-block font-semibold text-blue-600 hover:underline dark:text-blue-400"
                         >
                           Read their story →
                         </a>
@@ -516,32 +604,32 @@ export default function BlocksPartnerPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-slate-900 dark:bg-slate-950 py-16"
+              className="bg-slate-900 py-16 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 text-center">
+                  <h2 className="mb-4 text-4xl font-bold text-white">
                     Our Partner Network
                   </h2>
                   <p className="text-lg text-slate-400">
                     Connected ecosystem of leading technology partners
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                   {/* Technology Partners */}
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-blue-600">
                       <Users size={40} className="text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="mb-3 text-xl font-bold text-white">
                       Technology Partners
                     </h3>
-                    <p className="text-slate-400 mb-4">
+                    <p className="mb-4 text-slate-400">
                       120+ integration partners
                     </p>
                     <a
                       href="#"
-                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+                      className="inline-block rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
                     >
                       Explore
                     </a>
@@ -549,18 +637,18 @@ export default function BlocksPartnerPage() {
 
                   {/* Reseller Partners */}
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-purple-600">
                       <TrendingUp size={40} className="text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="mb-3 text-xl font-bold text-white">
                       Reseller Partners
                     </h3>
-                    <p className="text-slate-400 mb-4">
+                    <p className="mb-4 text-slate-400">
                       250+ reseller partners
                     </p>
                     <a
                       href="#"
-                      className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                      className="inline-block rounded-lg bg-purple-600 px-4 py-2 text-white transition-colors hover:bg-purple-700"
                     >
                       Explore
                     </a>
@@ -568,18 +656,16 @@ export default function BlocksPartnerPage() {
 
                   {/* Channel Partners */}
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-pink-600">
                       <Award size={40} className="text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="mb-3 text-xl font-bold text-white">
                       Channel Partners
                     </h3>
-                    <p className="text-slate-400 mb-4">
-                      85+ channel partners
-                    </p>
+                    <p className="mb-4 text-slate-400">85+ channel partners</p>
                     <a
                       href="#"
-                      className="inline-block bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg transition-colors"
+                      className="inline-block rounded-lg bg-pink-600 px-4 py-2 text-white transition-colors hover:bg-pink-700"
                     >
                       Explore
                     </a>
@@ -604,38 +690,45 @@ export default function BlocksPartnerPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 py-16"
+              className="bg-linear-to-r from-blue-600 to-purple-600 py-16 dark:from-blue-700 dark:to-purple-700"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-4xl font-bold text-white mb-4">
+              <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+                <h2 className="mb-4 text-4xl font-bold text-white">
                   Ready to Become a Partner?
                 </h2>
-                <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                  Join our growing partner network and unlock new opportunities for growth and innovation together.
+                <p className="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
+                  Join our growing partner network and unlock new opportunities
+                  for growth and innovation together.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+                <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                  <button className="rounded-lg bg-white px-8 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50">
                     Start Partnership Application
                   </button>
-                  <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors">
+                  <button className="hover:bg-opacity-10 rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white">
                     Learn More
                   </button>
                 </div>
                 <div className="mt-12 grid grid-cols-3 gap-8 text-center">
                   <div>
-                    <div className="text-4xl font-bold text-white mb-2">500+</div>
+                    <div className="mb-2 text-4xl font-bold text-white">
+                      500+
+                    </div>
                     <p className="text-blue-100">Active Partners</p>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-white mb-2">$50M+</div>
+                    <div className="mb-2 text-4xl font-bold text-white">
+                      $50M+
+                    </div>
                     <p className="text-blue-100">Combined Revenue</p>
                   </div>
                   <div>
-                    <div className="text-4xl font-bold text-white mb-2">150+</div>
+                    <div className="mb-2 text-4xl font-bold text-white">
+                      150+
+                    </div>
                     <p className="text-blue-100">Countries</p>
                   </div>
                 </div>
-                <p className="text-sm text-blue-100 mt-8">
+                <p className="mt-8 text-sm text-blue-100">
                   Have questions? Contact our partnership team at{" "}
                   <a
                     href="mailto:partners@company.com"

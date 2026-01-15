@@ -71,11 +71,11 @@ export default function BlocksSocialPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-slate-50 dark:bg-slate-900 py-12"
+              className="bg-slate-50 py-12 dark:bg-slate-900"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                     Share This Article
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300">
@@ -83,15 +83,15 @@ export default function BlocksSocialPage() {
                   </p>
                 </div>
                 <div className="flex justify-center gap-4">
-                  <button className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                  <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700">
                     <Facebook size={20} />
                     Share on Facebook
                   </button>
-                  <button className="flex items-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-lg font-medium transition-colors">
+                  <button className="flex items-center gap-2 rounded-lg bg-sky-500 px-6 py-3 font-medium text-white transition-colors hover:bg-sky-600">
                     <Twitter size={20} />
                     Share on Twitter
                   </button>
-                  <button className="flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-medium transition-colors">
+                  <button className="flex items-center gap-2 rounded-lg bg-blue-700 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-800">
                     <Linkedin size={20} />
                     Share on LinkedIn
                   </button>
@@ -115,25 +115,25 @@ export default function BlocksSocialPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-slate-50 dark:bg-slate-900 py-12"
+              className="bg-slate-50 py-12 dark:bg-slate-900"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                     Follow States
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300">
                     Different button states for follow interactions
                   </p>
                 </div>
-                <div className="flex justify-center gap-4 flex-wrap">
-                  <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                <div className="flex flex-wrap justify-center gap-4">
+                  <button className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700">
                     Follow
                   </button>
-                  <button className="px-6 py-3 bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg font-medium transition-colors hover:bg-slate-300 dark:hover:bg-slate-600">
+                  <button className="rounded-lg bg-slate-200 px-6 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-300 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600">
                     Following
                   </button>
-                  <button className="px-6 py-3 border-2 border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white rounded-lg font-medium transition-colors hover:bg-slate-100 dark:hover:bg-slate-800">
+                  <button className="rounded-lg border-2 border-slate-300 px-6 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-white dark:hover:bg-slate-800">
                     Unfollow
                   </button>
                 </div>
@@ -156,25 +156,25 @@ export default function BlocksSocialPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-slate-50 dark:bg-slate-900 py-12"
+              className="bg-slate-50 py-12 dark:bg-slate-900"
             >
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                     Social Feed
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300">
                     Latest posts from the community
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                   {[1, 2, 3].map((post) => (
                     <div
                       key={post}
-                      className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"
+                      className="rounded-lg bg-white p-6 shadow-md dark:bg-slate-800"
                     >
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
+                      <div className="mb-4 flex items-center gap-3">
+                        <div className="h-10 w-10 rounded-full bg-slate-300 dark:bg-slate-600"></div>
                         <div>
                           <p className="font-semibold text-slate-900 dark:text-white">
                             @user{post}
@@ -184,20 +184,20 @@ export default function BlocksSocialPage() {
                           </p>
                         </div>
                       </div>
-                      <p className="text-slate-700 dark:text-slate-300 mb-4">
+                      <p className="mb-4 text-slate-700 dark:text-slate-300">
                         Just launched our new product! Excited to share it with
                         everyone.
                       </p>
-                      <div className="flex items-center gap-6 text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-slate-700">
-                        <button className="flex items-center gap-2 hover:text-red-500 transition-colors">
+                      <div className="flex items-center gap-6 border-t border-slate-200 pt-4 text-slate-600 dark:border-slate-700 dark:text-slate-400">
+                        <button className="flex items-center gap-2 transition-colors hover:text-red-500">
                           <Heart size={18} />
                           <span className="text-sm">234</span>
                         </button>
-                        <button className="flex items-center gap-2 hover:text-blue-500 transition-colors">
+                        <button className="flex items-center gap-2 transition-colors hover:text-blue-500">
                           <MessageCircle size={18} />
                           <span className="text-sm">45</span>
                         </button>
-                        <button className="flex items-center gap-2 hover:text-green-500 transition-colors">
+                        <button className="flex items-center gap-2 transition-colors hover:text-green-500">
                           <Share2 size={18} />
                           <span className="text-sm">12</span>
                         </button>
@@ -224,47 +224,47 @@ export default function BlocksSocialPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-linear-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-12"
+              className="bg-linear-to-r from-slate-50 to-slate-100 py-12 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                     Our Community
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300">
                     Join thousands of satisfied users
                   </p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
-                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+                  <div className="rounded-lg bg-white p-6 text-center dark:bg-slate-800">
+                    <div className="mb-2 text-3xl font-bold text-blue-600 dark:text-blue-400">
                       125K
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 font-medium">
+                    <p className="font-medium text-slate-600 dark:text-slate-300">
                       Followers
                     </p>
                   </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
-                    <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                  <div className="rounded-lg bg-white p-6 text-center dark:bg-slate-800">
+                    <div className="mb-2 text-3xl font-bold text-purple-600 dark:text-purple-400">
                       89K
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 font-medium">
+                    <p className="font-medium text-slate-600 dark:text-slate-300">
                       Engagement
                     </p>
                   </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
-                    <div className="text-3xl font-bold text-pink-600 dark:text-pink-400 mb-2">
+                  <div className="rounded-lg bg-white p-6 text-center dark:bg-slate-800">
+                    <div className="mb-2 text-3xl font-bold text-pink-600 dark:text-pink-400">
                       45K
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 font-medium">
+                    <p className="font-medium text-slate-600 dark:text-slate-300">
                       Likes
                     </p>
                   </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
-                    <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+                  <div className="rounded-lg bg-white p-6 text-center dark:bg-slate-800">
+                    <div className="mb-2 text-3xl font-bold text-green-600 dark:text-green-400">
                       12K
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 font-medium">
+                    <p className="font-medium text-slate-600 dark:text-slate-300">
                       Shares
                     </p>
                   </div>
@@ -288,31 +288,31 @@ export default function BlocksSocialPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-slate-50 dark:bg-slate-900 py-12"
+              className="bg-slate-50 py-12 dark:bg-slate-900"
             >
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                     User Reviews
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300">
                     What our community says about us
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   {[1, 2].map((review) => (
                     <div
                       key={review}
-                      className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6"
+                      className="rounded-lg bg-white p-6 shadow-md dark:bg-slate-800"
                     >
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
+                      <div className="mb-4 flex items-center gap-3">
+                        <div className="h-12 w-12 rounded-full bg-slate-300 dark:bg-slate-600"></div>
                         <div>
                           <p className="font-semibold text-slate-900 dark:text-white">
                             Sarah Johnson
                           </p>
                           <div className="flex gap-1">
-                            {[...Array(5)].map((_, i) => (
+                            {Array.from({ length: 5 }).map((_, i) => (
                               <span key={i} className="text-yellow-400">
                                 ★
                               </span>
@@ -320,9 +320,10 @@ export default function BlocksSocialPage() {
                           </div>
                         </div>
                       </div>
-                      <p className="text-slate-700 dark:text-slate-300 italic">
-                        "This product has completely transformed how I work. The
-                        interface is intuitive and the support team is amazing!"
+                      <p className="text-slate-700 italic dark:text-slate-300">
+                        &quot;This product has completely transformed how I
+                        work. The interface is intuitive and the support team is
+                        amazing!&quot;
                       </p>
                     </div>
                   ))}
@@ -346,34 +347,34 @@ export default function BlocksSocialPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-slate-50 dark:bg-slate-900 py-12"
+              className="bg-slate-50 py-12 dark:bg-slate-900"
             >
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                     Featured Creators
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300">
                     Follow our top influencers and content creators
                   </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
                   {[1, 2, 3].map((influencer) => (
                     <div
                       key={influencer}
-                      className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-8 text-center"
+                      className="rounded-lg bg-white p-8 text-center shadow-md dark:bg-slate-800"
                     >
-                      <div className="w-20 h-20 bg-slate-300 dark:bg-slate-600 rounded-full mx-auto mb-4"></div>
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+                      <div className="mx-auto mb-4 h-20 w-20 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+                      <h4 className="mb-1 text-lg font-bold text-slate-900 dark:text-white">
                         Creator {influencer}
                       </h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                      <p className="mb-2 text-sm text-slate-600 dark:text-slate-400">
                         Content Creator
                       </p>
-                      <p className="text-slate-600 dark:text-slate-300 font-semibold mb-4">
+                      <p className="mb-4 font-semibold text-slate-600 dark:text-slate-300">
                         {125 + influencer * 10}K Followers
                       </p>
-                      <button className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                      <button className="w-full rounded-lg bg-blue-600 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-700">
                         Follow
                       </button>
                     </div>
@@ -398,76 +399,76 @@ export default function BlocksSocialPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-linear-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-12"
+              className="bg-linear-to-r from-slate-50 to-slate-100 py-12 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                     Engagement Metrics
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300">
                     Track your social media performance
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                  <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="rounded-lg bg-blue-100 p-3 dark:bg-blue-900">
                         <Heart className="text-blue-600 dark:text-blue-400" />
                       </div>
                       <h4 className="font-semibold text-slate-900 dark:text-white">
                         Likes
                       </h4>
                     </div>
-                    <p className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                    <p className="mb-1 text-2xl font-bold text-slate-900 dark:text-white">
                       2,458
                     </p>
                     <p className="text-sm text-green-600 dark:text-green-400">
                       +12% from last week
                     </p>
                   </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="p-3 bg-purple-100 dark:bg-purple-900 rounded-lg">
+                  <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="rounded-lg bg-purple-100 p-3 dark:bg-purple-900">
                         <MessageCircle className="text-purple-600 dark:text-purple-400" />
                       </div>
                       <h4 className="font-semibold text-slate-900 dark:text-white">
                         Comments
                       </h4>
                     </div>
-                    <p className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                    <p className="mb-1 text-2xl font-bold text-slate-900 dark:text-white">
                       856
                     </p>
                     <p className="text-sm text-green-600 dark:text-green-400">
                       +8% from last week
                     </p>
                   </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="p-3 bg-green-100 dark:bg-green-900 rounded-lg">
+                  <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="rounded-lg bg-green-100 p-3 dark:bg-green-900">
                         <Share2 className="text-green-600 dark:text-green-400" />
                       </div>
                       <h4 className="font-semibold text-slate-900 dark:text-white">
                         Shares
                       </h4>
                     </div>
-                    <p className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                    <p className="mb-1 text-2xl font-bold text-slate-900 dark:text-white">
                       432
                     </p>
                     <p className="text-sm text-green-600 dark:text-green-400">
                       +5% from last week
                     </p>
                   </div>
-                  <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="p-3 bg-pink-100 dark:bg-pink-900 rounded-lg">
+                  <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="rounded-lg bg-pink-100 p-3 dark:bg-pink-900">
                         <TrendingUp className="text-pink-600 dark:text-pink-400" />
                       </div>
                       <h4 className="font-semibold text-slate-900 dark:text-white">
                         Reach
                       </h4>
                     </div>
-                    <p className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                    <p className="mb-1 text-2xl font-bold text-slate-900 dark:text-white">
                       45.2K
                     </p>
                     <p className="text-sm text-green-600 dark:text-green-400">
@@ -494,35 +495,35 @@ export default function BlocksSocialPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-linear-to-r from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 text-white py-12"
+              className="bg-linear-to-r from-slate-900 to-slate-800 py-12 text-white dark:from-slate-950 dark:to-slate-900"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
                 <div className="mb-6 flex justify-center">
-                  <div className="w-16 h-16 bg-slate-600 rounded-full"></div>
+                  <div className="h-16 w-16 rounded-full bg-slate-600"></div>
                 </div>
-                <h3 className="text-3xl font-bold mb-3">Stay Connected</h3>
-                <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+                <h3 className="mb-3 text-3xl font-bold">Stay Connected</h3>
+                <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300">
                   Follow us on social media and subscribe to our newsletter for
                   the latest updates, tips, and exclusive content.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                  <button className="flex items-center justify-center gap-2 px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors">
+                <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row">
+                  <button className="flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-3 font-medium transition-colors hover:bg-blue-700">
                     <Users size={20} />
                     Follow Us
                   </button>
-                  <button className="flex items-center justify-center gap-2 px-8 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors">
+                  <button className="flex items-center justify-center gap-2 rounded-lg bg-slate-700 px-8 py-3 font-medium transition-colors hover:bg-slate-600">
                     <Award size={20} />
                     Join Newsletter
                   </button>
                 </div>
                 <div className="flex justify-center gap-6 text-slate-400">
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#" className="transition-colors hover:text-white">
                     <Facebook size={24} />
                   </a>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#" className="transition-colors hover:text-white">
                     <Twitter size={24} />
                   </a>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#" className="transition-colors hover:text-white">
                     <Linkedin size={24} />
                   </a>
                 </div>

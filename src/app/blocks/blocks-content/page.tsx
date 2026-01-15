@@ -67,22 +67,22 @@ export default function BlocksContentPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="bg-slate-200 dark:bg-slate-800 h-80 rounded-lg flex items-center justify-center">
+              <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+                <div className="flex h-80 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800">
                   <span className="text-slate-400">Image</span>
                 </div>
                 <div>
-                  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                  <h2 className="mb-6 text-4xl font-bold text-slate-900 dark:text-white">
                     Unlock Your Potential
                   </h2>
-                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+                  <p className="mb-6 text-lg text-slate-600 dark:text-slate-300">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                   </p>
-                  <button className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium flex items-center gap-2">
+                  <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-3 font-medium text-white hover:bg-blue-700">
                     Learn More
                     <ArrowRight size={18} />
                   </button>
@@ -106,34 +106,36 @@ export default function BlocksContentPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
                 <div className="order-2 md:order-1">
-                  <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                  <h2 className="mb-6 text-4xl font-bold text-slate-900 dark:text-white">
                     Build Faster Together
                   </h2>
-                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                    Collaborate with your team and ship products faster than ever.
-                    Real-time updates keep everyone on the same page.
+                  <p className="mb-6 text-lg text-slate-600 dark:text-slate-300">
+                    Collaborate with your team and ship products faster than
+                    ever. Real-time updates keep everyone on the same page.
                   </p>
                   <ul className="space-y-3">
-                    {["Real-time collaboration", "Version control", "Team analytics"].map(
-                      (item) => (
-                        <li key={item} className="flex gap-3 items-center">
-                          <CheckCircle
-                            className="text-green-600 shrink-0"
-                            size={20}
-                          />
-                          <span className="text-slate-700 dark:text-slate-300">
-                            {item}
-                          </span>
-                        </li>
-                      )
-                    )}
+                    {[
+                      "Real-time collaboration",
+                      "Version control",
+                      "Team analytics",
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-3">
+                        <CheckCircle
+                          className="shrink-0 text-green-600"
+                          size={20}
+                        />
+                        <span className="text-slate-700 dark:text-slate-300">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
-                <div className="order-1 md:order-2 bg-slate-200 dark:bg-slate-800 h-80 rounded-lg flex items-center justify-center">
+                <div className="order-1 flex h-80 items-center justify-center rounded-lg bg-slate-200 md:order-2 dark:bg-slate-800">
                   <span className="text-slate-400">Image</span>
                 </div>
               </div>
@@ -155,22 +157,23 @@ export default function BlocksContentPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="max-w-4xl mx-auto">
-                <div className="bg-slate-200 dark:bg-slate-800 h-96 rounded-lg mb-8 flex items-center justify-center">
+              <div className="mx-auto max-w-4xl">
+                <div className="mb-8 flex h-96 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800">
                   <span className="text-slate-400">Hero Image</span>
                 </div>
                 <div className="prose dark:prose-invert max-w-none">
-                  <h1 className="text-5xl font-bold text-slate-900 dark:text-white mb-6">
+                  <h1 className="mb-6 text-5xl font-bold text-slate-900 dark:text-white">
                     The Future of Digital Creation
                   </h1>
-                  <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                    ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  <p className="mb-8 text-xl leading-relaxed text-slate-600 dark:text-slate-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris.
                   </p>
-                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mt-12 mb-4">
+                  <h2 className="mt-12 mb-4 text-3xl font-bold text-slate-900 dark:text-white">
                     Key Points
                   </h2>
                   <ul className="space-y-2 text-slate-600 dark:text-slate-300">
@@ -198,16 +201,16 @@ export default function BlocksContentPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-blue-50 dark:bg-blue-900/20 py-16 rounded-lg border-l-4 border-blue-600"
+              className="rounded-lg border-l-4 border-blue-600 bg-blue-50 py-16 dark:bg-blue-900/20"
             >
-              <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <Quote className="text-blue-600 mb-4" size={40} />
-                <blockquote className="text-3xl font-bold text-slate-900 dark:text-white mb-6 leading-relaxed">
-                  "The best time to plant a tree was 20 years ago. The second
-                  best time is now. This is the philosophy we live by when
-                  building our products."
+              <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+                <Quote className="mb-4 text-blue-600" size={40} />
+                <blockquote className="mb-6 text-3xl leading-relaxed font-bold text-slate-900 dark:text-white">
+                  &quot;The best time to plant a tree was 20 years ago. The
+                  second best time is now. This is the philosophy we live by
+                  when building our products.&quot;
                 </blockquote>
-                <footer className="border-t border-blue-200 dark:border-blue-800 pt-4">
+                <footer className="border-t border-blue-200 pt-4 dark:border-blue-800">
                   <p className="font-semibold text-slate-900 dark:text-white">
                     John Doe
                   </p>
@@ -234,22 +237,22 @@ export default function BlocksContentPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-12 text-center">
+              <div className="mx-auto max-w-6xl">
+                <h2 className="mb-12 text-center text-4xl font-bold text-slate-900 dark:text-white">
                   How It Works
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
-                      className="bg-white dark:bg-slate-800 p-8 rounded-lg"
+                      className="rounded-lg bg-white p-8 dark:bg-slate-800"
                     >
-                      <div className="text-4xl font-bold text-blue-600 mb-4">
+                      <div className="mb-4 text-4xl font-bold text-blue-600">
                         {i}
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
+                      <h3 className="mb-3 text-xl font-bold text-slate-900 dark:text-white">
                         Step {i}
                       </h3>
                       <p className="text-slate-600 dark:text-slate-400">
@@ -278,25 +281,25 @@ export default function BlocksContentPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <div className="bg-linear-to-r from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 border border-purple-300 dark:border-purple-700 rounded-lg p-8">
-                  <div className="flex gap-4 items-start">
+              <div className="mx-auto max-w-3xl">
+                <div className="rounded-lg border border-purple-300 bg-linear-to-r from-purple-100 to-pink-100 p-8 dark:border-purple-700 dark:from-purple-900/20 dark:to-pink-900/20">
+                  <div className="flex items-start gap-4">
                     <Lightbulb
-                      className="text-purple-600 shrink-0 mt-1"
+                      className="mt-1 shrink-0 text-purple-600"
                       size={24}
                     />
                     <div>
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+                      <h3 className="mb-3 text-2xl font-bold text-slate-900 dark:text-white">
                         Pro Tip
                       </h3>
                       <p className="text-slate-700 dark:text-slate-300">
                         Did you know that you can save up to 70% of your time by
-                        using our advanced features? Explore our documentation to
-                        learn more about all capabilities.
+                        using our advanced features? Explore our documentation
+                        to learn more about all capabilities.
                       </p>
-                      <button className="mt-4 text-purple-600 dark:text-purple-400 font-medium hover:underline flex items-center gap-2">
+                      <button className="mt-4 flex items-center gap-2 font-medium text-purple-600 hover:underline dark:text-purple-400">
                         Learn more
                         <ArrowRight size={16} />
                       </button>
@@ -322,27 +325,34 @@ export default function BlocksContentPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-4xl mx-auto px-4">
-                <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+              <div className="mx-auto max-w-4xl px-4">
+                <h2 className="mb-8 text-center text-4xl font-bold text-slate-900 dark:text-white">
                   Why Choose Us?
                 </h2>
-                <div className="prose dark:prose-invert max-w-none text-lg text-slate-700 dark:text-slate-300 space-y-6">
+                <div className="prose dark:prose-invert max-w-none space-y-6 text-lg text-slate-700 dark:text-slate-300">
                   <p>
-                    We provide <span className="bg-yellow-200 dark:bg-yellow-600 px-2 py-1 rounded">
+                    We provide{" "}
+                    <span className="rounded bg-yellow-200 px-2 py-1 dark:bg-yellow-600">
                       world-class solutions
-                    </span> that help businesses scale faster and more efficiently.
+                    </span>{" "}
+                    that help businesses scale faster and more efficiently.
                   </p>
                   <p>
-                    Our team has over <span className="bg-green-200 dark:bg-green-600 px-2 py-1 rounded font-semibold">
+                    Our team has over{" "}
+                    <span className="rounded bg-green-200 px-2 py-1 font-semibold dark:bg-green-600">
                       20 years of experience
-                    </span> in the industry, delivering results to Fortune 500 companies.
+                    </span>{" "}
+                    in the industry, delivering results to Fortune 500
+                    companies.
                   </p>
                   <p>
-                    With <span className="bg-blue-200 dark:bg-blue-600 px-2 py-1 rounded">
+                    With{" "}
+                    <span className="rounded bg-blue-200 px-2 py-1 dark:bg-blue-600">
                       24/7 customer support
-                    </span>, we're here to help you succeed.
+                    </span>
+                    , we&apos;re here to help you succeed.
                   </p>
                 </div>
               </div>
@@ -364,30 +374,31 @@ export default function BlocksContentPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="bg-slate-100 dark:bg-slate-900 p-8 rounded-lg">
-                  <BookOpen className="text-blue-600 mb-4" size={32} />
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+                <div className="rounded-lg bg-slate-100 p-8 dark:bg-slate-900">
+                  <BookOpen className="mb-4 text-blue-600" size={32} />
+                  <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
                     Documentation
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-6">
-                    Comprehensive guides to help you get started with our platform.
+                  <p className="mb-6 text-slate-600 dark:text-slate-400">
+                    Comprehensive guides to help you get started with our
+                    platform.
                   </p>
-                  <button className="text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                  <button className="font-medium text-blue-600 hover:underline dark:text-blue-400">
                     Read docs →
                   </button>
                 </div>
-                <div className="bg-slate-100 dark:bg-slate-900 p-8 rounded-lg">
-                  <Lightbulb className="text-yellow-600 mb-4" size={32} />
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                <div className="rounded-lg bg-slate-100 p-8 dark:bg-slate-900">
+                  <Lightbulb className="mb-4 text-yellow-600" size={32} />
+                  <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
                     Best Practices
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-6">
+                  <p className="mb-6 text-slate-600 dark:text-slate-400">
                     Learn from industry experts on how to maximize your results.
                   </p>
-                  <button className="text-yellow-600 dark:text-yellow-400 font-medium hover:underline">
+                  <button className="font-medium text-yellow-600 hover:underline dark:text-yellow-400">
                     View guides →
                   </button>
                 </div>

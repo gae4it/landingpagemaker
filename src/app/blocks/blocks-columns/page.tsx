@@ -3,7 +3,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { Copy, Grid3X3, Columns3, Layout, BarChart3 } from "lucide-react";
+import { Copy, Grid3X3, Columns3, BarChart3 } from "lucide-react";
 import { useRef } from "react";
 import { useCopyNotification } from "@/components/useCopyNotification";
 import SectionDivider from "@/components/SectionDivider";
@@ -60,32 +60,32 @@ export default function BlocksColumnsPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div className="rounded-lg bg-white p-8 shadow dark:bg-slate-800">
+                  <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
                     Column One
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sed do eiusmod tempor incididunt ut labore et dolore.
+                  <p className="mb-4 text-slate-600 dark:text-slate-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore.
                   </p>
-                  <ul className="space-y-2 text-slate-600 dark:text-slate-300 text-sm">
+                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
                     <li>✓ Feature one</li>
                     <li>✓ Feature two</li>
                     <li>✓ Feature three</li>
                   </ul>
                 </div>
-                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                <div className="rounded-lg bg-white p-8 shadow dark:bg-slate-800">
+                  <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
                     Column Two
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
+                  <p className="mb-4 text-slate-600 dark:text-slate-300">
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
-                  <ul className="space-y-2 text-slate-600 dark:text-slate-300 text-sm">
+                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
                     <li>✓ Benefit one</li>
                     <li>✓ Benefit two</li>
                     <li>✓ Benefit three</li>
@@ -110,22 +110,19 @@ export default function BlocksColumnsPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="bg-slate-50 dark:bg-slate-900 p-6 rounded-lg text-center"
+                    className="rounded-lg bg-slate-50 p-6 text-center dark:bg-slate-900"
                   >
-                    <Grid3X3
-                      className="mx-auto mb-4 text-blue-600"
-                      size={32}
-                    />
-                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">
+                    <Grid3X3 className="mx-auto mb-4 text-blue-600" size={32} />
+                    <h3 className="mb-2 font-bold text-slate-900 dark:text-white">
                       Column {i}
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
                       Add your content here. Each column is equal width and
                       responsive.
                     </p>
@@ -150,19 +147,20 @@ export default function BlocksColumnsPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow hover:shadow-lg transition-shadow"
+                    className="rounded-lg bg-white p-6 shadow transition-shadow hover:shadow-lg dark:bg-slate-800"
                   >
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-3">
+                    <h4 className="mb-3 font-bold text-slate-900 dark:text-white">
                       Item {i}
                     </h4>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">
-                      Perfect for showcasing products, team members, or services.
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Perfect for showcasing products, team members, or
+                      services.
                     </p>
                   </div>
                 ))}
@@ -185,27 +183,36 @@ export default function BlocksColumnsPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                 <aside className="md:col-span-1">
-                  <div className="bg-slate-100 dark:bg-slate-900 p-6 rounded-lg sticky top-20">
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                  <div className="sticky top-20 rounded-lg bg-slate-100 p-6 dark:bg-slate-900">
+                    <h4 className="mb-4 font-bold text-slate-900 dark:text-white">
                       Navigation
                     </h4>
                     <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                       <li>
-                        <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                        <a
+                          href="#"
+                          className="hover:text-slate-900 dark:hover:text-white"
+                        >
                           Section 1
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                        <a
+                          href="#"
+                          className="hover:text-slate-900 dark:hover:text-white"
+                        >
                           Section 2
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                        <a
+                          href="#"
+                          className="hover:text-slate-900 dark:hover:text-white"
+                        >
                           Section 3
                         </a>
                       </li>
@@ -247,23 +254,20 @@ export default function BlocksColumnsPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <div className="bg-blue-100 dark:bg-blue-900/20 p-8 rounded-lg text-center">
-                  <Columns3
-                    className="mx-auto mb-4 text-blue-600"
-                    size={40}
-                  />
+              <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
+                <div className="rounded-lg bg-blue-100 p-8 text-center dark:bg-blue-900/20">
+                  <Columns3 className="mx-auto mb-4 text-blue-600" size={40} />
                   <p className="text-slate-600 dark:text-slate-300">
                     Narrow Column
                   </p>
                 </div>
-                <div className="md:col-span-2 bg-white dark:bg-slate-800 p-8 rounded-lg">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                <div className="rounded-lg bg-white p-8 md:col-span-2 dark:bg-slate-800">
+                  <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
                     Wide Column
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
+                  <p className="mb-4 text-slate-600 dark:text-slate-300">
                     This column takes up twice as much space. Perfect for
                     featuring main content with a supporting sidebar.
                   </p>
@@ -290,26 +294,26 @@ export default function BlocksColumnsPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-slate-100 dark:bg-slate-900 py-16 rounded-lg relative"
+              className="relative rounded-lg bg-slate-100 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-6xl mx-auto px-4">
+              <div className="mx-auto max-w-6xl px-4">
                 <div className="relative">
-                  <div className="bg-blue-600 text-white p-12 rounded-lg mb-8">
+                  <div className="mb-8 rounded-lg bg-blue-600 p-12 text-white">
                     <h3 className="text-3xl font-bold">Featured Section</h3>
                     <p className="mt-2 text-blue-100">
                       Highlight your most important content here
                     </p>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 -mt-6 relative z-10">
+                  <div className="relative z-10 -mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
                     {[1, 2, 3].map((i) => (
                       <div
                         key={i}
-                        className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg"
+                        className="rounded-lg bg-white p-6 shadow-lg dark:bg-slate-800"
                       >
-                        <h4 className="font-bold text-slate-900 dark:text-white mb-2">
+                        <h4 className="mb-2 font-bold text-slate-900 dark:text-white">
                           Card {i}
                         </h4>
-                        <p className="text-slate-600 dark:text-slate-400 text-sm">
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
                           These cards overlap the section above for visual
                           interest.
                         </p>
@@ -336,21 +340,21 @@ export default function BlocksColumnsPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
+              <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
                   <div
                     key={i}
-                    className="bg-slate-100 dark:bg-slate-900 p-6 rounded-lg mb-6 break-inside-avoid"
+                    className="mb-6 break-inside-avoid rounded-lg bg-slate-100 p-6 dark:bg-slate-900"
                   >
-                    <div className="bg-blue-200 dark:bg-blue-900 h-32 mb-4 rounded flex items-center justify-center">
+                    <div className="mb-4 flex h-32 items-center justify-center rounded bg-blue-200 dark:bg-blue-900">
                       <span className="text-slate-500">Image {i}</span>
                     </div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">
+                    <h4 className="mb-2 font-bold text-slate-900 dark:text-white">
                       Item {i}
                     </h4>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
                       {i % 2 === 0
                         ? "Longer description for this item"
                         : "Short description"}
@@ -376,19 +380,19 @@ export default function BlocksColumnsPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 auto-rows-max">
+              <div className="grid auto-rows-max grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                   <div
                     key={i}
-                    className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow text-center"
+                    className="rounded-lg bg-white p-6 text-center shadow dark:bg-slate-800"
                   >
                     <BarChart3
                       className="mx-auto mb-3 text-blue-600"
                       size={24}
                     />
-                    <h5 className="font-semibold text-slate-900 dark:text-white text-sm">
+                    <h5 className="text-sm font-semibold text-slate-900 dark:text-white">
                       Item {i}
                     </h5>
                   </div>

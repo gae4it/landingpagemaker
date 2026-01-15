@@ -3,7 +3,14 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { Copy, Mail, User, MessageSquare, Upload, CreditCard, CheckCircle, ArrowRight } from "lucide-react";
+import {
+  Copy,
+  Mail,
+  Upload,
+  CreditCard,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 import { useRef, type RefObject } from "react";
 import { useCopyNotification } from "@/components/useCopyNotification";
 import SectionDivider from "@/components/SectionDivider";
@@ -69,7 +76,7 @@ export default function BlocksFormsPage() {
                     Get in touch
                   </h2>
                   <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
-                    We'd love to hear from you. Fill out the form below.
+                    We&apos;d love to hear from you. Fill out the form below.
                   </p>
                 </div>
                 <form className="mt-12 space-y-6">
@@ -139,7 +146,8 @@ export default function BlocksFormsPage() {
                   Subscribe to our newsletter
                 </h2>
                 <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
-                  Get the latest updates and exclusive content delivered to your inbox.
+                  Get the latest updates and exclusive content delivered to your
+                  inbox.
                 </p>
                 <form className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
                   <input
@@ -351,7 +359,7 @@ export default function BlocksFormsPage() {
                           placeholder="1234 5678 9012 3456"
                           className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 pr-12 text-neutral-900 focus:ring-2 focus:ring-neutral-900 focus:outline-none dark:border-neutral-700 dark:bg-neutral-950 dark:text-neutral-50 dark:focus:ring-neutral-50"
                         />
-                        <CreditCard className="absolute right-3 top-3.5 h-5 w-5 text-neutral-400" />
+                        <CreditCard className="absolute top-3.5 right-3 h-5 w-5 text-neutral-400" />
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -524,11 +532,11 @@ export default function BlocksFormsPage() {
                       Time Slot
                     </label>
                     <select className="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 focus:ring-2 focus:ring-neutral-900 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50 dark:focus:ring-neutral-50">
-                        <option>9:00 AM - 10:00 AM</option>
-                        <option>10:00 AM - 11:00 AM</option>
-                        <option>2:00 PM - 3:00 PM</option>
-                        <option>3:00 PM - 4:00 PM</option>
-                      </select>
+                      <option>9:00 AM - 10:00 AM</option>
+                      <option>10:00 AM - 11:00 AM</option>
+                      <option>2:00 PM - 3:00 PM</option>
+                      <option>3:00 PM - 4:00 PM</option>
+                    </select>
                   </div>
                   <button
                     type="submit"
@@ -568,7 +576,11 @@ export default function BlocksFormsPage() {
                       Choose your plan
                     </label>
                     <div className="space-y-3">
-                      {["Starter ($9/mo)", "Professional ($29/mo)", "Enterprise ($99/mo)"].map((plan) => (
+                      {[
+                        "Starter ($9/mo)",
+                        "Professional ($29/mo)",
+                        "Enterprise ($99/mo)",
+                      ].map((plan) => (
                         <label
                           key={plan}
                           className="flex cursor-pointer items-center rounded-lg border border-neutral-300 bg-white p-4 transition-all hover:border-neutral-400 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600"
@@ -590,22 +602,25 @@ export default function BlocksFormsPage() {
                       Select features you need
                     </label>
                     <div className="space-y-3">
-                      {["Advanced Analytics", "API Access", "Priority Support", "Custom Integrations"].map(
-                        (feature) => (
-                          <label
-                            key={feature}
-                            className="flex cursor-pointer items-center rounded-lg border border-neutral-300 bg-white p-4 transition-all hover:border-neutral-400 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600"
-                          >
-                            <input
-                              type="checkbox"
-                              className="h-4 w-4 rounded border-neutral-300 text-neutral-900 focus:ring-2 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-900"
-                            />
-                            <span className="ml-3 text-sm font-medium text-neutral-900 dark:text-neutral-50">
-                              {feature}
-                            </span>
-                          </label>
-                        )
-                      )}
+                      {[
+                        "Advanced Analytics",
+                        "API Access",
+                        "Priority Support",
+                        "Custom Integrations",
+                      ].map((feature) => (
+                        <label
+                          key={feature}
+                          className="flex cursor-pointer items-center rounded-lg border border-neutral-300 bg-white p-4 transition-all hover:border-neutral-400 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600"
+                        >
+                          <input
+                            type="checkbox"
+                            className="h-4 w-4 rounded border-neutral-300 text-neutral-900 focus:ring-2 focus:ring-neutral-900 dark:border-neutral-700 dark:bg-neutral-900"
+                          />
+                          <span className="ml-3 text-sm font-medium text-neutral-900 dark:text-neutral-50">
+                            {feature}
+                          </span>
+                        </label>
+                      ))}
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -615,7 +630,10 @@ export default function BlocksFormsPage() {
                     />
                     <label className="ml-3 text-sm text-neutral-700 dark:text-neutral-300">
                       I agree to the{" "}
-                      <a href="#" className="underline hover:text-neutral-900 dark:hover:text-neutral-50">
+                      <a
+                        href="#"
+                        className="underline hover:text-neutral-900 dark:hover:text-neutral-50"
+                      >
                         terms and conditions
                       </a>
                     </label>

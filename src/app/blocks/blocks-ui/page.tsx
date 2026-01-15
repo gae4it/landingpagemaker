@@ -3,14 +3,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import {
-  Copy,
-  CheckCircle,
-  AlertCircle,
-  Loader,
-  Eye,
-  EyeOff,
-} from "lucide-react";
+import { Copy, CheckCircle, AlertCircle, Loader } from "lucide-react";
 import { useRef, useState } from "react";
 import { useCopyNotification } from "@/components/useCopyNotification";
 import SectionDivider from "@/components/SectionDivider";
@@ -39,7 +32,6 @@ export default function BlocksUIPage() {
   const [textareaValue, setTextareaValue] = useState("");
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [radioSelected, setRadioSelected] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
     const el = ref.current;
@@ -81,16 +73,16 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="flex flex-wrap gap-4 items-center">
-                <button className="px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors">
+              <div className="flex flex-wrap items-center gap-4">
+                <button className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800">
                   Solid Button
                 </button>
-                <button className="px-6 py-3 bg-slate-600 dark:bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-700 dark:hover:bg-slate-800 transition-colors">
+                <button className="rounded-lg bg-slate-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-800">
                   Secondary
                 </button>
-                <button className="px-6 py-3 bg-green-600 dark:bg-green-700 text-white font-semibold rounded-lg hover:bg-green-700 dark:hover:bg-green-800 transition-colors">
+                <button className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800">
                   Success
                 </button>
               </div>
@@ -112,16 +104,16 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="flex flex-wrap gap-4 items-center">
-                <button className="px-6 py-3 border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 font-semibold rounded-lg hover:bg-blue-50 dark:hover:bg-slate-900 transition-colors">
+              <div className="flex flex-wrap items-center gap-4">
+                <button className="rounded-lg border-2 border-blue-600 px-6 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50 dark:border-blue-500 dark:text-blue-400 dark:hover:bg-slate-900">
                   Outline Button
                 </button>
-                <button className="px-6 py-3 border-2 border-slate-400 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-semibold rounded-lg hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors">
+                <button className="rounded-lg border-2 border-slate-400 px-6 py-3 font-semibold text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-900">
                   Secondary
                 </button>
-                <button className="px-6 py-3 border-2 border-red-600 dark:border-red-500 text-red-600 dark:text-red-400 font-semibold rounded-lg hover:bg-red-50 dark:hover:bg-slate-900 transition-colors">
+                <button className="rounded-lg border-2 border-red-600 px-6 py-3 font-semibold text-red-600 transition-colors hover:bg-red-50 dark:border-red-500 dark:text-red-400 dark:hover:bg-slate-900">
                   Danger
                 </button>
               </div>
@@ -143,16 +135,16 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="flex flex-wrap gap-4 items-center">
-                <button className="px-6 py-3 text-slate-700 dark:text-slate-300 font-semibold rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <div className="flex flex-wrap items-center gap-4">
+                <button className="rounded-lg px-6 py-3 font-semibold text-slate-700 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">
                   Ghost Button
                 </button>
-                <button className="px-6 py-3 text-blue-600 dark:text-blue-400 font-semibold rounded-lg hover:bg-blue-50 dark:hover:bg-slate-900 transition-colors">
+                <button className="rounded-lg px-6 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-slate-900">
                   Blue Ghost
                 </button>
-                <button className="px-6 py-3 text-slate-500 dark:text-slate-400 font-semibold rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <button className="rounded-lg px-6 py-3 font-semibold text-slate-500 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800">
                   Subtle
                 </button>
               </div>
@@ -174,14 +166,14 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="flex flex-wrap gap-4 items-center">
-                <button className="px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-4">
+                <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800">
                   <Loader size={18} className="animate-spin" />
                   Loading...
                 </button>
-                <button className="px-6 py-3 bg-slate-600 dark:bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-700 dark:hover:bg-slate-800 transition-colors flex items-center gap-2">
+                <button className="flex items-center gap-2 rounded-lg bg-slate-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-800">
                   <Loader size={18} className="animate-spin" />
                   Processing
                 </button>
@@ -204,11 +196,11 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="space-y-4 max-w-md">
+              <div className="max-w-md space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
                     Email
                   </label>
                   <input
@@ -216,7 +208,7 @@ export default function BlocksUIPage() {
                     placeholder="you@example.com"
                     value={formInput}
                     onChange={(e) => setFormInput(e.target.value)}
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+                    className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder-slate-500 dark:focus:ring-blue-400"
                   />
                 </div>
               </div>
@@ -238,17 +230,17 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="space-y-4 max-w-md">
+              <div className="max-w-md space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
                     Category
                   </label>
                   <select
                     value={selectValue}
                     onChange={(e) => setSelectValue(e.target.value)}
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+                    className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:ring-blue-400"
                   >
                     <option value="">Select an option</option>
                     <option value="option1">Option 1</option>
@@ -275,11 +267,11 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="space-y-4 max-w-md">
+              <div className="max-w-md space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
                     Message
                   </label>
                   <textarea
@@ -287,7 +279,7 @@ export default function BlocksUIPage() {
                     onChange={(e) => setTextareaValue(e.target.value)}
                     placeholder="Enter your message..."
                     rows={4}
-                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+                    className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder-slate-500 dark:focus:ring-blue-400"
                   />
                 </div>
               </div>
@@ -309,27 +301,27 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="space-y-4 max-w-md">
-                <label className="flex items-center gap-3 cursor-pointer">
+              <div className="max-w-md space-y-4">
+                <label className="flex cursor-pointer items-center gap-3">
                   <input
                     type="checkbox"
                     checked={checkboxChecked}
                     onChange={(e) => setCheckboxChecked(e.target.checked)}
-                    className="w-5 h-5 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-900 text-blue-600 focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                    className="h-5 w-5 cursor-pointer rounded border border-slate-300 bg-white text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-slate-600 dark:bg-slate-900"
                   />
-                  <span className="text-slate-700 dark:text-slate-300 font-medium">
+                  <span className="font-medium text-slate-700 dark:text-slate-300">
                     I agree to the terms and conditions
                   </span>
                 </label>
-                <label className="flex items-center gap-3 cursor-pointer">
+                <label className="flex cursor-pointer items-center gap-3">
                   <input
                     type="checkbox"
                     defaultChecked
-                    className="w-5 h-5 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-900 text-blue-600 focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                    className="h-5 w-5 cursor-pointer rounded border border-slate-300 bg-white text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-slate-600 dark:bg-slate-900"
                   />
-                  <span className="text-slate-700 dark:text-slate-300 font-medium">
+                  <span className="font-medium text-slate-700 dark:text-slate-300">
                     Subscribe to newsletter
                   </span>
                 </label>
@@ -352,35 +344,35 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef9}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="space-y-4 max-w-md">
+              <div className="max-w-md space-y-4">
                 <div>
-                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">
+                  <p className="mb-3 text-sm font-medium text-slate-700 dark:text-slate-300">
                     Select an option
                   </p>
                   <div className="space-y-2">
-                    <label className="flex items-center gap-3 cursor-pointer">
+                    <label className="flex cursor-pointer items-center gap-3">
                       <input
                         type="radio"
                         name="option"
                         value="option1"
                         checked={radioSelected === "option1"}
                         onChange={(e) => setRadioSelected(e.target.value)}
-                        className="w-5 h-5 border border-slate-300 dark:border-slate-600 rounded-full bg-white dark:bg-slate-900 text-blue-600 focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                        className="h-5 w-5 cursor-pointer rounded-full border border-slate-300 bg-white text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-slate-600 dark:bg-slate-900"
                       />
                       <span className="text-slate-700 dark:text-slate-300">
                         Option 1
                       </span>
                     </label>
-                    <label className="flex items-center gap-3 cursor-pointer">
+                    <label className="flex cursor-pointer items-center gap-3">
                       <input
                         type="radio"
                         name="option"
                         value="option2"
                         checked={radioSelected === "option2"}
                         onChange={(e) => setRadioSelected(e.target.value)}
-                        className="w-5 h-5 border border-slate-300 dark:border-slate-600 rounded-full bg-white dark:bg-slate-900 text-blue-600 focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                        className="h-5 w-5 cursor-pointer rounded-full border border-slate-300 bg-white text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-slate-600 dark:bg-slate-900"
                       />
                       <span className="text-slate-700 dark:text-slate-300">
                         Option 2
@@ -407,22 +399,22 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef10}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="flex flex-wrap gap-3 items-center">
-                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-semibold rounded">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                   New
                 </span>
-                <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-sm font-semibold rounded">
+                <span className="rounded bg-green-100 px-3 py-1 text-sm font-semibold text-green-800 dark:bg-green-900 dark:text-green-200">
                   Active
                 </span>
-                <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-sm font-semibold rounded">
+                <span className="rounded bg-yellow-100 px-3 py-1 text-sm font-semibold text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
                   Warning
                 </span>
-                <span className="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-sm font-semibold rounded">
+                <span className="rounded bg-red-100 px-3 py-1 text-sm font-semibold text-red-800 dark:bg-red-900 dark:text-red-200">
                   Danger
                 </span>
-                <span className="px-3 py-1 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-sm font-semibold rounded">
+                <span className="rounded bg-slate-200 px-3 py-1 text-sm font-semibold text-slate-800 dark:bg-slate-700 dark:text-slate-200">
                   Default
                 </span>
               </div>
@@ -444,19 +436,19 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef11}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="flex flex-wrap gap-3 items-center">
-                <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-semibold rounded-full">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                   Technology
                 </span>
-                <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm font-semibold rounded-full">
+                <span className="rounded-full bg-purple-100 px-4 py-2 text-sm font-semibold text-purple-800 dark:bg-purple-900 dark:text-purple-200">
                   Design
                 </span>
-                <span className="px-4 py-2 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 text-sm font-semibold rounded-full">
+                <span className="rounded-full bg-pink-100 px-4 py-2 text-sm font-semibold text-pink-800 dark:bg-pink-900 dark:text-pink-200">
                   Marketing
                 </span>
-                <span className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-sm font-semibold rounded-full">
+                <span className="rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-800 dark:bg-green-900 dark:text-green-200">
                   Development
                 </span>
               </div>
@@ -478,28 +470,30 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef12}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-6 shadow-sm hover:shadow-md dark:shadow-none transition-shadow">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:shadow-none">
+                  <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-white">
                     Card Title
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4">
-                    This is a simple card component with content. You can use it to display information in an organized way.
+                  <p className="mb-4 text-slate-600 dark:text-slate-400">
+                    This is a simple card component with content. You can use it
+                    to display information in an organized way.
                   </p>
-                  <button className="px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white font-semibold rounded hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors">
+                  <button className="rounded bg-blue-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800">
                     Learn More
                   </button>
                 </div>
-                <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-6 shadow-sm hover:shadow-md dark:shadow-none transition-shadow">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:shadow-none">
+                  <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-white">
                     Another Card
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4">
-                    Cards are versatile containers that work well in grids or layouts.
+                  <p className="mb-4 text-slate-600 dark:text-slate-400">
+                    Cards are versatile containers that work well in grids or
+                    layouts.
                   </p>
-                  <button className="px-4 py-2 border border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 font-semibold rounded hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors">
+                  <button className="rounded border border-blue-600 px-4 py-2 font-semibold text-blue-600 transition-colors hover:bg-blue-50 dark:border-blue-500 dark:text-blue-400 dark:hover:bg-slate-800">
                     View
                   </button>
                 </div>
@@ -522,32 +516,47 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef13}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
               <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-blue-50 dark:bg-slate-900 border border-blue-200 dark:border-blue-800 rounded-lg">
-                  <AlertCircle className="text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" size={20} />
+                <div className="flex items-start gap-4 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-slate-900">
+                  <AlertCircle
+                    className="mt-0.5 shrink-0 text-blue-600 dark:text-blue-400"
+                    size={20}
+                  />
                   <div>
-                    <h3 className="font-semibold text-blue-900 dark:text-blue-200">Info Alert</h3>
-                    <p className="text-blue-800 dark:text-blue-300 text-sm">
+                    <h3 className="font-semibold text-blue-900 dark:text-blue-200">
+                      Info Alert
+                    </h3>
+                    <p className="text-sm text-blue-800 dark:text-blue-300">
                       This is an informational alert message.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-green-50 dark:bg-slate-900 border border-green-200 dark:border-green-800 rounded-lg">
-                  <CheckCircle className="text-green-600 dark:text-green-400 shrink-0 mt-0.5" size={20} />
+                <div className="flex items-start gap-4 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-800 dark:bg-slate-900">
+                  <CheckCircle
+                    className="mt-0.5 shrink-0 text-green-600 dark:text-green-400"
+                    size={20}
+                  />
                   <div>
-                    <h3 className="font-semibold text-green-900 dark:text-green-200">Success Alert</h3>
-                    <p className="text-green-800 dark:text-green-300 text-sm">
+                    <h3 className="font-semibold text-green-900 dark:text-green-200">
+                      Success Alert
+                    </h3>
+                    <p className="text-sm text-green-800 dark:text-green-300">
                       Your operation completed successfully.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-red-50 dark:bg-slate-900 border border-red-200 dark:border-red-800 rounded-lg">
-                  <AlertCircle className="text-red-600 dark:text-red-400 shrink-0 mt-0.5" size={20} />
+                <div className="flex items-start gap-4 rounded-lg border border-red-200 bg-red-50 p-4 dark:border-red-800 dark:bg-slate-900">
+                  <AlertCircle
+                    className="mt-0.5 shrink-0 text-red-600 dark:text-red-400"
+                    size={20}
+                  />
                   <div>
-                    <h3 className="font-semibold text-red-900 dark:text-red-200">Error Alert</h3>
-                    <p className="text-red-800 dark:text-red-300 text-sm">
+                    <h3 className="font-semibold text-red-900 dark:text-red-200">
+                      Error Alert
+                    </h3>
+                    <p className="text-sm text-red-800 dark:text-red-300">
                       An error occurred while processing your request.
                     </p>
                   </div>
@@ -571,31 +580,31 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef14}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="space-y-6 max-w-md">
+              <div className="max-w-md space-y-6">
                 <div>
-                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">
                     25% Complete
                   </p>
-                  <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 dark:bg-blue-500 w-1/4"></div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                    <div className="h-full w-1/4 bg-blue-600 dark:bg-blue-500"></div>
                   </div>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">
                     60% Complete
                   </p>
-                  <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-green-600 dark:bg-green-500 w-3/5"></div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                    <div className="h-full w-3/5 bg-green-600 dark:bg-green-500"></div>
                   </div>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">
                     100% Complete
                   </p>
-                  <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-yellow-600 dark:bg-yellow-500 w-full"></div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                    <div className="h-full w-full bg-yellow-600 dark:bg-yellow-500"></div>
                   </div>
                 </div>
               </div>
@@ -617,24 +626,42 @@ export default function BlocksUIPage() {
             </SectionDivider>
             <section
               ref={sectionRef15}
-              className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg p-8 sm:p-12"
+              className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="flex flex-wrap gap-8 items-center justify-center py-12">
+              <div className="flex flex-wrap items-center justify-center gap-8 py-12">
                 <div className="flex flex-col items-center gap-2">
-                  <Loader className="text-blue-600 dark:text-blue-400 animate-spin" size={32} />
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Standard Spinner</p>
+                  <Loader
+                    className="animate-spin text-blue-600 dark:text-blue-400"
+                    size={32}
+                  />
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Standard Spinner
+                  </p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-8 h-8 border-4 border-slate-200 dark:border-slate-700 border-t-blue-600 dark:border-t-blue-400 rounded-full animate-spin"></div>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Ring Spinner</p>
+                  <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-blue-600 dark:border-slate-700 dark:border-t-blue-400"></div>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Ring Spinner
+                  </p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0s" }}></div>
-                    <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0.2s" }}></div>
-                    <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: "0.4s" }}></div>
+                    <div
+                      className="h-2 w-2 animate-pulse rounded-full bg-blue-600 dark:bg-blue-400"
+                      style={{ animationDelay: "0s" }}
+                    ></div>
+                    <div
+                      className="h-2 w-2 animate-pulse rounded-full bg-blue-600 dark:bg-blue-400"
+                      style={{ animationDelay: "0.2s" }}
+                    ></div>
+                    <div
+                      className="h-2 w-2 animate-pulse rounded-full bg-blue-600 dark:bg-blue-400"
+                      style={{ animationDelay: "0.4s" }}
+                    ></div>
                   </div>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Dot Loader</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Dot Loader
+                  </p>
                 </div>
               </div>
             </section>

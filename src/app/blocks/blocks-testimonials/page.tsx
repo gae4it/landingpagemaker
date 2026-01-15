@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -29,7 +30,8 @@ export default function BlocksTestimonialsPage() {
 
   const testimonials = [
     {
-      quote: "This product has transformed how we work. The team is more productive and our customers are happier than ever.",
+      quote:
+        "This product has transformed how we work. The team is more productive and our customers are happier than ever.",
       author: "Sarah Mitchell",
       role: "CEO, TechCorp",
       image: "https://i.pravatar.cc/150?img=1",
@@ -37,7 +39,8 @@ export default function BlocksTestimonialsPage() {
       rating: 5,
     },
     {
-      quote: "Outstanding support and incredible features. We've seen a 300% increase in efficiency since switching.",
+      quote:
+        "Outstanding support and incredible features. We've seen a 300% increase in efficiency since switching.",
       author: "James Wilson",
       role: "CTO, StartupXYZ",
       image: "https://i.pravatar.cc/150?img=13",
@@ -45,7 +48,8 @@ export default function BlocksTestimonialsPage() {
       rating: 5,
     },
     {
-      quote: "The best investment we've made this year. Highly recommend to anyone looking to scale their business.",
+      quote:
+        "The best investment we've made this year. Highly recommend to anyone looking to scale their business.",
       author: "Emily Chen",
       role: "Product Manager, InnovateCo",
       image: "https://i.pravatar.cc/150?img=5",
@@ -53,7 +57,8 @@ export default function BlocksTestimonialsPage() {
       rating: 5,
     },
     {
-      quote: "Exceptional quality and attention to detail. The platform exceeded all our expectations.",
+      quote:
+        "Exceptional quality and attention to detail. The platform exceeded all our expectations.",
       author: "Michael Rodriguez",
       role: "Founder, GrowthHub",
       image: "https://i.pravatar.cc/150?img=14",
@@ -127,9 +132,11 @@ export default function BlocksTestimonialsPage() {
                         {testimonial.quote}
                       </p>
                       <div className="mt-6 flex items-center gap-4">
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.author}
+                          width={48}
+                          height={48}
                           className="h-12 w-12 rounded-full object-cover"
                         />
                         <div>
@@ -168,19 +175,21 @@ export default function BlocksTestimonialsPage() {
               <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
                 <Quote className="mx-auto mb-6 h-12 w-12 text-neutral-400" />
                 <blockquote className="text-2xl font-medium text-neutral-950 sm:text-3xl dark:text-neutral-50">
-                  "{testimonials[0].quote}"
+                  &quot;{testimonials[0]?.quote}&quot;
                 </blockquote>
                 <div className="mt-8 flex flex-col items-center">
-                  <img
-                    src={testimonials[0].image}
-                    alt={testimonials[0].author}
+                  <Image
+                    src={testimonials[0]!.image}
+                    alt={testimonials[0]!.author}
+                    width={64}
+                    height={64}
                     className="mb-4 h-16 w-16 rounded-full object-cover"
                   />
                   <p className="font-semibold text-neutral-950 dark:text-neutral-50">
-                    {testimonials[0].author}
+                    {testimonials[0]?.author}
                   </p>
                   <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-                    {testimonials[0].role}
+                    {testimonials[0]?.role}
                   </p>
                 </div>
                 <div className="mt-8 flex justify-center gap-2">
@@ -221,20 +230,24 @@ export default function BlocksTestimonialsPage() {
                       className="rounded-lg border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
                     >
                       <div className="mb-4 flex gap-1">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="h-5 w-5 fill-yellow-400 text-yellow-400"
-                          />
-                        ))}
+                        {Array.from({ length: testimonial.rating }).map(
+                          (_, i) => (
+                            <Star
+                              key={i}
+                              className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                            />
+                          ),
+                        )}
                       </div>
                       <p className="text-sm text-neutral-700 dark:text-neutral-300">
                         {testimonial.quote}
                       </p>
                       <div className="mt-4 flex items-center gap-3">
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.author}
+                          width={40}
+                          height={40}
                           className="h-10 w-10 rounded-full object-cover"
                         />
                         <div>
@@ -295,13 +308,15 @@ export default function BlocksTestimonialsPage() {
                       className="rounded-lg border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-900"
                     >
                       <p className="text-lg text-neutral-700 dark:text-neutral-300">
-                        "{testimonial.quote}"
+                        &quot;{testimonial.quote}&quot;
                       </p>
                       <div className="mt-6 flex items-center justify-between">
                         <div className="flex items-center gap-4">
-                          <img
+                          <Image
                             src={testimonial.image}
                             alt={testimonial.author}
+                            width={48}
+                            height={48}
                             className="h-12 w-12 rounded-full object-cover"
                           />
                           <div>
@@ -349,9 +364,11 @@ export default function BlocksTestimonialsPage() {
                       className="rounded-lg border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
                     >
                       <div className="group relative mb-6 aspect-video overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800">
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.author}
+                          width={500}
+                          height={281}
                           className="h-full w-full object-cover"
                         />
                         <div className="absolute inset-0 flex items-center justify-center bg-black/40 transition-all group-hover:bg-black/50">
@@ -364,9 +381,11 @@ export default function BlocksTestimonialsPage() {
                         {testimonial.quote}
                       </p>
                       <div className="mt-4 flex items-center gap-3">
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.author}
+                          width={40}
+                          height={40}
                           className="h-10 w-10 rounded-full object-cover"
                         />
                         <div>
@@ -407,20 +426,22 @@ export default function BlocksTestimonialsPage() {
                 <div className="rounded-lg border border-neutral-200 bg-white p-12 dark:border-neutral-800 dark:bg-neutral-950">
                   <Quote className="mb-6 h-12 w-12 text-neutral-400" />
                   <blockquote className="text-2xl font-medium text-neutral-950 dark:text-neutral-50">
-                    "{testimonials[0].quote}"
+                    &quot;{testimonials[0]?.quote}&quot;
                   </blockquote>
                   <div className="mt-8 flex items-center gap-4">
-                    <img
-                      src={testimonials[0].image}
-                      alt={testimonials[0].author}
+                    <Image
+                      src={testimonials[0]!.image}
+                      alt={testimonials[0]!.author}
+                      width={64}
+                      height={64}
                       className="h-16 w-16 rounded-full object-cover"
                     />
                     <div>
-                      <p className="text-lg font-semibold text-neutral-950 dark:text-neutral-50">
-                        {testimonials[0].author}
+                      <p className="font-semibold text-neutral-950 dark:text-neutral-50">
+                        {testimonials[0]?.author}
                       </p>
-                      <p className="text-neutral-600 dark:text-neutral-400">
-                        {testimonials[0].role}
+                      <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                        {testimonials[0]?.role}
                       </p>
                     </div>
                   </div>
@@ -434,7 +455,7 @@ export default function BlocksTestimonialsPage() {
                       className="rounded-lg border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
                     >
                       <div className="mb-3 flex gap-1">
-                        {[...Array(5)].map((_, i) => (
+                        {Array.from({ length: 5 }).map((_, i) => (
                           <Star
                             key={i}
                             className="h-4 w-4 fill-yellow-400 text-yellow-400"
@@ -480,7 +501,7 @@ export default function BlocksTestimonialsPage() {
                     >
                       <div className="mb-4 flex items-center justify-between">
                         <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
+                          {Array.from({ length: 5 }).map((_, i) => (
                             <Star
                               key={i}
                               className="h-4 w-4 fill-yellow-400 text-yellow-400"
@@ -498,9 +519,11 @@ export default function BlocksTestimonialsPage() {
                         {testimonial.quote}
                       </p>
                       <div className="mt-6 flex items-center gap-4">
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.author}
+                          width={48}
+                          height={48}
                           className="h-12 w-12 rounded-full object-cover"
                         />
                         <div>
@@ -543,7 +566,8 @@ export default function BlocksTestimonialsPage() {
                       Customer stories
                     </h2>
                     <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
-                      See how companies are transforming their businesses with our platform.
+                      See how companies are transforming their businesses with
+                      our platform.
                     </p>
                     <div className="mt-8 space-y-6">
                       <div className="flex items-center gap-4">
@@ -581,7 +605,7 @@ export default function BlocksTestimonialsPage() {
                         className="rounded-lg border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950"
                       >
                         <div className="mb-3 flex gap-1">
-                          {[...Array(5)].map((_, i) => (
+                          {Array.from({ length: 5 }).map((_, i) => (
                             <Star
                               key={i}
                               className="h-4 w-4 fill-yellow-400 text-yellow-400"
@@ -592,9 +616,11 @@ export default function BlocksTestimonialsPage() {
                           {testimonial.quote}
                         </p>
                         <div className="mt-4 flex items-center gap-3">
-                          <img
+                          <Image
                             src={testimonial.image}
                             alt={testimonial.author}
+                            width={40}
+                            height={40}
                             className="h-10 w-10 rounded-full object-cover"
                           />
                           <div>

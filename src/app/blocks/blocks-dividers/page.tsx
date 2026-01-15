@@ -60,10 +60,10 @@ export default function BlocksDividersPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="rounded-lg bg-slate-50 dark:bg-slate-950 py-16 px-6 sm:px-8"
+              className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-400 mb-8">
+              <div className="mx-auto max-w-3xl">
+                <p className="mb-8 text-slate-600 dark:text-slate-400">
                   A clean and minimal horizontal line divider for separating
                   content sections.
                 </p>
@@ -87,10 +87,10 @@ export default function BlocksDividersPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="rounded-lg bg-slate-50 dark:bg-slate-950 py-16 px-6 sm:px-8"
+              className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-400 mb-8">
+              <div className="mx-auto max-w-3xl">
+                <p className="mb-8 text-slate-600 dark:text-slate-400">
                   A dotted line divider adds visual interest while maintaining
                   clarity.
                 </p>
@@ -114,10 +114,10 @@ export default function BlocksDividersPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="rounded-lg bg-slate-50 dark:bg-slate-950 py-16 px-6 sm:px-8"
+              className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-400 mb-8">
+              <div className="mx-auto max-w-3xl">
+                <p className="mb-8 text-slate-600 dark:text-slate-400">
                   A dashed line divider provides a contemporary, tech-forward
                   aesthetic.
                 </p>
@@ -141,18 +141,18 @@ export default function BlocksDividersPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="rounded-lg bg-slate-50 dark:bg-slate-950 py-16 px-6 sm:px-8"
+              className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-400 mb-8">
+              <div className="mx-auto max-w-3xl">
+                <p className="mb-8 text-slate-600 dark:text-slate-400">
                   A decorative icon enhances the visual separation between
                   sections.
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="flex-1 h-px bg-slate-300 dark:bg-slate-700"></div>
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-slate-900 dark:bg-slate-100 flex items-center justify-center">
+                  <div className="h-px flex-1 bg-slate-300 dark:bg-slate-700"></div>
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-100">
                     <svg
-                      className="w-4 h-4 text-white dark:text-slate-900"
+                      className="h-4 w-4 text-white dark:text-slate-900"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -163,7 +163,7 @@ export default function BlocksDividersPage() {
                       />
                     </svg>
                   </div>
-                  <div className="flex-1 h-px bg-slate-300 dark:bg-slate-700"></div>
+                  <div className="h-px flex-1 bg-slate-300 dark:bg-slate-700"></div>
                 </div>
               </div>
             </section>
@@ -184,19 +184,19 @@ export default function BlocksDividersPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="rounded-lg bg-slate-50 dark:bg-slate-950 py-16 px-6 sm:px-8"
+              className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-400 mb-8">
+              <div className="mx-auto max-w-3xl">
+                <p className="mb-8 text-slate-600 dark:text-slate-400">
                   Text dividers break up content with meaningful labels or
                   section markers.
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="flex-1 h-px bg-slate-300 dark:bg-slate-700"></div>
-                  <span className="shrink-0 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wide">
+                  <div className="h-px flex-1 bg-slate-300 dark:bg-slate-700"></div>
+                  <span className="shrink-0 px-4 text-sm font-semibold tracking-wide text-slate-700 uppercase dark:text-slate-300">
                     or
                   </span>
-                  <div className="flex-1 h-px bg-slate-300 dark:bg-slate-700"></div>
+                  <div className="h-px flex-1 bg-slate-300 dark:bg-slate-700"></div>
                 </div>
               </div>
             </section>
@@ -217,14 +217,14 @@ export default function BlocksDividersPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="rounded-lg bg-slate-50 dark:bg-slate-950 py-16 px-6 sm:px-8"
+              className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-400 mb-8">
+              <div className="mx-auto max-w-3xl">
+                <p className="mb-8 text-slate-600 dark:text-slate-400">
                   A gradient divider adds elegance and visual depth to section
                   breaks.
                 </p>
-                <div className="h-1 bg-linear-to-r from-slate-100 via-slate-400 to-slate-100 dark:from-slate-900 dark:via-slate-600 dark:to-slate-900 rounded-full"></div>
+                <div className="h-1 rounded-full bg-linear-to-r from-slate-100 via-slate-400 to-slate-100 dark:from-slate-900 dark:via-slate-600 dark:to-slate-900"></div>
               </div>
             </section>
           </div>
@@ -244,16 +244,16 @@ export default function BlocksDividersPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="rounded-lg bg-slate-50 dark:bg-slate-950 py-16 px-6 sm:px-8"
+              className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-400 mb-8">
+              <div className="mx-auto max-w-3xl">
+                <p className="mb-8 text-slate-600 dark:text-slate-400">
                   A bolder divider with generous spacing creates strong visual
                   separation.
                 </p>
                 <div className="space-y-4">
-                  <div className="h-1.5 bg-slate-900 dark:bg-slate-100 rounded-full"></div>
-                  <div className="h-1.5 bg-slate-400 dark:bg-slate-600 rounded-full w-2/3"></div>
+                  <div className="h-1.5 rounded-full bg-slate-900 dark:bg-slate-100"></div>
+                  <div className="h-1.5 w-2/3 rounded-full bg-slate-400 dark:bg-slate-600"></div>
                 </div>
               </div>
             </section>
@@ -274,13 +274,13 @@ export default function BlocksDividersPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="rounded-lg bg-slate-50 dark:bg-slate-950 py-16 px-6 sm:px-8"
+              className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950"
             >
-              <div className="max-w-3xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-400 mb-8">
+              <div className="mx-auto max-w-3xl">
+                <p className="mb-8 text-slate-600 dark:text-slate-400">
                   An animated divider brings motion and energy to your layout.
                 </p>
-                <div className="relative overflow-hidden h-px bg-linear-to-r from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-700 rounded-full">
+                <div className="relative h-px overflow-hidden rounded-full bg-linear-to-r from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-700">
                   <style>{`
                     @keyframes slide {
                       0% { transform: translateX(-100%); }
@@ -290,7 +290,7 @@ export default function BlocksDividersPage() {
                       animation: slide 2s infinite;
                     }
                   `}</style>
-                  <div className="absolute inset-0 w-1/2 bg-linear-to-r from-transparent via-slate-600 dark:via-slate-400 to-transparent animate-slide"></div>
+                  <div className="animate-slide absolute inset-0 w-1/2 bg-linear-to-r from-transparent via-slate-600 to-transparent dark:via-slate-400"></div>
                 </div>
               </div>
             </section>

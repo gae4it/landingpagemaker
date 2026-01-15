@@ -68,33 +68,33 @@ export default function BlocksShopPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   Our Products
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-4">
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                     <div
                       key={i}
-                      className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                      className="overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg dark:bg-slate-800"
                     >
-                      <div className="bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 h-48 flex items-center justify-center">
+                      <div className="flex h-48 items-center justify-center bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600">
                         <Package size={48} className="text-slate-400" />
                       </div>
                       <div className="p-4">
-                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                        <h3 className="mb-2 text-lg font-semibold text-slate-900 dark:text-white">
                           Product {i}
                         </h3>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                        <p className="mb-4 text-sm text-slate-600 dark:text-slate-300">
                           High-quality product with great features
                         </p>
-                        <div className="flex justify-between items-center">
+                        <div className="flex items-center justify-between">
                           <span className="text-xl font-bold text-slate-900 dark:text-white">
                             ${(19.99 + i * 5).toFixed(2)}
                           </span>
-                          <button className="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                          <button className="rounded-lg bg-blue-600 p-2 text-white transition-colors hover:bg-blue-700">
                             <ShoppingCart size={18} />
                           </button>
                         </div>
@@ -121,49 +121,49 @@ export default function BlocksShopPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-white dark:bg-slate-800 py-16"
+              className="bg-white py-16 dark:bg-slate-800"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   Top Rated Products
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {[1, 2, 3, 4, 5, 6].map((i) => (
                     <div
                       key={i}
-                      className="bg-slate-50 dark:bg-slate-700 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+                      className="overflow-hidden rounded-lg bg-slate-50 shadow-md transition-shadow hover:shadow-xl dark:bg-slate-700"
                     >
-                      <div className="bg-linear-to-br from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 h-56 flex items-center justify-center">
+                      <div className="flex h-56 items-center justify-center bg-linear-to-br from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900">
                         <Package size={64} className="text-slate-400" />
                       </div>
                       <div className="p-6">
-                        <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+                        <h3 className="mb-2 text-xl font-semibold text-slate-900 dark:text-white">
                           Premium Product {i}
                         </h3>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                        <p className="mb-4 text-sm text-slate-600 dark:text-slate-300">
                           Exceptional quality and outstanding performance
                         </p>
-                        <div className="flex items-center gap-1 mb-4">
+                        <div className="mb-4 flex items-center gap-1">
                           {[1, 2, 3, 4, 5].map((star) => (
                             <Star
                               key={star}
                               size={16}
                               className={
-                                star <= (4 + (i % 2))
+                                star <= 4 + (i % 2)
                                   ? "fill-yellow-400 text-yellow-400"
                                   : "text-slate-300 dark:text-slate-500"
                               }
                             />
                           ))}
-                          <span className="text-sm text-slate-600 dark:text-slate-300 ml-2">
+                          <span className="ml-2 text-sm text-slate-600 dark:text-slate-300">
                             ({100 + i * 12} reviews)
                           </span>
                         </div>
-                        <div className="flex justify-between items-center">
+                        <div className="flex items-center justify-between">
                           <span className="text-2xl font-bold text-slate-900 dark:text-white">
                             ${(29.99 + i * 8).toFixed(2)}
                           </span>
-                          <button className="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                          <button className="rounded-lg bg-blue-600 p-2 text-white transition-colors hover:bg-blue-700">
                             <ShoppingCart size={20} />
                           </button>
                         </div>
@@ -190,32 +190,32 @@ export default function BlocksShopPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-slate-100 dark:bg-slate-950 py-16"
+              className="bg-slate-100 py-16 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   Featured Collection
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
-                      className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all group"
+                      className="group overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg dark:bg-slate-800"
                     >
-                      <div className="relative bg-linear-to-br from-slate-300 to-slate-400 dark:from-slate-600 dark:to-slate-700 h-64 flex items-center justify-center overflow-hidden">
+                      <div className="relative flex h-64 items-center justify-center overflow-hidden bg-linear-to-br from-slate-300 to-slate-400 dark:from-slate-600 dark:to-slate-700">
                         <Package size={80} className="text-slate-500" />
-                        <button className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all">
+                        <button className="bg-opacity-0 group-hover:bg-opacity-40 absolute inset-0 flex items-center justify-center bg-black transition-all">
                           <Eye
                             size={40}
-                            className="text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                            className="text-white opacity-0 transition-opacity group-hover:opacity-100"
                           />
                         </button>
                       </div>
                       <div className="p-6">
-                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                        <h3 className="mb-2 text-lg font-semibold text-slate-900 dark:text-white">
                           Showcase Product {i}
                         </h3>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                        <p className="mb-4 text-sm text-slate-600 dark:text-slate-300">
                           Click the eye icon to see details and quick view
                         </p>
                         <div className="flex items-center justify-between">
@@ -223,10 +223,10 @@ export default function BlocksShopPage() {
                             ${(39.99 + i * 10).toFixed(2)}
                           </span>
                           <div className="flex gap-2">
-                            <button className="p-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-900 dark:text-white rounded-lg transition-colors">
+                            <button className="rounded-lg bg-slate-200 p-2 text-slate-900 transition-colors hover:bg-slate-300 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600">
                               <Heart size={18} />
                             </button>
-                            <button className="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                            <button className="rounded-lg bg-blue-600 p-2 text-white transition-colors hover:bg-blue-700">
                               <ShoppingCart size={18} />
                             </button>
                           </div>
@@ -254,22 +254,22 @@ export default function BlocksShopPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-white dark:bg-slate-800 py-16"
+              className="bg-white py-16 dark:bg-slate-800"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   Browse Products
                 </h2>
-                <div className="flex flex-col lg:flex-row gap-8">
+                <div className="flex flex-col gap-8 lg:flex-row">
                   {/* Sidebar Filters */}
-                  <div className="w-full lg:w-64 shrink-0">
-                    <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">
+                  <div className="w-full shrink-0 lg:w-64">
+                    <div className="rounded-lg bg-slate-50 p-6 dark:bg-slate-700">
+                      <h3 className="mb-6 text-lg font-semibold text-slate-900 dark:text-white">
                         Filters
                       </h3>
                       <div className="space-y-6">
                         <div>
-                          <label className="block text-sm font-medium text-slate-900 dark:text-white mb-3">
+                          <label className="mb-3 block text-sm font-medium text-slate-900 dark:text-white">
                             Price Range
                           </label>
                           <input
@@ -278,12 +278,12 @@ export default function BlocksShopPage() {
                             max="500"
                             className="w-full"
                           />
-                          <p className="text-sm text-slate-600 dark:text-slate-300 mt-2">
+                          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                             $0 - $500
                           </p>
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-slate-900 dark:text-white mb-3">
+                          <label className="mb-3 block text-sm font-medium text-slate-900 dark:text-white">
                             Category
                           </label>
                           <div className="space-y-2">
@@ -291,34 +291,28 @@ export default function BlocksShopPage() {
                               (cat) => (
                                 <label
                                   key={cat}
-                                  className="flex items-center gap-2 cursor-pointer"
+                                  className="flex cursor-pointer items-center gap-2"
                                 >
-                                  <input
-                                    type="checkbox"
-                                    className="rounded"
-                                  />
+                                  <input type="checkbox" className="rounded" />
                                   <span className="text-slate-700 dark:text-slate-300">
                                     {cat}
                                   </span>
                                 </label>
-                              )
+                              ),
                             )}
                           </div>
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-slate-900 dark:text-white mb-3">
+                          <label className="mb-3 block text-sm font-medium text-slate-900 dark:text-white">
                             Rating
                           </label>
                           <div className="space-y-2">
                             {[5, 4, 3, 2, 1].map((rating) => (
                               <label
                                 key={rating}
-                                className="flex items-center gap-2 cursor-pointer"
+                                className="flex cursor-pointer items-center gap-2"
                               >
-                                <input
-                                  type="checkbox"
-                                  className="rounded"
-                                />
+                                <input type="checkbox" className="rounded" />
                                 <div className="flex gap-1">
                                   {[1, 2, 3, 4, 5].map((star) => (
                                     <Star
@@ -342,20 +336,20 @@ export default function BlocksShopPage() {
 
                   {/* Product Grid */}
                   <div className="flex-1">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {[1, 2, 3, 4, 5, 6].map((i) => (
                         <div
                           key={i}
-                          className="bg-slate-50 dark:bg-slate-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                          className="overflow-hidden rounded-lg bg-slate-50 shadow-md transition-shadow hover:shadow-lg dark:bg-slate-700"
                         >
-                          <div className="bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-600 dark:to-slate-700 h-40 flex items-center justify-center">
+                          <div className="flex h-40 items-center justify-center bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-600 dark:to-slate-700">
                             <Package size={48} className="text-slate-400" />
                           </div>
                           <div className="p-4">
-                            <h3 className="font-semibold text-slate-900 dark:text-white mb-2">
+                            <h3 className="mb-2 font-semibold text-slate-900 dark:text-white">
                               Filtered Product {i}
                             </h3>
-                            <div className="flex items-center gap-1 mb-3">
+                            <div className="mb-3 flex items-center gap-1">
                               {[1, 2, 3, 4, 5].map((star) => (
                                 <Star
                                   key={star}
@@ -368,11 +362,11 @@ export default function BlocksShopPage() {
                                 />
                               ))}
                             </div>
-                            <div className="flex justify-between items-center">
+                            <div className="flex items-center justify-between">
                               <span className="font-bold text-slate-900 dark:text-white">
                                 ${(24.99 + i * 6).toFixed(2)}
                               </span>
-                              <button className="p-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors">
+                              <button className="rounded bg-blue-600 p-1.5 text-white transition-colors hover:bg-blue-700">
                                 <ShoppingCart size={16} />
                               </button>
                             </div>
@@ -401,53 +395,50 @@ export default function BlocksShopPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   Your Shopping Cart
                 </h2>
-                <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
+                <div className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-slate-800">
                   <div className="divide-y divide-slate-200 dark:divide-slate-700">
                     {[1, 2, 3].map((i) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-4 p-6"
-                      >
-                        <div className="w-24 h-24 bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 rounded-lg flex items-center justify-center shrink-0">
+                      <div key={i} className="flex items-center gap-4 p-6">
+                        <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600">
                           <Package size={32} className="text-slate-400" />
                         </div>
-                        <div className="flex-1 min-w-0">
+                        <div className="min-w-0 flex-1">
                           <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                             Cart Item {i}
                           </h3>
-                          <p className="text-slate-600 dark:text-slate-300 text-sm">
+                          <p className="text-sm text-slate-600 dark:text-slate-300">
                             Product code: SKU-{1000 + i}
                           </p>
-                          <div className="flex items-center gap-2 mt-2">
-                            <button className="px-2 py-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded">
+                          <div className="mt-2 flex items-center gap-2">
+                            <button className="rounded bg-slate-200 px-2 py-1 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600">
                               -
                             </button>
                             <span className="w-8 text-center text-slate-900 dark:text-white">
                               {i}
                             </span>
-                            <button className="px-2 py-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded">
+                            <button className="rounded bg-slate-200 px-2 py-1 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600">
                               +
                             </button>
                           </div>
                         </div>
-                        <div className="text-right shrink-0">
+                        <div className="shrink-0 text-right">
                           <p className="text-lg font-bold text-slate-900 dark:text-white">
                             ${(49.99 + i * 15).toFixed(2)}
                           </p>
-                          <button className="mt-2 text-red-600 hover:text-red-700 text-sm font-medium">
+                          <button className="mt-2 text-sm font-medium text-red-600 hover:text-red-700">
                             Remove
                           </button>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="bg-slate-50 dark:bg-slate-700 p-6 space-y-4">
+                  <div className="space-y-4 bg-slate-50 p-6 dark:bg-slate-700">
                     <div className="flex justify-between text-slate-900 dark:text-white">
                       <span>Subtotal:</span>
                       <span className="font-semibold">$164.97</span>
@@ -456,11 +447,11 @@ export default function BlocksShopPage() {
                       <span>Shipping:</span>
                       <span className="font-semibold">$10.00</span>
                     </div>
-                    <div className="flex justify-between text-lg font-bold text-slate-900 dark:text-white border-t border-slate-200 dark:border-slate-600 pt-4">
+                    <div className="flex justify-between border-t border-slate-200 pt-4 text-lg font-bold text-slate-900 dark:border-slate-600 dark:text-white">
                       <span>Total:</span>
                       <span>$174.97</span>
                     </div>
-                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors mt-4">
+                    <button className="mt-4 w-full rounded-lg bg-blue-600 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
                       Proceed to Checkout
                     </button>
                   </div>
@@ -484,41 +475,43 @@ export default function BlocksShopPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-white dark:bg-slate-800 py-16"
+              className="bg-white py-16 dark:bg-slate-800"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-4 text-3xl font-bold text-slate-900 dark:text-white">
                   Customer Reviews
                 </h2>
-                <p className="text-slate-600 dark:text-slate-300 mb-12 max-w-2xl">
-                  See what our satisfied customers have to say about our products
+                <p className="mb-12 max-w-2xl text-slate-600 dark:text-slate-300">
+                  See what our satisfied customers have to say about our
+                  products
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {[1, 2, 3, 4, 5, 6].map((i) => (
                     <div
                       key={i}
-                      className="bg-slate-50 dark:bg-slate-700 rounded-lg p-6"
+                      className="rounded-lg bg-slate-50 p-6 dark:bg-slate-700"
                     >
-                      <div className="flex items-center gap-1 mb-4">
+                      <div className="mb-4 flex items-center gap-1">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star
                             key={star}
                             size={18}
                             className={
-                              star <= (4 + (i % 2))
+                              star <= 4 + (i % 2)
                                 ? "fill-yellow-400 text-yellow-400"
                                 : "text-slate-300 dark:text-slate-500"
                             }
                           />
                         ))}
                       </div>
-                      <p className="text-slate-700 dark:text-slate-300 mb-4 italic">
-                        "This product exceeded my expectations. Amazing quality
-                        and fantastic customer service. Highly recommended!"
+                      <p className="mb-4 text-slate-700 italic dark:text-slate-300">
+                        &quot;This product exceeded my expectations. Amazing
+                        quality and fantastic customer service. Highly
+                        recommended!&quot;
                       </p>
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-linear-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center shrink-0">
-                          <span className="text-white font-semibold text-sm">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-blue-400 to-purple-400">
+                          <span className="text-sm font-semibold text-white">
                             {String.fromCharCode(64 + i)}
                           </span>
                         </div>
@@ -553,44 +546,44 @@ export default function BlocksShopPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-slate-100 dark:bg-slate-950 py-16"
+              className="bg-slate-100 py-16 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-4 text-3xl font-bold text-slate-900 dark:text-white">
                   Customers Also Bought
                 </h2>
-                <p className="text-slate-600 dark:text-slate-300 mb-12">
+                <p className="mb-12 text-slate-600 dark:text-slate-300">
                   Complete your purchase with these complementary products
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                   {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
-                      className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all group"
+                      className="group overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg dark:bg-slate-800"
                     >
-                      <div className="relative bg-linear-to-br from-green-200 to-teal-200 dark:from-green-900 dark:to-teal-900 h-48 flex items-center justify-center overflow-hidden">
+                      <div className="relative flex h-48 items-center justify-center overflow-hidden bg-linear-to-br from-green-200 to-teal-200 dark:from-green-900 dark:to-teal-900">
                         <TrendingUp size={48} className="text-green-600" />
                         {i <= 2 && (
-                          <div className="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          <div className="absolute top-3 right-3 rounded-full bg-red-500 px-3 py-1 text-sm font-semibold text-white">
                             Save 20%
                           </div>
                         )}
                       </div>
                       <div className="p-5">
-                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                        <h3 className="mb-2 text-lg font-semibold text-slate-900 dark:text-white">
                           Related Item {i}
                         </h3>
-                        <div className="flex gap-2 mb-4">
+                        <div className="mb-4 flex gap-2">
                           <span className="text-lg font-bold text-slate-900 dark:text-white">
                             ${(34.99 + i * 5).toFixed(2)}
                           </span>
                           {i <= 2 && (
-                            <span className="text-sm text-slate-600 dark:text-slate-300 line-through">
+                            <span className="text-sm text-slate-600 line-through dark:text-slate-300">
                               ${(44.99 + i * 5).toFixed(2)}
                             </span>
                           )}
                         </div>
-                        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition-colors">
+                        <button className="w-full rounded-lg bg-blue-600 py-2 font-medium text-white transition-colors hover:bg-blue-700">
                           Add to Cart
                         </button>
                       </div>
@@ -616,54 +609,54 @@ export default function BlocksShopPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 py-16"
+              className="bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 py-16 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <div className="inline-block bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 text-center">
+                  <div className="mb-4 inline-block rounded-full bg-red-500 px-4 py-2 text-sm font-semibold text-white">
                     EXCLUSIVE OFFER
                   </div>
-                  <h2 className="text-4xl font-bold text-white mb-4">
+                  <h2 className="mb-4 text-4xl font-bold text-white">
                     Limited Time Sale
                   </h2>
-                  <p className="text-slate-300 max-w-2xl mx-auto mb-8">
-                    Don't miss out on these incredible deals on our best-selling
-                    products
+                  <p className="mx-auto mb-8 max-w-2xl text-slate-300">
+                    Don&apos;t miss out on these incredible deals on our
+                    best-selling products
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
                   {/* Featured Item 1 - Large */}
-                  <div className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-xl h-96">
+                  <div className="h-96 overflow-hidden rounded-lg bg-white shadow-xl dark:bg-slate-800">
                     <div className="flex h-full">
-                      <div className="bg-linear-to-br from-orange-300 to-red-300 dark:from-orange-700 dark:to-red-700 w-1/2 flex items-center justify-center">
+                      <div className="flex w-1/2 items-center justify-center bg-linear-to-br from-orange-300 to-red-300 dark:from-orange-700 dark:to-red-700">
                         <Package size={80} className="text-white opacity-50" />
                       </div>
-                      <div className="w-1/2 flex flex-col justify-between p-8">
+                      <div className="flex w-1/2 flex-col justify-between p-8">
                         <div>
-                          <div className="text-red-600 font-semibold text-sm mb-2">
+                          <div className="mb-2 text-sm font-semibold text-red-600">
                             HOT DEAL
                           </div>
-                          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                          <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">
                             Premium Product
                           </h3>
-                          <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                          <p className="mb-4 text-sm text-slate-600 dark:text-slate-300">
                             Limited quantities available
                           </p>
                         </div>
                         <div>
-                          <div className="flex items-baseline gap-2 mb-4">
+                          <div className="mb-4 flex items-baseline gap-2">
                             <span className="text-3xl font-bold text-slate-900 dark:text-white">
                               $79.99
                             </span>
                             <span className="text-lg text-slate-500 line-through">
                               $129.99
                             </span>
-                            <span className="bg-red-500 text-white px-2 py-1 rounded text-sm font-semibold">
+                            <span className="rounded bg-red-500 px-2 py-1 text-sm font-semibold text-white">
                               -38%
                             </span>
                           </div>
-                          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
+                          <button className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 py-2 font-semibold text-white transition-colors hover:bg-blue-700">
                             <ShoppingCart size={20} />
                             Buy Now
                           </button>
@@ -677,17 +670,20 @@ export default function BlocksShopPage() {
                     {[1, 2].map((i) => (
                       <div
                         key={i}
-                        className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-lg"
+                        className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-slate-800"
                       >
                         <div className="flex items-center gap-4 p-6">
-                          <div className="w-24 h-24 bg-linear-to-br from-purple-300 to-pink-300 dark:from-purple-700 dark:to-pink-700 rounded-lg flex items-center justify-center shrink-0">
-                            <Package size={40} className="text-white opacity-50" />
+                          <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-purple-300 to-pink-300 dark:from-purple-700 dark:to-pink-700">
+                            <Package
+                              size={40}
+                              className="text-white opacity-50"
+                            />
                           </div>
-                          <div className="flex-1 min-w-0">
+                          <div className="min-w-0 flex-1">
                             <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                               Spotlight Product {i}
                             </h3>
-                            <div className="flex items-baseline gap-2 mt-2">
+                            <div className="mt-2 flex items-baseline gap-2">
                               <span className="font-bold text-slate-900 dark:text-white">
                                 ${(59.99 + i * 10).toFixed(2)}
                               </span>
@@ -696,7 +692,7 @@ export default function BlocksShopPage() {
                               </span>
                             </div>
                           </div>
-                          <button className="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shrink-0">
+                          <button className="shrink-0 rounded-lg bg-blue-600 p-3 text-white transition-colors hover:bg-blue-700">
                             <ShoppingCart size={20} />
                           </button>
                         </div>

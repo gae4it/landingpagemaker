@@ -38,7 +38,9 @@ export default function BlocksInteractionsPage() {
   const [toggleState, setToggleState] = useState(false);
 
   // State for variant 4: Collapsible Sections
-  const [expandedCollapsible, setExpandedCollapsible] = useState<number | null>(0);
+  const [expandedCollapsible, setExpandedCollapsible] = useState<number | null>(
+    0,
+  );
 
   // State for variant 5: Expandable Cards
   const [expandedCards, setExpandedCards] = useState<number | null>(null);
@@ -92,10 +94,10 @@ export default function BlocksInteractionsPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-8"
+              className="rounded-lg bg-linear-to-br from-slate-50 to-slate-100 p-8 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-2xl mx-auto space-y-4">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              <div className="mx-auto max-w-2xl space-y-4">
+                <h3 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
                   Frequently Asked Questions
                 </h3>
                 {[
@@ -117,28 +119,28 @@ export default function BlocksInteractionsPage() {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden"
+                    className="overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700"
                   >
                     <button
                       onClick={() =>
                         setExpandedAccordion(
-                          expandedAccordion === index ? null : index
+                          expandedAccordion === index ? null : index,
                         )
                       }
-                      className="w-full flex items-center justify-between p-4 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                      className="flex w-full items-center justify-between bg-white p-4 transition-colors hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700"
                     >
                       <span className="font-semibold text-slate-900 dark:text-white">
                         {item.title}
                       </span>
                       <ChevronDown
                         size={20}
-                        className={`text-slate-600 dark:text-slate-400 transition-transform ${
+                        className={`text-slate-600 transition-transform dark:text-slate-400 ${
                           expandedAccordion === index ? "rotate-180" : ""
                         }`}
                       />
                     </button>
                     {expandedAccordion === index && (
-                      <div className="p-4 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-700">
+                      <div className="border-t border-slate-200 bg-slate-50 p-4 text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
                         {item.content}
                       </div>
                     )}
@@ -163,21 +165,21 @@ export default function BlocksInteractionsPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-8"
+              className="rounded-lg bg-linear-to-br from-slate-50 to-slate-100 p-8 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              <div className="mx-auto max-w-2xl">
+                <h3 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
                   Product Features
                 </h3>
-                <div className="flex gap-2 mb-6 border-b border-slate-200 dark:border-slate-700">
+                <div className="mb-6 flex gap-2 border-b border-slate-200 dark:border-slate-700">
                   {["Overview", "Details", "Reviews"].map((tab, index) => (
                     <button
                       key={index}
                       onClick={() => setActiveTab(index)}
-                      className={`px-4 py-3 font-medium transition-colors border-b-2 ${
+                      className={`border-b-2 px-4 py-3 font-medium transition-colors ${
                         activeTab === index
                           ? "border-blue-600 text-blue-600 dark:text-blue-400"
-                          : "border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-300"
+                          : "border-transparent text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
                       }`}
                     >
                       {tab}
@@ -188,10 +190,10 @@ export default function BlocksInteractionsPage() {
                   {activeTab === 0 && (
                     <div>
                       <p className="mb-4">
-                        Our product offers a comprehensive solution for modern web
-                        development.
+                        Our product offers a comprehensive solution for modern
+                        web development.
                       </p>
-                      <ul className="list-disc list-inside space-y-2">
+                      <ul className="list-inside list-disc space-y-2">
                         <li>Fast and responsive design</li>
                         <li>Easy to customize</li>
                         <li>Well documented</li>
@@ -203,7 +205,7 @@ export default function BlocksInteractionsPage() {
                       <p className="mb-4">
                         Built with modern technologies and best practices.
                       </p>
-                      <ul className="list-disc list-inside space-y-2">
+                      <ul className="list-inside list-disc space-y-2">
                         <li>React 18+</li>
                         <li>TypeScript support</li>
                         <li>Tailwind CSS</li>
@@ -215,7 +217,7 @@ export default function BlocksInteractionsPage() {
                       <p className="mb-4">
                         Loved by thousands of developers worldwide.
                       </p>
-                      <ul className="list-disc list-inside space-y-2">
+                      <ul className="list-inside list-disc space-y-2">
                         <li>5 stars from 1,000+ reviews</li>
                         <li>99% uptime guarantee</li>
                         <li>24/7 customer support</li>
@@ -242,14 +244,14 @@ export default function BlocksInteractionsPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-8"
+              className="rounded-lg bg-linear-to-br from-slate-50 to-slate-100 p-8 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-2xl mx-auto space-y-6">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">
+              <div className="mx-auto max-w-2xl space-y-6">
+                <h3 className="mb-8 text-2xl font-bold text-slate-900 dark:text-white">
                   Settings
                 </h3>
 
-                <div className="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-lg">
+                <div className="flex items-center justify-between rounded-lg bg-white p-4 dark:bg-slate-800">
                   <div>
                     <p className="font-semibold text-slate-900 dark:text-white">
                       Dark Mode
@@ -260,7 +262,7 @@ export default function BlocksInteractionsPage() {
                   </div>
                   <button
                     onClick={() => setToggleState(!toggleState)}
-                    className={`relative inline-flex items-center h-8 w-14 rounded-full transition-colors ${
+                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
                       toggleState
                         ? "bg-blue-600"
                         : "bg-slate-300 dark:bg-slate-600"
@@ -274,7 +276,7 @@ export default function BlocksInteractionsPage() {
                   </button>
                 </div>
 
-                <div className="flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-lg">
+                <div className="flex items-center justify-between rounded-lg bg-white p-4 dark:bg-slate-800">
                   <div>
                     <p className="font-semibold text-slate-900 dark:text-white">
                       Notifications
@@ -285,7 +287,7 @@ export default function BlocksInteractionsPage() {
                   </div>
                   <button
                     onClick={() => setToggleState(!toggleState)}
-                    className={`relative inline-flex items-center h-8 w-14 rounded-full transition-colors ${
+                    className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
                       toggleState
                         ? "bg-blue-600"
                         : "bg-slate-300 dark:bg-slate-600"
@@ -317,10 +319,10 @@ export default function BlocksInteractionsPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-8"
+              className="rounded-lg bg-linear-to-br from-slate-50 to-slate-100 p-8 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-2xl mx-auto space-y-4">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              <div className="mx-auto max-w-2xl space-y-4">
+                <h3 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
                   Documentation
                 </h3>
                 {[
@@ -339,32 +341,32 @@ export default function BlocksInteractionsPage() {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className={`rounded-lg overflow-hidden transition-all ${
+                    className={`overflow-hidden rounded-lg transition-all ${
                       expandedCollapsible === index
-                        ? "bg-white dark:bg-slate-800 shadow-md"
+                        ? "bg-white shadow-md dark:bg-slate-800"
                         : "bg-slate-100 dark:bg-slate-800"
                     }`}
                   >
                     <button
                       onClick={() =>
                         setExpandedCollapsible(
-                          expandedCollapsible === index ? null : index
+                          expandedCollapsible === index ? null : index,
                         )
                       }
-                      className="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                      className="flex w-full items-center justify-between p-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-700"
                     >
                       <span className="font-semibold text-slate-900 dark:text-white">
                         {item.title}
                       </span>
                       <ChevronDown
                         size={20}
-                        className={`text-slate-600 dark:text-slate-400 transition-transform ${
+                        className={`text-slate-600 transition-transform dark:text-slate-400 ${
                           expandedCollapsible === index ? "rotate-180" : ""
                         }`}
                       />
                     </button>
                     {expandedCollapsible === index && (
-                      <div className="p-4 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-t border-slate-200 dark:border-slate-700">
+                      <div className="border-t border-slate-200 bg-slate-50 p-4 text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
                         {item.content}
                       </div>
                     )}
@@ -389,13 +391,13 @@ export default function BlocksInteractionsPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-8"
+              className="rounded-lg bg-linear-to-br from-slate-50 to-slate-100 p-8 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              <div className="mx-auto max-w-4xl">
+                <h3 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
                   Services
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   {[
                     {
                       title: "Web Design",
@@ -425,17 +427,15 @@ export default function BlocksInteractionsPage() {
                     <div
                       key={index}
                       onClick={() =>
-                        setExpandedCards(
-                          expandedCards === index ? null : index
-                        )
+                        setExpandedCards(expandedCards === index ? null : index)
                       }
                       className={`cursor-pointer rounded-lg p-6 transition-all ${
                         expandedCards === index
-                          ? "bg-blue-50 dark:bg-blue-900 border-2 border-blue-500"
-                          : "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600"
+                          ? "border-2 border-blue-500 bg-blue-50 dark:bg-blue-900"
+                          : "border border-slate-200 bg-white hover:border-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-slate-600"
                       }`}
                     >
-                      <h4 className="font-bold text-slate-900 dark:text-white mb-2">
+                      <h4 className="mb-2 font-bold text-slate-900 dark:text-white">
                         {card.title}
                       </h4>
                       <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -468,46 +468,46 @@ export default function BlocksInteractionsPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-8"
+              className="rounded-lg bg-linear-to-br from-slate-50 to-slate-100 p-8 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-2xl mx-auto text-center">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              <div className="mx-auto max-w-2xl text-center">
+                <h3 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
                   Alert Dialog Example
                 </h3>
                 <Button
                   onClick={() => setShowModal(true)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                  className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
                 >
                   Open Modal
                 </Button>
 
                 {showModal && (
-                  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div className="bg-white dark:bg-slate-800 rounded-lg p-8 max-w-md mx-4 shadow-xl">
-                      <div className="flex items-start justify-between mb-4">
+                  <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black">
+                    <div className="mx-4 max-w-md rounded-lg bg-white p-8 shadow-xl dark:bg-slate-800">
+                      <div className="mb-4 flex items-start justify-between">
                         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                           Confirm Action
                         </h2>
                         <button
                           onClick={() => setShowModal(false)}
-                          className="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                          className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
                         >
                           <X size={24} />
                         </button>
                       </div>
-                      <p className="text-slate-700 dark:text-slate-300 mb-6">
+                      <p className="mb-6 text-slate-700 dark:text-slate-300">
                         Are you sure you want to proceed with this action?
                       </p>
                       <div className="flex gap-3">
                         <button
                           onClick={() => setShowModal(false)}
-                          className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                          className="flex-1 rounded-lg border border-slate-300 px-4 py-2 text-slate-900 transition-colors hover:bg-slate-50 dark:border-slate-600 dark:text-white dark:hover:bg-slate-700"
                         >
                           Cancel
                         </button>
                         <button
                           onClick={() => setShowModal(false)}
-                          className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                          className="flex-1 rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
                         >
                           Confirm
                         </button>
@@ -534,10 +534,10 @@ export default function BlocksInteractionsPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-8"
+              className="rounded-lg bg-linear-to-br from-slate-50 to-slate-100 p-8 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">
+              <div className="mx-auto max-w-2xl">
+                <h3 className="mb-8 text-2xl font-bold text-slate-900 dark:text-white">
                   Hover for Tooltip
                 </h3>
                 <div className="flex flex-wrap gap-4">
@@ -553,16 +553,16 @@ export default function BlocksInteractionsPage() {
                       onMouseEnter={() => setTooltipActive(index)}
                       onMouseLeave={() => setTooltipActive(null)}
                     >
-                      <button className="p-3 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-400 transition-colors">
+                      <button className="rounded-lg border border-slate-200 bg-white p-3 transition-colors hover:border-blue-400 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-blue-400">
                         <item.icon
                           size={24}
                           className="text-slate-600 dark:text-slate-400"
                         />
                       </button>
                       {tooltipActive === index && (
-                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-900 dark:bg-slate-950 text-white text-sm rounded whitespace-nowrap z-10">
+                        <div className="absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 transform rounded bg-slate-900 px-3 py-2 text-sm whitespace-nowrap text-white dark:bg-slate-950">
                           {item.text}
-                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-slate-900 dark:border-t-slate-950"></div>
+                          <div className="absolute top-full left-1/2 -translate-x-1/2 transform border-4 border-transparent border-t-slate-900 dark:border-t-slate-950"></div>
                         </div>
                       )}
                     </div>
@@ -587,15 +587,18 @@ export default function BlocksInteractionsPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 rounded-lg p-8"
+              className="rounded-lg bg-linear-to-br from-slate-50 to-slate-100 p-8 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">
+              <div className="mx-auto max-w-2xl">
+                <h3 className="mb-8 text-2xl font-bold text-slate-900 dark:text-white">
                   Click for Popover
                 </h3>
                 <div className="flex flex-wrap gap-6">
                   {[
-                    { title: "Account", items: ["Profile", "Settings", "Logout"] },
+                    {
+                      title: "Account",
+                      items: ["Profile", "Settings", "Logout"],
+                    },
                     {
                       title: "Notifications",
                       items: ["Alerts On", "Alerts Off", "Clear All"],
@@ -605,19 +608,21 @@ export default function BlocksInteractionsPage() {
                     <div key={index} className="relative inline-block">
                       <button
                         onClick={() =>
-                          setActivePopover(activePopover === index ? null : index)
+                          setActivePopover(
+                            activePopover === index ? null : index,
+                          )
                         }
-                        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                        className="rounded-lg bg-blue-600 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-700"
                       >
                         {popover.title}
                       </button>
                       {activePopover === index && (
-                        <div className="absolute top-full left-0 mt-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg z-10">
+                        <div className="absolute top-full left-0 z-10 mt-2 rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-800">
                           {popover.items.map((item, itemIndex) => (
                             <button
                               key={itemIndex}
                               onClick={() => setActivePopover(null)}
-                              className="block w-full text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors first:rounded-t-lg last:rounded-b-lg"
+                              className="block w-full px-4 py-2 text-left text-slate-700 transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700"
                             >
                               {item}
                             </button>

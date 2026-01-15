@@ -9,10 +9,8 @@ import {
   Phone,
   MapPin,
   Send,
-  Globe,
   Calendar,
   MessageCircle,
-  Loader,
   Globe as GlobeIcon,
 } from "lucide-react";
 import { useRef } from "react";
@@ -71,49 +69,59 @@ export default function BlocksContactPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-6xl mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="mx-auto max-w-6xl px-4">
+                <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                   <div>
-                    <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+                    <h2 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
                       Get in Touch
                     </h2>
-                    <p className="text-slate-600 dark:text-slate-300 mb-8">
-                      Have questions? We'd love to hear from you. Send us a message
-                      and we'll get back to you as soon as possible.
+                    <p className="mb-8 text-slate-600 dark:text-slate-300">
+                      Have questions? We&apos;d love to hear from you. Send us a
+                      message and we&apos;ll get back to you as soon as
+                      possible.
                     </p>
                     <div className="space-y-4">
                       <div className="flex gap-3">
-                        <Mail className="text-blue-600 shrink-0 mt-1" size={20} />
+                        <Mail
+                          className="mt-1 shrink-0 text-blue-600"
+                          size={20}
+                        />
                         <div>
                           <p className="font-medium text-slate-900 dark:text-white">
                             Email
                           </p>
                           <a
                             href="mailto:hello@company.com"
-                            className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                            className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                           >
                             hello@company.com
                           </a>
                         </div>
                       </div>
                       <div className="flex gap-3">
-                        <Phone className="text-blue-600 shrink-0 mt-1" size={20} />
+                        <Phone
+                          className="mt-1 shrink-0 text-blue-600"
+                          size={20}
+                        />
                         <div>
                           <p className="font-medium text-slate-900 dark:text-white">
                             Phone
                           </p>
                           <a
                             href="tel:+1234567890"
-                            className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                            className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                           >
                             +1 (234) 567-890
                           </a>
                         </div>
                       </div>
                       <div className="flex gap-3">
-                        <MapPin className="text-blue-600 shrink-0 mt-1" size={20} />
+                        <MapPin
+                          className="mt-1 shrink-0 text-blue-600"
+                          size={20}
+                        />
                         <div>
                           <p className="font-medium text-slate-900 dark:text-white">
                             Address
@@ -128,40 +136,40 @@ export default function BlocksContactPage() {
                     </div>
                   </div>
                   <div>
-                    <form className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+                    <form className="rounded-lg bg-white p-8 shadow-lg dark:bg-slate-800">
                       <div className="mb-4">
-                        <label className="block text-slate-900 dark:text-white font-medium mb-2">
+                        <label className="mb-2 block font-medium text-slate-900 dark:text-white">
                           Name
                         </label>
                         <input
                           type="text"
                           placeholder="Your name"
-                          className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-700 dark:text-white"
                         />
                       </div>
                       <div className="mb-4">
-                        <label className="block text-slate-900 dark:text-white font-medium mb-2">
+                        <label className="mb-2 block font-medium text-slate-900 dark:text-white">
                           Email
                         </label>
                         <input
                           type="email"
                           placeholder="your@email.com"
-                          className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-700 dark:text-white"
                         />
                       </div>
                       <div className="mb-6">
-                        <label className="block text-slate-900 dark:text-white font-medium mb-2">
+                        <label className="mb-2 block font-medium text-slate-900 dark:text-white">
                           Message
                         </label>
                         <textarea
                           rows={4}
                           placeholder="Your message..."
-                          className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-700 dark:text-white"
                         ></textarea>
                       </div>
                       <button
                         type="submit"
-                        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 font-medium flex items-center justify-center gap-2"
+                        className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 py-2 font-medium text-white hover:bg-blue-700"
                       >
                         <Send size={18} />
                         Send Message
@@ -188,41 +196,41 @@ export default function BlocksContactPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-white dark:bg-slate-950 rounded-lg overflow-hidden"
+              className="overflow-hidden rounded-lg bg-white dark:bg-slate-950"
             >
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="p-8 col-span-1">
-                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                <div className="col-span-1 p-8">
+                  <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
                     Contact Us
                   </h2>
                   <div className="space-y-6">
                     <div>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
                         EMAIL
                       </p>
                       <a
                         href="mailto:contact@company.com"
-                        className="text-slate-900 dark:text-white font-medium hover:text-blue-600"
+                        className="font-medium text-slate-900 hover:text-blue-600 dark:text-white"
                       >
                         contact@company.com
                       </a>
                     </div>
                     <div>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
                         PHONE
                       </p>
                       <a
                         href="tel:+1234567890"
-                        className="text-slate-900 dark:text-white font-medium hover:text-blue-600"
+                        className="font-medium text-slate-900 hover:text-blue-600 dark:text-white"
                       >
                         +1 (234) 567-890
                       </a>
                     </div>
                     <div>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
                         ADDRESS
                       </p>
-                      <p className="text-slate-900 dark:text-white font-medium">
+                      <p className="font-medium text-slate-900 dark:text-white">
                         123 Business Ave
                         <br />
                         City, State 12345
@@ -230,8 +238,8 @@ export default function BlocksContactPage() {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-2 bg-slate-200 dark:bg-slate-800 h-96 flex items-center justify-center">
-                  <div className="text-slate-400 flex items-center gap-2">
+                <div className="col-span-2 flex h-96 items-center justify-center bg-slate-200 dark:bg-slate-800">
+                  <div className="flex items-center gap-2 text-slate-400">
                     <GlobeIcon size={24} />
                     <span>Map Integration Here</span>
                   </div>
@@ -255,23 +263,23 @@ export default function BlocksContactPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
               <div className="mb-12 text-center">
                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
                   Our Offices
                 </h2>
-                <p className="text-slate-600 dark:text-slate-300 mt-2">
+                <p className="mt-2 text-slate-600 dark:text-slate-300">
                   Visit us at any of our global locations
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="bg-white dark:bg-slate-800 p-6 rounded-lg"
+                    className="rounded-lg bg-white p-6 dark:bg-slate-800"
                   >
-                    <h3 className="font-bold text-slate-900 dark:text-white mb-4">
+                    <h3 className="mb-4 font-bold text-slate-900 dark:text-white">
                       {["New York", "London", "Tokyo"][i - 1]}
                     </h3>
                     <div className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
@@ -285,7 +293,9 @@ export default function BlocksContactPage() {
                       </p>
                       <p>
                         Email:{" "}
-                        <a href="mailto:office@company.com">office@company.com</a>
+                        <a href="mailto:office@company.com">
+                          office@company.com
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -309,55 +319,58 @@ export default function BlocksContactPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white text-center mb-12">
+              <div className="mx-auto max-w-6xl px-4">
+                <h2 className="mb-12 text-center text-3xl font-bold text-slate-900 dark:text-white">
                   How to Reach Us
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                  <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg text-center">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+                  <div className="rounded-lg bg-blue-50 p-6 text-center dark:bg-blue-900/20">
                     <Phone className="mx-auto mb-4 text-blue-600" size={32} />
-                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">
+                    <h3 className="mb-2 font-bold text-slate-900 dark:text-white">
                       Phone
                     </h3>
                     <a
                       href="tel:+1234567890"
-                      className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                      className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                     >
                       +1 (234) 567-890
                     </a>
                   </div>
-                  <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg text-center">
+                  <div className="rounded-lg bg-green-50 p-6 text-center dark:bg-green-900/20">
                     <Mail className="mx-auto mb-4 text-green-600" size={32} />
-                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">
+                    <h3 className="mb-2 font-bold text-slate-900 dark:text-white">
                       Email
                     </h3>
                     <a
                       href="mailto:hello@company.com"
-                      className="text-slate-600 dark:text-slate-400 hover:text-green-600 text-sm"
+                      className="text-sm text-slate-600 hover:text-green-600 dark:text-slate-400"
                     >
                       hello@company.com
                     </a>
                   </div>
-                  <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg text-center">
-                    <MapPin className="mx-auto mb-4 text-purple-600" size={32} />
-                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">
+                  <div className="rounded-lg bg-purple-50 p-6 text-center dark:bg-purple-900/20">
+                    <MapPin
+                      className="mx-auto mb-4 text-purple-600"
+                      size={32}
+                    />
+                    <h3 className="mb-2 font-bold text-slate-900 dark:text-white">
                       Address
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
                       123 Main St, City
                     </p>
                   </div>
-                  <div className="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg text-center">
+                  <div className="rounded-lg bg-orange-50 p-6 text-center dark:bg-orange-900/20">
                     <MessageCircle
                       className="mx-auto mb-4 text-orange-600"
                       size={32}
                     />
-                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">
+                    <h3 className="mb-2 font-bold text-slate-900 dark:text-white">
                       Chat
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
                       Live support
                     </p>
                   </div>
@@ -381,54 +394,55 @@ export default function BlocksContactPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-4xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">
+              <div className="mx-auto max-w-4xl px-4">
+                <h2 className="mb-12 text-center text-3xl font-bold text-slate-900 dark:text-white">
                   Schedule a Meeting
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
+                    <h3 className="mb-6 text-xl font-bold text-slate-900 dark:text-white">
                       Quick Contact
                     </h3>
                     <form className="space-y-4">
                       <input
                         type="text"
                         placeholder="Full Name"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                       />
                       <input
                         type="email"
                         placeholder="Email"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                       />
                       <textarea
                         placeholder="Tell us about your project..."
                         rows={3}
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                       ></textarea>
                       <button
                         type="submit"
-                        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 font-medium"
+                        className="w-full rounded-lg bg-blue-600 py-2 font-medium text-white hover:bg-blue-700"
                       >
                         Submit
                       </button>
                     </form>
                   </div>
-                  <div className="bg-white dark:bg-slate-800 p-8 rounded-lg">
-                    <Calendar className="text-blue-600 mb-4" size={32} />
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+                  <div className="rounded-lg bg-white p-8 dark:bg-slate-800">
+                    <Calendar className="mb-4 text-blue-600" size={32} />
+                    <h3 className="mb-4 text-xl font-bold text-slate-900 dark:text-white">
                       Book a Time
                     </h3>
-                    <p className="text-slate-600 dark:text-slate-400 mb-6">
-                      Select a convenient time for a 30-minute call with our team.
+                    <p className="mb-6 text-slate-600 dark:text-slate-400">
+                      Select a convenient time for a 30-minute call with our
+                      team.
                     </p>
                     <div className="space-y-2">
                       {["10:00 AM", "2:00 PM", "4:00 PM"].map((time) => (
                         <button
                           key={time}
-                          className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-600 transition-colors"
+                          className="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-600 transition-colors hover:border-blue-600 hover:bg-blue-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-blue-900/20"
                         >
                           {time}
                         </button>
@@ -455,30 +469,30 @@ export default function BlocksContactPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="max-w-2xl mx-auto px-4">
-                <div className="bg-slate-50 dark:bg-slate-900 rounded-lg overflow-hidden shadow-lg">
-                  <div className="bg-blue-600 text-white p-4 flex items-center justify-between">
+              <div className="mx-auto max-w-2xl px-4">
+                <div className="overflow-hidden rounded-lg bg-slate-50 shadow-lg dark:bg-slate-900">
+                  <div className="flex items-center justify-between bg-blue-600 p-4 text-white">
                     <h3 className="font-bold">Live Chat Support</h3>
                     <span className="flex items-center gap-2 text-sm">
-                      <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                      <span className="h-2 w-2 rounded-full bg-green-400"></span>
                       Available
                     </span>
                   </div>
-                  <div className="p-6 h-96 flex flex-col">
-                    <div className="flex-1 space-y-4 mb-4 overflow-y-auto">
+                  <div className="flex h-96 flex-col p-6">
+                    <div className="mb-4 flex-1 space-y-4 overflow-y-auto">
                       <div className="flex gap-3">
-                        <div className="w-8 h-8 bg-blue-600 rounded-full shrink-0"></div>
-                        <div className="bg-blue-100 dark:bg-blue-900 rounded-lg p-3 max-w-xs">
-                          <p className="text-slate-900 dark:text-white text-sm">
+                        <div className="h-8 w-8 shrink-0 rounded-full bg-blue-600"></div>
+                        <div className="max-w-xs rounded-lg bg-blue-100 p-3 dark:bg-blue-900">
+                          <p className="text-sm text-slate-900 dark:text-white">
                             Hello! How can we help you today?
                           </p>
                         </div>
                       </div>
-                      <div className="flex gap-3 justify-end">
-                        <div className="bg-slate-200 dark:bg-slate-700 rounded-lg p-3 max-w-xs">
-                          <p className="text-slate-900 dark:text-white text-sm">
+                      <div className="flex justify-end gap-3">
+                        <div className="max-w-xs rounded-lg bg-slate-200 p-3 dark:bg-slate-700">
+                          <p className="text-sm text-slate-900 dark:text-white">
                             I have a question about pricing.
                           </p>
                         </div>
@@ -488,9 +502,9 @@ export default function BlocksContactPage() {
                       <input
                         type="text"
                         placeholder="Type your message..."
-                        className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                       />
-                      <button className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700">
+                      <button className="rounded-lg bg-blue-600 p-2 text-white hover:bg-blue-700">
                         <Send size={18} />
                       </button>
                     </div>
@@ -515,26 +529,26 @@ export default function BlocksContactPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">
+              <div className="mx-auto max-w-6xl px-4">
+                <h2 className="mb-12 text-center text-3xl font-bold text-slate-900 dark:text-white">
                   Support Channels
                 </h2>
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-slate-200 dark:border-slate-700">
-                        <th className="text-left py-4 px-4 font-bold text-slate-900 dark:text-white">
+                        <th className="px-4 py-4 text-left font-bold text-slate-900 dark:text-white">
                           Channel
                         </th>
-                        <th className="text-left py-4 px-4 font-bold text-slate-900 dark:text-white">
+                        <th className="px-4 py-4 text-left font-bold text-slate-900 dark:text-white">
                           Response Time
                         </th>
-                        <th className="text-left py-4 px-4 font-bold text-slate-900 dark:text-white">
+                        <th className="px-4 py-4 text-left font-bold text-slate-900 dark:text-white">
                           Availability
                         </th>
-                        <th className="text-left py-4 px-4 font-bold text-slate-900 dark:text-white">
+                        <th className="px-4 py-4 text-left font-bold text-slate-900 dark:text-white">
                           Contact
                         </th>
                       </tr>
@@ -542,7 +556,12 @@ export default function BlocksContactPage() {
                     <tbody>
                       {[
                         ["Email", "24-48 hours", "24/7", "hello@company.com"],
-                        ["Phone", "Immediate", "Mon-Fri 9AM-5PM", "+1 (234) 567-890"],
+                        [
+                          "Phone",
+                          "Immediate",
+                          "Mon-Fri 9AM-5PM",
+                          "+1 (234) 567-890",
+                        ],
                         ["Chat", "5-10 minutes", "9AM-10PM daily", "Live Chat"],
                       ].map((row, i) => (
                         <tr
@@ -552,7 +571,7 @@ export default function BlocksContactPage() {
                           {row.map((cell, j) => (
                             <td
                               key={j}
-                              className="py-4 px-4 text-slate-600 dark:text-slate-400"
+                              className="px-4 py-4 text-slate-600 dark:text-slate-400"
                             >
                               {cell}
                             </td>
@@ -581,41 +600,41 @@ export default function BlocksContactPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="max-w-2xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">
+              <div className="mx-auto max-w-2xl px-4">
+                <h2 className="mb-12 text-center text-3xl font-bold text-slate-900 dark:text-white">
                   Send us Your Project Details
                 </h2>
                 <form className="space-y-6">
                   <div>
-                    <label className="block font-medium text-slate-900 dark:text-white mb-2">
+                    <label className="mb-2 block font-medium text-slate-900 dark:text-white">
                       Your Name
                     </label>
                     <input
                       type="text"
-                      className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                     />
                   </div>
                   <div>
-                    <label className="block font-medium text-slate-900 dark:text-white mb-2">
+                    <label className="mb-2 block font-medium text-slate-900 dark:text-white">
                       Email
                     </label>
                     <input
                       type="email"
-                      className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                     />
                   </div>
                   <div>
-                    <label className="block font-medium text-slate-900 dark:text-white mb-2">
+                    <label className="mb-2 block font-medium text-slate-900 dark:text-white">
                       Project Description
                     </label>
                     <textarea
                       rows={4}
-                      className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2 text-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-white"
                     ></textarea>
                   </div>
-                  <div className="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg p-8 text-center hover:border-blue-600 transition-colors">
+                  <div className="rounded-lg border-2 border-dashed border-slate-300 p-8 text-center transition-colors hover:border-blue-600 dark:border-slate-600">
                     <input type="file" className="hidden" />
                     <Mail className="mx-auto mb-2 text-slate-400" size={32} />
                     <p className="font-medium text-slate-900 dark:text-white">
@@ -627,7 +646,7 @@ export default function BlocksContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 font-medium flex items-center justify-center gap-2"
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 py-3 font-medium text-white hover:bg-blue-700"
                   >
                     <Send size={18} />
                     Submit Project

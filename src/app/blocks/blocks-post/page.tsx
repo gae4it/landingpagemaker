@@ -68,31 +68,32 @@ export default function BlocksPostPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   Latest Articles
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                   {[1, 2, 3, 4, 5, 6].map((i) => (
                     <article
                       key={i}
-                      className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                      className="overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg dark:bg-slate-800"
                     >
                       <div className="h-48 bg-linear-to-r from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600" />
                       <div className="p-6">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                        <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">
                           Blog Post Title {i}
                         </h3>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
-                          Discover insights about web development and design trends...
+                        <p className="mb-4 text-sm text-slate-600 dark:text-slate-300">
+                          Discover insights about web development and design
+                          trends...
                         </p>
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-slate-500 dark:text-slate-400">
                             5 min read
                           </span>
-                          <button className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-1 font-medium">
+                          <button className="flex items-center gap-1 font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
                             Read More
                             <ArrowRight size={16} />
                           </button>
@@ -120,22 +121,24 @@ export default function BlocksPostPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-white dark:bg-slate-800 py-16"
+              className="bg-white py-16 dark:bg-slate-800"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                  <div className="h-96 bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 rounded-lg" />
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+                  <div className="h-96 rounded-lg bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600" />
                   <div>
-                    <div className="text-sm text-blue-600 dark:text-blue-400 font-bold mb-2">
+                    <div className="mb-2 text-sm font-bold text-blue-600 dark:text-blue-400">
                       Featured Article
                     </div>
-                    <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                    <h2 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">
                       The Future of Web Design
                     </h2>
-                    <p className="text-slate-600 dark:text-slate-300 text-lg mb-6">
-                      Explore the emerging trends and technologies shaping the future of web design. From AI-powered interfaces to sustainable web practices, discover what's next.
+                    <p className="mb-6 text-lg text-slate-600 dark:text-slate-300">
+                      Explore the emerging trends and technologies shaping the
+                      future of web design. From AI-powered interfaces to
+                      sustainable web practices, discover what&apos;s next.
                     </p>
-                    <div className="flex items-center gap-6 mb-8 text-sm text-slate-600 dark:text-slate-400">
+                    <div className="mb-8 flex items-center gap-6 text-sm text-slate-600 dark:text-slate-400">
                       <div className="flex items-center gap-2">
                         <Calendar size={16} />
                         <span>Jan 14, 2026</span>
@@ -149,7 +152,7 @@ export default function BlocksPostPage() {
                         <span>Design</span>
                       </div>
                     </div>
-                    <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium flex items-center gap-2 transition-colors">
+                    <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-3 font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
                       Read Full Article
                       <ArrowRight size={18} />
                     </button>
@@ -174,21 +177,21 @@ export default function BlocksPostPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   All Posts
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                   {[1, 2, 3, 4].map((i) => (
                     <article
                       key={i}
-                      className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                      className="overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg dark:bg-slate-800"
                     >
                       <div className="h-56 bg-linear-to-r from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600" />
                       <div className="p-6">
-                        <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400 mb-3">
+                        <div className="mb-3 flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
                           <div className="flex items-center gap-1">
                             <Calendar size={14} />
                             <span>Jan {10 + i}, 2026</span>
@@ -198,23 +201,24 @@ export default function BlocksPostPage() {
                             <span>Sarah Smith</span>
                           </div>
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                        <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">
                           Understanding React Hooks
                         </h3>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          <span className="inline-flex items-center gap-1 text-xs bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full">
+                        <div className="mb-4 flex flex-wrap gap-2">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-700 dark:text-slate-300">
                             <Tag size={12} />
                             React
                           </span>
-                          <span className="inline-flex items-center gap-1 text-xs bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-700 dark:text-slate-300">
                             <Tag size={12} />
                             JavaScript
                           </span>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
-                          A comprehensive guide to mastering React Hooks and building efficient functional components...
+                        <p className="mb-4 text-sm text-slate-600 dark:text-slate-300">
+                          A comprehensive guide to mastering React Hooks and
+                          building efficient functional components...
                         </p>
-                        <button className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium">
+                        <button className="text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
                           Read More →
                         </button>
                       </div>
@@ -240,32 +244,35 @@ export default function BlocksPostPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-white dark:bg-slate-800 py-16"
+              className="bg-white py-16 dark:bg-slate-800"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   Recent Blog Posts
                 </h2>
                 <div className="space-y-8">
                   {[1, 2, 3].map((i) => (
                     <article
                       key={i}
-                      className="pb-8 border-b border-slate-200 dark:border-slate-700 last:border-b-0"
+                      className="border-b border-slate-200 pb-8 last:border-b-0 dark:border-slate-700"
                     >
                       <div className="flex items-start gap-6">
-                        <div className="h-40 w-40 shrink-0 bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600 rounded-lg" />
+                        <div className="h-40 w-40 shrink-0 rounded-lg bg-linear-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600" />
                         <div className="flex-1">
-                          <div className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-                            <Calendar size={14} className="inline mr-2" />
+                          <div className="mb-2 text-sm text-slate-600 dark:text-slate-400">
+                            <Calendar size={14} className="mr-2 inline" />
                             Feb {i}, 2026
                           </div>
-                          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+                          <h3 className="mb-3 text-2xl font-bold text-slate-900 dark:text-white">
                             Mastering CSS Grid Layout
                           </h3>
-                          <p className="text-slate-600 dark:text-slate-300 mb-4">
-                            Learn how to create responsive layouts using CSS Grid. This comprehensive guide covers everything from basic concepts to advanced techniques for building modern, flexible web designs.
+                          <p className="mb-4 text-slate-600 dark:text-slate-300">
+                            Learn how to create responsive layouts using CSS
+                            Grid. This comprehensive guide covers everything
+                            from basic concepts to advanced techniques for
+                            building modern, flexible web designs.
                           </p>
-                          <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium text-sm flex items-center gap-2 transition-colors">
+                          <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
                             Read Full Article
                             <ArrowRight size={16} />
                           </button>
@@ -293,14 +300,14 @@ export default function BlocksPostPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-center text-3xl font-bold text-slate-900 dark:text-white">
                   Publication Timeline
                 </h2>
                 <div className="relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-linear-to-b from-blue-600 to-slate-300 dark:to-slate-600" />
+                  <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-linear-to-b from-blue-600 to-slate-300 dark:to-slate-600" />
                   <div className="space-y-12">
                     {[1, 2, 3, 4].map((i) => (
                       <div
@@ -309,16 +316,17 @@ export default function BlocksPostPage() {
                       >
                         <div className="w-1/2" />
                         <div className="w-1/2 px-8">
-                          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
-                            <div className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 font-bold mb-2">
+                          <div className="rounded-lg bg-white p-6 shadow-md dark:bg-slate-800">
+                            <div className="mb-2 flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400">
                               <Calendar size={14} />
                               {`0${i}/15/2026`}
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                            <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">
                               Timeline Post {i}
                             </h3>
-                            <p className="text-slate-600 dark:text-slate-300 text-sm">
-                              Explore key milestones and important updates in our blog journey.
+                            <p className="text-sm text-slate-600 dark:text-slate-300">
+                              Explore key milestones and important updates in
+                              our blog journey.
                             </p>
                           </div>
                         </div>
@@ -345,27 +353,27 @@ export default function BlocksPostPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-white dark:bg-slate-800 py-16 overflow-hidden"
+              className="overflow-hidden bg-white py-16 dark:bg-slate-800"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-12 text-3xl font-bold text-slate-900 dark:text-white">
                   Latest Posts
                 </h2>
-                <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
+                <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <article
                       key={i}
-                      className="shrink-0 w-80 bg-slate-50 dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow snap-start"
+                      className="w-80 shrink-0 snap-start overflow-hidden rounded-lg bg-slate-50 shadow-md transition-shadow hover:shadow-lg dark:bg-slate-900"
                     >
                       <div className="h-48 bg-linear-to-r from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600" />
                       <div className="p-6">
-                        <div className="text-xs text-blue-600 dark:text-blue-400 font-bold mb-2">
+                        <div className="mb-2 text-xs font-bold text-blue-600 dark:text-blue-400">
                           Featured
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                        <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-white">
                           Post Title {i}
                         </h3>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                        <p className="mb-4 text-sm text-slate-600 dark:text-slate-300">
                           Brief description of the blog post content and topic.
                         </p>
                         <div className="flex items-center justify-between text-sm">
@@ -399,18 +407,18 @@ export default function BlocksPostPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">
                   Explore by Category
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-4">
                   {["Design", "Development", "Business", "Technology"].map(
                     (category) => (
                       <button
                         key={category}
-                        className="p-4 bg-white dark:bg-slate-800 rounded-lg text-center hover:shadow-lg transition-shadow cursor-pointer"
+                        className="cursor-pointer rounded-lg bg-white p-4 text-center transition-shadow hover:shadow-lg dark:bg-slate-800"
                       >
                         <Tag className="mx-auto mb-2" size={24} />
                         <h3 className="font-bold text-slate-900 dark:text-white">
@@ -420,21 +428,21 @@ export default function BlocksPostPage() {
                           12 articles
                         </p>
                       </button>
-                    )
+                    ),
                   )}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                   {[1, 2, 3, 4, 5, 6].map((i) => (
                     <article
                       key={i}
-                      className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                      className="overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg dark:bg-slate-800"
                     >
                       <div className="h-40 bg-linear-to-r from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-600" />
                       <div className="p-4">
                         <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
                           DESIGN
                         </span>
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mt-2 mb-2">
+                        <h3 className="mt-2 mb-2 text-lg font-bold text-slate-900 dark:text-white">
                           Category Post {i}
                         </h3>
                         <p className="text-sm text-slate-600 dark:text-slate-300">
@@ -463,21 +471,23 @@ export default function BlocksPostPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-linear-to-r from-blue-600 to-blue-700 dark:from-blue-900 dark:to-blue-800 py-16"
+              className="bg-linear-to-r from-blue-600 to-blue-700 py-16 dark:from-blue-900 dark:to-blue-800"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
                   <div>
-                    <h2 className="text-3xl font-bold text-white mb-4">
+                    <h2 className="mb-4 text-3xl font-bold text-white">
                       Recommended Read
                     </h2>
-                    <h3 className="text-2xl font-bold text-white mb-4">
+                    <h3 className="mb-4 text-2xl font-bold text-white">
                       The Art of Modern Web Development
                     </h3>
-                    <p className="text-blue-100 mb-6">
-                      Discover the latest techniques and best practices in modern web development. From responsive design to performance optimization.
+                    <p className="mb-6 text-blue-100">
+                      Discover the latest techniques and best practices in
+                      modern web development. From responsive design to
+                      performance optimization.
                     </p>
-                    <div className="flex items-center gap-4 text-blue-100 text-sm mb-6">
+                    <div className="mb-6 flex items-center gap-4 text-sm text-blue-100">
                       <div className="flex items-center gap-1">
                         <User size={16} />
                         <span>Alex Johnson</span>
@@ -491,34 +501,34 @@ export default function BlocksPostPage() {
                         <span>120 comments</span>
                       </div>
                     </div>
-                    <button className="px-6 py-3 bg-white text-blue-600 hover:bg-blue-50 rounded-lg font-bold transition-colors flex items-center gap-2">
+                    <button className="flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-bold text-blue-600 transition-colors hover:bg-blue-50">
                       Read Article
                       <ArrowRight size={18} />
                     </button>
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-xl mb-6">
+                    <h3 className="mb-6 text-xl font-bold text-white">
                       Subscribe to our newsletter
                     </h3>
                     <form className="space-y-4">
                       <input
                         type="email"
                         placeholder="your@email.com"
-                        className="w-full px-4 py-3 rounded-lg border-0 bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white"
+                        className="w-full rounded-lg border-0 bg-white px-4 py-3 text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-white focus:outline-none"
                       />
                       <input
                         type="text"
                         placeholder="Your name"
-                        className="w-full px-4 py-3 rounded-lg border-0 bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white"
+                        className="w-full rounded-lg border-0 bg-white px-4 py-3 text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-white focus:outline-none"
                       />
                       <button
                         type="submit"
-                        className="w-full px-6 py-3 bg-white text-blue-600 hover:bg-blue-50 rounded-lg font-bold transition-colors"
+                        className="w-full rounded-lg bg-white px-6 py-3 font-bold text-blue-600 transition-colors hover:bg-blue-50"
                       >
                         Subscribe
                       </button>
                     </form>
-                    <p className="text-blue-100 text-xs mt-4">
+                    <p className="mt-4 text-xs text-blue-100">
                       We respect your privacy. Unsubscribe at any time.
                     </p>
                   </div>

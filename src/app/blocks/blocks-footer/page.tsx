@@ -74,19 +74,19 @@ export default function BlocksFooterPage() {
             </SectionDivider>
             <footer
               ref={sectionRef1}
-              className="bg-slate-900 dark:bg-slate-950 text-slate-200 dark:text-slate-300 py-16"
+              className="bg-slate-900 py-16 text-slate-200 dark:bg-slate-950 dark:text-slate-300"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-4">
                   <div>
-                    <h3 className="text-white dark:text-white font-bold mb-4">
+                    <h3 className="mb-4 font-bold text-white dark:text-white">
                       About
                     </h3>
                     <ul className="space-y-2">
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           About Us
                         </a>
@@ -94,7 +94,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Blog
                         </a>
@@ -102,7 +102,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Careers
                         </a>
@@ -110,14 +110,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-white dark:text-white font-bold mb-4">
+                    <h3 className="mb-4 font-bold text-white dark:text-white">
                       Product
                     </h3>
                     <ul className="space-y-2">
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Features
                         </a>
@@ -125,7 +125,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Pricing
                         </a>
@@ -133,7 +133,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Security
                         </a>
@@ -141,14 +141,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-white dark:text-white font-bold mb-4">
+                    <h3 className="mb-4 font-bold text-white dark:text-white">
                       Resources
                     </h3>
                     <ul className="space-y-2">
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Docs
                         </a>
@@ -156,7 +156,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           API Reference
                         </a>
@@ -164,7 +164,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Support
                         </a>
@@ -172,14 +172,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-white dark:text-white font-bold mb-4">
+                    <h3 className="mb-4 font-bold text-white dark:text-white">
                       Legal
                     </h3>
                     <ul className="space-y-2">
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Privacy Policy
                         </a>
@@ -187,7 +187,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Terms of Service
                         </a>
@@ -195,7 +195,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="hover:text-white transition-colors"
+                          className="transition-colors hover:text-white"
                         >
                           Cookie Policy
                         </a>
@@ -203,26 +203,26 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-slate-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <div className="flex flex-col items-center justify-between border-t border-slate-700 pt-8 sm:flex-row">
                   <p className="text-sm">
                     &copy; 2024 Your Company. All rights reserved.
                   </p>
-                  <div className="flex gap-4 mt-4 sm:mt-0">
+                  <div className="mt-4 flex gap-4 sm:mt-0">
                     <a
                       href="#"
-                      className="text-slate-400 hover:text-white transition-colors"
+                      className="text-slate-400 transition-colors hover:text-white"
                     >
                       <Twitter size={20} />
                     </a>
                     <a
                       href="#"
-                      className="text-slate-400 hover:text-white transition-colors"
+                      className="text-slate-400 transition-colors hover:text-white"
                     >
                       <Facebook size={20} />
                     </a>
                     <a
                       href="#"
-                      className="text-slate-400 hover:text-white transition-colors"
+                      className="text-slate-400 transition-colors hover:text-white"
                     >
                       <Linkedin size={20} />
                     </a>
@@ -247,25 +247,25 @@ export default function BlocksFooterPage() {
             </SectionDivider>
             <footer
               ref={sectionRef2}
-              className="bg-linear-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-16"
+              className="bg-linear-to-r from-slate-50 to-slate-100 py-16 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+                <h3 className="mb-4 text-3xl font-bold text-slate-900 dark:text-white">
                   Stay Updated
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-                  Subscribe to our newsletter and get the latest updates delivered
-                  to your inbox.
+                <p className="mx-auto mb-8 max-w-2xl text-slate-600 dark:text-slate-300">
+                  Subscribe to our newsletter and get the latest updates
+                  delivered to your inbox.
                 </p>
-                <form className="flex gap-2 mb-8 max-w-md mx-auto">
+                <form className="mx-auto mb-8 flex max-w-md gap-2">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder-slate-400"
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium flex items-center gap-2 transition-colors"
+                    className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
                   >
                     <Send size={18} />
                     Subscribe
@@ -274,19 +274,28 @@ export default function BlocksFooterPage() {
                 <p className="text-sm text-slate-500 dark:text-slate-400">
                   We respect your privacy. Unsubscribe at any time.
                 </p>
-                <div className="border-t border-slate-200 dark:border-slate-700 mt-8 pt-8">
-                  <div className="flex flex-wrap justify-center gap-6 text-slate-600 dark:text-slate-300 text-sm">
-                    <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                <div className="mt-8 border-t border-slate-200 pt-8 dark:border-slate-700">
+                  <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+                    <a
+                      href="#"
+                      className="hover:text-slate-900 dark:hover:text-white"
+                    >
                       Privacy Policy
                     </a>
-                    <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                    <a
+                      href="#"
+                      className="hover:text-slate-900 dark:hover:text-white"
+                    >
                       Terms of Service
                     </a>
-                    <a href="#" className="hover:text-slate-900 dark:hover:text-white">
+                    <a
+                      href="#"
+                      className="hover:text-slate-900 dark:hover:text-white"
+                    >
                       Contact
                     </a>
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-4">
+                  <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">
                     &copy; 2024 Your Company. All rights reserved.
                   </p>
                 </div>
@@ -309,64 +318,64 @@ export default function BlocksFooterPage() {
             </SectionDivider>
             <footer
               ref={sectionRef3}
-              className="bg-slate-900 dark:bg-slate-950 text-white py-12"
+              className="bg-slate-900 py-12 text-white dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 flex flex-col items-center justify-between md:flex-row">
                   <div>
                     <h3 className="text-2xl font-bold">YourBrand</h3>
-                    <p className="text-slate-400 mt-2">
+                    <p className="mt-2 text-slate-400">
                       Building amazing products together
                     </p>
                   </div>
-                  <div className="flex gap-6 mt-6 md:mt-0">
+                  <div className="mt-6 flex gap-6 md:mt-0">
                     <a
                       href="#"
-                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      className="rounded-lg p-2 transition-colors hover:bg-slate-800"
                       aria-label="Twitter"
                     >
                       <Twitter size={24} />
                     </a>
                     <a
                       href="#"
-                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      className="rounded-lg p-2 transition-colors hover:bg-slate-800"
                       aria-label="Facebook"
                     >
                       <Facebook size={24} />
                     </a>
                     <a
                       href="#"
-                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      className="rounded-lg p-2 transition-colors hover:bg-slate-800"
                       aria-label="Instagram"
                     >
                       <Instagram size={24} />
                     </a>
                     <a
                       href="#"
-                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      className="rounded-lg p-2 transition-colors hover:bg-slate-800"
                       aria-label="Linkedin"
                     >
                       <Linkedin size={24} />
                     </a>
                     <a
                       href="#"
-                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      className="rounded-lg p-2 transition-colors hover:bg-slate-800"
                       aria-label="YouTube"
                     >
                       <Youtube size={24} />
                     </a>
                     <a
                       href="#"
-                      className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                      className="rounded-lg p-2 transition-colors hover:bg-slate-800"
                       aria-label="Github"
                     >
                       <Github size={24} />
                     </a>
                   </div>
                 </div>
-                <div className="border-t border-slate-700 pt-8 grid grid-cols-2 md:grid-cols-3 gap-4 text-sm text-slate-400">
+                <div className="grid grid-cols-2 gap-4 border-t border-slate-700 pt-8 text-sm text-slate-400 md:grid-cols-3">
                   <div>
-                    <p className="font-semibold text-white mb-2">Product</p>
+                    <p className="mb-2 font-semibold text-white">Product</p>
                     <ul className="space-y-1">
                       <li>
                         <a href="#" className="hover:text-white">
@@ -381,7 +390,7 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <p className="font-semibold text-white mb-2">Company</p>
+                    <p className="mb-2 font-semibold text-white">Company</p>
                     <ul className="space-y-1">
                       <li>
                         <a href="#" className="hover:text-white">
@@ -396,7 +405,7 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <p className="font-semibold text-white mb-2">Legal</p>
+                    <p className="mb-2 font-semibold text-white">Legal</p>
                     <ul className="space-y-1">
                       <li>
                         <a href="#" className="hover:text-white">
@@ -430,19 +439,19 @@ export default function BlocksFooterPage() {
             </SectionDivider>
             <footer
               ref={sectionRef4}
-              className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16"
+              className="border-t border-slate-200 bg-white py-16 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-3">
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                    <h4 className="mb-4 font-bold text-slate-900 dark:text-white">
                       Contact Us
                     </h4>
                     <ul className="space-y-3">
                       <li className="flex gap-3">
                         <Mail
                           size={20}
-                          className="text-blue-600 shrink-0 mt-1"
+                          className="mt-1 shrink-0 text-blue-600"
                         />
                         <div>
                           <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -450,7 +459,7 @@ export default function BlocksFooterPage() {
                           </p>
                           <a
                             href="mailto:hello@company.com"
-                            className="text-slate-900 dark:text-white hover:text-blue-600"
+                            className="text-slate-900 hover:text-blue-600 dark:text-white"
                           >
                             hello@company.com
                           </a>
@@ -459,7 +468,7 @@ export default function BlocksFooterPage() {
                       <li className="flex gap-3">
                         <Phone
                           size={20}
-                          className="text-blue-600 shrink-0 mt-1"
+                          className="mt-1 shrink-0 text-blue-600"
                         />
                         <div>
                           <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -467,7 +476,7 @@ export default function BlocksFooterPage() {
                           </p>
                           <a
                             href="tel:+1234567890"
-                            className="text-slate-900 dark:text-white hover:text-blue-600"
+                            className="text-slate-900 hover:text-blue-600 dark:text-white"
                           >
                             +1 (234) 567-890
                           </a>
@@ -476,7 +485,7 @@ export default function BlocksFooterPage() {
                       <li className="flex gap-3">
                         <MapPin
                           size={20}
-                          className="text-blue-600 shrink-0 mt-1"
+                          className="mt-1 shrink-0 text-blue-600"
                         />
                         <div>
                           <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -490,14 +499,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                    <h4 className="mb-4 font-bold text-slate-900 dark:text-white">
                       Quick Links
                     </h4>
                     <ul className="space-y-2">
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         >
                           Home
                         </a>
@@ -505,7 +514,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         >
                           Products
                         </a>
@@ -513,7 +522,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         >
                           Services
                         </a>
@@ -521,7 +530,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         >
                           About Us
                         </a>
@@ -529,14 +538,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                    <h4 className="mb-4 font-bold text-slate-900 dark:text-white">
                       Support
                     </h4>
                     <ul className="space-y-2">
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         >
                           Help Center
                         </a>
@@ -544,7 +553,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         >
                           Documentation
                         </a>
@@ -552,7 +561,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         >
                           Contact Support
                         </a>
@@ -560,7 +569,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         >
                           Status Page
                         </a>
@@ -568,26 +577,26 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-slate-200 dark:border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                <div className="flex flex-col items-center justify-between border-t border-slate-200 pt-8 md:flex-row dark:border-slate-700">
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
                     &copy; 2024 Your Company. All rights reserved.
                   </p>
-                  <div className="flex gap-4 mt-4 md:mt-0">
+                  <div className="mt-4 flex gap-4 md:mt-0">
                     <a
                       href="#"
-                      className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm"
+                      className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                     >
                       Privacy Policy
                     </a>
                     <a
                       href="#"
-                      className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm"
+                      className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                     >
                       Terms
                     </a>
                     <a
                       href="#"
-                      className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm"
+                      className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                     >
                       Cookies
                     </a>
@@ -612,47 +621,47 @@ export default function BlocksFooterPage() {
             </SectionDivider>
             <footer
               ref={sectionRef5}
-              className="bg-slate-50 dark:bg-slate-900 py-16"
+              className="bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-5">
                   <div className="md:col-span-1">
-                    <div className="text-2xl font-bold text-blue-600 mb-4">
+                    <div className="mb-4 text-2xl font-bold text-blue-600">
                       Brand
                     </div>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                    <p className="mb-4 text-sm text-slate-600 dark:text-slate-400">
                       Creating exceptional digital experiences.
                     </p>
                     <div className="flex gap-3">
                       <a
                         href="#"
-                        className="text-slate-400 hover:text-blue-600 transition-colors"
+                        className="text-slate-400 transition-colors hover:text-blue-600"
                       >
                         <Twitter size={18} />
                       </a>
                       <a
                         href="#"
-                        className="text-slate-400 hover:text-blue-600 transition-colors"
+                        className="text-slate-400 transition-colors hover:text-blue-600"
                       >
                         <Linkedin size={18} />
                       </a>
                       <a
                         href="#"
-                        className="text-slate-400 hover:text-blue-600 transition-colors"
+                        className="text-slate-400 transition-colors hover:text-blue-600"
                       >
                         <Github size={18} />
                       </a>
                     </div>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-slate-900 dark:text-white mb-4">
+                    <h5 className="mb-4 font-semibold text-slate-900 dark:text-white">
                       Product
                     </h5>
                     <ul className="space-y-2 text-sm">
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Features
                         </a>
@@ -660,7 +669,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Pricing
                         </a>
@@ -668,7 +677,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Updates
                         </a>
@@ -676,14 +685,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-slate-900 dark:text-white mb-4">
+                    <h5 className="mb-4 font-semibold text-slate-900 dark:text-white">
                       Company
                     </h5>
                     <ul className="space-y-2 text-sm">
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           About
                         </a>
@@ -691,7 +700,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Blog
                         </a>
@@ -699,7 +708,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Careers
                         </a>
@@ -707,14 +716,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-slate-900 dark:text-white mb-4">
+                    <h5 className="mb-4 font-semibold text-slate-900 dark:text-white">
                       Resources
                     </h5>
                     <ul className="space-y-2 text-sm">
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Documentation
                         </a>
@@ -722,7 +731,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           API
                         </a>
@@ -730,7 +739,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Community
                         </a>
@@ -738,14 +747,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-slate-900 dark:text-white mb-4">
+                    <h5 className="mb-4 font-semibold text-slate-900 dark:text-white">
                       Legal
                     </h5>
                     <ul className="space-y-2 text-sm">
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Privacy
                         </a>
@@ -753,7 +762,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           Terms
                         </a>
@@ -761,7 +770,7 @@ export default function BlocksFooterPage() {
                       <li>
                         <a
                           href="#"
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                          className="text-slate-600 hover:text-blue-600 dark:text-slate-400"
                         >
                           License
                         </a>
@@ -769,8 +778,8 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-slate-200 dark:border-slate-700 pt-8">
-                  <p className="text-center text-slate-600 dark:text-slate-400 text-sm">
+                <div className="border-t border-slate-200 pt-8 dark:border-slate-700">
+                  <p className="text-center text-sm text-slate-600 dark:text-slate-400">
                     &copy; 2024 Your Company. All rights reserved.
                   </p>
                 </div>
@@ -793,12 +802,12 @@ export default function BlocksFooterPage() {
             </SectionDivider>
             <footer
               ref={sectionRef6}
-              className="bg-black dark:bg-black text-white py-12"
+              className="bg-black py-12 text-white dark:bg-black"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-2">YourBrand</h3>
+                    <h3 className="mb-2 text-xl font-bold">YourBrand</h3>
                     <p className="text-gray-400">
                       Elegant footer for your modern website
                     </p>
@@ -818,9 +827,9 @@ export default function BlocksFooterPage() {
                     </a>
                   </div>
                 </div>
-                <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs">
+                <div className="mt-8 flex flex-col items-center justify-between border-t border-gray-800 pt-8 text-xs text-gray-400 md:flex-row">
                   <p>&copy; 2024 Your Company. All rights reserved.</p>
-                  <div className="flex gap-4 mt-4 md:mt-0">
+                  <div className="mt-4 flex gap-4 md:mt-0">
                     <a href="#" className="hover:text-white">
                       <Twitter size={16} />
                     </a>
@@ -851,84 +860,113 @@ export default function BlocksFooterPage() {
             </SectionDivider>
             <footer
               ref={sectionRef7}
-              className="bg-slate-900 dark:bg-slate-950 text-slate-200 dark:text-slate-300 py-16"
+              className="bg-slate-900 py-16 text-slate-200 dark:bg-slate-950 dark:text-slate-300"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-3">
                   <div>
-                    <h4 className="text-white dark:text-white font-bold mb-4">
+                    <h4 className="mb-4 font-bold text-white dark:text-white">
                       Solutions
                     </h4>
                     <ul className="space-y-2 text-sm">
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           Platform
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           Features
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           Security
                         </a>
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-white dark:text-white font-bold mb-4">
+                    <h4 className="mb-4 font-bold text-white dark:text-white">
                       Developers
                     </h4>
                     <ul className="space-y-2 text-sm">
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           Documentation
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           API Reference
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           Status
                         </a>
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-white dark:text-white font-bold mb-4">
+                    <h4 className="mb-4 font-bold text-white dark:text-white">
                       Company
                     </h4>
                     <ul className="space-y-2 text-sm">
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           About Us
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           Blog
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a
+                          href="#"
+                          className="transition-colors hover:text-white"
+                        >
                           Careers
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div className="flex flex-col items-center justify-between border-t border-slate-700 pt-8 md:flex-row">
                   <p className="text-sm">
                     &copy; 2024 Your Company. All rights reserved.
                   </p>
                   <button
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                    className="mt-4 md:mt-0 p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-2"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
+                    className="mt-4 flex items-center gap-2 rounded-lg bg-slate-800 p-2 transition-colors hover:bg-slate-700 md:mt-0"
                   >
                     <span className="text-sm">Back to top</span>
                     <ArrowUp size={18} />
@@ -953,12 +991,12 @@ export default function BlocksFooterPage() {
             </SectionDivider>
             <footer
               ref={sectionRef8}
-              className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16"
+              className="border-t border-slate-200 bg-white py-16 dark:border-slate-800 dark:bg-slate-950"
             >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-4">
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                    <h4 className="mb-4 font-bold text-slate-900 dark:text-white">
                       Product
                     </h4>
                     <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
@@ -980,7 +1018,7 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                    <h4 className="mb-4 font-bold text-slate-900 dark:text-white">
                       Developers
                     </h4>
                     <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
@@ -1002,7 +1040,7 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                    <h4 className="mb-4 font-bold text-slate-900 dark:text-white">
                       Company
                     </h4>
                     <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
@@ -1024,7 +1062,7 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-4">
+                    <h4 className="mb-4 font-bold text-slate-900 dark:text-white">
                       Legal
                     </h4>
                     <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
@@ -1046,14 +1084,14 @@ export default function BlocksFooterPage() {
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-slate-200 dark:border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 md:flex-row dark:border-slate-700">
                   <p className="text-sm text-slate-600 dark:text-slate-400">
                     &copy; 2024 Your Company. All rights reserved.
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
                       <Globe size={18} className="text-slate-400" />
-                      <select className="bg-transparent text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <select className="rounded border border-slate-200 bg-transparent px-2 py-1 text-sm text-slate-600 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-700 dark:text-slate-400">
                         <option>English</option>
                         <option>Spanish</option>
                         <option>French</option>

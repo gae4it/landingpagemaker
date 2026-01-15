@@ -60,9 +60,9 @@ export default function BlocksCounterPage() {
             </SectionDivider>
             <section
               ref={sectionRef1}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                   { number: "10M+", label: "Users", icon: Users },
                   { number: "500+", label: "Companies", icon: TrendingUp },
@@ -73,10 +73,10 @@ export default function BlocksCounterPage() {
                   return (
                     <div
                       key={i}
-                      className="text-center bg-white dark:bg-slate-800 p-8 rounded-lg"
+                      className="rounded-lg bg-white p-8 text-center dark:bg-slate-800"
                     >
                       <Icon className="mx-auto mb-4 text-blue-600" size={32} />
-                      <div className="text-4xl font-bold text-slate-900 dark:text-white mb-2">
+                      <div className="mb-2 text-4xl font-bold text-slate-900 dark:text-white">
                         {item.number}
                       </div>
                       <p className="text-slate-600 dark:text-slate-400">
@@ -104,17 +104,17 @@ export default function BlocksCounterPage() {
             </SectionDivider>
             <section
               ref={sectionRef2}
-              className="bg-blue-600 dark:bg-blue-900 py-16 rounded-lg text-white"
+              className="rounded-lg bg-blue-600 py-16 text-white dark:bg-blue-900"
             >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 {[
                   { number: "25K", label: "Happy Customers" },
                   { number: "1M+", label: "Downloads" },
                   { number: "15+", label: "Years Active" },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-5xl font-bold mb-2">{item.number}</div>
-                    <p className="text-blue-100 text-lg">{item.label}</p>
+                    <div className="mb-2 text-5xl font-bold">{item.number}</div>
+                    <p className="text-lg text-blue-100">{item.label}</p>
                   </div>
                 ))}
               </div>
@@ -136,18 +136,26 @@ export default function BlocksCounterPage() {
             </SectionDivider>
             <section
               ref={sectionRef3}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                 {[
-                  { number: "98%", label: "Satisfaction", desc: "Our customers are extremely happy" },
-                  { number: "3.2K", label: "5-Star Reviews", desc: "Trusted by thousands worldwide" },
+                  {
+                    number: "98%",
+                    label: "Satisfaction",
+                    desc: "Our customers are extremely happy",
+                  },
+                  {
+                    number: "3.2K",
+                    label: "5-Star Reviews",
+                    desc: "Trusted by thousands worldwide",
+                  },
                 ].map((item, i) => (
                   <div key={i} className="border-l-4 border-blue-600 pl-6">
-                    <div className="text-5xl font-bold text-slate-900 dark:text-white mb-2">
+                    <div className="mb-2 text-5xl font-bold text-slate-900 dark:text-white">
                       {item.number}
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+                    <h3 className="mb-2 text-xl font-semibold text-slate-900 dark:text-white">
                       {item.label}
                     </h3>
                     <p className="text-slate-600 dark:text-slate-400">
@@ -174,24 +182,26 @@ export default function BlocksCounterPage() {
             </SectionDivider>
             <section
               ref={sectionRef4}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-4xl mx-auto space-y-8">
+              <div className="mx-auto max-w-4xl space-y-8">
                 {[
                   { label: "Growth Rate", value: 85 },
                   { label: "Customer Trust", value: 92 },
                   { label: "Product Quality", value: 95 },
                 ].map((item, i) => (
                   <div key={i}>
-                    <div className="flex justify-between mb-2">
+                    <div className="mb-2 flex justify-between">
                       <span className="font-semibold text-slate-900 dark:text-white">
                         {item.label}
                       </span>
-                      <span className="text-blue-600 font-bold">{item.value}%</span>
+                      <span className="font-bold text-blue-600">
+                        {item.value}%
+                      </span>
                     </div>
-                    <div className="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-3">
+                    <div className="h-3 w-full rounded-full bg-slate-200 dark:bg-slate-800">
                       <div
-                        className="bg-blue-600 h-3 rounded-full transition-all duration-500"
+                        className="h-3 rounded-full bg-blue-600 transition-all duration-500"
                         style={{ width: `${item.value}%` }}
                       ></div>
                     </div>
@@ -216,21 +226,21 @@ export default function BlocksCounterPage() {
             </SectionDivider>
             <section
               ref={sectionRef5}
-              className="bg-linear-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-20 rounded-lg"
+              className="rounded-lg bg-linear-to-r from-slate-50 to-slate-100 py-20 dark:from-slate-900 dark:to-slate-800"
             >
-              <div className="text-center mb-16">
+              <div className="mb-16 text-center">
                 <h2 className="text-4xl font-bold text-slate-900 dark:text-white">
                   Our Impact
                 </h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
                 {[
                   { number: "$100M", label: "Revenue Generated" },
                   { number: "50K+", label: "Projects Delivered" },
                   { number: "24/7", label: "Support Available" },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-6xl font-black text-blue-600 mb-4">
+                    <div className="mb-4 text-6xl font-black text-blue-600">
                       {item.number}
                     </div>
                     <p className="text-xl text-slate-700 dark:text-slate-300">
@@ -257,9 +267,9 @@ export default function BlocksCounterPage() {
             </SectionDivider>
             <section
               ref={sectionRef6}
-              className="bg-white dark:bg-slate-950 py-16 rounded-lg"
+              className="rounded-lg bg-white py-16 dark:bg-slate-950"
             >
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
                 {[
                   { icon: Users, number: "2.5K", label: "Team Members" },
                   { icon: TrendingUp, number: "450%", label: "Growth" },
@@ -268,11 +278,14 @@ export default function BlocksCounterPage() {
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
-                    <div key={i} className="flex flex-col items-center text-center">
-                      <div className="mb-4 p-4 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
+                    <div
+                      key={i}
+                      className="flex flex-col items-center text-center"
+                    >
+                      <div className="mb-4 rounded-lg bg-blue-100 p-4 dark:bg-blue-900/20">
                         <Icon className="text-blue-600" size={48} />
                       </div>
-                      <div className="text-3xl font-bold text-slate-900 dark:text-white mb-1">
+                      <div className="mb-1 text-3xl font-bold text-slate-900 dark:text-white">
                         {item.number}
                       </div>
                       <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -300,22 +313,22 @@ export default function BlocksCounterPage() {
             </SectionDivider>
             <section
               ref={sectionRef7}
-              className="bg-slate-50 dark:bg-slate-900 py-16 rounded-lg"
+              className="rounded-lg bg-slate-50 py-16 dark:bg-slate-900"
             >
-              <div className="max-w-4xl mx-auto">
+              <div className="mx-auto max-w-4xl">
                 <div className="space-y-8">
                   {[
                     { year: "2019", milestone: "Founded" },
                     { year: "2021", milestone: "1M Users" },
                     { year: "2023", milestone: "Global Expansion" },
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-6 items-center">
-                      <div className="w-24 h-24 bg-blue-600 text-white rounded-full flex items-center justify-center shrink-0">
+                    <div key={i} className="flex items-center gap-6">
+                      <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
                         <div className="text-center">
                           <div className="text-2xl font-bold">{item.year}</div>
                         </div>
                       </div>
-                      <div className="bg-white dark:bg-slate-800 p-6 rounded-lg flex-1">
+                      <div className="flex-1 rounded-lg bg-white p-6 dark:bg-slate-800">
                         <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
                           {item.milestone}
                         </h3>
@@ -342,7 +355,7 @@ export default function BlocksCounterPage() {
             </SectionDivider>
             <section
               ref={sectionRef8}
-              className="bg-white dark:bg-slate-950 py-12 rounded-lg"
+              className="rounded-lg bg-white py-12 dark:bg-slate-950"
             >
               <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
                 {[
@@ -353,12 +366,12 @@ export default function BlocksCounterPage() {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="text-center border-r border-slate-200 dark:border-slate-700 pr-8 last:border-r-0"
+                    className="border-r border-slate-200 pr-8 text-center last:border-r-0 dark:border-slate-700"
                   >
                     <div className="text-3xl font-bold text-slate-900 dark:text-white">
                       {item.number}
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                    <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                       {item.label}
                     </p>
                   </div>
