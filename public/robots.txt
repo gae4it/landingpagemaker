@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api
+
+Sitemap: https://landingpagemaker.vercel.app/sitemap.xml

@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { PanelsTopLeft } from "lucide-react";
 
 interface HeroProps {
   title: string;
   subtitle?: string;
+  subsubtitle?: string;
   ctaText?: string;
   ctaLink?: string;
 }
 
-export default function Hero({ title, subtitle, ctaText, ctaLink }: HeroProps) {
+export default function Hero({ title, subtitle, subsubtitle, ctaText, ctaLink }: HeroProps) {
   return (
     <section className="from-primary/20 via-background to-secondary/20 relative overflow-hidden bg-linear-to-br py-20 sm:py-32">
       <div className="absolute inset-0 -z-10">
@@ -25,13 +27,19 @@ export default function Hero({ title, subtitle, ctaText, ctaLink }: HeroProps) {
             </p>
           )}
           {ctaText && ctaLink && (
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-6 flex items-center justify-center gap-x-6">
               <Link href={ctaLink}>
-                <Button size="lg" className="shadow-lg">
-                  {ctaText}
+                <Button size="lg" className="shadow-lg inline-flex items-center gap-2">
+                  <PanelsTopLeft className="h-4 w-4" aria-hidden />
+                  <span>{ctaText}</span>
                 </Button>
               </Link>
             </div>
+          )}
+          {subsubtitle && (
+            <p className="text-muted-foreground mt-6 text-lg leading-8">
+              {subsubtitle}
+            </p>
           )}
         </div>
       </div>
