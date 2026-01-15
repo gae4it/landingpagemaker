@@ -78,9 +78,9 @@ const categories = [
     icon: SeparatorHorizontal,
   },
   {
-    name: "Features & Services",
-    slug: "blocks-features-e-services",
-    description: "Showcase features and services",
+    name: "Features",
+    slug: "blocks-features",
+    description: "Showcase features",
     icon: Sparkles,
   },
   {
@@ -175,8 +175,6 @@ export default function Home() {
           ctaText="Browse Components"
           ctaLink="#categories"
         />
-
-        
 
         <section id="categories" className="py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
