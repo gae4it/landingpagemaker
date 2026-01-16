@@ -37,7 +37,7 @@ export default function Hero({
               <Link href={ctaLink}>
                 <Button
                   size="lg"
-                  className="inline-flex items-center gap-2 shadow-lg"
+                  className="inline-flex cursor-pointer items-center gap-2 shadow-lg"
                 >
                   <PanelsTopLeft className="h-4 w-4" aria-hidden />
                   <span>{ctaText}</span>

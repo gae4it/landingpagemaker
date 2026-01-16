@@ -304,7 +304,6 @@ export default function Home() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <div className="mb-4 inline-flex items-center gap-2">
-                <HelpCircle className="h-6 w-6 text-primary" />
                 <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                   Frequently Asked Questions
                 </h2>
@@ -319,7 +318,7 @@ export default function Home() {
                 value="item-1"
                 className="rounded-lg border bg-card px-6"
               >
-                <AccordionTrigger className="text-left hover:no-underline">
+                <AccordionTrigger className="cursor-pointer text-left hover:no-underline">
                   Are these components completely free to use?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -334,7 +333,7 @@ export default function Home() {
                 value="item-2"
                 className="rounded-lg border bg-card px-6"
               >
-                <AccordionTrigger className="text-left hover:no-underline">
+                <AccordionTrigger className="cursor-pointer text-left hover:no-underline">
                   What tech stack are these components built with?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -348,7 +347,7 @@ export default function Home() {
                 value="item-3"
                 className="rounded-lg border bg-card px-6"
               >
-                <AccordionTrigger className="text-left hover:no-underline">
+                <AccordionTrigger className="cursor-pointer text-left hover:no-underline">
                   How do I use these components in my project?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -363,7 +362,7 @@ export default function Home() {
                 value="item-4"
                 className="rounded-lg border bg-card px-6"
               >
-                <AccordionTrigger className="text-left hover:no-underline">
+                <AccordionTrigger className="cursor-pointer text-left hover:no-underline">
                   Do I need to install any dependencies?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -378,7 +377,7 @@ export default function Home() {
                 value="item-5"
                 className="rounded-lg border bg-card px-6"
               >
-                <AccordionTrigger className="text-left hover:no-underline">
+                <AccordionTrigger className="cursor-pointer text-left hover:no-underline">
                   Are the components responsive and accessible?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -393,7 +392,7 @@ export default function Home() {
                 value="item-6"
                 className="rounded-lg border bg-card px-6"
               >
-                <AccordionTrigger className="text-left hover:no-underline">
+                <AccordionTrigger className="cursor-pointer text-left hover:no-underline">
                   Can I customize the components?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -408,7 +407,7 @@ export default function Home() {
                 value="item-7"
                 className="rounded-lg border bg-card px-6"
               >
-                <AccordionTrigger className="text-left hover:no-underline">
+                <AccordionTrigger className="cursor-pointer text-left hover:no-underline">
                   Will more components be added?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">

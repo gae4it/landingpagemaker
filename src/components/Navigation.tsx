@@ -7,6 +7,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+import { PanelsTopLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Navigation() {
@@ -23,7 +25,22 @@ export default function Navigation() {
           >
             LandingPageMaker
           </Link>
-          <NavigationMenu>
+
+          {/* Mobile view: single button */}
+          <div className="md:hidden">
+            <Link href="/#categories">
+              <Button
+                size="sm"
+                className="inline-flex items-center gap-2 shadow-md"
+              >
+                <PanelsTopLeft className="h-4 w-4" aria-hidden />
+                <span>Blocks</span>
+              </Button>
+            </Link>
+          </div>
+
+          {/* Tablet and desktop view: navigation menu */}
+          <NavigationMenu className="hidden md:block">
             <NavigationMenuList className="flex justify-center gap-4">
               <NavigationMenuItem>
                 <NavigationMenuLink
