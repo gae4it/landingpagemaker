@@ -79,7 +79,7 @@ const categories = [
   },
   {
     name: "Features",
-    slug: "blocks-features",
+    slug: "blocks-features-e-services",
     description: "Showcase features",
     icon: Sparkles,
   },
