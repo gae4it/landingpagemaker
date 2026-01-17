@@ -18,7 +18,7 @@ function loadCronitor() {
   if (typeof window === "undefined") return;
   if (!CRONITOR_KEY) {
     console.warn(
-      "Cronitor: NEXT_PUBLIC_CRONITOR_KEY is not configured. Skipping Cronitor initialization."
+      "Cronitor: NEXT_PUBLIC_CRONITOR_KEY is not configured. Skipping Cronitor initialization.",
     );
     return;
   }

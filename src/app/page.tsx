@@ -37,7 +37,6 @@ import {
   Quote,
   Shapes,
   Check,
-  HelpCircle,
 } from "lucide-react";
 
 const categories = [
