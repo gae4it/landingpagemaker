@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { env } from "@/env";
 
-const CRONITOR_KEY = "59e569204b07f06b1b452baba4df26aa";
 const CONSENT_KEY = "cookie-consent";
+const CRONITOR_KEY = env.NEXT_PUBLIC_CRONITOR_KEY;
 
 declare global {
   interface Window {
@@ -15,6 +16,12 @@ declare global {
 
 function loadCronitor() {
   if (typeof window === "undefined") return;
+  if (!CRONITOR_KEY) {
+    console.warn(
+      "Cronitor: NEXT_PUBLIC_CRONITOR_KEY is not configured. Skipping Cronitor initialization."
+    );
+    return;
+  }
   if (window.cronitorLoaded) return;
 
   const src = "https://rum.cronitor.io/script.js";
@@ -22,6 +29,16 @@ function loadCronitor() {
     const script = document.createElement("script");
     script.src = src;
     script.async = true;
+    script.onload = () => {
+      console.log("Cronitor script loaded successfully.");
+      // Configure Cronitor after script loads
+      if (window.cronitor) {
+        window.cronitor("config", { clientKey: CRONITOR_KEY });
+      }
+    };
+    script.onerror = () => {
+      console.error("Failed to load Cronitor script from", src);
+    };
     document.head.appendChild(script);
   }
 
