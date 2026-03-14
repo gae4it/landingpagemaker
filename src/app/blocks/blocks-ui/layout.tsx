@@ -12,11 +12,7 @@ const slug = "blocks-ui" as BlockSlug;
 
 export const metadata: Metadata = getBlockMetadata(slug);
 
-export default function BlocksUiLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function BlocksUiLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <SeoJsonLd data={getBlockJsonLd(slug)} />

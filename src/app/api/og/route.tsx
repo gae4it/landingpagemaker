@@ -51,9 +51,7 @@ export async function GET(request: Request) {
         >
           {subtitle}
         </div>
-        <div style={{ fontSize: "36px", color: "#a0a0a0" }}>
-          {tertiary}
-        </div>
+        <div style={{ fontSize: "36px", color: "#a0a0a0" }}>{tertiary}</div>
       </div>
     </>,
     {
