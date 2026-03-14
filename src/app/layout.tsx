@@ -3,8 +3,11 @@ import "@/styles/globals.css";
 import { type Metadata, type Viewport } from "next";
 import { Geist } from "next/font/google";
 
+import Script from "next/script";
+
 import { TRPCReactProvider } from "@/trpc/react";
 import CookieConsent from "@/components/CookieConsent";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://landingpagemaker.vercel.app/"),
@@ -176,6 +179,12 @@ export default function RootLayout({
             __html: JSON.stringify(faqSchema),
           }}
         />
+        <Script
+          data-goatcounter="https://landingpagemaker.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className="min-h-screen bg-background font-sans antialiased"
@@ -183,6 +192,7 @@ export default function RootLayout({
       >
         <CookieConsent />
         <TRPCReactProvider>{children}</TRPCReactProvider>
+        <ScrollToTop />
       </body>
     </html>
   );

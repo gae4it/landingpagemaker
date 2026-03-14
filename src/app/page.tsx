@@ -183,8 +183,8 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 Browse 20+ free, copy-paste ready landing page sections. All
-                components built with HTML, React, Vue, shadcn/ui, and Tailwind CSS. No
-                installation needed—just copy the code and customize.
+                components built with HTML, React, Vue, shadcn/ui, and Tailwind
+                CSS. No installation needed—just copy the code and customize.
               </p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

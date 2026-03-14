@@ -30,6 +30,149 @@ export default function BlocksUIPage() {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [radioSelected, setRadioSelected] = useState("");
 
+  const buttonSolidReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="flex flex-wrap items-center gap-4">
+    <button className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700">Solid Button</button>
+    <button className="rounded-lg bg-slate-600 px-6 py-3 font-semibold text-white hover:bg-slate-700">Secondary</button>
+    <button className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700">Success</button>
+  </div>
+</section>`;
+
+  const buttonOutlineReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="flex flex-wrap items-center gap-4">
+    <button className="rounded-lg border-2 border-blue-600 px-6 py-3 font-semibold text-blue-600 hover:bg-blue-50">Outline Button</button>
+    <button className="rounded-lg border-2 border-slate-400 px-6 py-3 font-semibold text-slate-700 hover:bg-slate-100">Secondary</button>
+    <button className="rounded-lg border-2 border-red-600 px-6 py-3 font-semibold text-red-600 hover:bg-red-50">Danger</button>
+  </div>
+</section>`;
+
+  const buttonGhostReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="flex flex-wrap items-center gap-4">
+    <button className="rounded-lg px-6 py-3 font-semibold text-slate-700 hover:bg-slate-100">Ghost Button</button>
+    <button className="rounded-lg px-6 py-3 font-semibold text-blue-600 hover:bg-blue-50">Blue Ghost</button>
+    <button className="rounded-lg px-6 py-3 font-semibold text-slate-500 hover:bg-slate-100">Subtle</button>
+  </div>
+</section>`;
+
+  const buttonLoadingReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="flex flex-wrap items-center gap-4">
+    <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700">
+      <Loader size={18} className="animate-spin" />
+      Loading...
+    </button>
+    <button className="flex items-center gap-2 rounded-lg bg-slate-600 px-6 py-3 font-semibold text-white hover:bg-slate-700">
+      <Loader size={18} className="animate-spin" />
+      Processing
+    </button>
+  </div>
+</section>`;
+
+  const formInputReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="max-w-md space-y-4">
+    <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
+    <input type="email" placeholder="you@example.com" className="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900 dark:text-white" />
+  </div>
+</section>`;
+
+  const formSelectReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="max-w-md space-y-4">
+    <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Category</label>
+    <select className="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900 dark:text-white">
+      <option>Select an option</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </select>
+  </div>
+</section>`;
+
+  const formTextareaReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="max-w-md space-y-4">
+    <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Message</label>
+    <textarea rows={4} placeholder="Enter your message..." className="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900 dark:text-white" />
+  </div>
+</section>`;
+
+  const formCheckboxReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="max-w-md space-y-4">
+    <label className="flex items-center gap-3">
+      <input type="checkbox" className="h-5 w-5 rounded border border-slate-300 text-blue-600" />
+      <span className="font-medium text-slate-700 dark:text-slate-300">I agree to the terms and conditions</span>
+    </label>
+    <label className="flex items-center gap-3">
+      <input type="checkbox" defaultChecked className="h-5 w-5 rounded border border-slate-300 text-blue-600" />
+      <span className="font-medium text-slate-700 dark:text-slate-300">Subscribe to newsletter</span>
+    </label>
+  </div>
+</section>`;
+
+  const formRadioReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="max-w-md space-y-4">
+    <p className="mb-3 text-sm font-medium text-slate-700 dark:text-slate-300">Select an option</p>
+    <label className="flex items-center gap-3"><input type="radio" name="option" className="h-5 w-5" /> Option 1</label>
+    <label className="flex items-center gap-3"><input type="radio" name="option" className="h-5 w-5" /> Option 2</label>
+  </div>
+</section>`;
+
+  const badgeReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="flex flex-wrap gap-3">
+    <span className="rounded bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-800">New</span>
+    <span className="rounded bg-green-100 px-3 py-1 text-sm font-semibold text-green-800">Active</span>
+    <span className="rounded bg-yellow-100 px-3 py-1 text-sm font-semibold text-yellow-800">Warning</span>
+    <span className="rounded bg-red-100 px-3 py-1 text-sm font-semibold text-red-800">Danger</span>
+  </div>
+</section>`;
+
+  const pillsReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="flex flex-wrap gap-3">
+    <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-800">Technology</span>
+    <span className="rounded-full bg-purple-100 px-4 py-2 text-sm font-semibold text-purple-800">Design</span>
+    <span className="rounded-full bg-pink-100 px-4 py-2 text-sm font-semibold text-pink-800">Marketing</span>
+  </div>
+</section>`;
+
+  const cardReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div className="rounded-lg border border-slate-200 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+      <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-white">Card Title</h3>
+      <p className="mb-4 text-slate-600 dark:text-slate-400">Simple card content for structured information.</p>
+      <button className="rounded bg-blue-600 px-4 py-2 font-semibold text-white">Learn More</button>
+    </div>
+  </div>
+</section>`;
+
+  const alertReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="space-y-4">
+    <div className="flex items-start gap-4 rounded-lg border border-blue-200 bg-blue-50 p-4">
+      <AlertCircle size={20} className="mt-0.5 text-blue-600" />
+      <div><h3 className="font-semibold text-blue-900">Info Alert</h3><p className="text-sm text-blue-800">Informational message.</p></div>
+    </div>
+    <div className="flex items-start gap-4 rounded-lg border border-green-200 bg-green-50 p-4">
+      <CheckCircle size={20} className="mt-0.5 text-green-600" />
+      <div><h3 className="font-semibold text-green-900">Success Alert</h3><p className="text-sm text-green-800">Operation completed successfully.</p></div>
+    </div>
+  </div>
+</section>`;
+
+  const progressBarReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="max-w-md space-y-6">
+    <div><p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">25% Complete</p><div className="h-2 rounded-full bg-slate-200"><div className="h-full w-1/4 bg-blue-600" /></div></div>
+    <div><p className="mb-2 text-sm font-medium text-slate-700 dark:text-slate-300">60% Complete</p><div className="h-2 rounded-full bg-slate-200"><div className="h-full w-3/5 bg-green-600" /></div></div>
+  </div>
+</section>`;
+
+  const loaderReactSnippet = `<section className="rounded-lg border border-slate-200 bg-white p-8 sm:p-12 dark:border-slate-800 dark:bg-slate-950">
+  <div className="flex flex-wrap items-center justify-center gap-8 py-12">
+    <div className="flex flex-col items-center gap-2">
+      <Loader className="animate-spin text-blue-600" size={32} />
+      <p className="text-sm text-slate-600 dark:text-slate-400">Standard Spinner</p>
+    </div>
+    <div className="flex flex-col items-center gap-2">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-blue-600" />
+      <p className="text-sm text-slate-600 dark:text-slate-400">Ring Spinner</p>
+    </div>
+  </div>
+</section>`;
+
   return (
     <>
       <Navigation />
@@ -42,7 +185,10 @@ export default function BlocksUIPage() {
           {/* Variant 1: Button Solid */}
           <div className="relative">
             <SectionDivider title="Button Solid (Primary Filled)">
-              <CopySnippetButtons sectionRef={sectionRef1} />
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={buttonSolidReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -65,7 +211,10 @@ export default function BlocksUIPage() {
           {/* Variant 2: Button Outline */}
           <div className="relative">
             <SectionDivider title="Button Outline (Bordered)">
-              <CopySnippetButtons sectionRef={sectionRef2} />
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={buttonOutlineReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -88,7 +237,10 @@ export default function BlocksUIPage() {
           {/* Variant 3: Button Ghost */}
           <div className="relative">
             <SectionDivider title="Button Ghost (Transparent)">
-              <CopySnippetButtons sectionRef={sectionRef3} />
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={buttonGhostReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -111,7 +263,10 @@ export default function BlocksUIPage() {
           {/* Variant 4: Button Loading */}
           <div className="relative">
             <SectionDivider title="Button Loading (Animated)">
-              <CopySnippetButtons sectionRef={sectionRef4} />
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={buttonLoadingReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -133,7 +288,10 @@ export default function BlocksUIPage() {
           {/* Variant 5: Form Input */}
           <div className="relative">
             <SectionDivider title="Form Input (Text Field)">
-              <CopySnippetButtons sectionRef={sectionRef5} />
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={formInputReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -159,7 +317,10 @@ export default function BlocksUIPage() {
           {/* Variant 6: Form Select */}
           <div className="relative">
             <SectionDivider title="Form Select (Dropdown)">
-              <CopySnippetButtons sectionRef={sectionRef6} />
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={formSelectReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -188,7 +349,10 @@ export default function BlocksUIPage() {
           {/* Variant 7: Form Textarea */}
           <div className="relative">
             <SectionDivider title="Form Textarea (Multi-line)">
-              <CopySnippetButtons sectionRef={sectionRef7} />
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={formTextareaReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -214,7 +378,10 @@ export default function BlocksUIPage() {
           {/* Variant 8: Form Checkbox */}
           <div className="relative">
             <SectionDivider title="Form Checkbox">
-              <CopySnippetButtons sectionRef={sectionRef8} />
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={formCheckboxReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}
@@ -249,7 +416,10 @@ export default function BlocksUIPage() {
           {/* Variant 9: Form Radio */}
           <div className="relative">
             <SectionDivider title="Form Radio (Radio Button)">
-              <CopySnippetButtons sectionRef={sectionRef9} />
+              <CopySnippetButtons
+                sectionRef={sectionRef9}
+                reactSnippet={formRadioReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef9}
@@ -296,7 +466,10 @@ export default function BlocksUIPage() {
           {/* Variant 10: Badge */}
           <div className="relative">
             <SectionDivider title="Badge (Small Label Tags)">
-              <CopySnippetButtons sectionRef={sectionRef10} />
+              <CopySnippetButtons
+                sectionRef={sectionRef10}
+                reactSnippet={badgeReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef10}
@@ -325,7 +498,10 @@ export default function BlocksUIPage() {
           {/* Variant 11: Pills */}
           <div className="relative">
             <SectionDivider title="Pills (Rounded Badge Variants)">
-              <CopySnippetButtons sectionRef={sectionRef11} />
+              <CopySnippetButtons
+                sectionRef={sectionRef11}
+                reactSnippet={pillsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef11}
@@ -351,7 +527,10 @@ export default function BlocksUIPage() {
           {/* Variant 12: Card */}
           <div className="relative">
             <SectionDivider title="Card (Content Container)">
-              <CopySnippetButtons sectionRef={sectionRef12} />
+              <CopySnippetButtons
+                sectionRef={sectionRef12}
+                reactSnippet={cardReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef12}
@@ -389,7 +568,10 @@ export default function BlocksUIPage() {
           {/* Variant 13: Alert */}
           <div className="relative">
             <SectionDivider title="Alert (Message Box)">
-              <CopySnippetButtons sectionRef={sectionRef13} />
+              <CopySnippetButtons
+                sectionRef={sectionRef13}
+                reactSnippet={alertReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef13}
@@ -445,7 +627,10 @@ export default function BlocksUIPage() {
           {/* Variant 14: Progress Bar */}
           <div className="relative">
             <SectionDivider title="Progress Bar (Progress Indicator)">
-              <CopySnippetButtons sectionRef={sectionRef14} />
+              <CopySnippetButtons
+                sectionRef={sectionRef14}
+                reactSnippet={progressBarReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef14}
@@ -483,7 +668,10 @@ export default function BlocksUIPage() {
           {/* Variant 15: Loader/Spinner */}
           <div className="relative">
             <SectionDivider title="Loader/Spinner (Loading Animation)">
-              <CopySnippetButtons sectionRef={sectionRef15} />
+              <CopySnippetButtons
+                sectionRef={sectionRef15}
+                reactSnippet={loaderReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef15}
