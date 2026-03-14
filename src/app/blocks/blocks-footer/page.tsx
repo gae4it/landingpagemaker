@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import {
-  Copy,
   Facebook,
   Twitter,
   Instagram,
@@ -19,9 +18,8 @@ import {
   Github,
 } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksFooterPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -32,26 +30,132 @@ export default function BlocksFooterPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const footerLinksReactSnippet = `<footer className="bg-slate-950 px-6 py-14 text-slate-300">
+  <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-4">
+    <div>
+      <h3 className="text-lg font-semibold text-white">Brand</h3>
+      <p className="mt-2 text-sm text-slate-400">Build faster with polished landing page sections.</p>
+    </div>
+    {[
+      ["Product", ["Features", "Pricing", "Integrations"]],
+      ["Company", ["About", "Careers", "Contact"]],
+      ["Resources", ["Docs", "Blog", "Help Center"]],
+    ].map(([title, links]) => (
+      <div key={title}>
+        <h4 className="font-medium text-white">{title}</h4>
+        <ul className="mt-3 space-y-2 text-sm text-slate-400">
+          {links.map((link) => <li key={link}>{link}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+</footer>`;
+
+  const footerNewsletterReactSnippet = `<footer className="bg-slate-900 px-6 py-14 text-slate-200">
+  <div className="mx-auto max-w-4xl text-center">
+    <h3 className="text-2xl font-bold text-white">Stay in the loop</h3>
+    <p className="mt-2 text-sm text-slate-400">Monthly updates, practical tactics, zero spam.</p>
+    <div className="mx-auto mt-6 flex max-w-xl flex-col gap-3 sm:flex-row">
+      <input className="flex-1 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-sm" placeholder="you@company.com" />
+      <button className="rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white">Subscribe</button>
+    </div>
+  </div>
+</footer>`;
+
+  const footerSocialReactSnippet = `<footer className="bg-slate-950 px-6 py-14 text-slate-300">
+  <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
+    <p className="text-sm">© 2026 Brand Inc. All rights reserved.</p>
+    <div className="flex gap-3">
+      {["X", "LinkedIn", "YouTube", "GitHub"].map((item) => (
+        <button key={item} className="rounded-lg border border-slate-700 px-3 py-2 text-xs">{item}</button>
+      ))}
+    </div>
+  </div>
+</footer>`;
+
+  const footerCompanyInfoReactSnippet = `<footer className="bg-slate-900 px-6 py-14 text-slate-300">
+  <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+    <div>
+      <h3 className="text-lg font-semibold text-white">Company</h3>
+      <p className="mt-2 text-sm text-slate-400">123 Market Street, San Francisco, CA</p>
+      <p className="mt-1 text-sm text-slate-400">hello@company.com</p>
+      <p className="mt-1 text-sm text-slate-400">+1 (555) 123-4567</p>
+    </div>
+    <div>
+      <h4 className="font-medium text-white">Open Hours</h4>
+      <p className="mt-2 text-sm text-slate-400">Mon-Fri 9:00-18:00</p>
+    </div>
+    <div>
+      <h4 className="font-medium text-white">Support</h4>
+      <p className="mt-2 text-sm text-slate-400">24/7 chat for all paid plans.</p>
+    </div>
+  </div>
+</footer>`;
+
+  const footerMultiColumnReactSnippet = `<footer className="bg-slate-950 px-6 py-14 text-slate-300">
+  <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 md:grid-cols-5">
+    {[
+      "Product",
+      "Solutions",
+      "Developers",
+      "Company",
+      "Resources",
+    ].map((col) => (
+      <div key={col}>
+        <h4 className="font-semibold text-white">{col}</h4>
+        <ul className="mt-3 space-y-2 text-sm text-slate-400">
+          <li>Overview</li>
+          <li>Pricing</li>
+          <li>Docs</li>
+        </ul>
+      </div>
+    ))}
+  </div>
+</footer>`;
+
+  const footerMinimalReactSnippet = `<footer className="border-t border-slate-200 bg-white px-6 py-8 dark:border-slate-800 dark:bg-slate-950">
+  <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 md:flex-row">
+    <p className="text-sm text-slate-600 dark:text-slate-400">© 2026 Brand. All rights reserved.</p>
+    <div className="flex gap-4 text-sm text-slate-600 dark:text-slate-400">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>`;
+
+  const footerWithCtaReactSnippet = `<footer className="bg-slate-950 px-6 py-14 text-slate-300">
+  <div className="mx-auto max-w-6xl">
+    <div className="rounded-2xl bg-blue-600 p-8 text-white">
+      <h3 className="text-2xl font-bold">Ready to launch?</h3>
+      <p className="mt-2 text-blue-100">Start building your next landing page in minutes.</p>
+      <button className="mt-5 rounded-lg bg-white px-5 py-2 text-sm font-medium text-blue-700">Get Started</button>
+    </div>
+    <div className="mt-8 flex flex-col justify-between gap-4 text-sm text-slate-400 md:flex-row">
+      <p>© 2026 Brand Inc.</p>
+      <p>Built for makers and teams</p>
+    </div>
+  </div>
+</footer>`;
+
+  const footerAppStoreReactSnippet = `<footer className="bg-slate-900 px-6 py-14 text-slate-300">
+  <div className="mx-auto max-w-6xl rounded-2xl border border-slate-700 p-8">
+    <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
+      <div>
+        <h3 className="text-2xl font-bold text-white">Get the app</h3>
+        <p className="mt-2 text-sm text-slate-400">Manage campaigns and analytics on the go.</p>
+      </div>
+      <div className="flex gap-3 md:justify-end">
+        <button className="rounded-lg border border-slate-600 px-4 py-2 text-sm">App Store</button>
+        <button className="rounded-lg border border-slate-600 px-4 py-2 text-sm">Google Play</button>
+      </div>
+    </div>
+  </div>
+</footer>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Footer Sections"
@@ -62,15 +166,10 @@ export default function BlocksFooterPage() {
           {/* Variant 1: Links Grid + Copyright */}
           <div className="relative">
             <SectionDivider title="Links Grid + Copyright">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={footerLinksReactSnippet}
+              />
             </SectionDivider>
             <footer
               ref={sectionRef1}
@@ -235,15 +334,10 @@ export default function BlocksFooterPage() {
           {/* Variant 2: Newsletter Focus */}
           <div className="relative">
             <SectionDivider title="Newsletter Focus">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={footerNewsletterReactSnippet}
+              />
             </SectionDivider>
             <footer
               ref={sectionRef2}
@@ -306,15 +400,10 @@ export default function BlocksFooterPage() {
           {/* Variant 3: Social Icons */}
           <div className="relative">
             <SectionDivider title="Social Icons">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={footerSocialReactSnippet}
+              />
             </SectionDivider>
             <footer
               ref={sectionRef3}
@@ -427,15 +516,10 @@ export default function BlocksFooterPage() {
           {/* Variant 4: Company Info + Contact */}
           <div className="relative">
             <SectionDivider title="Company Info + Contact">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={footerCompanyInfoReactSnippet}
+              />
             </SectionDivider>
             <footer
               ref={sectionRef4}
@@ -609,15 +693,10 @@ export default function BlocksFooterPage() {
           {/* Variant 5: Logo + Columns */}
           <div className="relative">
             <SectionDivider title="Logo + Columns">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={footerMultiColumnReactSnippet}
+              />
             </SectionDivider>
             <footer
               ref={sectionRef5}
@@ -790,15 +869,10 @@ export default function BlocksFooterPage() {
           {/* Variant 6: Dark Minimal */}
           <div className="relative">
             <SectionDivider title="Dark Minimal">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={footerMinimalReactSnippet}
+              />
             </SectionDivider>
             <footer
               ref={sectionRef6}
@@ -848,15 +922,10 @@ export default function BlocksFooterPage() {
           {/* Variant 7: Back to Top Button */}
           <div className="relative">
             <SectionDivider title="Back to Top Button">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={footerWithCtaReactSnippet}
+              />
             </SectionDivider>
             <footer
               ref={sectionRef7}
@@ -979,15 +1048,10 @@ export default function BlocksFooterPage() {
           {/* Variant 8: Language Switcher */}
           <div className="relative">
             <SectionDivider title="Language Switcher">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={footerAppStoreReactSnippet}
+              />
             </SectionDivider>
             <footer
               ref={sectionRef8}

@@ -4,11 +4,10 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { Copy, Star, Quote, CheckCircle, Play } from "lucide-react";
-import { useRef, type RefObject } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import { Star, Quote, CheckCircle, Play } from "lucide-react";
+import { useRef } from "react";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksTestimonialsPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -19,14 +18,6 @@ export default function BlocksTestimonialsPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-
-  const [showCopied, triggerCopied] = useCopyNotification();
-  const handleCopy = (ref: RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (!el) return;
-    void navigator.clipboard.writeText(el.outerHTML);
-    triggerCopied();
-  };
 
   const testimonials = [
     {
@@ -67,6 +58,114 @@ export default function BlocksTestimonialsPage() {
     },
   ];
 
+  const testimonialGridReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {[1, 2, 3].map((i) => (
+      <blockquote key={i} className="rounded-xl border border-slate-200 p-6 dark:border-slate-800">
+        <p className="text-sm text-slate-600 dark:text-slate-400">\"This platform made our team faster and more aligned.\"</p>
+        <footer className="mt-4">
+          <p className="font-semibold text-slate-900 dark:text-white">Customer {i}</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Role, Company</p>
+        </footer>
+      </blockquote>
+    ))}
+  </div>
+</section>`;
+
+  const testimonialCarouselReactSnippet = `<section className="rounded-2xl bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl px-6 text-center">
+    <p className="text-sm font-medium text-blue-600">Featured Testimonial</p>
+    <p className="mt-4 text-xl font-medium text-slate-900 dark:text-white">\"A smooth rollout and immediate impact across our organization.\"</p>
+    <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">Jordan Lee, COO at Horizon Labs</p>
+    <div className="mt-6 flex justify-center gap-2">
+      {[0, 1, 2].map((dot) => (
+        <span key={dot} className="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700" />
+      ))}
+    </div>
+  </div>
+</section>`;
+
+  const ratingTestimonialsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    {["Acme", "Nova", "Pulse", "Orbit"].map((company) => (
+      <div key={company} className="rounded-xl border border-slate-200 p-6 dark:border-slate-800">
+        <div className="mb-3 flex text-amber-400">★★★★★</div>
+        <p className="text-sm text-slate-600 dark:text-slate-400">\"Excellent support and performance from day one.\"</p>
+        <p className="mt-4 text-sm font-semibold text-slate-900 dark:text-white">{company} Team</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const logoTestimonialsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <h3 className="text-center text-2xl font-bold text-slate-900 dark:text-white">Trusted by leading teams</h3>
+  <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+    {["Acme", "North", "Vertex", "Nexa", "Mira", "Flux", "Aster", "Mono"].map((logo) => (
+      <div key={logo} className="rounded-lg bg-white p-4 text-center text-sm font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">{logo}</div>
+    ))}
+  </div>
+</section>`;
+
+  const videoTestimonialsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <div className="relative h-64 rounded-xl bg-slate-200 dark:bg-slate-700">
+      <button className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90 px-4 py-2 text-sm font-medium">Play Story</button>
+    </div>
+    <div>
+      <p className="text-sm font-medium text-blue-600">Video Testimonial</p>
+      <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">How BrightCo scaled onboarding</h3>
+      <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">Watch how the team reduced setup time by 60% and improved activation.</p>
+    </div>
+  </div>
+</section>`;
+
+  const featuredPlusGridReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+    <div className="rounded-xl bg-blue-600 p-8 text-white lg:col-span-2">
+      <p className="text-sm text-blue-100">Featured</p>
+      <p className="mt-3 text-xl font-semibold">\"The most strategic product decision we made this year.\"</p>
+      <p className="mt-4 text-sm text-blue-100">Emma Clark, VP Operations</p>
+    </div>
+    <div className="space-y-4">
+      {[1, 2].map((i) => (
+        <div key={i} className="rounded-xl bg-white p-5 dark:bg-slate-800">
+          <p className="text-sm text-slate-600 dark:text-slate-400">\"Loved by our team.\"</p>
+          <p className="mt-2 text-xs font-medium text-slate-900 dark:text-white">Customer {i}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>`;
+
+  const verifiedTestimonialsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    {["Verified Buyer", "Enterprise Customer", "Startup Founder"].map((tag) => (
+      <div key={tag} className="rounded-xl border border-slate-200 p-6 dark:border-slate-800">
+        <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700 dark:bg-green-900/30 dark:text-green-300">{tag}</span>
+        <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">\"Reliable, fast, and easy to deploy across teams.\"</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const splitTestimonialsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <div className="rounded-xl bg-white p-7 dark:bg-slate-800">
+      <h3 className="text-xl font-bold text-slate-900 dark:text-white">Customer Voices</h3>
+      <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">Read direct feedback from teams using the product every day.</p>
+      <button className="mt-5 rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">See all stories</button>
+    </div>
+    <div className="space-y-4">
+      {["Fast setup", "Excellent support", "Great reliability"].map((item) => (
+        <div key={item} className="rounded-xl bg-white p-5 dark:bg-slate-800">
+          <p className="text-sm font-medium text-slate-900 dark:text-white">{item}</p>
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Customer insight</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>`;
+
   const companyLogos = [
     "TechCorp",
     "StartupXYZ",
@@ -78,15 +177,6 @@ export default function BlocksTestimonialsPage() {
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
-
       <Navigation />
       <Hero
         title="Testimonials Sections"
@@ -98,15 +188,10 @@ export default function BlocksTestimonialsPage() {
           {/* Testimonial Block 1: Grid Layout */}
           <div className="relative">
             <SectionDivider title="Testimonial Grid">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={testimonialGridReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -158,15 +243,10 @@ export default function BlocksTestimonialsPage() {
           {/* Testimonial Block 2: Centered Carousel */}
           <div className="relative">
             <SectionDivider title="Testimonial Carousel (Centered)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={testimonialCarouselReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -208,15 +288,10 @@ export default function BlocksTestimonialsPage() {
           {/* Testimonial Block 3: With Rating Stars */}
           <div className="relative">
             <SectionDivider title="Testimonials with Rating Stars">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={ratingTestimonialsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -269,15 +344,10 @@ export default function BlocksTestimonialsPage() {
           {/* Testimonial Block 4: With Company Logos */}
           <div className="relative">
             <SectionDivider title="Testimonials with Company Logos">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={logoTestimonialsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -342,15 +412,10 @@ export default function BlocksTestimonialsPage() {
           {/* Testimonial Block 5: Video/Media Testimonials */}
           <div className="relative">
             <SectionDivider title="Testimonial Video/Media">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={videoTestimonialsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -407,15 +472,10 @@ export default function BlocksTestimonialsPage() {
           {/* Testimonial Block 6: Featured + Grid */}
           <div className="relative">
             <SectionDivider title="Featured Testimonial + Grid">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={featuredPlusGridReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -478,15 +538,10 @@ export default function BlocksTestimonialsPage() {
           {/* Testimonial Block 7: With Verified Badges */}
           <div className="relative">
             <SectionDivider title="Testimonials with Verified Badges">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={verifiedTestimonialsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -545,15 +600,10 @@ export default function BlocksTestimonialsPage() {
           {/* Testimonial Block 8: Two-Column Split */}
           <div className="relative">
             <SectionDivider title="Testimonials Two-Column Split">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={splitTestimonialsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

@@ -3,11 +3,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { Copy, TrendingUp, Users, Award, Zap } from "lucide-react";
+import { TrendingUp, Users, Award, Zap } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksCounterPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -18,26 +17,151 @@ export default function BlocksCounterPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const simpleCountersReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+    {[
+      { value: "10K+", label: "Customers" },
+      { value: "99.9%", label: "Uptime" },
+      { value: "24/7", label: "Support" },
+      { value: "500+", label: "Integrations" },
+    ].map((item) => (
+      <div key={item.label} className="rounded-xl border border-slate-200 p-6 text-center dark:border-slate-800">
+        <p className="text-3xl font-bold text-slate-900 dark:text-white">{item.value}</p>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{item.label}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const backgroundCountersReactSnippet = `<section className="rounded-2xl bg-blue-600 py-16 text-white">
+  <div className="grid grid-cols-2 gap-8 px-6 md:grid-cols-4">
+    {[
+      { value: "2.5M", label: "API Calls / Day" },
+      { value: "120", label: "Countries" },
+      { value: "350+", label: "Enterprise Teams" },
+      { value: "4.9/5", label: "User Rating" },
+    ].map((item) => (
+      <div key={item.label} className="text-center">
+        <p className="text-4xl font-black">{item.value}</p>
+        <p className="mt-2 text-sm text-blue-100">{item.label}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const describedCountersReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {[
+      { value: "87%", title: "Faster Delivery", desc: "Teams launch projects in less time with reusable workflows." },
+      { value: "63%", title: "Lower Costs", desc: "Automation reduces manual overhead across departments." },
+      { value: "41%", title: "Higher Conversion", desc: "Optimized funnels improve acquisition and retention." },
+    ].map((item) => (
+      <div key={item.title} className="rounded-xl bg-white p-7 shadow-sm dark:bg-slate-800">
+        <p className="text-4xl font-bold text-blue-600">{item.value}</p>
+        <h3 className="mt-3 text-lg font-semibold text-slate-900 dark:text-white">{item.title}</h3>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const progressCountersReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="space-y-6">
+    {[
+      { label: "Product Adoption", value: 92 },
+      { label: "Customer Satisfaction", value: 88 },
+      { label: "Automation Coverage", value: 74 },
+      { label: "Release Confidence", value: 96 },
+    ].map((item) => (
+      <div key={item.label}>
+        <div className="mb-2 flex items-center justify-between">
+          <p className="text-sm font-medium text-slate-700 dark:text-slate-300">{item.label}</p>
+          <p className="text-sm font-semibold text-slate-900 dark:text-white">{item.value}%</p>
+        </div>
+        <div className="h-2 rounded-full bg-slate-200 dark:bg-slate-800">
+          <div className="h-2 rounded-full bg-blue-600" style={{ width: item.value + "%" }} />
+        </div>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const largeCountersReactSnippet = `<section className="rounded-2xl bg-slate-950 py-20 text-white">
+  <div className="grid grid-cols-1 gap-8 px-6 md:grid-cols-3">
+    {[
+      { value: "1B+", label: "Events Processed" },
+      { value: "250K", label: "Active Users" },
+      { value: "17ms", label: "Median Latency" },
+    ].map((item) => (
+      <div key={item.label} className="text-center md:text-left">
+        <p className="text-5xl font-black tracking-tight text-cyan-300">{item.value}</p>
+        <p className="mt-2 text-sm uppercase tracking-wider text-slate-300">{item.label}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const iconCountersReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+    {[
+      { icon: "TrendingUp", value: "320%", label: "Growth" },
+      { icon: "Users", value: "48K", label: "Community" },
+      { icon: "Award", value: "29", label: "Awards" },
+      { icon: "Zap", value: "0.2s", label: "Response Time" },
+    ].map((item) => (
+      <div key={item.label} className="rounded-xl bg-white p-6 text-center shadow-sm dark:bg-slate-800">
+        <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+          <span className="text-xs font-semibold">{item.icon}</span>
+        </div>
+        <p className="text-3xl font-bold text-slate-900 dark:text-white">{item.value}</p>
+        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{item.label}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const timelineCountersReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="space-y-8">
+    {[
+      { year: "2021", value: "5K", label: "Early Adopters" },
+      { year: "2022", value: "22K", label: "Growing Teams" },
+      { year: "2023", value: "80K", label: "Active Customers" },
+      { year: "2024", value: "210K", label: "Global Users" },
+    ].map((item, index) => (
+      <div key={item.year} className="flex items-start gap-4">
+        <div className="flex flex-col items-center">
+          <div className="h-3 w-3 rounded-full bg-blue-600" />
+          {index < 3 && <div className="mt-2 h-12 w-px bg-slate-300 dark:bg-slate-700" />}
+        </div>
+        <div className="-mt-1">
+          <p className="text-sm font-medium text-blue-600">{item.year}</p>
+          <p className="text-2xl font-bold text-slate-900 dark:text-white">{item.value}</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">{item.label}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const compactCountersReactSnippet = `<section className="bg-slate-50 py-12 dark:bg-slate-900">
+  <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+    {[
+      ["99.99%", "Reliability"],
+      ["12m", "Daily Actions"],
+      ["4,200+", "Teams"],
+      ["187", "Markets"],
+    ].map(([value, label]) => (
+      <div key={label} className="rounded-lg bg-white px-4 py-5 text-center dark:bg-slate-800">
+        <p className="text-2xl font-bold text-slate-900 dark:text-white">{value}</p>
+        <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Counter Sections"
@@ -48,15 +172,10 @@ export default function BlocksCounterPage() {
           {/* Variant 1: Simple 4 Column Counters */}
           <div className="relative">
             <SectionDivider title="4 Column Counters">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={simpleCountersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -92,15 +211,10 @@ export default function BlocksCounterPage() {
           {/* Variant 2: Counters with Background */}
           <div className="relative">
             <SectionDivider title="Counters with Background">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={backgroundCountersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -124,15 +238,10 @@ export default function BlocksCounterPage() {
           {/* Variant 3: Counters with Descriptions */}
           <div className="relative">
             <SectionDivider title="Counters with Descriptions">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={describedCountersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -170,15 +279,10 @@ export default function BlocksCounterPage() {
           {/* Variant 4: Animated Counters */}
           <div className="relative">
             <SectionDivider title="Counters with Indicators">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={progressCountersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -214,15 +318,10 @@ export default function BlocksCounterPage() {
           {/* Variant 5: Large Counters */}
           <div className="relative">
             <SectionDivider title="Large Prominent Counters">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={largeCountersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -255,15 +354,10 @@ export default function BlocksCounterPage() {
           {/* Variant 6: Counters with Icons */}
           <div className="relative">
             <SectionDivider title="Counters with Large Icons">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={iconCountersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -301,15 +395,10 @@ export default function BlocksCounterPage() {
           {/* Variant 7: Timeline Style Counters */}
           <div className="relative">
             <SectionDivider title="Timeline Counters">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={timelineCountersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -343,15 +432,10 @@ export default function BlocksCounterPage() {
           {/* Variant 8: Compact Counters */}
           <div className="relative">
             <SectionDivider title="Compact Counters">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={compactCountersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

@@ -4,18 +4,10 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import {
-  Copy,
-  Twitter,
-  Linkedin,
-  Github,
-  Mail,
-  ArrowRight,
-} from "lucide-react";
-import { useRef, type RefObject } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import { Twitter, Linkedin, Github, Mail, ArrowRight } from "lucide-react";
+import { useRef } from "react";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksTeamsPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -26,14 +18,6 @@ export default function BlocksTeamsPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-
-  const [showCopied, triggerCopied] = useCopyNotification();
-  const handleCopy = (ref: RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (!el) return;
-    void navigator.clipboard.writeText(el.outerHTML);
-    triggerCopied();
-  };
 
   const teamMembers = [
     {
@@ -62,17 +46,139 @@ export default function BlocksTeamsPage() {
     },
   ];
 
+  const teamGridReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {[
+      ["Sarah Johnson", "CEO"],
+      ["Michael Chen", "CTO"],
+      ["Emily Rodriguez", "Design Lead"],
+      ["David Kim", "Engineering Manager"],
+    ].map(([name, role], i) => (
+      <div key={name} className="rounded-xl border border-slate-200 p-6 text-center dark:border-slate-800">
+        <div className="mx-auto h-20 w-20 rounded-full bg-slate-200 dark:bg-slate-700" />
+        <h3 className="mt-4 font-semibold text-slate-900 dark:text-white">{name}</h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400">{role}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const teamHoverCardsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {["Product", "Engineering", "Growth"].map((dept) => (
+      <div key={dept} className="group rounded-xl bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800">
+        <p className="text-sm text-blue-600">{dept}</p>
+        <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-white">Team {dept}</h3>
+        <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">Collaborative specialists focused on high-impact outcomes.</p>
+        <p className="mt-4 text-sm font-medium text-blue-600 opacity-0 transition group-hover:opacity-100">View members</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const teamSocialLinksReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+    {["Ava", "Noah", "Liam", "Mia"].map((name) => (
+      <div key={name} className="rounded-xl border border-slate-200 p-6 dark:border-slate-800">
+        <div className="h-16 w-16 rounded-full bg-slate-200 dark:bg-slate-700" />
+        <h3 className="mt-4 font-semibold text-slate-900 dark:text-white">{name}</h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400">Team Member</p>
+        <div className="mt-4 flex gap-2 text-slate-500">
+          <button className="rounded-md border px-2 py-1 text-xs">Tw</button>
+          <button className="rounded-md border px-2 py-1 text-xs">Ln</button>
+          <button className="rounded-md border px-2 py-1 text-xs">Gh</button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const twoColumnTeamReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+    {["Leadership", "Core Team"].map((group) => (
+      <div key={group} className="rounded-xl bg-white p-7 shadow-sm dark:bg-slate-800">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white">{group}</h3>
+        <ul className="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-400">
+          <li>Sarah Johnson - CEO</li>
+          <li>Michael Chen - CTO</li>
+          <li>Emily Rodriguez - Design Lead</li>
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const expandableBioReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="space-y-4">
+    {[
+      ["Sarah Johnson", "Founder"],
+      ["Michael Chen", "CTO"],
+      ["Emily Rodriguez", "Design Lead"],
+    ].map(([name, role]) => (
+      <details key={name} className="rounded-xl border border-slate-200 p-5 dark:border-slate-800">
+        <summary className="cursor-pointer list-none">
+          <p className="font-semibold text-slate-900 dark:text-white">{name}</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">{role}</p>
+        </summary>
+        <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">Experienced leader focused on product excellence and team growth.</p>
+      </details>
+    ))}
+  </div>
+</section>`;
+
+  const hoverRevealTeamReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {[1, 2, 3, 4].map((i) => (
+      <div key={i} className="group relative overflow-hidden rounded-xl bg-slate-800 p-6 text-white">
+        <div className="h-40 rounded-lg bg-slate-700" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition group-hover:opacity-100" />
+        <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
+          <p className="font-semibold">Member {i}</p>
+          <p className="text-sm text-slate-200">Short bio and role summary</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const teamSpotlightReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+    <div className="h-72 rounded-2xl bg-slate-200 dark:bg-slate-700" />
+    <div>
+      <p className="text-sm font-medium text-blue-600">Team Spotlight</p>
+      <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">Meet Sarah Johnson</h3>
+      <p className="mt-4 text-slate-600 dark:text-slate-400">Sarah leads product strategy and helps teams ship meaningful experiences quickly.</p>
+      <button className="mt-6 rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">Read Story</button>
+    </div>
+  </div>
+</section>`;
+
+  const roleFilterReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mb-6 flex flex-wrap gap-2">
+    {[
+      "All",
+      "Leadership",
+      "Engineering",
+      "Design",
+      "Marketing",
+    ].map((role, i) => (
+      <button key={role} className="rounded-full bg-white px-4 py-2 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+        {role}
+      </button>
+    ))}
+  </div>
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    {["Alex", "Priya", "Noah", "Sofia", "Iris", "Mateo"].map((name) => (
+      <div key={name} className="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800">
+        <p className="font-semibold text-slate-900 dark:text-white">{name}</p>
+        <p className="text-sm text-slate-500 dark:text-slate-400">Role</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
-
       <Navigation />
       <Hero
         title="Teams Sections"
@@ -84,15 +190,10 @@ export default function BlocksTeamsPage() {
           {/* Team Block 1: Grid Layout */}
           <div className="relative">
             <SectionDivider title="Team Grid">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={teamGridReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -135,15 +236,10 @@ export default function BlocksTeamsPage() {
           {/* Team Block 2: Card Layout with Hover */}
           <div className="relative">
             <SectionDivider title="Team Cards with Hover">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={teamHoverCardsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -183,15 +279,10 @@ export default function BlocksTeamsPage() {
           {/* Team Block 3: With Social Links */}
           <div className="relative">
             <SectionDivider title="Team with Social Links">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={teamSocialLinksReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -249,15 +340,10 @@ export default function BlocksTeamsPage() {
           {/* Team Block 4: Two Column Layout */}
           <div className="relative">
             <SectionDivider title="Two-Column Team Layout">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={twoColumnTeamReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -320,15 +406,10 @@ export default function BlocksTeamsPage() {
           {/* Team Block 5: With Bio Modal Preview */}
           <div className="relative">
             <SectionDivider title="Team with Bio Expandable">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={expandableBioReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -373,15 +454,10 @@ export default function BlocksTeamsPage() {
           {/* Team Block 6: Hover Reveal Social */}
           <div className="relative">
             <SectionDivider title="Team with Hover Reveal">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={hoverRevealTeamReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -438,15 +514,10 @@ export default function BlocksTeamsPage() {
           {/* Team Block 7: Spotlight Leadership */}
           <div className="relative">
             <SectionDivider title="Team Spotlight (Leadership)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={teamSpotlightReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -529,15 +600,10 @@ export default function BlocksTeamsPage() {
           {/* Team Block 8: With Role Filters */}
           <div className="relative">
             <SectionDivider title="Team with Role Filters">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={roleFilterReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

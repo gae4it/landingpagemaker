@@ -3,17 +3,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import {
-  Copy,
-  ChevronDown,
-  X,
-  Info,
-  HelpCircle,
-  Eye,
-  EyeOff,
-} from "lucide-react";
+import { ChevronDown, X, Info, HelpCircle, Eye, EyeOff } from "lucide-react";
 import { useRef, useState } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
 import { Button } from "@/components/ui/button";
 
@@ -26,7 +18,102 @@ export default function BlocksInteractionsPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
+
+  const accordionReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl space-y-3">
+    {["What is included?", "Can I customize it?", "Is support available?"].map((q) => (
+      <details key={q} className="rounded-xl border border-slate-200 p-4 dark:border-slate-800">
+        <summary className="cursor-pointer list-none font-medium text-slate-900 dark:text-white">{q}</summary>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Yes. This section is fully customizable and production-ready.</p>
+      </details>
+    ))}
+  </div>
+</section>`;
+
+  const tabsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-4xl rounded-2xl bg-white p-7 shadow-sm dark:bg-slate-800">
+    <div className="flex gap-2">
+      {["Overview", "Features", "Pricing"].map((tab, i) => (
+        <button key={tab} className="rounded-lg bg-slate-100 px-4 py-2 text-sm text-slate-700 dark:bg-slate-900 dark:text-slate-300">
+          {tab}
+        </button>
+      ))}
+    </div>
+    <p className="mt-5 text-sm text-slate-600 dark:text-slate-400">Tab content area for concise context and calls to action.</p>
+  </div>
+</section>`;
+
+  const toggleReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto flex max-w-3xl items-center justify-between rounded-xl border border-slate-200 p-6 dark:border-slate-800">
+    <div>
+      <h3 className="font-semibold text-slate-900 dark:text-white">Enable notifications</h3>
+      <p className="text-sm text-slate-600 dark:text-slate-400">Receive product updates and usage alerts.</p>
+    </div>
+    <button className="relative h-7 w-12 rounded-full bg-blue-600">
+      <span className="absolute right-1 top-1 h-5 w-5 rounded-full bg-white" />
+    </button>
+  </div>
+</section>`;
+
+  const collapsibleReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl space-y-3">
+    {["Account", "Billing", "Security"].map((item) => (
+      <details key={item} className="rounded-xl bg-white p-4 shadow-sm dark:bg-slate-800">
+        <summary className="cursor-pointer list-none font-medium text-slate-900 dark:text-white">{item} Settings</summary>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Expandable content with additional controls and descriptions.</p>
+      </details>
+    ))}
+  </div>
+</section>`;
+
+  const expandableCardsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    {["Starter", "Growth", "Enterprise"].map((plan) => (
+      <details key={plan} className="rounded-xl border border-slate-200 p-5 dark:border-slate-800">
+        <summary className="cursor-pointer list-none font-semibold text-slate-900 dark:text-white">{plan}</summary>
+        <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">Expand to reveal benefits, limits, and upgrade options.</p>
+      </details>
+    ))}
+  </div>
+</section>`;
+
+  const modalReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl text-center">
+    <button className="rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white">Open Modal</button>
+    <div className="mx-auto mt-6 max-w-md rounded-xl bg-white p-6 shadow-lg dark:bg-slate-800">
+      <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Example Modal</h3>
+      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Use for confirmations, quick forms, or guided actions.</p>
+      <div className="mt-4 flex justify-end gap-2">
+        <button className="rounded-lg border border-slate-300 px-4 py-2 text-sm dark:border-slate-700">Cancel</button>
+        <button className="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white">Confirm</button>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  const tooltipReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto flex max-w-3xl justify-center">
+    <div className="relative">
+      <button className="rounded-lg border border-slate-300 px-5 py-2 text-sm font-medium dark:border-slate-700">Hover for tooltip</button>
+      <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 rounded-md bg-slate-900 px-3 py-2 text-xs text-white">
+        Helpful contextual hint
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  const popoverReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl text-center">
+    <div className="inline-block rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+      <p className="text-sm font-medium text-slate-900 dark:text-white">Quick actions</p>
+      <div className="mt-3 space-y-2 text-left text-sm text-slate-600 dark:text-slate-400">
+        <button className="block w-full rounded-md px-2 py-1 hover:bg-slate-100 dark:hover:bg-slate-700">Duplicate</button>
+        <button className="block w-full rounded-md px-2 py-1 hover:bg-slate-100 dark:hover:bg-slate-700">Archive</button>
+        <button className="block w-full rounded-md px-2 py-1 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20">Delete</button>
+      </div>
+    </div>
+  </div>
+</section>`;
 
   // State for variant 1: Accordion
   const [expandedAccordion, setExpandedAccordion] = useState<number | null>(0);
@@ -54,24 +141,8 @@ export default function BlocksInteractionsPage() {
   // State for variant 8: Popover
   const [activePopover, setActivePopover] = useState<number | null>(null);
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
-
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Interactive Components"
@@ -82,15 +153,10 @@ export default function BlocksInteractionsPage() {
           {/* Variant 1: Accordion */}
           <div className="relative">
             <SectionDivider title="Accordion (Expandable Items)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={accordionReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -153,15 +219,10 @@ export default function BlocksInteractionsPage() {
           {/* Variant 2: Tabs */}
           <div className="relative">
             <SectionDivider title="Tabs (Content Switcher)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={tabsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -232,15 +293,10 @@ export default function BlocksInteractionsPage() {
           {/* Variant 3: Toggle */}
           <div className="relative">
             <SectionDivider title="Toggle (On/Off Switch)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={toggleReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -307,15 +363,10 @@ export default function BlocksInteractionsPage() {
           {/* Variant 4: Collapsible Sections */}
           <div className="relative">
             <SectionDivider title="Collapsible Sections (Expandable Cards)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={collapsibleReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -379,15 +430,10 @@ export default function BlocksInteractionsPage() {
           {/* Variant 5: Expandable Cards */}
           <div className="relative">
             <SectionDivider title="Expandable Cards (Click to Expand)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={expandableCardsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -456,15 +502,10 @@ export default function BlocksInteractionsPage() {
           {/* Variant 6: Modal Dialog */}
           <div className="relative">
             <SectionDivider title="Modal Dialog (Popup)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={modalReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -522,15 +563,10 @@ export default function BlocksInteractionsPage() {
           {/* Variant 7: Tooltip */}
           <div className="relative">
             <SectionDivider title="Tooltip (Hover Popups)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={tooltipReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -575,15 +611,10 @@ export default function BlocksInteractionsPage() {
           {/* Variant 8: Popover */}
           <div className="relative">
             <SectionDivider title="Popover (Click-to-Show Panel)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={popoverReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

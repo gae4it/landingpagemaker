@@ -3,18 +3,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import {
-  Copy,
-  Award,
-  CheckCircle,
-  Users,
-  TrendingUp,
-  Star,
-} from "lucide-react";
+import { Award, CheckCircle, Users, TrendingUp, Star } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksPartnerPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -25,26 +17,128 @@ export default function BlocksPartnerPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const partnerLogosReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <h3 className="text-center text-2xl font-bold text-slate-900 dark:text-white">Trusted by Partners</h3>
+  <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+    {["Acme", "Nova", "Horizon", "Pulse", "Vertex", "Mira", "Flux", "Nexa"].map((name) => (
+      <div key={name} className="rounded-lg border border-slate-200 p-4 text-center text-sm font-semibold text-slate-600 dark:border-slate-800 dark:text-slate-300">{name}</div>
+    ))}
+  </div>
+</section>`;
+
+  const partnerTestimonialsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {[1, 2, 3].map((i) => (
+      <blockquote key={i} className="rounded-xl bg-white p-6 shadow-sm dark:bg-slate-800">
+        <p className="text-sm text-slate-600 dark:text-slate-400">\"Partnership with this platform accelerated our growth.\"</p>
+        <p className="mt-4 text-sm font-semibold text-slate-900 dark:text-white">Partner {i}</p>
+      </blockquote>
+    ))}
+  </div>
+</section>`;
+
+  const partnerTiersReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {[
+      ["Silver", "Entry tier", "5% rev share"],
+      ["Gold", "Growth tier", "10% rev share"],
+      ["Platinum", "Top tier", "15% rev share"],
+    ].map(([tier, desc, benefit]) => (
+      <div key={tier} className="rounded-xl border border-slate-200 p-7 dark:border-slate-800">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white">{tier}</h3>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{desc}</p>
+        <p className="mt-4 text-sm font-medium text-blue-600">{benefit}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const partnerBenefitsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    {[
+      "Dedicated partner manager",
+      "Co-marketing campaigns",
+      "Technical enablement",
+      "Early feature access",
+    ].map((item) => (
+      <div key={item} className="rounded-xl bg-white p-6 shadow-sm dark:bg-slate-800">
+        <p className="text-sm font-medium text-slate-900 dark:text-white">{item}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const partnerComparisonReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+    <table className="w-full min-w-[680px] text-left text-sm">
+      <thead className="bg-slate-100 dark:bg-slate-900">
+        <tr>
+          <th className="px-4 py-3">Feature</th>
+          <th className="px-4 py-3">Silver</th>
+          <th className="px-4 py-3">Gold</th>
+          <th className="px-4 py-3">Platinum</th>
+        </tr>
+      </thead>
+      <tbody>
+        {[
+          ["Dedicated manager", "-", "Yes", "Yes"],
+          ["Lead sharing", "Limited", "Standard", "Priority"],
+          ["Co-marketing", "-", "Quarterly", "Monthly"],
+        ].map((row) => (
+          <tr key={row[0]} className="border-t border-slate-200 dark:border-slate-800">
+            <td className="px-4 py-3">{row[0]}</td>
+            <td className="px-4 py-3">{row[1]}</td>
+            <td className="px-4 py-3">{row[2]}</td>
+            <td className="px-4 py-3">{row[3]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>`;
+
+  const featuredPartnerReactSnippet = `<section className="rounded-2xl bg-blue-600 py-16 text-white">
+  <div className="grid grid-cols-1 items-center gap-8 px-6 md:grid-cols-2">
+    <div>
+      <p className="text-sm text-blue-100">Featured Partner</p>
+      <h3 className="mt-2 text-3xl font-bold">Horizon Ventures</h3>
+      <p className="mt-4 text-sm text-blue-100">Scaling joint customer success through strategic collaboration.</p>
+      <button className="mt-6 rounded-lg bg-white px-5 py-2 text-sm font-medium text-blue-700">Read Case Study</button>
+    </div>
+    <div className="h-56 rounded-xl bg-blue-500/40" />
+  </div>
+</section>`;
+
+  const partnerCtaReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 text-center shadow-sm dark:bg-slate-800">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Become a partner</h3>
+    <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">Join our ecosystem and unlock growth opportunities.</p>
+    <div className="mt-6 flex justify-center gap-3">
+      <button className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">Apply Now</button>
+      <button className="rounded-lg border border-slate-300 px-5 py-2 text-sm font-medium dark:border-slate-700">Partner Guide</button>
+    </div>
+  </div>
+</section>`;
+
+  const partnerStatsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+    {[
+      ["120+", "Active partners"],
+      ["42", "Countries"],
+      ["$18M", "Partner revenue"],
+      ["96%", "Satisfaction"],
+    ].map(([value, label]) => (
+      <div key={label} className="rounded-xl border border-slate-200 p-6 text-center dark:border-slate-800">
+        <p className="text-3xl font-bold text-slate-900 dark:text-white">{value}</p>
+        <p className="mt-1 text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Partner Sections"
@@ -55,15 +149,10 @@ export default function BlocksPartnerPage() {
           {/* Variant 1: Partner Logos Grid */}
           <div className="relative">
             <SectionDivider title="Partner Logos Grid">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={partnerLogosReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -97,15 +186,10 @@ export default function BlocksPartnerPage() {
           {/* Variant 2: Partner Testimonials */}
           <div className="relative">
             <SectionDivider title="Partner Testimonials">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={partnerTestimonialsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -161,15 +245,10 @@ export default function BlocksPartnerPage() {
           {/* Variant 3: Partner Tiers/Levels */}
           <div className="relative">
             <SectionDivider title="Partner Tiers/Levels">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={partnerTiersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -309,15 +388,10 @@ export default function BlocksPartnerPage() {
           {/* Variant 4: Partner Benefits */}
           <div className="relative">
             <SectionDivider title="Partner Benefits">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={partnerBenefitsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -398,15 +472,10 @@ export default function BlocksPartnerPage() {
           {/* Variant 5: Partner Comparison */}
           <div className="relative">
             <SectionDivider title="Partner Comparison">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={partnerComparisonReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -527,15 +596,10 @@ export default function BlocksPartnerPage() {
           {/* Variant 6: Featured Partners */}
           <div className="relative">
             <SectionDivider title="Featured Partners">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={featuredPartnerReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -592,15 +656,10 @@ export default function BlocksPartnerPage() {
           {/* Variant 7: Partner Network */}
           <div className="relative">
             <SectionDivider title="Partner Network">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={partnerCtaReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -678,15 +737,10 @@ export default function BlocksPartnerPage() {
           {/* Variant 8: Partner CTA */}
           <div className="relative">
             <SectionDivider title="Partner CTA (Call-to-Action)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={partnerStatsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

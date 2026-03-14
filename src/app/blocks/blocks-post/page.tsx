@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import {
-  Copy,
   Calendar,
   User,
   Tag,
@@ -13,9 +12,8 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksPostPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -26,26 +24,118 @@ export default function BlocksPostPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const blogGridReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {[1, 2, 3].map((i) => (
+      <article key={i} className="rounded-xl border border-slate-200 p-5 dark:border-slate-800">
+        <div className="mb-4 h-40 rounded-lg bg-slate-200 dark:bg-slate-700" />
+        <h3 className="font-semibold text-slate-900 dark:text-white">Blog Post {i}</h3>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Short summary describing this article and its key takeaway.</p>
+      </article>
+    ))}
+  </div>
+</section>`;
+
+  const featuredPostReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+    <div className="h-72 rounded-2xl bg-slate-200 dark:bg-slate-700" />
+    <div>
+      <p className="text-sm font-medium text-blue-600">Featured Story</p>
+      <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">How top teams scale content operations</h3>
+      <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">Frameworks and systems that keep quality high while publishing consistently.</p>
+      <button className="mt-6 rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">Read Article</button>
+    </div>
+  </div>
+</section>`;
+
+  const metadataPostsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+    {[1, 2, 3, 4].map((i) => (
+      <article key={i} className="rounded-xl border border-slate-200 p-5 dark:border-slate-800">
+        <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">June 20, 2026 • 6 min read</p>
+        <h3 className="mt-2 font-semibold text-slate-900 dark:text-white">Post with metadata {i}</h3>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Useful insights with practical steps.</p>
+      </article>
+    ))}
+  </div>
+</section>`;
+
+  const excerptPostsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="space-y-4">
+    {["Growth strategy", "Design systems", "Launch checklists"].map((title) => (
+      <article key={title} className="rounded-xl bg-white p-6 shadow-sm dark:bg-slate-800">
+        <h3 className="font-semibold text-slate-900 dark:text-white">{title}</h3>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">A compact excerpt preview that helps readers scan and choose quickly.</p>
+      </article>
+    ))}
+  </div>
+</section>`;
+
+  const timelinePostsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="space-y-8">
+    {["Jan 2026", "Mar 2026", "May 2026", "Jul 2026"].map((date, index) => (
+      <div key={date} className="flex gap-4">
+        <div className="flex flex-col items-center">
+          <div className="h-3 w-3 rounded-full bg-blue-600" />
+          {index < 3 && <div className="mt-2 h-12 w-px bg-slate-300 dark:bg-slate-700" />}
+        </div>
+        <div>
+          <p className="text-xs font-medium text-blue-600">{date}</p>
+          <h3 className="font-semibold text-slate-900 dark:text-white">Milestone Post</h3>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Progress updates and launch learnings.</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const carouselPostsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {[1, 2, 3].map((i) => (
+      <article key={i} className="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800">
+        <div className="mb-4 h-32 rounded-lg bg-slate-200 dark:bg-slate-700" />
+        <h3 className="font-semibold text-slate-900 dark:text-white">Carousel post {i}</h3>
+      </article>
+    ))}
+  </div>
+  <div className="mt-5 flex justify-center gap-2">
+    {[0, 1, 2].map((dot) => (
+      <span key={dot} className="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700" />
+    ))}
+  </div>
+</section>`;
+
+  const categoriesPostsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mb-6 flex flex-wrap gap-2">
+    {["All", "Product", "Marketing", "Design", "Engineering"].map((cat, i) => (
+      <button key={cat} className="rounded-full bg-slate-100 px-4 py-2 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+        {cat}
+      </button>
+    ))}
+  </div>
+  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+    {[1, 2, 3, 4].map((i) => (
+      <article key={i} className="rounded-xl border border-slate-200 p-5 dark:border-slate-800">
+        <h3 className="font-semibold text-slate-900 dark:text-white">Category article {i}</h3>
+      </article>
+    ))}
+  </div>
+</section>`;
+
+  const subscribePostsReactSnippet = `<section className="rounded-2xl bg-blue-600 py-16 text-white">
+  <div className="mx-auto max-w-3xl px-6 text-center">
+    <h3 className="text-3xl font-bold">Never miss a post</h3>
+    <p className="mt-3 text-blue-100">Get the latest tutorials and growth playbooks in your inbox.</p>
+    <div className="mx-auto mt-6 flex max-w-xl flex-col gap-3 sm:flex-row">
+      <input className="flex-1 rounded-lg border border-blue-400 bg-blue-500/30 px-4 py-2 text-sm placeholder:text-blue-100" placeholder="you@company.com" />
+      <button className="rounded-lg bg-white px-6 py-2 text-sm font-medium text-blue-700">Subscribe</button>
+    </div>
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Post/Blog Sections"
@@ -56,15 +146,10 @@ export default function BlocksPostPage() {
           {/* Variant 1: Blog Card Grid */}
           <div className="relative">
             <SectionDivider title="Blog Card Grid">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={blogGridReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -109,15 +194,10 @@ export default function BlocksPostPage() {
           {/* Variant 2: Featured Post */}
           <div className="relative">
             <SectionDivider title="Featured Post">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={featuredPostReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -165,15 +245,10 @@ export default function BlocksPostPage() {
           {/* Variant 3: Post Grid with Metadata */}
           <div className="relative">
             <SectionDivider title="Post Grid with Metadata">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={metadataPostsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -232,15 +307,10 @@ export default function BlocksPostPage() {
           {/* Variant 4: Post with Excerpt */}
           <div className="relative">
             <SectionDivider title="Post with Excerpt">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={excerptPostsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -288,15 +358,10 @@ export default function BlocksPostPage() {
           {/* Variant 5: Post Timeline */}
           <div className="relative">
             <SectionDivider title="Post Timeline">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={timelinePostsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -341,15 +406,10 @@ export default function BlocksPostPage() {
           {/* Variant 6: Post Carousel */}
           <div className="relative">
             <SectionDivider title="Post Carousel">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={carouselPostsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -395,15 +455,10 @@ export default function BlocksPostPage() {
           {/* Variant 7: Post Categories */}
           <div className="relative">
             <SectionDivider title="Post Categories">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={categoriesPostsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -459,15 +514,10 @@ export default function BlocksPostPage() {
           {/* Variant 8: Post Subscription */}
           <div className="relative">
             <SectionDivider title="Post Subscription">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={subscribePostsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

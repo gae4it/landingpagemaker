@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import {
-  Copy,
   ShoppingCart,
   Star,
   Eye,
@@ -13,9 +12,8 @@ import {
   Package,
 } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksShopPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -26,26 +24,120 @@ export default function BlocksShopPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const productGridReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    {[1, 2, 3, 4].map((i) => (
+      <article key={i} className="rounded-xl border border-slate-200 p-4 dark:border-slate-800">
+        <div className="mb-4 h-44 rounded-lg bg-slate-200 dark:bg-slate-700" />
+        <h3 className="font-semibold text-slate-900 dark:text-white">Product {i}</h3>
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">$49.00</p>
+      </article>
+    ))}
+  </div>
+</section>`;
+
+  const productRatingsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    {["Starter Kit", "Pro Kit", "Team Kit"].map((name) => (
+      <article key={name} className="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800">
+        <h3 className="font-semibold text-slate-900 dark:text-white">{name}</h3>
+        <p className="mt-2 text-amber-400">★★★★★</p>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Top-rated by ecommerce operators.</p>
+      </article>
+    ))}
+  </div>
+</section>`;
+
+  const quickViewShopReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div className="h-80 rounded-2xl bg-slate-200 dark:bg-slate-700" />
+    <div className="rounded-2xl border border-slate-200 p-7 dark:border-slate-800">
+      <p className="text-sm font-medium text-blue-600">Quick View</p>
+      <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">Featured Product</h3>
+      <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">Concise details, variants, and instant add-to-cart action.</p>
+      <button className="mt-6 rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">Add to cart</button>
+    </div>
+  </div>
+</section>`;
+
+  const shopFiltersReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+    <aside className="rounded-xl bg-white p-5 dark:bg-slate-800">
+      <h4 className="font-semibold text-slate-900 dark:text-white">Filters</h4>
+      <div className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <label className="flex items-center gap-2"><input type="checkbox" /> In stock</label>
+        <label className="flex items-center gap-2"><input type="checkbox" /> On sale</label>
+        <label className="flex items-center gap-2"><input type="checkbox" /> Free shipping</label>
+      </div>
+    </aside>
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-3">
+      {[1, 2, 3, 4].map((i) => (
+        <article key={i} className="rounded-xl bg-white p-5 shadow-sm dark:bg-slate-800">
+          <div className="mb-3 h-32 rounded-lg bg-slate-200 dark:bg-slate-700" />
+          <h3 className="font-semibold text-slate-900 dark:text-white">Filtered Product {i}</h3>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>`;
+
+  const cartPreviewReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto max-w-4xl rounded-2xl border border-slate-200 p-8 dark:border-slate-800">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Cart Preview</h3>
+    <div className="mt-5 space-y-4">
+      {["Product A", "Product B"].map((item) => (
+        <div key={item} className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 dark:bg-slate-900">
+          <p className="text-sm text-slate-700 dark:text-slate-300">{item}</p>
+          <p className="text-sm font-medium text-slate-900 dark:text-white">$49.00</p>
+        </div>
+      ))}
+    </div>
+    <button className="mt-6 rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white">Checkout</button>
+  </div>
+</section>`;
+
+  const shopTestimonialsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    {["Best purchase this year", "Great support and quality"].map((quote) => (
+      <blockquote key={quote} className="rounded-xl bg-white p-6 shadow-sm dark:bg-slate-800">
+        <p className="text-sm text-slate-600 dark:text-slate-400">\"{quote}\"</p>
+        <p className="mt-3 text-xs font-medium text-slate-500 dark:text-slate-400">Verified Buyer</p>
+      </blockquote>
+    ))}
+  </div>
+</section>`;
+
+  const upsellShopReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">You may also like</h3>
+  <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {[1, 2, 3, 4].map((i) => (
+      <article key={i} className="rounded-xl border border-slate-200 p-5 dark:border-slate-800">
+        <div className="mb-3 h-32 rounded-lg bg-slate-200 dark:bg-slate-700" />
+        <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Upsell Product {i}</h4>
+      </article>
+    ))}
+  </div>
+</section>`;
+
+  const shopStatsReactSnippet = `<section className="rounded-2xl bg-blue-600 py-16 text-white">
+  <div className="grid grid-cols-2 gap-6 px-6 md:grid-cols-4">
+    {[
+      ["30K+", "Orders"],
+      ["4.9", "Average Rating"],
+      ["98%", "On-Time Delivery"],
+      ["24/7", "Support"],
+    ].map(([value, label]) => (
+      <div key={label} className="text-center">
+        <p className="text-3xl font-bold">{value}</p>
+        <p className="mt-1 text-xs uppercase tracking-wide text-blue-100">{label}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Shop Blocks"
@@ -56,15 +148,10 @@ export default function BlocksShopPage() {
           {/* Variant 1: Product Grid */}
           <div className="relative">
             <SectionDivider title="Product Grid (3-4 Column)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={productGridReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -109,15 +196,10 @@ export default function BlocksShopPage() {
           {/* Variant 2: Product Card with Review Stars */}
           <div className="relative">
             <SectionDivider title="Product Card with Review Stars">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={productRatingsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -178,15 +260,10 @@ export default function BlocksShopPage() {
           {/* Variant 3: Product with Quick View */}
           <div className="relative">
             <SectionDivider title="Product with Quick View Modal">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={quickViewShopReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -242,15 +319,10 @@ export default function BlocksShopPage() {
           {/* Variant 4: Product Filter Section */}
           <div className="relative">
             <SectionDivider title="Product Filter Section">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={shopFiltersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -383,15 +455,10 @@ export default function BlocksShopPage() {
           {/* Variant 5: Cart Preview */}
           <div className="relative">
             <SectionDivider title="Cart Preview (Mini Cart)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={cartPreviewReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -463,15 +530,10 @@ export default function BlocksShopPage() {
           {/* Variant 6: Product Testimonials */}
           <div className="relative">
             <SectionDivider title="Product Testimonials">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={shopTestimonialsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -534,15 +596,10 @@ export default function BlocksShopPage() {
           {/* Variant 7: Upsell Section */}
           <div className="relative">
             <SectionDivider title="Upsell Section (Related Products)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={upsellShopReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -597,15 +654,10 @@ export default function BlocksShopPage() {
           {/* Variant 8: Featured Products Spotlight */}
           <div className="relative">
             <SectionDivider title="Featured Products (Sale/Spotlight)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={shopStatsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

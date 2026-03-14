@@ -3,11 +3,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { Copy, CheckCircle, AlertCircle, Loader } from "lucide-react";
+import { CheckCircle, AlertCircle, Loader } from "lucide-react";
 import { useRef, useState } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksUIPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -25,32 +24,14 @@ export default function BlocksUIPage() {
   const sectionRef13 = useRef<HTMLElement>(null);
   const sectionRef14 = useRef<HTMLElement>(null);
   const sectionRef15 = useRef<HTMLElement>(null);
-
-  const [showCopied, triggerCopied] = useCopyNotification();
   const [formInput, setFormInput] = useState("");
   const [selectValue, setSelectValue] = useState("");
   const [textareaValue, setTextareaValue] = useState("");
   const [checkboxChecked, setCheckboxChecked] = useState(false);
   const [radioSelected, setRadioSelected] = useState("");
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
-
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="UI Components"
@@ -61,15 +42,7 @@ export default function BlocksUIPage() {
           {/* Variant 1: Button Solid */}
           <div className="relative">
             <SectionDivider title="Button Solid (Primary Filled)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef1} />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -92,15 +65,7 @@ export default function BlocksUIPage() {
           {/* Variant 2: Button Outline */}
           <div className="relative">
             <SectionDivider title="Button Outline (Bordered)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef2} />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -123,15 +88,7 @@ export default function BlocksUIPage() {
           {/* Variant 3: Button Ghost */}
           <div className="relative">
             <SectionDivider title="Button Ghost (Transparent)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef3} />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -154,15 +111,7 @@ export default function BlocksUIPage() {
           {/* Variant 4: Button Loading */}
           <div className="relative">
             <SectionDivider title="Button Loading (Animated)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef4} />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -184,15 +133,7 @@ export default function BlocksUIPage() {
           {/* Variant 5: Form Input */}
           <div className="relative">
             <SectionDivider title="Form Input (Text Field)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef5} />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -218,15 +159,7 @@ export default function BlocksUIPage() {
           {/* Variant 6: Form Select */}
           <div className="relative">
             <SectionDivider title="Form Select (Dropdown)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef6} />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -255,15 +188,7 @@ export default function BlocksUIPage() {
           {/* Variant 7: Form Textarea */}
           <div className="relative">
             <SectionDivider title="Form Textarea (Multi-line)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef7} />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -289,15 +214,7 @@ export default function BlocksUIPage() {
           {/* Variant 8: Form Checkbox */}
           <div className="relative">
             <SectionDivider title="Form Checkbox">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef8} />
             </SectionDivider>
             <section
               ref={sectionRef8}
@@ -332,15 +249,7 @@ export default function BlocksUIPage() {
           {/* Variant 9: Form Radio */}
           <div className="relative">
             <SectionDivider title="Form Radio (Radio Button)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef9)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef9} />
             </SectionDivider>
             <section
               ref={sectionRef9}
@@ -387,15 +296,7 @@ export default function BlocksUIPage() {
           {/* Variant 10: Badge */}
           <div className="relative">
             <SectionDivider title="Badge (Small Label Tags)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef10)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef10} />
             </SectionDivider>
             <section
               ref={sectionRef10}
@@ -424,15 +325,7 @@ export default function BlocksUIPage() {
           {/* Variant 11: Pills */}
           <div className="relative">
             <SectionDivider title="Pills (Rounded Badge Variants)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef11)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef11} />
             </SectionDivider>
             <section
               ref={sectionRef11}
@@ -458,15 +351,7 @@ export default function BlocksUIPage() {
           {/* Variant 12: Card */}
           <div className="relative">
             <SectionDivider title="Card (Content Container)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef12)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef12} />
             </SectionDivider>
             <section
               ref={sectionRef12}
@@ -504,15 +389,7 @@ export default function BlocksUIPage() {
           {/* Variant 13: Alert */}
           <div className="relative">
             <SectionDivider title="Alert (Message Box)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef13)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef13} />
             </SectionDivider>
             <section
               ref={sectionRef13}
@@ -568,15 +445,7 @@ export default function BlocksUIPage() {
           {/* Variant 14: Progress Bar */}
           <div className="relative">
             <SectionDivider title="Progress Bar (Progress Indicator)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef14)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef14} />
             </SectionDivider>
             <section
               ref={sectionRef14}
@@ -614,15 +483,7 @@ export default function BlocksUIPage() {
           {/* Variant 15: Loader/Spinner */}
           <div className="relative">
             <SectionDivider title="Loader/Spinner (Loading Animation)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef15)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons sectionRef={sectionRef15} />
             </SectionDivider>
             <section
               ref={sectionRef15}

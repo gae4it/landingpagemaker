@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import {
-  Copy,
   BookOpen,
   Lightbulb,
   Quote,
@@ -12,9 +11,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksContentPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -25,26 +23,162 @@ export default function BlocksContentPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const textImageLeftReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 px-4 md:grid-cols-2">
+    <div className="rounded-xl bg-slate-100 dark:bg-slate-800" style={{ height: 320, display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <span className="text-slate-400">Image placeholder</span>
+    </div>
+    <div>
+      <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Content with image left</h2>
+      <p className="mt-4 text-slate-600 dark:text-slate-400">
+        Pair your written content with an image on the left for visual balance. Great for product showcases and feature explanations.
+      </p>
+      <a href="#" className="mt-6 inline-flex items-center gap-1 font-medium text-blue-600 hover:underline dark:text-blue-400">
+        Learn more <ArrowRight size={16} />
+      </a>
+    </div>
+  </div>
+</section>`;
+
+  const textImageRightReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 px-4 md:grid-cols-2">
+    <div>
+      <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Content with image right</h2>
+      <p className="mt-4 text-slate-600 dark:text-slate-400">
+        Place the image on the right side for a different reading flow. Mix and match left/right layouts to create visual rhythm.
+      </p>
+      <ul className="mt-6 space-y-2 text-slate-600 dark:text-slate-400">
+        <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Feature one</li>
+        <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Feature two</li>
+        <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Feature three</li>
+      </ul>
+    </div>
+    <div className="rounded-xl bg-slate-200 dark:bg-slate-700" style={{ height: 320, display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <span className="text-slate-400">Image placeholder</span>
+    </div>
+  </div>
+</section>`;
+
+  const fullWidthContentReactSnippet = `<section className="bg-white py-20 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl px-4 text-center">
+    <BookOpen className="mx-auto mb-6 text-blue-600" size={40} />
+    <h2 className="text-4xl font-bold text-slate-900 dark:text-white">Full-Width Content</h2>
+    <p className="mt-6 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+      Use full-width layouts for focused reading experiences. Ideal for blog posts, articles, and long-form content. Keep the max-width constrained for readability.
+    </p>
+    <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+      Great typography and spacing make content easy to consume. Use generous line-height and comfortable font sizes for the best reading experience.
+    </p>
+    <button className="mt-8 rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-700">
+      Read more
+    </button>
+  </div>
+</section>`;
+
+  const blockquoteReactSnippet = `<section className="bg-slate-50 py-20 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl px-4">
+    <div className="rounded-xl border-l-4 border-blue-600 bg-white p-8 shadow dark:bg-slate-800">
+      <Quote className="mb-4 text-blue-600" size={32} />
+      <blockquote className="text-xl font-medium italic text-slate-700 dark:text-slate-200">
+        "Great design is not just what it looks like; it is how it works. Every element should serve a purpose and deliver clear value to the user."
+      </blockquote>
+      <footer className="mt-6 flex items-center gap-3">
+        <div className="h-10 w-10 rounded-full bg-slate-300 dark:bg-slate-600" />
+        <div>
+          <p className="font-semibold text-slate-900 dark:text-white">Jane Smith</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">CEO at Company Inc.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>`;
+
+  const multiColTextReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto max-w-5xl px-4">
+    <h2 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">Multi-Column Text</h2>
+    <div className="columns-1 gap-10 text-slate-600 md:columns-2 lg:columns-3 dark:text-slate-400">
+      <p className="mb-4 break-inside-avoid">
+        The first column contains introductory text. Multi-column layouts work great for magazine-style content, articles, and text-heavy sections.
+      </p>
+      <p className="mb-4 break-inside-avoid">
+        The second column continues the flow. CSS Columns automatically balance text across all columns for a polished, professional look.
+      </p>
+      <p className="mb-4 break-inside-avoid">
+        The third column completes the layout. Adjust the number of columns based on your content and screen size requirements.
+      </p>
+    </div>
+  </div>
+</section>`;
+
+  const calloutBoxReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl px-4">
+    <div className="rounded-xl bg-blue-50 p-8 dark:bg-blue-900/20">
+      <div className="flex items-start gap-4">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
+          <Lightbulb size={20} />
+        </div>
+        <div>
+          <h3 className="text-lg font-bold text-blue-900 dark:text-blue-100">Pro Tip</h3>
+          <p className="mt-2 text-blue-800 dark:text-blue-200">
+            Use callout boxes to highlight important information, warnings, or tips. They catch the reader's eye and break up long blocks of body text.
+          </p>
+          <a href="#" className="mt-4 inline-block text-sm font-medium text-blue-600 hover:underline dark:text-blue-400">
+            Learn more →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  const textHighlightReactSnippet = `<section className="bg-white py-20 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl px-4">
+    <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Highlighted Content</h2>
+    <p className="mt-6 text-lg text-slate-600 dark:text-slate-400">
+      Use{" "}
+      <mark className="rounded bg-yellow-200 px-1 text-slate-900 dark:bg-yellow-700 dark:text-white">
+        highlighted text
+      </mark>{" "}
+      to draw attention to key phrases. You can also use{" "}
+      <strong className="text-slate-900 dark:text-white">bold text</strong> or{" "}
+      <em className="text-blue-600 dark:text-blue-400">emphasized italic</em> for variety.
+    </p>
+    <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
+      Combine different text treatments to create visual hierarchy and guide the reader toward the most important information in your content.
+    </p>
+  </div>
+</section>`;
+
+  const sideBySideReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 md:grid-cols-2">
+    <div className="rounded-xl bg-white p-8 shadow dark:bg-slate-800">
+      <h3 className="text-xl font-bold text-slate-900 dark:text-white">Before</h3>
+      <p className="mt-3 text-slate-600 dark:text-slate-400">
+        Old approach: manual processes, scattered tools, and slow workflows that drain your team's productivity.
+      </p>
+      <ul className="mt-4 space-y-1 text-sm text-red-500">
+        <li>✗ Time-consuming manual tasks</li>
+        <li>✗ Disconnected tools</li>
+        <li>✗ Hard to track progress</li>
+      </ul>
+    </div>
+    <div className="rounded-xl bg-blue-600 p-8 text-white shadow">
+      <h3 className="text-xl font-bold">After</h3>
+      <p className="mt-3 text-blue-100">
+        New approach: automated workflows, integrated tools, and streamlined processes that save hours every week.
+      </p>
+      <ul className="mt-4 space-y-1 text-sm text-blue-200">
+        <li>✓ Automated workflows</li>
+        <li>✓ Unified platform</li>
+        <li>✓ Real-time visibility</li>
+      </ul>
+    </div>
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Content Sections"
@@ -55,15 +189,10 @@ export default function BlocksContentPage() {
           {/* Variant 1: Text + Image Left */}
           <div className="relative">
             <SectionDivider title="Text + Image Left">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={textImageLeftReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -94,15 +223,10 @@ export default function BlocksContentPage() {
           {/* Variant 2: Text + Image Right */}
           <div className="relative">
             <SectionDivider title="Text + Image Right">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={textImageRightReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -145,15 +269,10 @@ export default function BlocksContentPage() {
           {/* Variant 3: Full Width Content */}
           <div className="relative">
             <SectionDivider title="Full Width Content">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={fullWidthContentReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -189,15 +308,10 @@ export default function BlocksContentPage() {
           {/* Variant 4: Blockquote with Attribution */}
           <div className="relative">
             <SectionDivider title="Blockquote">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={blockquoteReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -225,15 +339,10 @@ export default function BlocksContentPage() {
           {/* Variant 5: Multi Column Text */}
           <div className="relative">
             <SectionDivider title="Multi Column Text">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={multiColTextReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -269,15 +378,10 @@ export default function BlocksContentPage() {
           {/* Variant 6: Callout Box */}
           <div className="relative">
             <SectionDivider title="Callout Box">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={calloutBoxReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -313,15 +417,10 @@ export default function BlocksContentPage() {
           {/* Variant 7: Text with Highlight */}
           <div className="relative">
             <SectionDivider title="Text with Highlight">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={textHighlightReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -362,15 +461,10 @@ export default function BlocksContentPage() {
           {/* Variant 8: Side by Side Content */}
           <div className="relative">
             <SectionDivider title="Side by Side Content">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={sideBySideReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

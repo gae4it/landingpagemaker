@@ -3,11 +3,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import { Copy } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksDividersPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -18,26 +16,77 @@ export default function BlocksDividersPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const simpleHorizontalLineReactSnippet = `<section className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl">
+    <p className="mb-8 text-slate-600 dark:text-slate-400">
+      A clean and minimal horizontal line divider for separating content sections.
+    </p>
+    <div className="h-px bg-slate-300 dark:bg-slate-700" />
+  </div>
+</section>`;
+
+  const dottedDividerReactSnippet = `<section className="rounded-lg bg-white px-6 py-16 sm:px-8 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl">
+    <p className="mb-8 text-slate-600 dark:text-slate-400">Use dotted separators for softer visual boundaries.</p>
+    <div className="border-t-2 border-dotted border-slate-300 dark:border-slate-700" />
+  </div>
+</section>`;
+
+  const dashedDividerReactSnippet = `<section className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl">
+    <p className="mb-8 text-slate-600 dark:text-slate-400">Dashed dividers provide a subtle decorative touch.</p>
+    <div className="border-t-2 border-dashed border-slate-400 dark:border-slate-600" />
+  </div>
+</section>`;
+
+  const iconCenteredDividerReactSnippet = `<section className="rounded-lg bg-white px-6 py-16 sm:px-8 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl">
+    <p className="mb-8 text-slate-600 dark:text-slate-400">Center an icon in the divider to call attention to section breaks.</p>
+    <div className="flex items-center">
+      <div className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
+      <div className="mx-4 rounded-full border border-slate-300 px-3 py-1 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-300">*</div>
+      <div className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
+    </div>
+  </div>
+</section>`;
+
+  const textCenteredDividerReactSnippet = `<section className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl">
+    <p className="mb-8 text-slate-600 dark:text-slate-400">Place a short label in the center for contextual separation.</p>
+    <div className="flex items-center">
+      <div className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
+      <span className="mx-4 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Next Section</span>
+      <div className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
+    </div>
+  </div>
+</section>`;
+
+  const gradientDividerReactSnippet = `<section className="rounded-lg bg-white px-6 py-16 sm:px-8 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl">
+    <p className="mb-8 text-slate-600 dark:text-slate-400">Gradient lines add color and emphasis to transitions.</p>
+    <div className="h-1 rounded-full bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600" />
+  </div>
+</section>`;
+
+  const thickDividerReactSnippet = `<section className="rounded-lg bg-slate-50 px-6 py-16 sm:px-8 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl">
+    <p className="mb-8 text-slate-600 dark:text-slate-400">Thick dividers create strong content boundaries.</p>
+    <div className="h-2 rounded-full bg-slate-800 dark:bg-slate-200" />
+  </div>
+</section>`;
+
+  const animatedDividerReactSnippet = `<section className="rounded-lg bg-white px-6 py-16 sm:px-8 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl">
+    <p className="mb-8 text-slate-600 dark:text-slate-400">Animated-style bars can suggest movement and progression.</p>
+    <div className="relative h-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+      <div className="absolute left-0 top-0 h-1 w-1/2 rounded-full bg-blue-600" />
+    </div>
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Dividers Sections"
@@ -48,15 +97,10 @@ export default function BlocksDividersPage() {
           {/* Variant 1: Simple Horizontal Line Divider */}
           <div className="relative">
             <SectionDivider title="Simple Horizontal Line">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={simpleHorizontalLineReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -75,15 +119,10 @@ export default function BlocksDividersPage() {
           {/* Variant 2: Dotted Line Divider */}
           <div className="relative">
             <SectionDivider title="Dotted Line Divider">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={dottedDividerReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -102,15 +141,10 @@ export default function BlocksDividersPage() {
           {/* Variant 3: Dashed Line Divider */}
           <div className="relative">
             <SectionDivider title="Dashed Line Divider">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={dashedDividerReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -129,15 +163,10 @@ export default function BlocksDividersPage() {
           {/* Variant 4: Icon-Centered Divider */}
           <div className="relative">
             <SectionDivider title="Icon-Centered Divider">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={iconCenteredDividerReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -172,15 +201,10 @@ export default function BlocksDividersPage() {
           {/* Variant 5: Text-Centered Divider */}
           <div className="relative">
             <SectionDivider title="Text-Centered Divider">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={textCenteredDividerReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -205,15 +229,10 @@ export default function BlocksDividersPage() {
           {/* Variant 6: Gradient Divider */}
           <div className="relative">
             <SectionDivider title="Gradient Divider">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={gradientDividerReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -232,15 +251,10 @@ export default function BlocksDividersPage() {
           {/* Variant 7: Thick Divider with Spacing */}
           <div className="relative">
             <SectionDivider title="Thick Divider with Spacing">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={thickDividerReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -262,15 +276,10 @@ export default function BlocksDividersPage() {
           {/* Variant 8: Animated Divider */}
           <div className="relative">
             <SectionDivider title="Animated Divider">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={animatedDividerReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

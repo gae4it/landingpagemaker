@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import {
-  Copy,
   Heart,
   Share2,
   MessageCircle,
@@ -16,9 +15,8 @@ import {
   Linkedin,
 } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksSocialPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -29,26 +27,112 @@ export default function BlocksSocialPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const socialShareButtonsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <h3 className="text-center text-2xl font-bold text-slate-900 dark:text-white">Share this article</h3>
+  <div className="mt-6 flex flex-wrap justify-center gap-3">
+    {[
+      "Twitter",
+      "LinkedIn",
+      "Facebook",
+      "Copy Link",
+    ].map((item) => (
+      <button key={item} className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium dark:border-slate-700">{item}</button>
+    ))}
+  </div>
+</section>`;
+
+  const socialFollowCardsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    {[
+      ["Twitter", "@brand", "24k followers"],
+      ["LinkedIn", "Brand Inc.", "18k followers"],
+      ["Instagram", "@brandstudio", "41k followers"],
+    ].map(([platform, handle, metric]) => (
+      <div key={platform} className="rounded-xl bg-white p-6 shadow-sm dark:bg-slate-800">
+        <p className="font-semibold text-slate-900 dark:text-white">{platform}</p>
+        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{handle}</p>
+        <p className="mt-3 text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{metric}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const socialFeedGridReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+    {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+      <div key={i} className="aspect-square rounded-xl bg-slate-200 dark:bg-slate-700" />
+    ))}
+  </div>
+</section>`;
+
+  const socialProofNumbersReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+    {[
+      ["125K", "Followers"],
+      ["4.8M", "Impressions"],
+      ["3.1%", "Engagement"],
+      ["72", "Brand Mentions"],
+    ].map(([value, label]) => (
+      <div key={label} className="rounded-xl bg-white p-6 text-center shadow-sm dark:bg-slate-800">
+        <p className="text-3xl font-bold text-slate-900 dark:text-white">{value}</p>
+        <p className="mt-1 text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const socialReviewsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {["Product Hunt", "G2", "Capterra"].map((source) => (
+      <div key={source} className="rounded-xl border border-slate-200 p-6 dark:border-slate-800">
+        <p className="text-sm font-medium text-slate-900 dark:text-white">{source}</p>
+        <p className="mt-2 text-amber-400">★★★★★</p>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">\"Excellent onboarding and fantastic reliability.\"</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const influencerSocialReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+    {["Ava", "Leo", "Mia", "Noah"].map((name) => (
+      <div key={name} className="rounded-xl bg-white p-5 text-center shadow-sm dark:bg-slate-800">
+        <div className="mx-auto h-16 w-16 rounded-full bg-slate-200 dark:bg-slate-700" />
+        <p className="mt-3 font-semibold text-slate-900 dark:text-white">{name}</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Influencer Partner</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const socialStatsPanelReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="rounded-2xl border border-slate-200 p-8 dark:border-slate-800">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Weekly social dashboard</h3>
+    <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+      {["Reach", "Clicks", "Shares"].map((metric) => (
+        <div key={metric} className="rounded-xl bg-slate-100 p-5 dark:bg-slate-900">
+          <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">{metric}</p>
+          <p className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">+18%</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>`;
+
+  const socialCommunityReactSnippet = `<section className="rounded-2xl bg-blue-600 py-16 text-white">
+  <div className="mx-auto max-w-3xl px-6 text-center">
+    <h3 className="text-3xl font-bold">Join our community</h3>
+    <p className="mt-3 text-blue-100">Connect with creators, builders, and growth teams around the world.</p>
+    <div className="mt-6 flex justify-center gap-3">
+      <button className="rounded-lg bg-white px-5 py-2 text-sm font-medium text-blue-700">Join Discord</button>
+      <button className="rounded-lg border border-blue-300 px-5 py-2 text-sm font-medium">Follow on X</button>
+    </div>
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Social Blocks"
@@ -59,15 +143,10 @@ export default function BlocksSocialPage() {
           {/* Variant 1: Share Buttons */}
           <div className="relative">
             <SectionDivider title="Share Buttons (Facebook, Twitter, LinkedIn)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={socialShareButtonsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -103,15 +182,10 @@ export default function BlocksSocialPage() {
           {/* Variant 2: Follow Button States */}
           <div className="relative">
             <SectionDivider title="Follow Button (Follow/Following/Unfollow States)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={socialFollowCardsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -144,15 +218,10 @@ export default function BlocksSocialPage() {
           {/* Variant 3: Social Feed Grid */}
           <div className="relative">
             <SectionDivider title="Social Feed Grid (Post Cards with Likes)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={socialFeedGridReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -212,15 +281,10 @@ export default function BlocksSocialPage() {
           {/* Variant 4: Social Proof Numbers */}
           <div className="relative">
             <SectionDivider title="Social Proof Numbers (Followers Counter)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={socialProofNumbersReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -276,15 +340,10 @@ export default function BlocksSocialPage() {
           {/* Variant 5: Social Reviews/Testimonials */}
           <div className="relative">
             <SectionDivider title="Social Reviews/Testimonials (Avatar + Stars + Quote)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={socialReviewsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -335,15 +394,10 @@ export default function BlocksSocialPage() {
           {/* Variant 6: Influencer Showcase */}
           <div className="relative">
             <SectionDivider title="Influencer Showcase (Avatar, Name, Followers, Follow Btn)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={influencerSocialReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -387,15 +441,10 @@ export default function BlocksSocialPage() {
           {/* Variant 7: Social Stats */}
           <div className="relative">
             <SectionDivider title="Social Stats (Engagement Metrics Grid)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={socialStatsPanelReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -483,15 +532,10 @@ export default function BlocksSocialPage() {
           {/* Variant 8: Social CTA */}
           <div className="relative">
             <SectionDivider title="Social CTA (Follow + Newsletter)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={socialCommunityReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

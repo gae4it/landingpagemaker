@@ -4,17 +4,15 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import {
-  Copy,
   Mail,
   Upload,
   CreditCard,
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
-import { useRef, type RefObject } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import { useRef } from "react";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksFormsPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -26,25 +24,144 @@ export default function BlocksFormsPage() {
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
 
-  const [showCopied, triggerCopied] = useCopyNotification();
-  const handleCopy = (ref: RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (!el) return;
-    void navigator.clipboard.writeText(el.outerHTML);
-    triggerCopied();
-  };
+  const contactFormReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 p-8 dark:border-slate-800">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Contact Us</h3>
+    <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <input className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="First name" />
+      <input className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Last name" />
+      <input className="md:col-span-2 rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Email" />
+      <textarea className="md:col-span-2 h-28 rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Message" />
+    </div>
+    <button className="mt-6 rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white">Submit</button>
+  </div>
+</section>`;
+
+  const newsletterFormReactSnippet = `<section className="rounded-2xl bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-2xl px-6 text-center">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Join our newsletter</h3>
+    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Get weekly product updates and practical growth tips.</p>
+    <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+      <input className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm dark:border-slate-700 dark:bg-slate-800" placeholder="you@company.com" />
+      <button className="rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white">Subscribe</button>
+    </div>
+  </div>
+</section>`;
+
+  const multiStepFormReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 p-8 dark:border-slate-800">
+    <div className="mb-6 flex items-center gap-2">
+      {[1, 2, 3].map((step) => (
+        <div key={step} className="flex items-center gap-2">
+          <div className="h-8 w-8 rounded-full bg-blue-600 text-center text-sm leading-8 text-white">
+            {step}
+          </div>
+          {step < 3 && <div className="h-px w-8 bg-slate-300 dark:bg-slate-700" />}
+        </div>
+      ))}
+    </div>
+    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Step 1: Basic details</h3>
+    <div className="mt-4 space-y-3">
+      <input className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Company name" />
+      <input className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Team size" />
+    </div>
+    <button className="mt-6 rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white">Continue</button>
+  </div>
+</section>`;
+
+  const validationFormReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 shadow-sm dark:bg-slate-800">
+    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Validation Feedback</h3>
+    <div className="mt-5 space-y-4">
+      <div>
+        <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
+        <input className="w-full rounded-lg border border-red-400 bg-transparent px-4 py-2 text-sm" defaultValue="invalid-email" />
+        <p className="mt-1 text-xs text-red-500">Please enter a valid email address.</p>
+      </div>
+      <div>
+        <label className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">Username</label>
+        <input className="w-full rounded-lg border border-green-500 bg-transparent px-4 py-2 text-sm" defaultValue="johndoe" />
+        <p className="mt-1 text-xs text-green-600">Looks good.</p>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  const paymentFormReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto max-w-2xl rounded-2xl border border-slate-200 p-8 dark:border-slate-800">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Checkout</h3>
+    <div className="mt-5 space-y-4">
+      <input className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Cardholder name" />
+      <input className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Card number" />
+      <div className="grid grid-cols-2 gap-3">
+        <input className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="MM/YY" />
+        <input className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="CVC" />
+      </div>
+    </div>
+    <button className="mt-6 w-full rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white">Pay Now</button>
+  </div>
+</section>`;
+
+  const uploadFormReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 shadow-sm dark:bg-slate-800">
+    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Upload Documents</h3>
+    <label className="mt-5 flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-slate-300 px-6 py-10 text-sm text-slate-500 dark:border-slate-600 dark:text-slate-400">
+      Drag and drop or click to upload
+      <input type="file" className="hidden" />
+    </label>
+    <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+      <li>proposal.pdf</li>
+      <li>brand-assets.zip</li>
+    </ul>
+    <button className="mt-6 rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">Upload Files</button>
+  </div>
+</section>`;
+
+  const selectFormReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 p-8 dark:border-slate-800">
+    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Project Intake</h3>
+    <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <select className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700">
+        <option>Project type</option>
+        <option>Website</option>
+        <option>Mobile App</option>
+      </select>
+      <select className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700">
+        <option>Budget range</option>
+        <option>$5k - $10k</option>
+        <option>$10k - $25k</option>
+      </select>
+      <select className="md:col-span-2 rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700">
+        <option>Timeline</option>
+        <option>2-4 weeks</option>
+        <option>1-2 months</option>
+      </select>
+    </div>
+  </div>
+</section>`;
+
+  const checkboxRadioFormReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 shadow-sm dark:bg-slate-800">
+    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Preferences</h3>
+    <div className="mt-5 space-y-5 text-sm">
+      <div>
+        <p className="mb-2 font-medium text-slate-700 dark:text-slate-300">Choose services</p>
+        <label className="flex items-center gap-2"><input type="checkbox" /> Design</label>
+        <label className="mt-1 flex items-center gap-2"><input type="checkbox" /> Development</label>
+        <label className="mt-1 flex items-center gap-2"><input type="checkbox" /> SEO</label>
+      </div>
+      <div>
+        <p className="mb-2 font-medium text-slate-700 dark:text-slate-300">Preferred contact method</p>
+        <label className="flex items-center gap-2"><input type="radio" name="contact" /> Email</label>
+        <label className="mt-1 flex items-center gap-2"><input type="radio" name="contact" /> Phone</label>
+      </div>
+    </div>
+    <button className="mt-6 rounded-lg bg-blue-600 px-6 py-2 text-sm font-medium text-white">Save Preferences</button>
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
-
       <Navigation />
       <Hero
         title="Forms Sections"
@@ -56,15 +173,10 @@ export default function BlocksFormsPage() {
           {/* Form Block 1: Contact Form */}
           <div className="relative">
             <SectionDivider title="Contact Form">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={contactFormReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -126,15 +238,10 @@ export default function BlocksFormsPage() {
           {/* Form Block 2: Newsletter Signup */}
           <div className="relative">
             <SectionDivider title="Newsletter Signup">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={newsletterFormReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -173,15 +280,10 @@ export default function BlocksFormsPage() {
           {/* Form Block 3: Multi-Step Wizard */}
           <div className="relative">
             <SectionDivider title="Multi-Step Form (Wizard)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={multiStepFormReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -252,15 +354,10 @@ export default function BlocksFormsPage() {
           {/* Form Block 4: Validation Feedback */}
           <div className="relative">
             <SectionDivider title="Form with Validation Feedback">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={validationFormReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -329,15 +426,10 @@ export default function BlocksFormsPage() {
           {/* Form Block 5: Payment Form (Stripe) */}
           <div className="relative">
             <SectionDivider title="Payment Form (Stripe Style)">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={paymentFormReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -411,15 +503,10 @@ export default function BlocksFormsPage() {
           {/* Form Block 6: File Upload */}
           <div className="relative">
             <SectionDivider title="File Upload Form">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={uploadFormReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -476,15 +563,10 @@ export default function BlocksFormsPage() {
           {/* Form Block 7: Select/Dropdown Fields */}
           <div className="relative">
             <SectionDivider title="Form with Select/Dropdown Fields">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={selectFormReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -552,15 +634,10 @@ export default function BlocksFormsPage() {
           {/* Form Block 8: Checkbox/Radio Options */}
           <div className="relative">
             <SectionDivider title="Form with Checkbox/Radio Options">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={checkboxRadioFormReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}

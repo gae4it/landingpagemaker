@@ -168,8 +168,8 @@ export default function Home() {
       <Navigation />
       <main className="min-h-screen bg-background">
         <Hero
-          title="Free Next.js Components Library - Copy & Paste Landing Page Sections with shadcn/ui"
-          subtitle="Free, copy-paste ready Next.js components & landing page sections."
+          title="Free HTML / React / Vue Components Library - Copy & Paste Landing Page Sections with shadcn/ui"
+          subtitle="Free, copy-paste ready HTML, React, and Vue components & landing page sections."
           subsubtitle="Build beautiful landing pages quickly with our professionally designed, Tailwind CSS-based components. 20+ pre-built blocks with Tailwind CSS & shadcn/ui. No signup, no installation needed—just copy, customize & ship."
           ctaText="Browse Components"
           ctaLink="#categories"
@@ -179,11 +179,11 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Free Next.js Landing Page Component Categories
+                HTML, React, and Vue Components Library Categories
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 Browse 20+ free, copy-paste ready landing page sections. All
-                components built with Next.js, shadcn/ui, and Tailwind CSS. No
+                components built with HTML, React, Vue, shadcn/ui, and Tailwind CSS. No
                 installation needed—just copy the code and customize.
               </p>
             </div>

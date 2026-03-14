@@ -18,7 +18,9 @@ export const metadata: Metadata = {
     "web components",
     "responsive design",
     "UI blocks",
-    "Next.js components",
+    "HTML Components Library",
+    "React Components Library ",
+    "Vue Components Library",
     "CSS framework",
     "design patterns",
     "web development",
@@ -46,14 +48,14 @@ export const metadata: Metadata = {
     url: "https://landingpagemaker.vercel.app/",
     title: "LandingPageMaker - Ready-made Tailwind Blocks for Landing Pages",
     description:
-      "Discover beautiful, ready-made landing page components built with Tailwind CSS.",
+      "Discover beautiful, ready-made HTML, React, and Vue components built with Tailwind CSS.",
     siteName: "LandingPageMaker",
     images: [
       {
         url: "https://landingpagemaker.vercel.app/api/og",
         width: 1200,
         height: 630,
-        alt: "LandingPageMaker - Free Next.js Components Library",
+        alt: "LandingPageMaker - Free HTML / React / Vue Components Library",
       },
     ],
   },
@@ -79,7 +81,7 @@ const organizationSchema = {
   name: "LandingPageMaker",
   url: "https://landingpagemaker.vercel.app",
   description:
-    "Free Next.js components library with copy-paste ready landing page sections built with Tailwind CSS and shadcn/ui",
+    "Free HTML, React, and Vue components library with copy-paste ready landing page sections built with Tailwind CSS and shadcn/ui",
   logo: "https://landingpagemaker.vercel.app/logo.png",
   sameAs: ["https://github.com/landingpagemaker"],
 };

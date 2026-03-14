@@ -35,7 +35,7 @@ export async function GET() {
         <div
           style={{ fontSize: "48px", marginBottom: "30px", color: "#e0e0e0" }}
         >
-          Free Next.js Components
+          Free HTML / React / Vue Components Library
         </div>
         <div style={{ fontSize: "36px", color: "#a0a0a0" }}>
           Copy & Paste Landing Page Sections

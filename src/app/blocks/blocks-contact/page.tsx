@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import {
-  Copy,
   Mail,
   Phone,
   MapPin,
@@ -14,9 +13,8 @@ import {
   Globe as GlobeIcon,
 } from "lucide-react";
 import { useRef } from "react";
-import { useCopyNotification } from "@/components/useCopyNotification";
+import CopySnippetButtons from "@/components/CopySnippetButtons";
 import SectionDivider from "@/components/SectionDivider";
-import { Button } from "@/components/ui/button";
 
 export default function BlocksContactPage() {
   const sectionRef1 = useRef<HTMLElement>(null);
@@ -27,26 +25,162 @@ export default function BlocksContactPage() {
   const sectionRef6 = useRef<HTMLElement>(null);
   const sectionRef7 = useRef<HTMLElement>(null);
   const sectionRef8 = useRef<HTMLElement>(null);
-  const [showCopied, triggerCopied] = useCopyNotification();
 
-  const handleCopy = (ref: React.RefObject<HTMLElement | null>) => {
-    const el = ref.current;
-    if (el) {
-      void navigator.clipboard.writeText(el.outerHTML);
-      triggerCopied();
-    }
-  };
+  const contactFormInfoReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <div className="rounded-xl border border-slate-200 p-7 dark:border-slate-800">
+      <h3 className="text-xl font-bold text-slate-900 dark:text-white">Send us a message</h3>
+      <div className="mt-5 space-y-4">
+        <input className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Your name" />
+        <input className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Your email" />
+        <textarea className="h-28 w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="How can we help?" />
+        <button className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700">Send Message</button>
+      </div>
+    </div>
+    <div className="rounded-xl bg-slate-50 p-7 dark:bg-slate-900">
+      <h3 className="text-xl font-bold text-slate-900 dark:text-white">Contact info</h3>
+      <div className="mt-5 space-y-3 text-sm text-slate-600 dark:text-slate-400">
+        <p>Email: hello@company.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>Address: 123 Market Street, San Francisco</p>
+        <p>Hours: Mon-Fri, 9:00-18:00</p>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  const contactWithMapReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <div className="rounded-xl bg-white p-6 shadow-sm dark:bg-slate-800">
+      <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Visit Our Office</h3>
+      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Come say hello at our HQ during business hours.</p>
+      <div className="mt-4 h-72 rounded-lg bg-slate-200 dark:bg-slate-700" />
+    </div>
+    <div className="rounded-xl bg-white p-6 shadow-sm dark:bg-slate-800">
+      <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Request Directions</h3>
+      <div className="mt-4 space-y-3">
+        <input className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Starting location" />
+        <select className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700">
+          <option>Travel by car</option>
+          <option>Public transit</option>
+          <option>Walking</option>
+        </select>
+        <button className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">Get Directions</button>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  const multipleLocationsReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Our Locations</h3>
+  <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+    {[
+      ["San Francisco", "123 Market St", "+1 555 111 2222"],
+      ["New York", "88 Madison Ave", "+1 555 333 4444"],
+      ["Berlin", "12 Alexanderplatz", "+49 30 123456"],
+    ].map(([city, address, phone]) => (
+      <div key={city} className="rounded-xl border border-slate-200 p-6 dark:border-slate-800">
+        <p className="text-lg font-semibold text-slate-900 dark:text-white">{city}</p>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{address}</p>
+        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{phone}</p>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const contactCardsReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+    {[
+      ["Sales", "sales@company.com", "Talk about plans"],
+      ["Support", "support@company.com", "Get technical help"],
+      ["Press", "press@company.com", "Media requests"],
+      ["Careers", "jobs@company.com", "Join our team"],
+    ].map(([title, email, desc]) => (
+      <div key={title} className="rounded-xl bg-white p-6 shadow-sm dark:bg-slate-800">
+        <h4 className="font-semibold text-slate-900 dark:text-white">{title}</h4>
+        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{desc}</p>
+        <a href="#" className="mt-4 inline-block text-sm font-medium text-blue-600 dark:text-blue-400">{email}</a>
+      </div>
+    ))}
+  </div>
+</section>`;
+
+  const bookingContactReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 p-8 dark:border-slate-800">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Book a meeting</h3>
+    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Choose a time that works for you and our team.</p>
+    <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <input className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Full name" />
+      <input className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Work email" />
+      <input type="date" className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" />
+      <input type="time" className="rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" />
+    </div>
+    <button className="mt-6 rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">Schedule</button>
+  </div>
+</section>`;
+
+  const liveChatContactReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-4xl rounded-2xl bg-white p-8 shadow-sm dark:bg-slate-800">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Live chat support</h3>
+    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Connect with an agent in under 2 minutes.</p>
+    <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="rounded-xl bg-slate-100 p-4 dark:bg-slate-900">
+        <p className="text-sm text-slate-700 dark:text-slate-300">Agent: Hi! What can we help with today?</p>
+      </div>
+      <div className="rounded-xl bg-blue-600 p-4 text-sm text-white">You: I need help choosing the right plan for my team.</div>
+    </div>
+    <button className="mt-6 rounded-lg border border-slate-300 px-5 py-2 text-sm font-medium dark:border-slate-700">Start Chat</button>
+  </div>
+</section>`;
+
+  const supportMatrixReactSnippet = `<section className="bg-white py-16 dark:bg-slate-950">
+  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Support Channels</h3>
+  <div className="mt-6 overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+    <table className="w-full min-w-[620px] text-left text-sm">
+      <thead className="bg-slate-100 dark:bg-slate-900">
+        <tr>
+          <th className="px-4 py-3">Channel</th>
+          <th className="px-4 py-3">Availability</th>
+          <th className="px-4 py-3">Response Time</th>
+          <th className="px-4 py-3">Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        {[
+          ["Email", "24/7", "< 12h", "Detailed requests"],
+          ["Live Chat", "Business hours", "< 5m", "Quick questions"],
+          ["Phone", "Premium only", "Immediate", "Critical issues"],
+        ].map((row) => (
+          <tr key={row[0]} className="border-t border-slate-200 dark:border-slate-800">
+            <td className="px-4 py-3">{row[0]}</td>
+            <td className="px-4 py-3">{row[1]}</td>
+            <td className="px-4 py-3">{row[2]}</td>
+            <td className="px-4 py-3">{row[3]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>`;
+
+  const attachmentContactReactSnippet = `<section className="bg-slate-50 py-16 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 shadow-sm dark:bg-slate-800">
+    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Send files with your request</h3>
+    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Attach screenshots, PDFs, or logs so we can help faster.</p>
+    <div className="mt-6 space-y-4">
+      <input className="w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Subject" />
+      <textarea className="h-28 w-full rounded-lg border border-slate-300 bg-transparent px-4 py-2 text-sm dark:border-slate-700" placeholder="Describe your request" />
+      <label className="flex cursor-pointer items-center justify-center rounded-lg border border-dashed border-slate-300 px-4 py-6 text-sm text-slate-500 dark:border-slate-600 dark:text-slate-400">
+        Click to upload files
+        <input type="file" className="hidden" />
+      </label>
+      <button className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white">Submit Ticket</button>
+    </div>
+  </div>
+</section>`;
 
   return (
     <>
-      {showCopied && (
-        <div
-          style={{ position: "fixed", top: 24, right: 24, zIndex: 1000 }}
-          className="animate-fade-in rounded bg-black px-4 py-2 text-white shadow-lg"
-        >
-          Section copied
-        </div>
-      )}
       <Navigation />
       <Hero
         title="Contact Sections"
@@ -57,15 +191,10 @@ export default function BlocksContactPage() {
           {/* Variant 1: Contact Form + Info (2 Columns) */}
           <div className="relative">
             <SectionDivider title="Contact Form + Info">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef1)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef1}
+                reactSnippet={contactFormInfoReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef1}
@@ -184,15 +313,10 @@ export default function BlocksContactPage() {
           {/* Variant 2: Contact with Map Placeholder */}
           <div className="relative">
             <SectionDivider title="Contact with Map">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef2)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef2}
+                reactSnippet={contactWithMapReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef2}
@@ -251,15 +375,10 @@ export default function BlocksContactPage() {
           {/* Variant 3: Office Locations Grid */}
           <div className="relative">
             <SectionDivider title="Office Locations">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef3)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef3}
+                reactSnippet={multipleLocationsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef3}
@@ -307,15 +426,10 @@ export default function BlocksContactPage() {
           {/* Variant 4: Contact Info Cards */}
           <div className="relative">
             <SectionDivider title="Contact Info Cards">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef4)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef4}
+                reactSnippet={contactCardsReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef4}
@@ -382,15 +496,10 @@ export default function BlocksContactPage() {
           {/* Variant 5: Contact + Calendar Booking */}
           <div className="relative">
             <SectionDivider title="Contact + Calendar Booking">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef5)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef5}
+                reactSnippet={bookingContactReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef5}
@@ -457,15 +566,10 @@ export default function BlocksContactPage() {
           {/* Variant 6: Live Chat Widget */}
           <div className="relative">
             <SectionDivider title="Contact with Live Chat">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef6)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef6}
+                reactSnippet={liveChatContactReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef6}
@@ -517,15 +621,10 @@ export default function BlocksContactPage() {
           {/* Variant 7: Support Channels Matrix */}
           <div className="relative">
             <SectionDivider title="Support Channels Matrix">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef7)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef7}
+                reactSnippet={supportMatrixReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef7}
@@ -588,15 +687,10 @@ export default function BlocksContactPage() {
           {/* Variant 8: Form with File Attachments */}
           <div className="relative">
             <SectionDivider title="Form with File Attachments">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleCopy(sectionRef8)}
-                className="absolute top-2 right-2"
-                aria-label="Copy section HTML"
-              >
-                <Copy size={18} />
-              </Button>
+              <CopySnippetButtons
+                sectionRef={sectionRef8}
+                reactSnippet={attachmentContactReactSnippet}
+              />
             </SectionDivider>
             <section
               ref={sectionRef8}
