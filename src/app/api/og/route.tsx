@@ -1,8 +1,22 @@
 import { ImageResponse } from "next/og";
 
+import { BLOCKS_META, type BlockSlug } from "@/lib/seo/blocks";
+
 export const runtime = "edge";
 
-export async function GET() {
+export async function GET(request: Request) {
+  const searchParams = new URL(request.url).searchParams;
+  const maybeSlug = searchParams.get("block") as BlockSlug | null;
+  const blockMeta = maybeSlug ? BLOCKS_META[maybeSlug] : undefined;
+
+  const mainTitle = blockMeta?.name ?? "LandingPageMaker";
+  const subtitle = blockMeta
+    ? "Copy and paste Tailwind CSS landing page sections"
+    : "Free HTML / React / Vue Components Library";
+  const tertiary = blockMeta
+    ? "Production-ready sections for modern landing pages"
+    : "Copy and Paste Landing Page Sections";
+
   return new ImageResponse(
     <>
       <div
@@ -21,7 +35,7 @@ export async function GET() {
       >
         <div
           style={{
-            fontSize: "96px",
+            fontSize: blockMeta ? "76px" : "96px",
             fontWeight: "bold",
             marginBottom: "20px",
             background: "linear-gradient(135deg, #00d4ff, #0066ff)",
@@ -30,15 +44,15 @@ export async function GET() {
             color: "transparent",
           }}
         >
-          LandingPageMaker
+          {mainTitle}
         </div>
         <div
           style={{ fontSize: "48px", marginBottom: "30px", color: "#e0e0e0" }}
         >
-          Free HTML / React / Vue Components Library
+          {subtitle}
         </div>
         <div style={{ fontSize: "36px", color: "#a0a0a0" }}>
-          Copy & Paste Landing Page Sections
+          {tertiary}
         </div>
       </div>
     </>,

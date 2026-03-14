@@ -1,13 +1,64 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { type Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Github, Code, Palette } from "lucide-react";
 import Link from "next/link";
+import SeoJsonLd from "@/components/SeoJsonLd";
+import {
+  createBreadcrumbListSchema,
+  createWebPageSchema,
+} from "@/lib/seo/schema";
+import { SITE_URL } from "@/lib/seo/blocks";
+
+export const metadata: Metadata = {
+  title: "About LandingPageMaker | Free Tailwind CSS Components",
+  description:
+    "Learn about LandingPageMaker, an open-source library of copy-paste ready Tailwind CSS landing page components.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About LandingPageMaker | Free Tailwind CSS Components",
+    description:
+      "Learn about LandingPageMaker, an open-source library of copy-paste ready Tailwind CSS landing page components.",
+    type: "website",
+    url: `${SITE_URL}/about`,
+    images: [
+      {
+        url: `${SITE_URL}/api/og`,
+        width: 1200,
+        height: 630,
+        alt: "About LandingPageMaker",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About LandingPageMaker",
+    description:
+      "Open-source Tailwind CSS blocks and components for high-converting landing pages.",
+    images: [`${SITE_URL}/api/og`],
+  },
+};
 
 export default function About() {
+  const aboutSchema = createWebPageSchema({
+    name: "About LandingPageMaker",
+    description:
+      "Learn about LandingPageMaker, an open-source library of copy-paste ready Tailwind CSS landing page components.",
+    url: `${SITE_URL}/about`,
+  });
+
+  const breadcrumbSchema = createBreadcrumbListSchema([
+    { name: "Home", item: SITE_URL },
+    { name: "About", item: `${SITE_URL}/about` },
+  ]);
+
   return (
     <>
+      <SeoJsonLd data={[aboutSchema, breadcrumbSchema]} />
       <Navigation />
       <main className="min-h-screen bg-background py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

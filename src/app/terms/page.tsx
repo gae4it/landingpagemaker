@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Terms of Service | LandingPageMaker",
   description:
     "Terms of Service for LandingPageMaker - an educational project for learning landing page design with Tailwind CSS components.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsOfService() {

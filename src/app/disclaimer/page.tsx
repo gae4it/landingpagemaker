@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Disclaimer | LandingPageMaker",
   description:
     "Legal disclaimer: LandingPageMaker is an educational project. Please read our disclaimer and understand the limitations before use.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/disclaimer",
+  },
 };
 
 export default function Disclaimer() {

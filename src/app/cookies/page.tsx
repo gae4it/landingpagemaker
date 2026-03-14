@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Cookie Policy | LandingPageMaker",
   description:
     "Learn about cookies used on LandingPageMaker. Understand how we collect and use data, manage your preferences, and your rights under GDPR.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/cookies",
+  },
 };
 
 export default function CookiePolicy() {

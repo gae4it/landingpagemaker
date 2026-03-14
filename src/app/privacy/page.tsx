@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Privacy Policy | LandingPageMaker",
   description:
     "Privacy Policy for LandingPageMaker - Educational platform for learning landing page design and component creation.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

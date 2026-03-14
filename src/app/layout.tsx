@@ -8,9 +8,11 @@ import Script from "next/script";
 import { TRPCReactProvider } from "@/trpc/react";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollToTop from "@/components/ScrollToTop";
+import SeoJsonLd from "@/components/SeoJsonLd";
+import { SITE_URL } from "@/lib/seo/blocks";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://landingpagemaker.vercel.app/"),
+  metadataBase: new URL(`${SITE_URL}/`),
   title: "LandingPageMaker - Ready-made Tailwind Blocks for Landing Pages",
   description:
     "Discover beautiful, ready-made landing page components built with Tailwind CSS. Perfect for learning web design and building professional landing pages.",
@@ -67,8 +69,15 @@ export const metadata: Metadata = {
     title: "LandingPageMaker - Ready-made Tailwind Blocks",
     description: "Beautiful landing page components built with Tailwind CSS",
     creator: "@landingpagemaker",
+    images: [`${SITE_URL}/api/og`],
   },
-  robots: "index, follow",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   manifest: "/site.webmanifest",
 };
 
@@ -152,6 +161,16 @@ const faqSchema = {
   ],
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "LandingPageMaker",
+  url: SITE_URL,
+  description:
+    "Free HTML, React, and Vue components library with copy-paste landing page sections built with Tailwind CSS and shadcn/ui",
+  inLanguage: "en-US",
+};
+
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
@@ -167,18 +186,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
+        <SeoJsonLd data={organizationSchema} />
+        <SeoJsonLd data={websiteSchema} />
+        <SeoJsonLd data={faqSchema} />
       </head>
       <body
         className="min-h-screen bg-background font-sans antialiased"
