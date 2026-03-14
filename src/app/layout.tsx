@@ -179,12 +179,6 @@ export default function RootLayout({
             __html: JSON.stringify(faqSchema),
           }}
         />
-        <Script
-          data-goatcounter="https://landingpagemaker.goatcounter.com/count"
-          async
-          src="//gc.zgo.at/count.js"
-          strategy="afterInteractive"
-        />
       </head>
       <body
         className="min-h-screen bg-background font-sans antialiased"
@@ -193,6 +187,12 @@ export default function RootLayout({
         <CookieConsent />
         <TRPCReactProvider>{children}</TRPCReactProvider>
         <ScrollToTop />
+        <Script
+          data-goatcounter="https://landingpagemaker.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
